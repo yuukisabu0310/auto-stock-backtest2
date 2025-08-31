@@ -9,6 +9,9 @@ from typing import Dict, List, Tuple, Optional
 import logging
 from dataclasses import dataclass
 from enum import Enum
+import time
+import concurrent.futures
+from functools import partial
 
 from data_loader import DataLoader
 from technical_indicators import TechnicalIndicators
@@ -197,6 +200,163 @@ class BacktestEngine:
         self.logger.info(f"バックテスト完了: {self.strategy}")
         return results
     
+    def run_backtest_parallel(self, stocks_data: Dict[str, pd.DataFrame], 
+                             start_date: str, end_date: str, 
+                             max_workers: int = 3) -> Dict:
+        """
+        並列処理によるバックテスト実行（高速化版）
+        
+        Args:
+            stocks_data: 銘柄コードをキーとしたデータ辞書
+            start_date: 開始日
+            end_date: 終了日
+            max_workers: 並列処理の最大ワーカー数
+        
+        Returns:
+            Dict: バックテスト結果
+        """
+        self.logger.info(f"並列バックテスト開始: {len(stocks_data)}銘柄")
+        start_time = time.time()
+        
+        # データの前処理
+        processed_data = {}
+        for symbol, data in stocks_data.items():
+            if not data.empty and self.validate_data(data):
+                processed_data[symbol] = data
+        
+        if not processed_data:
+            return {"error": "有効なデータがありません"}
+        
+        self.logger.info(f"有効なデータ: {len(processed_data)}銘柄")
+        
+        # 並列処理でバックテスト実行
+        with concurrent.futures.ThreadPoolExecutor(max_workers=max_workers) as executor:
+            # 部分関数を作成
+            backtest_func = partial(
+                self._run_single_stock_backtest,
+                start_date=start_date,
+                end_date=end_date
+            )
+            
+            # 並列実行
+            future_to_symbol = {
+                executor.submit(backtest_func, symbol, data): symbol 
+                for symbol, data in processed_data.items()
+            }
+            
+            all_trades = []
+            completed = 0
+            
+            for future in concurrent.futures.as_completed(future_to_symbol):
+                symbol = future_to_symbol[future]
+                completed += 1
+                
+                try:
+                    trades = future.result()
+                    if trades:
+                        all_trades.extend(trades)
+                    
+                    # 進捗表示
+                    if completed % 10 == 0 or completed == len(processed_data):
+                        self.logger.info(f"バックテスト進捗: {completed}/{len(processed_data)} 完了")
+                        
+                except Exception as e:
+                    self.logger.error(f"バックテストエラー: {symbol}, {e}")
+        
+        # 結果の集計
+        if all_trades:
+            # ポートフォリオを再構築
+            self.portfolio = Portfolio()
+            
+            # 取引を日付順にソート
+            all_trades.sort(key=lambda x: x.entry_date)
+            
+            # 取引を適用
+            for trade in all_trades:
+                self.portfolio.trades.append(trade)
+            
+            # 結果を計算
+            results = self._calculate_results()
+            
+            elapsed_time = time.time() - start_time
+            self.logger.info(f"並列バックテスト完了: 所要時間 {elapsed_time:.2f}秒")
+            
+            return results
+        else:
+            return {"error": "有効な取引がありません"}
+    
+    def _run_single_stock_backtest(self, symbol: str, data: pd.DataFrame, 
+                                  start_date: str, end_date: str) -> List[Trade]:
+        """
+        単一銘柄のバックテスト実行
+        
+        Args:
+            symbol: 銘柄コード
+            data: 株価データ
+            start_date: 開始日
+            end_date: 終了日
+        
+        Returns:
+            List[Trade]: 取引リスト
+        """
+        try:
+            # 期間でフィルタリング
+            start_dt = pd.to_datetime(start_date)
+            end_dt = pd.to_datetime(end_date)
+            data = data[(data.index >= start_dt) & (data.index <= end_dt)]
+            
+            if data.empty:
+                return []
+            
+            # テクニカル指標の計算
+            indicators = TechnicalIndicators()
+            data = indicators.calculate_all_indicators(data)
+            
+            # 取引シグナルの生成
+            trades = []
+            position = None
+            
+            for date, row in data.iterrows():
+                # エントリー条件のチェック
+                if position is None:
+                    entry_signal = self._check_entry_conditions(row, symbol)
+                    if entry_signal:
+                        position = {
+                            'symbol': symbol,
+                            'entry_date': date,
+                            'entry_price': row['Close'],
+                            'quantity': self._calculate_position_size(symbol, row['Close']),
+                            'entry_reason': entry_signal
+                        }
+                
+                # エグジット条件のチェック
+                elif position:
+                    exit_signal = self._check_exit_conditions(row, position, date)
+                    if exit_signal:
+                        trade = Trade(
+                            symbol=position['symbol'],
+                            entry_date=position['entry_date'],
+                            exit_date=date,
+                            entry_price=position['entry_price'],
+                            exit_price=row['Close'],
+                            quantity=position['quantity'],
+                            trade_type=TradeType.SELL,
+                            strategy=self.strategy,
+                            entry_reason=position['entry_reason'],
+                            exit_reason=exit_signal,
+                            profit_loss=(row['Close'] - position['entry_price']) * position['quantity'],
+                            profit_loss_pct=(row['Close'] - position['entry_price']) / position['entry_price'],
+                            holding_days=(date - position['entry_date']).days
+                        )
+                        trades.append(trade)
+                        position = None
+            
+            return trades
+            
+        except Exception as e:
+            self.logger.error(f"単一銘柄バックテストエラー: {symbol}, {e}")
+            return []
+    
     def _process_date(self, date: datetime, all_data: Dict[str, pd.DataFrame]):
         """特定日の処理"""
         current_prices = {}
@@ -377,3 +537,17 @@ class BacktestEngine:
         }
         
         return results
+
+    def validate_data(self, data: pd.DataFrame) -> bool:
+        """データの妥当性チェック"""
+        if data.empty:
+            return False
+        
+        required_columns = ['Open', 'High', 'Low', 'Close', 'Volume']
+        if not all(col in data.columns for col in required_columns):
+            return False
+        
+        if len(data) < 30:
+            return False
+        
+        return True

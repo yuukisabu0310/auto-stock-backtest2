@@ -36,7 +36,8 @@ def get_index_summary() -> Dict[str, int]:
     return data_loader.get_index_summary()
 
 def run_single_backtest(strategy: str, random_seed: int, 
-                       start_date: str, end_date: str) -> Dict:
+                       start_date: str, end_date: str, 
+                       use_parallel: bool = True) -> Dict:
     """
     単一バックテスト実行
     
@@ -45,16 +46,17 @@ def run_single_backtest(strategy: str, random_seed: int,
         random_seed: 乱数シード
         start_date: 開始日
         end_date: 終了日
+        use_parallel: 並列処理を使用するか
     
     Returns:
         Dict: バックテスト結果
     """
     logger = logging.getLogger(__name__)
-    logger.info(f"単一バックテスト開始: {strategy}, シード: {random_seed}")
+    logger.info(f"単一バックテスト開始: {strategy}, シード: {random_seed}, 並列処理: {use_parallel}")
     
     try:
         # データローダーの初期化
-        data_loader = DataLoader()
+        data_loader = DataLoader(max_workers=5 if use_parallel else 1)
         
         # 戦略に応じた銘柄リストを取得（ランダム抽出）
         stocks = data_loader.get_strategy_stocks(strategy, random_seed)
@@ -69,8 +71,16 @@ def run_single_backtest(strategy: str, random_seed: int,
         # バックテストエンジンの初期化
         engine = BacktestEngine(strategy)
         
-        # バックテスト実行
-        results = engine.run_backtest(stocks, start_date, end_date)
+        # 並列処理を使用する場合
+        if use_parallel:
+            # 並列でデータ取得
+            stocks_data = data_loader.get_stock_data_batch(stocks, start_date, end_date)
+            
+            # 並列でバックテスト実行
+            results = engine.run_backtest_parallel(stocks_data, start_date, end_date)
+        else:
+            # 従来の逐次処理
+            results = engine.run_backtest(stocks, start_date, end_date)
         
         if "error" in results:
             logger.error(f"バックテストエラー: {results['error']}")
@@ -258,6 +268,7 @@ def main():
     parser.add_argument('--num-runs', type=int, default=5, help='実行回数（デフォルト: 5）')
     parser.add_argument('--base-seed', type=int, default=42, help='ベース乱数シード（デフォルト: 42）')
     parser.add_argument('--show-indices', action='store_true', help='指数別銘柄数を表示')
+    parser.add_argument('--use-parallel', action='store_true', help='並列処理を使用する')
     
     args = parser.parse_args()
     
@@ -269,6 +280,7 @@ def main():
     logger.info(f"期間: {args.start_date} 〜 {args.end_date}")
     logger.info(f"実行回数: {args.num_runs}")
     logger.info(f"ベースシード: {args.base_seed}")
+    logger.info(f"並列処理: {args.use_parallel}")
     
     try:
         # 指数別銘柄数の表示

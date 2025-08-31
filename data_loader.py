@@ -10,18 +10,22 @@ import logging
 from typing import List, Optional, Dict
 import pickle
 import time
+import concurrent.futures
+from functools import partial
 
 class DataLoader:
     """データローダークラス"""
     
-    def __init__(self, cache_dir: str = "cache"):
+    def __init__(self, cache_dir: str = "cache", max_workers: int = 5):
         """
         初期化
         
         Args:
             cache_dir: キャッシュディレクトリ
+            max_workers: 並列処理の最大ワーカー数
         """
         self.cache_dir = cache_dir
+        self.max_workers = max_workers
         self.logger = logging.getLogger(__name__)
         
         # キャッシュディレクトリの作成
@@ -427,3 +431,57 @@ class DataLoader:
             return []
         
         return all_stocks
+
+    def get_stock_data_batch(self, symbols: List[str], start_date: str = "2020-01-01", 
+                            end_date: str = "2025-08-31", interval: str = "1d") -> Dict[str, pd.DataFrame]:
+        """
+        複数銘柄のデータを並列で取得
+        
+        Args:
+            symbols: 銘柄コードリスト
+            start_date: 開始日
+            end_date: 終了日
+            interval: 時間間隔
+        
+        Returns:
+            Dict: 銘柄コードをキーとしたデータ辞書
+        """
+        self.logger.info(f"並列データ取得開始: {len(symbols)}銘柄")
+        start_time = time.time()
+        
+        # 並列処理でデータ取得
+        with concurrent.futures.ThreadPoolExecutor(max_workers=self.max_workers) as executor:
+            # 部分関数を作成（引数を固定）
+            get_data_func = partial(
+                self.get_stock_data, 
+                start_date=start_date, 
+                end_date=end_date, 
+                interval=interval
+            )
+            
+            # 並列実行
+            future_to_symbol = {executor.submit(get_data_func, symbol): symbol for symbol in symbols}
+            
+            results = {}
+            completed = 0
+            
+            for future in concurrent.futures.as_completed(future_to_symbol):
+                symbol = future_to_symbol[future]
+                completed += 1
+                
+                try:
+                    data = future.result()
+                    results[symbol] = data
+                    
+                    # 進捗表示
+                    if completed % 10 == 0 or completed == len(symbols):
+                        self.logger.info(f"データ取得進捗: {completed}/{len(symbols)} 完了")
+                        
+                except Exception as e:
+                    self.logger.error(f"データ取得エラー: {symbol}, {e}")
+                    results[symbol] = pd.DataFrame()
+        
+        elapsed_time = time.time() - start_time
+        self.logger.info(f"並列データ取得完了: {len(symbols)}銘柄, 所要時間: {elapsed_time:.2f}秒")
+        
+        return results

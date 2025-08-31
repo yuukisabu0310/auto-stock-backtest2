@@ -10,7 +10,15 @@ START_DATE = "2020-01-01"
 END_DATE = datetime.now().strftime("%Y-%m-%d")
 INITIAL_CAPITAL = 10000000  # 1000万円
 
+# パフォーマンス設定
+MAX_WORKERS = 5  # 並列処理の最大ワーカー数
+BATCH_SIZE = 10  # バッチ処理のサイズ
+CACHE_ENABLED = True  # キャッシュの有効/無効
+RETRY_DELAY = 2  # リトライ間隔（秒）
+
 # データ取得設定
+DATA_FETCH_TIMEOUT = 30  # データ取得タイムアウト（秒）
+MAX_RETRIES = 3  # 最大リトライ回数
 DATA_SOURCE = "stooq"
 CACHE_DIR = "cache"
 REPORT_DIR = "reports"
