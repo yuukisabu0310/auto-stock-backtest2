@@ -45,7 +45,9 @@ class BacktestAggregator:
             return {key: self._convert_timestamps(value) for key, value in obj.items()}
         elif isinstance(obj, list):
             return [self._convert_timestamps(item) for item in obj]
-        elif isinstance(obj, (np.integer, np.floating)):
+        elif isinstance(obj, np.integer):
+            return int(obj)
+        elif isinstance(obj, np.floating):
             return float(obj)
         elif isinstance(obj, np.ndarray):
             return obj.tolist()
@@ -205,7 +207,7 @@ class BacktestAggregator:
         
         try:
             with open(filepath, 'w', encoding='utf-8') as f:
-                json.dump(aggregated_result, f, ensure_ascii=False, indent=2)
+                json.dump(self._convert_timestamps(aggregated_result), f, ensure_ascii=False, indent=2)
             
             self.logger.info(f"集計結果保存: {filepath}")
             return filepath
