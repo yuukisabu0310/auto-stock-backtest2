@@ -65,14 +65,16 @@ class DataLoader:
             return existing_data
         
         # 不足している期間のデータを取得
+        self.logger.info(f"差分データ取得開始: {symbol} (不足期間: {len(missing_periods)}個)")
         new_data_parts = []
-        for period_start, period_end in missing_periods:
-            self.logger.info(f"不足期間のデータを取得: {symbol} ({period_start} 〜 {period_end})")
+        for i, (period_start, period_end) in enumerate(missing_periods, 1):
+            self.logger.info(f"不足期間 {i}/{len(missing_periods)} のデータを取得: {symbol} ({period_start} 〜 {period_end})")
             
             try:
                 period_data = self._get_from_stooq(symbol, period_start, period_end, interval, max_retries)
                 if not period_data.empty:
                     new_data_parts.append(period_data)
+                    self.logger.info(f"期間データ取得成功: {symbol} ({period_start} 〜 {period_end}) - {len(period_data)}行")
                 else:
                     self.logger.warning(f"期間データが空: {symbol} ({period_start} 〜 {period_end})")
             except Exception as e:
@@ -83,6 +85,8 @@ class DataLoader:
             new_data = pd.concat(new_data_parts)
             new_data = new_data[~new_data.index.duplicated(keep='first')]
             new_data = new_data.sort_index()
+            
+            self.logger.info(f"新規データマージ: {symbol} (新規: {len(new_data)}行, 既存: {len(existing_data)}行)")
             
             # 既存データとマージ
             final_data = self._merge_data(existing_data, new_data)
@@ -97,7 +101,7 @@ class DataLoader:
             try:
                 with open(cache_file, 'wb') as f:
                     pickle.dump(final_data, f)
-                self.logger.info(f"差分データ取得完了: {symbol} (新規: {len(new_data)}行)")
+                self.logger.info(f"差分データ取得完了: {symbol} (最終: {len(final_data)}行, 新規追加: {len(new_data)}行)")
             except Exception as e:
                 self.logger.warning(f"キャッシュ保存エラー: {symbol}, {e}")
             
