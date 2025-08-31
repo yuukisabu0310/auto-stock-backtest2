@@ -120,27 +120,26 @@ def run_multiple_backtests(strategy: str, num_runs: int,
         # 単一バックテスト実行
         result = run_single_backtest(strategy, random_seed, start_date, end_date)
         
-        if "error" not in result:
-            successful_runs += 1
-            
-                    # 個別結果を保存
+        # 個別結果を保存
         stocks = DataLoader().get_strategy_stocks(strategy, random_seed)
         aggregator.save_individual_result(strategy, run_id, random_seed, stocks, result)
         
-        # 銘柄一覧レポートの生成（最新の実行のみ）
-        if run_id == num_runs:
-            try:
-                report_generator = ReportGenerator()
-                stocks_report = report_generator.generate_stocks_list_report(stocks, strategy, random_seed)
-                logger.info(f"銘柄一覧レポート生成: {stocks_report}")
-            except Exception as e:
-                logger.warning(f"銘柄一覧レポート生成エラー: {e}")
-            
+        if "error" not in result:
+            successful_runs += 1
             all_results.append(result)
             
             # 進捗表示
             total_return = result.get('total_return', 0) * 100
             logger.info(f"実行 {run_id} 完了: リターン {total_return:.2f}%")
+            
+            # 銘柄一覧レポートの生成（最新の実行のみ）
+            if run_id == num_runs:
+                try:
+                    report_generator = ReportGenerator()
+                    stocks_report = report_generator.generate_stocks_list_report(stocks, strategy, random_seed)
+                    logger.info(f"銘柄一覧レポート生成: {stocks_report}")
+                except Exception as e:
+                    logger.warning(f"銘柄一覧レポート生成エラー: {e}")
         else:
             logger.warning(f"実行 {run_id} 失敗: {result['error']}")
     
@@ -303,7 +302,7 @@ def main():
         aggregator = BacktestAggregator()
         
         for strategy_key, strategy_data in all_results.items():
-            if "error" not in strategy_data:
+            if isinstance(strategy_data, dict) and "error" not in strategy_data:
                 successful_runs = strategy_data.get("successful_runs", 0)
                 total_runs = strategy_data.get("total_runs", 0)
                 
@@ -318,7 +317,7 @@ def main():
                     logger.info(f"  平均最大ドローダウン: {performance.get('max_drawdown_mean', 0)*100:.2f}%")
                     logger.info(f"  平均勝率: {performance.get('win_rate_mean', 0)*100:.1f}%")
             else:
-                logger.error(f"{strategy_key}: エラー - {strategy_data['error']}")
+                logger.error(f"{strategy_key}: エラー - {strategy_data.get('error', 'Unknown error')}")
         
         logger.info(f"レポートファイル: {report_files}")
         
