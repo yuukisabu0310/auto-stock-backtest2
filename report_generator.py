@@ -170,13 +170,240 @@ class ReportGenerator:
         
         return html
     
-    def generate_strategy_report(self, results: Dict, strategy_name: str) -> str:
+    def generate_stocks_list_report(self, stocks: List[str], strategy_name: str, random_seed: int) -> str:
+        """
+        対象銘柄一覧レポートの生成
+        
+        Args:
+            stocks: 銘柄リスト
+            strategy_name: 戦略名
+            random_seed: 乱数シード
+        
+        Returns:
+            str: レポートファイルパス
+        """
+        # 銘柄を指数別に分類
+        stocks_by_index = self._categorize_stocks_by_index(stocks)
+        
+        # HTMLレポートの生成
+        html_content = self._generate_stocks_list_html(stocks_by_index, strategy_name, random_seed)
+        
+        # ファイル保存
+        timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+        filename = f"{strategy_name}_stocks_{timestamp}.html"
+        filepath = os.path.join(self.report_dir, filename)
+        
+        with open(filepath, 'w', encoding='utf-8') as f:
+            f.write(html_content)
+        
+        self.logger.info(f"銘柄一覧レポート生成完了: {filepath}")
+        return filepath
+    
+    def _categorize_stocks_by_index(self, stocks: List[str]) -> Dict[str, List[str]]:
+        """
+        銘柄を指数別に分類
+        
+        Args:
+            stocks: 銘柄リスト
+        
+        Returns:
+            Dict[str, List[str]]: 指数別銘柄リスト
+        """
+        stocks_by_index = {
+            "SP500": [],
+            "NASDAQ100": [],
+            "NIKKEI225": []
+        }
+        
+        # index_stocks.csvから正確な分類を取得
+        try:
+            import pandas as pd
+            stocks_df = pd.read_csv("index_stocks.csv")
+            
+            for stock in stocks:
+                stock_info = stocks_df[stocks_df['symbol'] == stock]
+                if not stock_info.empty:
+                    index_name = stock_info.iloc[0]['index']
+                    if index_name in stocks_by_index:
+                        stocks_by_index[index_name].append(stock)
+                    else:
+                        # 分類できない場合は、.Tで終わるかどうかで判断
+                        if stock.endswith('.T'):
+                            stocks_by_index["NIKKEI225"].append(stock)
+                        else:
+                            stocks_by_index["SP500"].append(stock)
+                else:
+                    # CSVにない場合は、.Tで終わるかどうかで判断
+                    if stock.endswith('.T'):
+                        stocks_by_index["NIKKEI225"].append(stock)
+                    else:
+                        stocks_by_index["SP500"].append(stock)
+        except Exception as e:
+            # CSV読み込みエラーの場合は、簡易分類
+            for stock in stocks:
+                if stock.endswith('.T'):
+                    stocks_by_index["NIKKEI225"].append(stock)
+                else:
+                    stocks_by_index["SP500"].append(stock)
+        
+        return stocks_by_index
+    
+    def _generate_stocks_list_html(self, stocks_by_index: Dict[str, List[str]], 
+                                  strategy_name: str, random_seed: int) -> str:
+        """
+        銘柄一覧HTMLの生成
+        
+        Args:
+            stocks_by_index: 指数別銘柄リスト
+            strategy_name: 戦略名
+            random_seed: 乱数シード
+        
+        Returns:
+            str: HTML文字列
+        """
+        total_stocks = sum(len(stocks) for stocks in stocks_by_index.values())
+        
+        html_content = f"""
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>対象銘柄一覧 - {strategy_name}</title>
+    <style>
+        body {{
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }}
+        .container {{
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+        }}
+        .header {{
+            text-align: center;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid #007bff;
+        }}
+        .summary {{
+            background-color: #e3f2fd;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            text-align: center;
+        }}
+        .summary h3 {{
+            color: #1976d2;
+            margin-top: 0;
+        }}
+        .index-section {{
+            margin: 30px 0;
+            background-color: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 4px solid #28a745;
+        }}
+        .index-section h3 {{
+            color: #28a745;
+            margin-top: 0;
+            margin-bottom: 15px;
+        }}
+        .stocks-grid {{
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 10px;
+        }}
+        .stock-item {{
+            background-color: white;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #dee2e6;
+            text-align: center;
+            font-weight: bold;
+            color: #495057;
+        }}
+        .stock-item:hover {{
+            background-color: #e9ecef;
+            transform: translateY(-2px);
+            transition: all 0.2s ease;
+        }}
+        .back-link {{
+            text-align: center;
+            margin-top: 30px;
+        }}
+        .back-link a {{
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+        }}
+        .back-link a:hover {{
+            background-color: #0056b3;
+        }}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>📋 対象銘柄一覧</h1>
+            <h2>{strategy_name}</h2>
+            <p>生成日時: {datetime.now().strftime('%Y年%m月%d日 %H:%M:%S')}</p>
+        </div>
+        
+        <div class="summary">
+            <h3>📊 銘柄構成サマリー</h3>
+            <p><strong>総銘柄数:</strong> {total_stocks}銘柄</p>
+            <p><strong>乱数シード:</strong> {random_seed}</p>
+            <p><strong>戦略:</strong> {strategy_name}</p>
+        </div>
+"""
+        
+        # 各指数の銘柄一覧
+        for index_name, stocks in stocks_by_index.items():
+            if stocks:  # 空でない場合のみ表示
+                html_content += f"""
+        <div class="index-section">
+            <h3>📈 {index_name} ({len(stocks)}銘柄)</h3>
+            <div class="stocks-grid">
+"""
+                for stock in stocks:
+                    html_content += f'                <div class="stock-item">{stock}</div>\n'
+                
+                html_content += """
+            </div>
+        </div>
+"""
+        
+        html_content += """
+        <div class="back-link">
+            <a href="javascript:history.back()">← バックテスト結果に戻る</a>
+        </div>
+    </div>
+</body>
+</html>
+        """
+        
+        return html_content
+    
+    def generate_strategy_report(self, results: Dict, strategy_name: str, 
+                               stocks: List[str] = None, random_seed: int = None) -> str:
         """
         戦略別レポートの生成
         
         Args:
             results: バックテスト結果
             strategy_name: 戦略名
+            stocks: 使用銘柄リスト
+            random_seed: 乱数シード
         
         Returns:
             str: レポートファイルパス
@@ -189,7 +416,7 @@ class ReportGenerator:
         charts = self._generate_charts(results)
         
         # HTMLレポートの生成
-        html_content = self._generate_html_report(results, strategy_name, charts)
+        html_content = self._generate_html_report(results, strategy_name, charts, stocks, random_seed)
         
         # ファイル保存
         timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
@@ -352,7 +579,8 @@ class ReportGenerator:
         
         return fig.to_html(full_html=False, include_plotlyjs=False)
     
-    def _generate_html_report(self, results: Dict, strategy_name: str, charts: Dict[str, str]) -> str:
+    def _generate_html_report(self, results: Dict, strategy_name: str, charts: Dict[str, str], 
+                            stocks: List[str] = None, random_seed: int = None) -> str:
         """HTMLレポートの生成"""
         # 基本統計の計算
         stats = self._calculate_statistics(results)
@@ -360,6 +588,19 @@ class ReportGenerator:
         # 戦略条件の取得
         strategy_conditions = self._get_strategy_conditions(strategy_name)
         strategy_conditions_html = self._generate_strategy_conditions_html(strategy_conditions)
+        
+        # 銘柄一覧へのリンク生成
+        stocks_link_html = ""
+        if stocks and random_seed is not None:
+            timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+            stocks_filename = f"{strategy_name}_stocks_{timestamp}.html"
+            stocks_link_html = f"""
+        <div class="stocks-link">
+            <a href="{stocks_filename}" target="_blank" class="stocks-link-btn">
+                📋 対象銘柄一覧を確認 ({len(stocks)}銘柄)
+            </a>
+        </div>
+"""
         
         # AI分析コメント
         ai_analysis = self._generate_ai_analysis(results, strategy_name)
@@ -500,6 +741,27 @@ class ReportGenerator:
         .condition-section strong {{
             color: #495057;
         }}
+        .stocks-link {{
+            text-align: center;
+            margin: 20px 0;
+        }}
+        .stocks-link-btn {{
+            display: inline-block;
+            padding: 12px 24px;
+            background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: bold;
+            font-size: 1.1em;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(40, 167, 69, 0.3);
+        }}
+        .stocks-link-btn:hover {{
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(40, 167, 69, 0.4);
+            background: linear-gradient(135deg, #218838 0%, #1ea085 100%);
+        }}
     </style>
 </head>
 <body>
@@ -538,6 +800,8 @@ class ReportGenerator:
         </div>
         
         {strategy_conditions_html}
+        
+        {stocks_link_html}
         
         <div class="ai-analysis">
             <h3>🤖 AI分析・評価</h3>
@@ -706,67 +970,14 @@ class ReportGenerator:
     
     def generate_summary_report(self, all_results: Dict[str, Dict]) -> str:
         """
-        全戦略のサマリーレポート生成
+        全戦略のサマリーレポート生成（無効化）
         
         Args:
             all_results: 全戦略の結果辞書
         
         Returns:
-            str: サマリーレポートファイルパス
+            str: 空文字列（ファイル生成しない）
         """
-        # サマリーレポートの実装
-        # （簡略化のため、基本的な比較表のみ実装）
-        
-        summary_html = """
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-    <meta charset="UTF-8">
-    <title>戦略比較サマリー</title>
-    <style>
-        body { font-family: Arial, sans-serif; margin: 20px; }
-        table { border-collapse: collapse; width: 100%; }
-        th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
-        th { background-color: #f2f2f2; }
-    </style>
-</head>
-<body>
-    <h1>戦略比較サマリー</h1>
-    <table>
-        <tr>
-            <th>戦略</th>
-            <th>総リターン</th>
-            <th>シャープレシオ</th>
-            <th>最大ドローダウン</th>
-            <th>勝率</th>
-            <th>取引数</th>
-        </tr>
-        """
-        
-        for strategy, results in all_results.items():
-            if "error" not in results:
-                summary_html += f"""
-                <tr>
-                    <td>{strategy}</td>
-                    <td>{results.get('total_return', 0)*100:.2f}%</td>
-                    <td>{results.get('sharpe_ratio', 0):.2f}</td>
-                    <td>{results.get('max_drawdown', 0)*100:.2f}%</td>
-                    <td>{results.get('win_rate', 0)*100:.1f}%</td>
-                    <td>{results.get('total_trades', 0)}</td>
-                </tr>
-                """
-        
-        summary_html += """
-    </table>
-</body>
-</html>
-        """
-        
-        timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-        filename = f"summary_{timestamp}.html"
-        filepath = os.path.join(self.report_dir, filename)
-        
-        with open(filepath, 'w', encoding='utf-8') as f:
-            f.write(summary_html)
-        
-        return filepath
+        # summaryファイルの生成を無効化
+        self.logger.info("サマリーレポート生成をスキップしました")
+        return ""

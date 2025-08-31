@@ -123,9 +123,18 @@ def run_multiple_backtests(strategy: str, num_runs: int,
         if "error" not in result:
             successful_runs += 1
             
-            # 個別結果を保存
-            stocks = DataLoader().get_strategy_stocks(strategy, random_seed)
-            aggregator.save_individual_result(strategy, run_id, random_seed, stocks, result)
+                    # 個別結果を保存
+        stocks = DataLoader().get_strategy_stocks(strategy, random_seed)
+        aggregator.save_individual_result(strategy, run_id, random_seed, stocks, result)
+        
+        # 銘柄一覧レポートの生成（最新の実行のみ）
+        if run_id == num_runs:
+            try:
+                report_generator = ReportGenerator()
+                stocks_report = report_generator.generate_stocks_list_report(stocks, strategy, random_seed)
+                logger.info(f"銘柄一覧レポート生成: {stocks_report}")
+            except Exception as e:
+                logger.warning(f"銘柄一覧レポート生成エラー: {e}")
             
             all_results.append(result)
             
@@ -177,10 +186,11 @@ def run_all_strategies_multiple_backtests(num_runs: int = 5,
             if aggregated:
                 aggregator.save_aggregated_result(aggregated)
     
-    # サマリーレポート生成
-    summary_report = aggregator.generate_summary_report(strategies)
-    if summary_report:
-        logger.info(f"サマリーレポート生成: {summary_report}")
+    # サマリーレポート生成（無効化）
+    # summary_report = aggregator.generate_summary_report(strategies)
+    # if summary_report:
+    #     logger.info(f"サマリーレポート生成: {summary_report}")
+    logger.info("サマリーレポート生成をスキップしました")
     
     logger.info("全戦略複数回バックテスト完了")
     return all_strategy_results
@@ -212,7 +222,25 @@ def generate_individual_reports(all_results: Dict[str, Dict]) -> List[str]:
         if results:
             latest_result = results[-1]  # 最新の結果
             strategy_name = TRADING_RULES[strategy_key]["name"]
-            report_file = report_generator.generate_strategy_report(latest_result, strategy_name)
+            
+            # 最新の実行で使用された銘柄リストを取得
+            latest_stocks = None
+            latest_seed = None
+            try:
+                # 最新の実行の乱数シードを計算
+                total_runs = strategy_data.get("total_runs", 0)
+                base_seed = 42  # デフォルト値
+                latest_seed = base_seed + total_runs
+                
+                # 最新の銘柄リストを取得
+                data_loader = DataLoader()
+                latest_stocks = data_loader.get_strategy_stocks(strategy_key, latest_seed)
+            except Exception as e:
+                logger.warning(f"銘柄リスト取得エラー: {e}")
+            
+            report_file = report_generator.generate_strategy_report(
+                latest_result, strategy_name, latest_stocks, latest_seed
+            )
             
             if report_file:
                 report_files.append(report_file)
