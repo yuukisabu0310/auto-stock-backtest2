@@ -2,8 +2,8 @@ name: Daily Backtest
 
 on:
   schedule:
-    # 毎日09:00に実行（UTC時間、日本時間は18:00）
-    - cron: '0 9 * * *'
+    # 毎日06:00に実行（UTC時間、日本時間は15:00）
+    - cron: '0 6 * * *'
   workflow_dispatch:
   push:
     branches: [ main ]
