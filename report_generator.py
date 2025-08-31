@@ -12,7 +12,7 @@ import json
 from typing import Dict, List
 import logging
 
-from config import REPORT_DIR, REPORT_TEMPLATES
+from config import REPORT_DIR, REPORT_TEMPLATES, TRADING_RULES
 
 class ReportGenerator:
     """レポート生成クラス"""
@@ -26,6 +26,149 @@ class ReportGenerator:
         """レポートディレクトリの作成"""
         os.makedirs(self.report_dir, exist_ok=True)
         os.makedirs(os.path.join(self.report_dir, "assets"), exist_ok=True)
+    
+    def _get_strategy_conditions(self, strategy_name: str) -> Dict:
+        """
+        戦略の条件を取得
+        
+        Args:
+            strategy_name: 戦略名
+        
+        Returns:
+            Dict: 戦略条件
+        """
+        # 戦略名からキーを特定
+        strategy_key = None
+        for key, value in TRADING_RULES.items():
+            if value["name"] == strategy_name:
+                strategy_key = key
+                break
+        
+        if not strategy_key:
+            return {}
+        
+        return TRADING_RULES[strategy_key]
+    
+    def _translate_condition_name(self, condition_name: str) -> str:
+        """
+        条件名を日本語に変換
+        
+        Args:
+            condition_name: 条件名
+        
+        Returns:
+            str: 日本語の条件名
+        """
+        translations = {
+            'timeframe': '時間足',
+            'max_holding_days': '最大保有日数',
+            'max_positions': '最大ポジション数',
+            'risk_per_trade': '取引リスク',
+            'max_position_size': '最大ポジションサイズ',
+            'golden_cross': 'ゴールデンクロス',
+            'rsi_range': 'RSI範囲',
+            'volume_multiplier': '出来高倍率',
+            'new_high_preference': '新高値優先',
+            'above_ma200': '200日線上',
+            'fundamental_growth': 'ファンダメンタル成長',
+            'volume_new_high': '出来高新高値',
+            'macro_environment': 'マクロ環境',
+            'profit_target': '利益目標',
+            'stop_loss': '損切り',
+            'rsi_overbought': 'RSI過買い',
+            'below_ma25': '25日線下',
+            'partial_profit': '部分利確',
+            'below_ma200': '200日線下',
+            'fundamental_divergence': 'ファンダメンタル乖離',
+            'enabled': '有効',
+            'first_target': '第1目標',
+            'second_target': '第2目標'
+        }
+        
+        return translations.get(condition_name, condition_name)
+    
+    def _generate_strategy_conditions_html(self, strategy_conditions: Dict) -> str:
+        """
+        戦略条件のHTML生成
+        
+        Args:
+            strategy_conditions: 戦略条件
+        
+        Returns:
+            str: HTML文字列
+        """
+        if not strategy_conditions:
+            return "<p>戦略条件が見つかりませんでした。</p>"
+        
+        html = f"""
+        <div class="strategy-conditions">
+            <h3>📋 戦略条件</h3>
+            <div class="conditions-grid">
+                <div class="condition-section">
+                    <h4>🕒 基本設定</h4>
+                    <ul>
+                        <li><strong>{self._translate_condition_name('timeframe')}:</strong> {strategy_conditions.get('timeframe', 'N/A')}</li>
+                        <li><strong>{self._translate_condition_name('max_holding_days')}:</strong> {strategy_conditions.get('max_holding_days', 'N/A')}日</li>
+                        <li><strong>{self._translate_condition_name('max_positions')}:</strong> {strategy_conditions.get('max_positions', 'N/A')}銘柄</li>
+                        <li><strong>{self._translate_condition_name('risk_per_trade')}:</strong> {strategy_conditions.get('risk_per_trade', 0)*100:.1f}%</li>
+                        <li><strong>{self._translate_condition_name('max_position_size')}:</strong> {strategy_conditions.get('max_position_size', 0)*100:.1f}%</li>
+                    </ul>
+                </div>
+        """
+        
+        # エントリー条件
+        entry_conditions = strategy_conditions.get('entry_conditions', {})
+        if entry_conditions:
+            html += """
+                <div class="condition-section">
+                    <h4>📈 エントリー条件</h4>
+                    <ul>
+            """
+            for condition, value in entry_conditions.items():
+                translated_condition = self._translate_condition_name(condition)
+                if isinstance(value, bool):
+                    status = "✅ 有効" if value else "❌ 無効"
+                    html += f"<li><strong>{translated_condition}:</strong> {status}</li>"
+                elif isinstance(value, tuple):
+                    html += f"<li><strong>{translated_condition}:</strong> {value[0]}〜{value[1]}</li>"
+                else:
+                    html += f"<li><strong>{translated_condition}:</strong> {value}</li>"
+            html += "</ul></div>"
+        
+        # エグジット条件
+        exit_conditions = strategy_conditions.get('exit_conditions', {})
+        if exit_conditions:
+            html += """
+                <div class="condition-section">
+                    <h4>📉 エグジット条件</h4>
+                    <ul>
+            """
+            for condition, value in exit_conditions.items():
+                translated_condition = self._translate_condition_name(condition)
+                if isinstance(value, bool):
+                    status = "✅ 有効" if value else "❌ 無効"
+                    html += f"<li><strong>{translated_condition}:</strong> {status}</li>"
+                elif isinstance(value, dict):
+                    # 部分利確などの複雑な条件
+                    html += f"<li><strong>{translated_condition}:</strong>"
+                    for sub_key, sub_value in value.items():
+                        translated_sub_key = self._translate_condition_name(sub_key)
+                        if isinstance(sub_value, bool):
+                            status = "✅ 有効" if sub_value else "❌ 無効"
+                            html += f" {translated_sub_key}: {status}"
+                        else:
+                            html += f" {translated_sub_key}: {sub_value}"
+                    html += "</li>"
+                else:
+                    html += f"<li><strong>{translated_condition}:</strong> {value}</li>"
+            html += "</ul></div>"
+        
+        html += """
+            </div>
+        </div>
+        """
+        
+        return html
     
     def generate_strategy_report(self, results: Dict, strategy_name: str) -> str:
         """
@@ -214,6 +357,10 @@ class ReportGenerator:
         # 基本統計の計算
         stats = self._calculate_statistics(results)
         
+        # 戦略条件の取得
+        strategy_conditions = self._get_strategy_conditions(strategy_name)
+        strategy_conditions_html = self._generate_strategy_conditions_html(strategy_conditions)
+        
         # AI分析コメント
         ai_analysis = self._generate_ai_analysis(results, strategy_name)
         
@@ -309,6 +456,50 @@ class ReportGenerator:
             color: red;
             font-weight: bold;
         }}
+        .strategy-conditions {{
+            background-color: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 30px 0;
+            border-left: 4px solid #28a745;
+        }}
+        .strategy-conditions h3 {{
+            color: #28a745;
+            margin-top: 0;
+            margin-bottom: 20px;
+        }}
+        .conditions-grid {{
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }}
+        .condition-section {{
+            background-color: white;
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px solid #dee2e6;
+        }}
+        .condition-section h4 {{
+            color: #495057;
+            margin-top: 0;
+            margin-bottom: 15px;
+            font-size: 1.1em;
+        }}
+        .condition-section ul {{
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }}
+        .condition-section li {{
+            padding: 8px 0;
+            border-bottom: 1px solid #f1f3f4;
+        }}
+        .condition-section li:last-child {{
+            border-bottom: none;
+        }}
+        .condition-section strong {{
+            color: #495057;
+        }}
     </style>
 </head>
 <body>
@@ -345,6 +536,8 @@ class ReportGenerator:
                 <div class="stat-label">プロフィットファクター</div>
             </div>
         </div>
+        
+        {strategy_conditions_html}
         
         <div class="ai-analysis">
             <h3>🤖 AI分析・評価</h3>
