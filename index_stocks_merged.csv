@@ -1,0 +1,742 @@
+symbol,name,index,category,country,description
+AAPL,Apple Inc.,SP500,high,US,テクノロジー大手
+MSFT,Microsoft Corporation,SP500,high,US,ソフトウェア大手
+GOOGL,Alphabet Inc.,SP500,high,US,インターネット大手
+AMZN,Amazon.com Inc.,SP500,high,US,Eコマース大手
+TSLA,Tesla Inc.,SP500,high,US,電気自動車大手
+META,Meta Platforms Inc.,SP500,high,US,SNS大手
+NVDA,NVIDIA Corporation,SP500,high,US,GPU大手
+NFLX,Netflix Inc.,SP500,high,US,動画配信大手
+JPM,JPMorgan Chase & Co.,SP500,high,US,金融大手
+JNJ,Johnson & Johnson,SP500,high,US,製薬大手
+PG,Procter & Gamble Co.,SP500,high,US,消費財大手
+UNH,UnitedHealth Group Inc.,SP500,high,US,医療保険大手
+HD,Home Depot Inc.,SP500,high,US,ホームセンター大手
+MA,Mastercard Inc.,SP500,high,US,決済大手
+V,Visa Inc.,SP500,high,US,決済大手
+PYPL,PayPal Holdings Inc.,SP500,medium,US,決済大手
+ADBE,Adobe Inc.,SP500,high,US,ソフトウェア大手
+CRM,Salesforce Inc.,SP500,high,US,クラウド大手
+BAC,Bank of America Corp.,SP500,high,US,金融大手
+WMT,Walmart Inc.,SP500,high,US,小売大手
+DIS,Walt Disney Co.,SP500,high,US,エンターテイメント大手
+KO,Coca-Cola Co.,SP500,high,US,飲料大手
+PFE,Pfizer Inc.,SP500,high,US,製薬大手
+ABT,Abbott Laboratories,SP500,high,US,医療機器大手
+TMO,Thermo Fisher Scientific,SP500,high,US,科学機器大手
+AVGO,Broadcom Inc.,SP500,high,US,半導体大手
+COST,Costco Wholesale Corp.,SP500,high,US,小売大手
+PEP,PepsiCo Inc.,SP500,high,US,飲料大手
+ABBV,AbbVie Inc.,SP500,high,US,製薬大手
+TXN,Texas Instruments,SP500,high,US,半導体大手
+ACN,Accenture PLC,SP500,high,US,コンサルティング大手
+LLY,Eli Lilly and Co.,SP500,high,US,製薬大手
+DHR,Danaher Corp.,SP500,high,US,科学機器大手
+NEE,NextEra Energy Inc.,SP500,high,US,電力大手
+BMY,Bristol-Myers Squibb,SP500,high,US,製薬大手
+RTX,Raytheon Technologies,SP500,high,US,航空宇宙大手
+QCOM,Qualcomm Inc.,SP500,high,US,半導体大手
+AMD,Advanced Micro Devices,NASDAQ100,high,US,半導体大手
+INTC,Intel Corporation,NASDAQ100,high,US,半導体大手
+CSCO,Cisco Systems Inc.,NASDAQ100,high,US,ネットワーク機器大手
+ADP,Automatic Data Processing,NASDAQ100,high,US,ビジネスサービス大手
+CMCSA,Comcast Corporation,NASDAQ100,high,US,通信大手
+TMUS,T-Mobile US Inc.,NASDAQ100,high,US,通信大手
+NFLX,Netflix Inc.,NASDAQ100,high,US,動画配信大手
+PYPL,PayPal Holdings Inc.,NASDAQ100,high,US,決済大手
+ADBE,Adobe Inc.,NASDAQ100,high,US,ソフトウェア大手
+CRM,Salesforce Inc.,NASDAQ100,high,US,クラウド大手
+ORCL,Oracle Corporation,NASDAQ100,high,US,ソフトウェア大手
+INTU,Intuit Inc.,NASDAQ100,high,US,ソフトウェア大手
+ISRG,Intuitive Surgical,NASDAQ100,high,US,医療機器大手
+REGN,Regeneron Pharmaceuticals,NASDAQ100,high,US,バイオテクノロジー大手
+VRTX,Vertex Pharmaceuticals,NASDAQ100,high,US,バイオテクノロジー大手
+GILD,Gilead Sciences Inc.,NASDAQ100,high,US,バイオテクノロジー大手
+BIIB,Biogen Inc.,NASDAQ100,high,US,バイオテクノロジー大手
+ALGN,Align Technology,NASDAQ100,high,US,医療機器大手
+IDXX,IDEXX Laboratories,NASDAQ100,high,US,医療機器大手
+DXCM,DexCom Inc.,NASDAQ100,high,US,医療機器大手
+SNPS,Synopsys Inc.,NASDAQ100,high,US,ソフトウェア大手
+CDNS,Cadence Design Systems,NASDAQ100,high,US,ソフトウェア大手
+KLAC,KLA Corporation,NASDAQ100,high,US,半導体製造装置大手
+LRCX,Lam Research Corp.,NASDAQ100,high,US,半導体製造装置大手
+AMAT,Applied Materials Inc.,NASDAQ100,high,US,半導体製造装置大手
+ASML,ASML Holding NV,NASDAQ100,high,US,半導体製造装置大手
+MU,Micron Technology Inc.,NASDAQ100,high,US,半導体大手
+MAR,Marriott International,NASDAQ100,high,US,ホテル大手
+BKNG,Booking Holdings Inc.,NASDAQ100,high,US,旅行予約大手
+EXPE,Expedia Group Inc.,NASDAQ100,high,US,旅行予約大手
+TRIP,TripAdvisor Inc.,NASDAQ100,medium,US,旅行情報大手
+YELP,Yelp Inc.,NASDAQ100,medium,US,レビューサイト大手
+GRUB,GrubHub Inc.,NASDAQ100,medium,US,フードデリバリー大手
+UBER,Uber Technologies Inc.,NASDAQ100,high,US,配車サービス大手
+LYFT,Lyft Inc.,NASDAQ100,medium,US,配車サービス大手
+ZM,Zoom Video Communications,NASDAQ100,high,US,ビデオ会議大手
+TEAM,Atlassian Corporation,NASDAQ100,high,US,ソフトウェア大手
+SPLK,Splunk Inc.,NASDAQ100,high,US,ソフトウェア大手
+OKTA,Okta Inc.,NASDAQ100,high,US,セキュリティソフト大手
+CRWD,CrowdStrike Holdings,NASDAQ100,high,US,セキュリティソフト大手
+ZS,Zscaler Inc.,NASDAQ100,high,US,セキュリティソフト大手
+PANW,Palo Alto Networks,NASDAQ100,high,US,セキュリティソフト大手
+FTNT,Fortinet Inc.,NASDAQ100,high,US,セキュリティソフト大手
+CHKP,Check Point Software,NASDAQ100,high,US,セキュリティソフト大手
+SYMC,Symantec Corporation,NASDAQ100,high,US,セキュリティソフト大手
+7203.T,トヨタ自動車株式会社,NIKKEI225,high,JP,自動車大手
+6758.T,ソニーグループ株式会社,NIKKEI225,high,JP,エンターテイメント大手
+9984.T,ソフトバンクグループ株式会社,NIKKEI225,high,JP,通信大手
+6861.T,キーエンス株式会社,NIKKEI225,high,JP,FA機器大手
+6954.T,ファナック株式会社,NIKKEI225,high,JP,工作機械大手
+6594.T,ニデック株式会社,NIKKEI225,high,JP,モーター大手
+7974.T,任天堂株式会社,NIKKEI225,high,JP,ゲーム大手
+8306.T,三菱UFJフィナンシャル・グループ,NIKKEI225,high,JP,金融大手
+9433.T,KDDI株式会社,NIKKEI225,high,JP,通信大手
+7267.T,ホンダ技研工業株式会社,NIKKEI225,high,JP,自動車大手
+7269.T,スズキ株式会社,NIKKEI225,medium,JP,自動車大手
+7974.T,任天堂株式会社,NIKKEI225,high,JP,ゲーム大手
+4502.T,武田薬品工業株式会社,NIKKEI225,high,JP,製薬大手
+4519.T,中外製薬株式会社,NIKKEI225,high,JP,製薬大手
+4523.T,エーザイ株式会社,NIKKEI225,high,JP,製薬大手
+4568.T,第一三共株式会社,NIKKEI225,high,JP,製薬大手
+4578.T,大塚製薬株式会社,NIKKEI225,high,JP,製薬大手
+4901.T,富士フイルムホールディングス株式会社,NIKKEI225,high,JP,化学大手
+4902.T,コニカミノルタ株式会社,NIKKEI225,high,JP,光学機器大手
+4911.T,資生堂株式会社,NIKKEI225,high,JP,化粧品大手
+4922.T,コーセー株式会社,NIKKEI225,medium,JP,化粧品大手
+4927.T,ポーラ・オルビスホールディングス株式会社,NIKKEI225,medium,JP,化粧品大手
+5108.T,ブリヂストン株式会社,NIKKEI225,high,JP,タイヤ大手
+5201.T,AGC株式会社,NIKKEI225,high,JP,ガラス大手
+5202.T,日本板硝子株式会社,NIKKEI225,high,JP,ガラス大手
+5214.T,日本電気硝子株式会社,NIKKEI225,medium,JP,ガラス大手
+5232.T,住友大阪セメント株式会社,NIKKEI225,medium,JP,セメント大手
+5233.T,太平洋セメント株式会社,NIKKEI225,medium,JP,セメント大手
+5401.T,日本製鉄株式会社,NIKKEI225,high,JP,鉄鋼大手
+5406.T,神戸製鋼所株式会社,NIKKEI225,high,JP,鉄鋼大手
+5411.T,JFEホールディングス株式会社,NIKKEI225,high,JP,鉄鋼大手
+5706.T,三井金属鉱業株式会社,NIKKEI225,medium,JP,非鉄金属大手
+5711.T,三菱マテリアル株式会社,NIKKEI225,high,JP,非鉄金属大手
+5713.T,住友金属鉱山株式会社,NIKKEI225,high,JP,非鉄金属大手
+5801.T,古河電気工業株式会社,NIKKEI225,high,JP,電線大手
+5802.T,住友電気工業株式会社,NIKKEI225,high,JP,電線大手
+5803.T,フジクラ株式会社,NIKKEI225,medium,JP,電線大手
+6301.T,小松製作所株式会社,NIKKEI225,high,JP,建設機械大手
+6302.T,住友重機械工業株式会社,NIKKEI225,high,JP,重機械大手
+6305.T,日立建機株式会社,NIKKEI225,high,JP,建設機械大手
+6326.T,クボタ株式会社,NIKKEI225,high,JP,建設機械大手
+6361.T,荏原製作所株式会社,NIKKEI225,medium,JP,ポンプ大手
+6366.T,千代田化工建設株式会社,NIKKEI225,medium,JP,プラント大手
+6367.T,ダイキン工業株式会社,NIKKEI225,high,JP,空調機器大手
+6368.T,オルガノ株式会社,NIKKEI225,medium,JP,水処理大手
+6501.T,日立製作所株式会社,NIKKEI225,high,JP,電機大手
+6502.T,東芝株式会社,NIKKEI225,high,JP,電機大手
+6503.T,三菱電機株式会社,NIKKEI225,high,JP,電機大手
+6504.T,富士電機株式会社,NIKKEI225,medium,JP,電機大手
+6506.T,安川電機株式会社,NIKKEI225,high,JP,FA機器大手
+6508.T,明電舎株式会社,NIKKEI225,medium,JP,電機大手
+6594.T,ニデック株式会社,NIKKEI225,high,JP,モーター大手
+6645.T,オムロン株式会社,NIKKEI225,high,JP,制御機器大手
+6674.T,ジーエス・ユアサコーポレーション,NIKKEI225,medium,JP,電池大手
+6701.T,日本電気株式会社,NIKKEI225,high,JP,電機大手
+6702.T,富士通株式会社,NIKKEI225,high,JP,電機大手
+6703.T,沖電気工業株式会社,NIKKEI225,medium,JP,電機大手
+6723.T,ルネサスエレクトロニクス株式会社,NIKKEI225,high,JP,半導体大手
+6724.T,セイコーエプソン株式会社,NIKKEI225,high,JP,プリンター大手
+6752.T,パナソニックホールディングス株式会社,NIKKEI225,high,JP,電機大手
+6758.T,ソニーグループ株式会社,NIKKEI225,high,JP,エンターテイメント大手
+6762.T,TDK株式会社,NIKKEI225,high,JP,電子部品大手
+6770.T,アルプスアルパイン株式会社,NIKKEI225,high,JP,電子部品大手
+6841.T,横河電機株式会社,NIKKEI225,high,JP,計測機器大手
+6857.T,アドバンテスト株式会社,NIKKEI225,high,JP,半導体テスト大手
+6861.T,キーエンス株式会社,NIKKEI225,high,JP,FA機器大手
+6902.T,デンソー株式会社,NIKKEI225,high,JP,自動車部品大手
+6954.T,ファナック株式会社,NIKKEI225,high,JP,工作機械大手
+6971.T,京セラ株式会社,NIKKEI225,high,JP,電子部品大手
+6976.T,太陽誘電株式会社,NIKKEI225,high,JP,電子部品大手
+6988.T,日東電工株式会社,NIKKEI225,high,JP,電子部品大手
+7004.T,日産自動車株式会社,NIKKEI225,high,JP,自動車大手
+7011.T,三菱重工業株式会社,NIKKEI225,high,JP,重工業大手
+7012.T,川崎重工業株式会社,NIKKEI225,high,JP,重工業大手
+7013.T,IHI株式会社,NIKKEI225,high,JP,重工業大手
+7201.T,日産自動車株式会社,NIKKEI225,high,JP,自動車大手
+7203.T,トヨタ自動車株式会社,NIKKEI225,high,JP,自動車大手
+7267.T,ホンダ技研工業株式会社,NIKKEI225,high,JP,自動車大手
+7269.T,スズキ株式会社,NIKKEI225,medium,JP,自動車大手
+7270.T,SUBARU株式会社,NIKKEI225,high,JP,自動車大手
+7272.T,ヤマハ発動機株式会社,NIKKEI225,medium,JP,バイク大手
+7731.T,ニコン株式会社,NIKKEI225,high,JP,光学機器大手
+7733.T,オリンパス株式会社,NIKKEI225,high,JP,光学機器大手
+7735.T,スクウェア・エニックス・ホールディングス株式会社,NIKKEI225,medium,JP,ゲーム大手
+7741.T,HOYA株式会社,NIKKEI225,high,JP,光学機器大手
+7751.T,キヤノン株式会社,NIKKEI225,high,JP,光学機器大手
+7752.T,リコー株式会社,NIKKEI225,high,JP,事務機器大手
+7762.T,シチズン時計株式会社,NIKKEI225,medium,JP,時計大手
+7911.T,凸版印刷株式会社,NIKKEI225,high,JP,印刷大手
+7912.T,大日本印刷株式会社,NIKKEI225,high,JP,印刷大手
+7951.T,ヤマハ株式会社,NIKKEI225,high,JP,楽器大手
+7974.T,任天堂株式会社,NIKKEI225,high,JP,ゲーム大手
+8001.T,伊藤忠商事株式会社,NIKKEI225,high,JP,商社大手
+8002.T,丸紅株式会社,NIKKEI225,high,JP,商社大手
+8015.T,豊田通商株式会社,NIKKEI225,high,JP,商社大手
+8031.T,三井物産株式会社,NIKKEI225,high,JP,商社大手
+8035.T,東京エレクトロン株式会社,NIKKEI225,high,JP,半導体製造装置大手
+8053.T,住友商事株式会社,NIKKEI225,high,JP,商社大手
+8058.T,三菱商事株式会社,NIKKEI225,high,JP,商社大手
+8111.T,旭硝子株式会社,NIKKEI225,high,JP,ガラス大手
+8113.T,ユニ・チャーム株式会社,NIKKEI225,high,JP,衛生用品大手
+8230.T,三越伊勢丹ホールディングス株式会社,NIKKEI225,medium,JP,デパート大手
+8252.T,丸井グループ株式会社,NIKKEI225,medium,JP,小売大手
+8267.T,イオン株式会社,NIKKEI225,high,JP,小売大手
+8303.T,新生銀行株式会社,NIKKEI225,medium,JP,銀行大手
+8304.T,あおぞら銀行株式会社,NIKKEI225,medium,JP,銀行大手
+8306.T,三菱UFJフィナンシャル・グループ,NIKKEI225,high,JP,金融大手
+8308.T,りそなホールディングス株式会社,NIKKEI225,high,JP,金融大手
+8309.T,三井住友トラスト・ホールディングス株式会社,NIKKEI225,high,JP,金融大手
+8316.T,三井住友フィナンシャルグループ株式会社,NIKKEI225,high,JP,金融大手
+8331.T,千葉銀行株式会社,NIKKEI225,medium,JP,銀行大手
+8354.T,みずほフィナンシャルグループ株式会社,NIKKEI225,high,JP,金融大手
+8410.T,セブン銀行株式会社,NIKKEI225,medium,JP,銀行大手
+8411.T,みずほ銀行株式会社,NIKKEI225,high,JP,銀行大手
+8601.T,大和証券グループ本社株式会社,NIKKEI225,high,JP,証券大手
+8604.T,野村ホールディングス株式会社,NIKKEI225,high,JP,証券大手
+8628.T,松井証券株式会社,NIKKEI225,medium,JP,証券大手
+8630.T,SOMPOホールディングス株式会社,NIKKEI225,high,JP,保険大手
+8725.T,MS&ADインシュアランスグループホールディングス株式会社,NIKKEI225,high,JP,保険大手
+8750.T,第一生命ホールディングス株式会社,NIKKEI225,high,JP,保険大手
+8766.T,東京海上ホールディングス株式会社,NIKKEI225,high,JP,保険大手
+8795.T,Ｔ＆Ｄホールディングス株式会社,NIKKEI225,high,JP,保険大手
+8801.T,三井不動産株式会社,NIKKEI225,high,JP,不動産大手
+8802.T,三菱地所株式会社,NIKKEI225,high,JP,不動産大手
+8804.T,東京建物株式会社,NIKKEI225,medium,JP,不動産大手
+8830.T,住友不動産株式会社,NIKKEI225,high,JP,不動産大手
+9001.T,東武鉄道株式会社,NIKKEI225,high,JP,鉄道大手
+9005.T,東京急行電鉄株式会社,NIKKEI225,high,JP,鉄道大手
+9007.T,小田急電鉄株式会社,NIKKEI225,high,JP,鉄道大手
+9008.T,京王電鉄株式会社,NIKKEI225,high,JP,鉄道大手
+9009.T,京成電鉄株式会社,NIKKEI225,medium,JP,鉄道大手
+9020.T,東日本旅客鉄道株式会社,NIKKEI225,high,JP,鉄道大手
+9021.T,西日本旅客鉄道株式会社,NIKKEI225,high,JP,鉄道大手
+9022.T,東海旅客鉄道株式会社,NIKKEI225,high,JP,鉄道大手
+9062.T,日本通運株式会社,NIKKEI225,high,JP,物流大手
+9064.T,ヤマトホールディングス株式会社,NIKKEI225,high,JP,物流大手
+9101.T,日本郵船株式会社,NIKKEI225,high,JP,海運大手
+9104.T,商船三井株式会社,NIKKEI225,high,JP,海運大手
+9107.T,川崎汽船株式会社,NIKKEI225,medium,JP,海運大手
+9201.T,日本航空株式会社,NIKKEI225,high,JP,航空大手
+9202.T,全日本空輸株式会社,NIKKEI225,high,JP,航空大手
+9301.T,三菱倉庫株式会社,NIKKEI225,medium,JP,倉庫大手
+9432.T,日本電信電話株式会社,NIKKEI225,high,JP,通信大手
+9433.T,KDDI株式会社,NIKKEI225,high,JP,通信大手
+9434.T,ソフトバンク株式会社,NIKKEI225,high,JP,通信大手
+9501.T,東京電力ホールディングス株式会社,NIKKEI225,high,JP,電力大手
+9502.T,中部電力株式会社,NIKKEI225,high,JP,電力大手
+9503.T,関西電力株式会社,NIKKEI225,high,JP,電力大手
+9531.T,東京ガス株式会社,NIKKEI225,high,JP,ガス大手
+9532.T,大阪ガス株式会社,NIKKEI225,high,JP,ガス大手
+9602.T,東宝株式会社,NIKKEI225,high,JP,映画大手
+9613.T,ＮＴＴデータ株式会社,NIKKEI225,high,JP,IT大手
+9627.T,アインホールディングス株式会社,NIKKEI225,medium,JP,IT大手
+9681.T,東京ドーム株式会社,NIKKEI225,medium,JP,レジャー大手
+9735.T,セコム株式会社,NIKKEI225,high,JP,セキュリティ大手
+9766.T,コナミホールディングス株式会社,NIKKEI225,high,JP,ゲーム大手
+9783.T,ベネッセホールディングス株式会社,NIKKEI225,high,JP,教育大手
+9810.T,日鉄物産株式会社,NIKKEI225,medium,JP,商社大手
+9843.T,ノーリツ鋼機株式会社,NIKKEI225,medium,JP,商社大手
+9983.T,ファーストリテイリング株式会社,NIKKEI225,high,JP,アパレル大手
+9984.T,ソフトバンクグループ株式会社,NIKKEI225,high,JP,通信大手
+9989.T,サンドラッグ株式会社,NIKKEI225,medium,JP,ドラッグストア大手
+9990.T,サックスバー・ホールディングス株式会社,NIKKEI225,medium,JP,ドラッグストア大手
+9997.T,スズケン株式会社,NIKKEI225,medium,JP,医薬品商社大手
+MMM,3M,SP500,high,US,3M (S&P500)
+AOS,A. O. Smith,SP500,high,US,A. O. Smith (S&P500)
+AES,AES Corporation,SP500,high,US,AES Corporation (S&P500)
+AFL,Aflac,SP500,high,US,Aflac (S&P500)
+A,Agilent Technologies,SP500,high,US,Agilent Technologies (S&P500)
+APD,Air Products,SP500,high,US,Air Products (S&P500)
+ABNB,Airbnb,SP500,high,US,Airbnb (S&P500)
+AKAM,Akamai Technologies,SP500,high,US,Akamai Technologies (S&P500)
+ALB,Albemarle Corporation,SP500,high,US,Albemarle Corporation (S&P500)
+ARE,Alexandria Real Estate Equities,SP500,high,US,Alexandria Real Estate Equities (S&P500)
+ALLE,Allegion,SP500,high,US,Allegion (S&P500)
+LNT,Alliant Energy,SP500,high,US,Alliant Energy (S&P500)
+ALL,Allstate,SP500,high,US,Allstate (S&P500)
+GOOG,Alphabet Inc.(Class C),SP500,high,US,Alphabet Inc.(Class C) (S&P500)
+MO,Altria,SP500,high,US,Altria (S&P500)
+AMCR,Amcor,SP500,high,US,Amcor (S&P500)
+AEE,Ameren,SP500,high,US,Ameren (S&P500)
+AEP,American Electric Power,SP500,high,US,American Electric Power (S&P500)
+AXP,American Express,SP500,high,US,American Express (S&P500)
+AIG,American International Group,SP500,high,US,American International Group (S&P500)
+AMT,American Tower,SP500,high,US,American Tower (S&P500)
+AWK,American Water Works,SP500,high,US,American Water Works (S&P500)
+AMP,Ameriprise Financial,SP500,high,US,Ameriprise Financial (S&P500)
+AME,Ametek,SP500,high,US,Ametek (S&P500)
+AMGN,Amgen,SP500,high,US,Amgen (S&P500)
+APH,Amphenol,SP500,high,US,Amphenol (S&P500)
+ADI,Analog Devices,SP500,high,US,Analog Devices (S&P500)
+AON,Aon plc,SP500,high,US,Aon plc (S&P500)
+APA,APA Corporation,SP500,high,US,APA Corporation (S&P500)
+APO,Apollo Global Management,SP500,high,US,Apollo Global Management (S&P500)
+APTV,Aptiv,SP500,high,US,Aptiv (S&P500)
+ACGL,Arch Capital Group,SP500,high,US,Arch Capital Group (S&P500)
+ADM,Archer Daniels Midland,SP500,high,US,Archer Daniels Midland (S&P500)
+ANET,Arista Networks,SP500,high,US,Arista Networks (S&P500)
+AJG,Arthur J. Gallagher & Co.,SP500,high,US,Arthur J. Gallagher & Co. (S&P500)
+AIZ,Assurant,SP500,high,US,Assurant (S&P500)
+T,AT&T,SP500,high,US,AT&T (S&P500)
+ATO,Atmos Energy,SP500,high,US,Atmos Energy (S&P500)
+ADSK,Autodesk,SP500,high,US,Autodesk (S&P500)
+AZO,AutoZone,SP500,high,US,AutoZone (S&P500)
+AVB,AvalonBay Communities,SP500,high,US,AvalonBay Communities (S&P500)
+AVY,Avery Dennison,SP500,high,US,Avery Dennison (S&P500)
+AXON,Axon Enterprise,SP500,high,US,Axon Enterprise (S&P500)
+BKR,Baker Hughes,SP500,high,US,Baker Hughes (S&P500)
+BALL,Ball Corporation,SP500,high,US,Ball Corporation (S&P500)
+BAX,Baxter International,SP500,high,US,Baxter International (S&P500)
+BDX,Becton Dickinson,SP500,high,US,Becton Dickinson (S&P500)
+BRK.B,Berkshire Hathaway,SP500,high,US,Berkshire Hathaway (S&P500)
+BBY,Best Buy,SP500,high,US,Best Buy (S&P500)
+TECH,Bio-Techne,SP500,high,US,Bio-Techne (S&P500)
+BLK,BlackRock,SP500,high,US,BlackRock (S&P500)
+BX,Blackstone Inc.,SP500,high,US,Blackstone Inc. (S&P500)
+XYZ,"Block, Inc.",SP500,high,US,"Block, Inc. (S&P500)"
+BK,BNY Mellon,SP500,high,US,BNY Mellon (S&P500)
+BA,Boeing,SP500,high,US,Boeing (S&P500)
+BSX,Boston Scientific,SP500,high,US,Boston Scientific (S&P500)
+BR,Broadridge Financial Solutions,SP500,high,US,Broadridge Financial Solutions (S&P500)
+BRO,Brown & Brown,SP500,high,US,Brown & Brown (S&P500)
+BF.B,Brown–Forman,SP500,high,US,Brown–Forman (S&P500)
+BLDR,Builders FirstSource,SP500,high,US,Builders FirstSource (S&P500)
+BG,Bunge Global,SP500,high,US,Bunge Global (S&P500)
+BXP,"BXP, Inc.",SP500,high,US,"BXP, Inc. (S&P500)"
+CHRW,C.H. Robinson,SP500,high,US,C.H. Robinson (S&P500)
+CZR,Caesars Entertainment,SP500,high,US,Caesars Entertainment (S&P500)
+CPT,Camden Property Trust,SP500,high,US,Camden Property Trust (S&P500)
+CPB,Campbell's Company (The),SP500,high,US,Campbell's Company (The) (S&P500)
+COF,Capital One,SP500,high,US,Capital One (S&P500)
+CAH,Cardinal Health,SP500,high,US,Cardinal Health (S&P500)
+KMX,CarMax,SP500,high,US,CarMax (S&P500)
+CCL,Carnival,SP500,high,US,Carnival (S&P500)
+CARR,Carrier Global,SP500,high,US,Carrier Global (S&P500)
+CAT,Caterpillar Inc.,SP500,high,US,Caterpillar Inc. (S&P500)
+CBOE,Cboe Global Markets,SP500,high,US,Cboe Global Markets (S&P500)
+CBRE,CBRE Group,SP500,high,US,CBRE Group (S&P500)
+CDW,CDW Corporation,SP500,high,US,CDW Corporation (S&P500)
+COR,Cencora,SP500,high,US,Cencora (S&P500)
+CNC,Centene Corporation,SP500,high,US,Centene Corporation (S&P500)
+CNP,CenterPoint Energy,SP500,high,US,CenterPoint Energy (S&P500)
+CF,CF Industries,SP500,high,US,CF Industries (S&P500)
+CRL,Charles River Laboratories,SP500,high,US,Charles River Laboratories (S&P500)
+SCHW,Charles Schwab Corporation,SP500,high,US,Charles Schwab Corporation (S&P500)
+CHTR,Charter Communications,SP500,high,US,Charter Communications (S&P500)
+CVX,Chevron Corporation,SP500,high,US,Chevron Corporation (S&P500)
+CMG,Chipotle Mexican Grill,SP500,high,US,Chipotle Mexican Grill (S&P500)
+CB,Chubb Limited,SP500,high,US,Chubb Limited (S&P500)
+CHD,Church & Dwight,SP500,high,US,Church & Dwight (S&P500)
+CI,Cigna,SP500,high,US,Cigna (S&P500)
+CINF,Cincinnati Financial,SP500,high,US,Cincinnati Financial (S&P500)
+CTAS,Cintas,SP500,high,US,Cintas (S&P500)
+C,Citigroup,SP500,high,US,Citigroup (S&P500)
+CFG,Citizens Financial Group,SP500,high,US,Citizens Financial Group (S&P500)
+CLX,Clorox,SP500,high,US,Clorox (S&P500)
+CME,CME Group,SP500,high,US,CME Group (S&P500)
+CMS,CMS Energy,SP500,high,US,CMS Energy (S&P500)
+CTSH,Cognizant,SP500,high,US,Cognizant (S&P500)
+COIN,Coinbase,SP500,high,US,Coinbase (S&P500)
+CL,Colgate-Palmolive,SP500,high,US,Colgate-Palmolive (S&P500)
+CAG,Conagra Brands,SP500,high,US,Conagra Brands (S&P500)
+COP,ConocoPhillips,SP500,high,US,ConocoPhillips (S&P500)
+ED,Consolidated Edison,SP500,high,US,Consolidated Edison (S&P500)
+STZ,Constellation Brands,SP500,high,US,Constellation Brands (S&P500)
+CEG,Constellation Energy,SP500,high,US,Constellation Energy (S&P500)
+COO,Cooper Companies (The),SP500,high,US,Cooper Companies (The) (S&P500)
+CPRT,Copart,SP500,high,US,Copart (S&P500)
+GLW,Corning Inc.,SP500,high,US,Corning Inc. (S&P500)
+CPAY,Corpay,SP500,high,US,Corpay (S&P500)
+CTVA,Corteva,SP500,high,US,Corteva (S&P500)
+CSGP,CoStar Group,SP500,high,US,CoStar Group (S&P500)
+CTRA,Coterra,SP500,high,US,Coterra (S&P500)
+CCI,Crown Castle,SP500,high,US,Crown Castle (S&P500)
+CSX,CSX Corporation,SP500,high,US,CSX Corporation (S&P500)
+CMI,Cummins,SP500,high,US,Cummins (S&P500)
+CVS,CVS Health,SP500,high,US,CVS Health (S&P500)
+DRI,Darden Restaurants,SP500,high,US,Darden Restaurants (S&P500)
+DDOG,Datadog,SP500,high,US,Datadog (S&P500)
+DVA,DaVita,SP500,high,US,DaVita (S&P500)
+DAY,Dayforce,SP500,high,US,Dayforce (S&P500)
+DECK,Deckers Brands,SP500,high,US,Deckers Brands (S&P500)
+DE,Deere & Company,SP500,high,US,Deere & Company (S&P500)
+DELL,Dell Technologies,SP500,high,US,Dell Technologies (S&P500)
+DAL,Delta Air Lines,SP500,high,US,Delta Air Lines (S&P500)
+DVN,Devon Energy,SP500,high,US,Devon Energy (S&P500)
+FANG,Diamondback Energy,SP500,high,US,Diamondback Energy (S&P500)
+DLR,Digital Realty,SP500,high,US,Digital Realty (S&P500)
+DG,Dollar General,SP500,high,US,Dollar General (S&P500)
+DLTR,Dollar Tree,SP500,high,US,Dollar Tree (S&P500)
+D,Dominion Energy,SP500,high,US,Dominion Energy (S&P500)
+DPZ,Domino's,SP500,high,US,Domino's (S&P500)
+DASH,DoorDash,SP500,high,US,DoorDash (S&P500)
+DOV,Dover Corporation,SP500,high,US,Dover Corporation (S&P500)
+DOW,Dow Inc.,SP500,high,US,Dow Inc. (S&P500)
+DHI,D. R. Horton,SP500,high,US,D. R. Horton (S&P500)
+DTE,DTE Energy,SP500,high,US,DTE Energy (S&P500)
+DUK,Duke Energy,SP500,high,US,Duke Energy (S&P500)
+DD,DuPont,SP500,high,US,DuPont (S&P500)
+EMN,Eastman Chemical Company,SP500,high,US,Eastman Chemical Company (S&P500)
+ETN,Eaton Corporation,SP500,high,US,Eaton Corporation (S&P500)
+EBAY,eBay Inc.,SP500,high,US,eBay Inc. (S&P500)
+ECL,Ecolab,SP500,high,US,Ecolab (S&P500)
+EIX,Edison International,SP500,high,US,Edison International (S&P500)
+EW,Edwards Lifesciences,SP500,high,US,Edwards Lifesciences (S&P500)
+EA,Electronic Arts,SP500,high,US,Electronic Arts (S&P500)
+ELV,Elevance Health,SP500,high,US,Elevance Health (S&P500)
+EMR,Emerson Electric,SP500,high,US,Emerson Electric (S&P500)
+ENPH,Enphase Energy,SP500,high,US,Enphase Energy (S&P500)
+ETR,Entergy,SP500,high,US,Entergy (S&P500)
+EOG,EOG Resources,SP500,high,US,EOG Resources (S&P500)
+EPAM,EPAM Systems,SP500,high,US,EPAM Systems (S&P500)
+EQT,EQT Corporation,SP500,high,US,EQT Corporation (S&P500)
+EFX,Equifax,SP500,high,US,Equifax (S&P500)
+EQIX,Equinix,SP500,high,US,Equinix (S&P500)
+EQR,Equity Residential,SP500,high,US,Equity Residential (S&P500)
+ERIE,Erie Indemnity,SP500,high,US,Erie Indemnity (S&P500)
+ESS,Essex Property Trust,SP500,high,US,Essex Property Trust (S&P500)
+EL,Estée Lauder Companies (The),SP500,high,US,Estée Lauder Companies (The) (S&P500)
+EG,Everest Group,SP500,high,US,Everest Group (S&P500)
+EVRG,Evergy,SP500,high,US,Evergy (S&P500)
+ES,Eversource Energy,SP500,high,US,Eversource Energy (S&P500)
+EXC,Exelon,SP500,high,US,Exelon (S&P500)
+EXE,Expand Energy,SP500,high,US,Expand Energy (S&P500)
+EXPD,Expeditors International,SP500,high,US,Expeditors International (S&P500)
+EXR,Extra Space Storage,SP500,high,US,Extra Space Storage (S&P500)
+XOM,ExxonMobil,SP500,high,US,ExxonMobil (S&P500)
+FFIV,"F5, Inc.",SP500,high,US,"F5, Inc. (S&P500)"
+FDS,FactSet,SP500,high,US,FactSet (S&P500)
+FICO,Fair Isaac,SP500,high,US,Fair Isaac (S&P500)
+FAST,Fastenal,SP500,high,US,Fastenal (S&P500)
+FRT,Federal Realty Investment Trust,SP500,high,US,Federal Realty Investment Trust (S&P500)
+FDX,FedEx,SP500,high,US,FedEx (S&P500)
+FIS,Fidelity National Information Services,SP500,high,US,Fidelity National Information Services (S&P500)
+FITB,Fifth Third Bancorp,SP500,high,US,Fifth Third Bancorp (S&P500)
+FSLR,First Solar,SP500,high,US,First Solar (S&P500)
+FE,FirstEnergy,SP500,high,US,FirstEnergy (S&P500)
+FI,Fiserv,SP500,high,US,Fiserv (S&P500)
+F,Ford Motor Company,SP500,high,US,Ford Motor Company (S&P500)
+FTV,Fortive,SP500,high,US,Fortive (S&P500)
+FOXA,Fox Corporation(Class A),SP500,high,US,Fox Corporation(Class A) (S&P500)
+FOX,Fox Corporation(Class B),SP500,high,US,Fox Corporation(Class B) (S&P500)
+BEN,Franklin Resources,SP500,high,US,Franklin Resources (S&P500)
+FCX,Freeport-McMoRan,SP500,high,US,Freeport-McMoRan (S&P500)
+GRMN,Garmin,SP500,high,US,Garmin (S&P500)
+IT,Gartner,SP500,high,US,Gartner (S&P500)
+GE,GE Aerospace,SP500,high,US,GE Aerospace (S&P500)
+GEHC,GE HealthCare,SP500,high,US,GE HealthCare (S&P500)
+GEV,GE Vernova,SP500,high,US,GE Vernova (S&P500)
+GEN,Gen Digital,SP500,high,US,Gen Digital (S&P500)
+GNRC,Generac,SP500,high,US,Generac (S&P500)
+GD,General Dynamics,SP500,high,US,General Dynamics (S&P500)
+GIS,General Mills,SP500,high,US,General Mills (S&P500)
+GM,General Motors,SP500,high,US,General Motors (S&P500)
+GPC,Genuine Parts Company,SP500,high,US,Genuine Parts Company (S&P500)
+GPN,Global Payments,SP500,high,US,Global Payments (S&P500)
+GL,Globe Life,SP500,high,US,Globe Life (S&P500)
+GDDY,GoDaddy,SP500,high,US,GoDaddy (S&P500)
+GS,Goldman Sachs,SP500,high,US,Goldman Sachs (S&P500)
+HAL,Halliburton,SP500,high,US,Halliburton (S&P500)
+HIG,Hartford (The),SP500,high,US,Hartford (The) (S&P500)
+HAS,Hasbro,SP500,high,US,Hasbro (S&P500)
+HCA,HCA Healthcare,SP500,high,US,HCA Healthcare (S&P500)
+DOC,Healthpeak Properties,SP500,high,US,Healthpeak Properties (S&P500)
+HSIC,Henry Schein,SP500,high,US,Henry Schein (S&P500)
+HSY,Hershey Company (The),SP500,high,US,Hershey Company (The) (S&P500)
+HPE,Hewlett Packard Enterprise,SP500,high,US,Hewlett Packard Enterprise (S&P500)
+HLT,Hilton Worldwide,SP500,high,US,Hilton Worldwide (S&P500)
+HOLX,Hologic,SP500,high,US,Hologic (S&P500)
+HON,Honeywell,SP500,high,US,Honeywell (S&P500)
+HRL,Hormel Foods,SP500,high,US,Hormel Foods (S&P500)
+HST,Host Hotels & Resorts,SP500,high,US,Host Hotels & Resorts (S&P500)
+HWM,Howmet Aerospace,SP500,high,US,Howmet Aerospace (S&P500)
+HPQ,HP Inc.,SP500,high,US,HP Inc. (S&P500)
+HUBB,Hubbell Incorporated,SP500,high,US,Hubbell Incorporated (S&P500)
+HUM,Humana,SP500,high,US,Humana (S&P500)
+HBAN,Huntington Bancshares,SP500,high,US,Huntington Bancshares (S&P500)
+HII,Huntington Ingalls Industries,SP500,high,US,Huntington Ingalls Industries (S&P500)
+IBM,IBM,SP500,high,US,IBM (S&P500)
+IEX,IDEX Corporation,SP500,high,US,IDEX Corporation (S&P500)
+ITW,Illinois Tool Works,SP500,high,US,Illinois Tool Works (S&P500)
+INCY,Incyte,SP500,high,US,Incyte (S&P500)
+IR,Ingersoll Rand,SP500,high,US,Ingersoll Rand (S&P500)
+PODD,Insulet Corporation,SP500,high,US,Insulet Corporation (S&P500)
+IBKR,Interactive Brokers,SP500,high,US,Interactive Brokers (S&P500)
+ICE,Intercontinental Exchange,SP500,high,US,Intercontinental Exchange (S&P500)
+IFF,International Flavors & Fragrances,SP500,high,US,International Flavors & Fragrances (S&P500)
+IP,International Paper,SP500,high,US,International Paper (S&P500)
+IPG,Interpublic Group of Companies (The),SP500,high,US,Interpublic Group of Companies (The) (S&P500)
+IVZ,Invesco,SP500,high,US,Invesco (S&P500)
+INVH,Invitation Homes,SP500,high,US,Invitation Homes (S&P500)
+IQV,IQVIA,SP500,high,US,IQVIA (S&P500)
+IRM,Iron Mountain,SP500,high,US,Iron Mountain (S&P500)
+JBHT,J.B. Hunt,SP500,high,US,J.B. Hunt (S&P500)
+JBL,Jabil,SP500,high,US,Jabil (S&P500)
+JKHY,Jack Henry & Associates,SP500,high,US,Jack Henry & Associates (S&P500)
+J,Jacobs Solutions,SP500,high,US,Jacobs Solutions (S&P500)
+JCI,Johnson Controls,SP500,high,US,Johnson Controls (S&P500)
+K,Kellanova,SP500,high,US,Kellanova (S&P500)
+KVUE,Kenvue,SP500,high,US,Kenvue (S&P500)
+KDP,Keurig Dr Pepper,SP500,high,US,Keurig Dr Pepper (S&P500)
+KEY,KeyCorp,SP500,high,US,KeyCorp (S&P500)
+KEYS,Keysight Technologies,SP500,high,US,Keysight Technologies (S&P500)
+KMB,Kimberly-Clark,SP500,high,US,Kimberly-Clark (S&P500)
+KIM,Kimco Realty,SP500,high,US,Kimco Realty (S&P500)
+KMI,Kinder Morgan,SP500,high,US,Kinder Morgan (S&P500)
+KKR,KKR & Co.,SP500,high,US,KKR & Co. (S&P500)
+KHC,Kraft Heinz,SP500,high,US,Kraft Heinz (S&P500)
+KR,Kroger,SP500,high,US,Kroger (S&P500)
+LHX,L3Harris,SP500,high,US,L3Harris (S&P500)
+LH,Labcorp,SP500,high,US,Labcorp (S&P500)
+LW,Lamb Weston,SP500,high,US,Lamb Weston (S&P500)
+LVS,Las Vegas Sands,SP500,high,US,Las Vegas Sands (S&P500)
+LDOS,Leidos,SP500,high,US,Leidos (S&P500)
+LEN,Lennar,SP500,high,US,Lennar (S&P500)
+LII,Lennox International,SP500,high,US,Lennox International (S&P500)
+LIN,Linde plc,SP500,high,US,Linde plc (S&P500)
+LYV,Live Nation Entertainment,SP500,high,US,Live Nation Entertainment (S&P500)
+LKQ,LKQ Corporation,SP500,high,US,LKQ Corporation (S&P500)
+LMT,Lockheed Martin,SP500,high,US,Lockheed Martin (S&P500)
+L,Loews Corporation,SP500,high,US,Loews Corporation (S&P500)
+LOW,Lowe's,SP500,high,US,Lowe's (S&P500)
+LULU,Lululemon Athletica,SP500,high,US,Lululemon Athletica (S&P500)
+LYB,LyondellBasell,SP500,high,US,LyondellBasell (S&P500)
+MTB,M&T Bank,SP500,high,US,M&T Bank (S&P500)
+MPC,Marathon Petroleum,SP500,high,US,Marathon Petroleum (S&P500)
+MKTX,MarketAxess,SP500,high,US,MarketAxess (S&P500)
+MMC,Marsh McLennan,SP500,high,US,Marsh McLennan (S&P500)
+MLM,Martin Marietta Materials,SP500,high,US,Martin Marietta Materials (S&P500)
+MAS,Masco,SP500,high,US,Masco (S&P500)
+MTCH,Match Group,SP500,high,US,Match Group (S&P500)
+MKC,McCormick & Company,SP500,high,US,McCormick & Company (S&P500)
+MCD,McDonald's,SP500,high,US,McDonald's (S&P500)
+MCK,McKesson Corporation,SP500,high,US,McKesson Corporation (S&P500)
+MDT,Medtronic,SP500,high,US,Medtronic (S&P500)
+MRK,Merck & Co.,SP500,high,US,Merck & Co. (S&P500)
+MET,MetLife,SP500,high,US,MetLife (S&P500)
+MTD,Mettler Toledo,SP500,high,US,Mettler Toledo (S&P500)
+MGM,MGM Resorts,SP500,high,US,MGM Resorts (S&P500)
+MCHP,Microchip Technology,SP500,high,US,Microchip Technology (S&P500)
+MAA,Mid-America Apartment Communities,SP500,high,US,Mid-America Apartment Communities (S&P500)
+MRNA,Moderna,SP500,high,US,Moderna (S&P500)
+MHK,Mohawk Industries,SP500,high,US,Mohawk Industries (S&P500)
+MOH,Molina Healthcare,SP500,high,US,Molina Healthcare (S&P500)
+TAP,Molson Coors Beverage Company,SP500,high,US,Molson Coors Beverage Company (S&P500)
+MDLZ,Mondelez International,SP500,high,US,Mondelez International (S&P500)
+MPWR,Monolithic Power Systems,SP500,high,US,Monolithic Power Systems (S&P500)
+MNST,Monster Beverage,SP500,high,US,Monster Beverage (S&P500)
+MCO,Moody's Corporation,SP500,high,US,Moody's Corporation (S&P500)
+MS,Morgan Stanley,SP500,high,US,Morgan Stanley (S&P500)
+MOS,Mosaic Company (The),SP500,high,US,Mosaic Company (The) (S&P500)
+MSI,Motorola Solutions,SP500,high,US,Motorola Solutions (S&P500)
+MSCI,MSCI Inc.,SP500,high,US,MSCI Inc. (S&P500)
+NDAQ,"Nasdaq, Inc.",SP500,high,US,"Nasdaq, Inc. (S&P500)"
+NTAP,NetApp,SP500,high,US,NetApp (S&P500)
+NEM,Newmont,SP500,high,US,Newmont (S&P500)
+NWSA,News Corp(Class A),SP500,high,US,News Corp(Class A) (S&P500)
+NWS,News Corp(Class B),SP500,high,US,News Corp(Class B) (S&P500)
+NKE,"Nike, Inc.",SP500,high,US,"Nike, Inc. (S&P500)"
+NI,NiSource,SP500,high,US,NiSource (S&P500)
+NDSN,Nordson Corporation,SP500,high,US,Nordson Corporation (S&P500)
+NSC,Norfolk Southern,SP500,high,US,Norfolk Southern (S&P500)
+NTRS,Northern Trust,SP500,high,US,Northern Trust (S&P500)
+NOC,Northrop Grumman,SP500,high,US,Northrop Grumman (S&P500)
+NCLH,Norwegian Cruise Line Holdings,SP500,high,US,Norwegian Cruise Line Holdings (S&P500)
+NRG,NRG Energy,SP500,high,US,NRG Energy (S&P500)
+NUE,Nucor,SP500,high,US,Nucor (S&P500)
+NVR,"NVR, Inc.",SP500,high,US,"NVR, Inc. (S&P500)"
+NXPI,NXP Semiconductors,SP500,high,US,NXP Semiconductors (S&P500)
+ORLY,O’Reilly Automotive,SP500,high,US,O’Reilly Automotive (S&P500)
+OXY,Occidental Petroleum,SP500,high,US,Occidental Petroleum (S&P500)
+ODFL,Old Dominion,SP500,high,US,Old Dominion (S&P500)
+OMC,Omnicom Group,SP500,high,US,Omnicom Group (S&P500)
+ON,ON Semiconductor,SP500,high,US,ON Semiconductor (S&P500)
+OKE,Oneok,SP500,high,US,Oneok (S&P500)
+OTIS,Otis Worldwide,SP500,high,US,Otis Worldwide (S&P500)
+PCAR,Paccar,SP500,high,US,Paccar (S&P500)
+PKG,Packaging Corporation of America,SP500,high,US,Packaging Corporation of America (S&P500)
+PLTR,Palantir Technologies,SP500,high,US,Palantir Technologies (S&P500)
+PSKY,Paramount Skydance Corporation,SP500,high,US,Paramount Skydance Corporation (S&P500)
+PH,Parker Hannifin,SP500,high,US,Parker Hannifin (S&P500)
+PAYX,Paychex,SP500,high,US,Paychex (S&P500)
+PAYC,Paycom,SP500,high,US,Paycom (S&P500)
+PNR,Pentair,SP500,high,US,Pentair (S&P500)
+PCG,PG&E Corporation,SP500,high,US,PG&E Corporation (S&P500)
+PM,Philip Morris International,SP500,high,US,Philip Morris International (S&P500)
+PSX,Phillips 66,SP500,high,US,Phillips 66 (S&P500)
+PNW,Pinnacle West Capital,SP500,high,US,Pinnacle West Capital (S&P500)
+PNC,PNC Financial Services,SP500,high,US,PNC Financial Services (S&P500)
+POOL,Pool Corporation,SP500,high,US,Pool Corporation (S&P500)
+PPG,PPG Industries,SP500,high,US,PPG Industries (S&P500)
+PPL,PPL Corporation,SP500,high,US,PPL Corporation (S&P500)
+PFG,Principal Financial Group,SP500,high,US,Principal Financial Group (S&P500)
+PGR,Progressive Corporation,SP500,high,US,Progressive Corporation (S&P500)
+PLD,Prologis,SP500,high,US,Prologis (S&P500)
+PRU,Prudential Financial,SP500,high,US,Prudential Financial (S&P500)
+PEG,Public Service Enterprise Group,SP500,high,US,Public Service Enterprise Group (S&P500)
+PTC,PTC Inc.,SP500,high,US,PTC Inc. (S&P500)
+PSA,Public Storage,SP500,high,US,Public Storage (S&P500)
+PHM,PulteGroup,SP500,high,US,PulteGroup (S&P500)
+PWR,Quanta Services,SP500,high,US,Quanta Services (S&P500)
+DGX,Quest Diagnostics,SP500,high,US,Quest Diagnostics (S&P500)
+RL,Ralph Lauren Corporation,SP500,high,US,Ralph Lauren Corporation (S&P500)
+RJF,Raymond James Financial,SP500,high,US,Raymond James Financial (S&P500)
+O,Realty Income,SP500,high,US,Realty Income (S&P500)
+REG,Regency Centers,SP500,high,US,Regency Centers (S&P500)
+RF,Regions Financial Corporation,SP500,high,US,Regions Financial Corporation (S&P500)
+RSG,Republic Services,SP500,high,US,Republic Services (S&P500)
+RMD,ResMed,SP500,high,US,ResMed (S&P500)
+RVTY,Revvity,SP500,high,US,Revvity (S&P500)
+ROK,Rockwell Automation,SP500,high,US,Rockwell Automation (S&P500)
+ROL,"Rollins, Inc.",SP500,high,US,"Rollins, Inc. (S&P500)"
+ROP,Roper Technologies,SP500,high,US,Roper Technologies (S&P500)
+ROST,Ross Stores,SP500,high,US,Ross Stores (S&P500)
+RCL,Royal Caribbean Group,SP500,high,US,Royal Caribbean Group (S&P500)
+SPGI,S&P Global,SP500,high,US,S&P Global (S&P500)
+SBAC,SBA Communications,SP500,high,US,SBA Communications (S&P500)
+SLB,Schlumberger,SP500,high,US,Schlumberger (S&P500)
+STX,Seagate Technology,SP500,high,US,Seagate Technology (S&P500)
+SRE,Sempra,SP500,high,US,Sempra (S&P500)
+NOW,ServiceNow,SP500,high,US,ServiceNow (S&P500)
+SHW,Sherwin-Williams,SP500,high,US,Sherwin-Williams (S&P500)
+SPG,Simon Property Group,SP500,high,US,Simon Property Group (S&P500)
+SWKS,Skyworks Solutions,SP500,high,US,Skyworks Solutions (S&P500)
+SJM,J.M. Smucker Company (The),SP500,high,US,J.M. Smucker Company (The) (S&P500)
+SW,Smurfit Westrock,SP500,high,US,Smurfit Westrock (S&P500)
+SNA,Snap-on,SP500,high,US,Snap-on (S&P500)
+SOLV,Solventum,SP500,high,US,Solventum (S&P500)
+SO,Southern Company,SP500,high,US,Southern Company (S&P500)
+LUV,Southwest Airlines,SP500,high,US,Southwest Airlines (S&P500)
+SWK,Stanley Black & Decker,SP500,high,US,Stanley Black & Decker (S&P500)
+SBUX,Starbucks,SP500,high,US,Starbucks (S&P500)
+STT,State Street Corporation,SP500,high,US,State Street Corporation (S&P500)
+STLD,Steel Dynamics,SP500,high,US,Steel Dynamics (S&P500)
+STE,Steris,SP500,high,US,Steris (S&P500)
+SYK,Stryker Corporation,SP500,high,US,Stryker Corporation (S&P500)
+SMCI,Supermicro,SP500,high,US,Supermicro (S&P500)
+SYF,Synchrony Financial,SP500,high,US,Synchrony Financial (S&P500)
+SYY,Sysco,SP500,high,US,Sysco (S&P500)
+TROW,T. Rowe Price,SP500,high,US,T. Rowe Price (S&P500)
+TTWO,Take-Two Interactive,SP500,high,US,Take-Two Interactive (S&P500)
+TPR,"Tapestry, Inc.",SP500,high,US,"Tapestry, Inc. (S&P500)"
+TRGP,Targa Resources,SP500,high,US,Targa Resources (S&P500)
+TGT,Target Corporation,SP500,high,US,Target Corporation (S&P500)
+TEL,TE Connectivity,SP500,high,US,TE Connectivity (S&P500)
+TDY,Teledyne Technologies,SP500,high,US,Teledyne Technologies (S&P500)
+TER,Teradyne,SP500,high,US,Teradyne (S&P500)
+TPL,Texas Pacific Land Corporation,SP500,high,US,Texas Pacific Land Corporation (S&P500)
+TXT,Textron,SP500,high,US,Textron (S&P500)
+TJX,TJX Companies,SP500,high,US,TJX Companies (S&P500)
+TKO,TKO Group Holdings,SP500,high,US,TKO Group Holdings (S&P500)
+TTD,Trade Desk (The),SP500,high,US,Trade Desk (The) (S&P500)
+TSCO,Tractor Supply,SP500,high,US,Tractor Supply (S&P500)
+TT,Trane Technologies,SP500,high,US,Trane Technologies (S&P500)
+TDG,TransDigm Group,SP500,high,US,TransDigm Group (S&P500)
+TRV,Travelers Companies (The),SP500,high,US,Travelers Companies (The) (S&P500)
+TRMB,Trimble Inc.,SP500,high,US,Trimble Inc. (S&P500)
+TFC,Truist Financial,SP500,high,US,Truist Financial (S&P500)
+TYL,Tyler Technologies,SP500,high,US,Tyler Technologies (S&P500)
+TSN,Tyson Foods,SP500,high,US,Tyson Foods (S&P500)
+USB,U.S. Bancorp,SP500,high,US,U.S. Bancorp (S&P500)
+UDR,"UDR, Inc.",SP500,high,US,"UDR, Inc. (S&P500)"
+ULTA,Ulta Beauty,SP500,high,US,Ulta Beauty (S&P500)
+UNP,Union Pacific Corporation,SP500,high,US,Union Pacific Corporation (S&P500)
+UAL,United Airlines Holdings,SP500,high,US,United Airlines Holdings (S&P500)
+UPS,United Parcel Service,SP500,high,US,United Parcel Service (S&P500)
+URI,United Rentals,SP500,high,US,United Rentals (S&P500)
+UHS,Universal Health Services,SP500,high,US,Universal Health Services (S&P500)
+VLO,Valero Energy,SP500,high,US,Valero Energy (S&P500)
+VTR,Ventas,SP500,high,US,Ventas (S&P500)
+VLTO,Veralto,SP500,high,US,Veralto (S&P500)
+VRSN,Verisign,SP500,high,US,Verisign (S&P500)
+VRSK,Verisk Analytics,SP500,high,US,Verisk Analytics (S&P500)
+VZ,Verizon,SP500,high,US,Verizon (S&P500)
+VTRS,Viatris,SP500,high,US,Viatris (S&P500)
+VICI,Vici Properties,SP500,high,US,Vici Properties (S&P500)
+VST,Vistra Corp.,SP500,high,US,Vistra Corp. (S&P500)
+VMC,Vulcan Materials Company,SP500,high,US,Vulcan Materials Company (S&P500)
+WRB,W. R. Berkley Corporation,SP500,high,US,W. R. Berkley Corporation (S&P500)
+GWW,W. W. Grainger,SP500,high,US,W. W. Grainger (S&P500)
+WAB,Wabtec,SP500,high,US,Wabtec (S&P500)
+WBD,Warner Bros. Discovery,SP500,high,US,Warner Bros. Discovery (S&P500)
+WM,Waste Management,SP500,high,US,Waste Management (S&P500)
+WAT,Waters Corporation,SP500,high,US,Waters Corporation (S&P500)
+WEC,WEC Energy Group,SP500,high,US,WEC Energy Group (S&P500)
+WFC,Wells Fargo,SP500,high,US,Wells Fargo (S&P500)
+WELL,Welltower,SP500,high,US,Welltower (S&P500)
+WST,West Pharmaceutical Services,SP500,high,US,West Pharmaceutical Services (S&P500)
+WDC,Western Digital,SP500,high,US,Western Digital (S&P500)
+WY,Weyerhaeuser,SP500,high,US,Weyerhaeuser (S&P500)
+WSM,"Williams-Sonoma, Inc.",SP500,high,US,"Williams-Sonoma, Inc. (S&P500)"
+WMB,Williams Companies,SP500,high,US,Williams Companies (S&P500)
+WTW,Willis Towers Watson,SP500,high,US,Willis Towers Watson (S&P500)
+WDAY,"Workday, Inc.",SP500,high,US,"Workday, Inc. (S&P500)"
+WYNN,Wynn Resorts,SP500,high,US,Wynn Resorts (S&P500)
+XEL,Xcel Energy,SP500,high,US,Xcel Energy (S&P500)
+XYL,Xylem Inc.,SP500,high,US,Xylem Inc. (S&P500)
+YUM,Yum! Brands,SP500,high,US,Yum! Brands (S&P500)
+ZBRA,Zebra Technologies,SP500,high,US,Zebra Technologies (S&P500)
+ZBH,Zimmer Biomet,SP500,high,US,Zimmer Biomet (S&P500)
+ZTS,Zoetis,SP500,high,US,Zoetis (S&P500)
+ABNB,Airbnb,NASDAQ100,high,US,Airbnb (NASDAQ100)
+GOOG,Alphabet Inc.(Class C),NASDAQ100,high,US,Alphabet Inc.(Class C) (NASDAQ100)
+AEP,American Electric Power,NASDAQ100,high,US,American Electric Power (NASDAQ100)
+AMGN,Amgen,NASDAQ100,high,US,Amgen (NASDAQ100)
+ADI,Analog Devices,NASDAQ100,high,US,Analog Devices (NASDAQ100)
+APP,AppLovin,NASDAQ100,high,US,AppLovin (NASDAQ100)
+ARM,Arm Holdings,NASDAQ100,high,US,Arm Holdings (NASDAQ100)
+AZN,AstraZeneca,NASDAQ100,high,US,AstraZeneca (NASDAQ100)
+ADSK,Autodesk,NASDAQ100,high,US,Autodesk (NASDAQ100)
+AXON,Axon Enterprise,NASDAQ100,high,US,Axon Enterprise (NASDAQ100)
+BKR,Baker Hughes,NASDAQ100,high,US,Baker Hughes (NASDAQ100)
+CDW,CDW Corporation,NASDAQ100,high,US,CDW Corporation (NASDAQ100)
+CHTR,Charter Communications,NASDAQ100,high,US,Charter Communications (NASDAQ100)
+CTAS,Cintas,NASDAQ100,high,US,Cintas (NASDAQ100)
+CCEP,Coca-Cola Europacific Partners,NASDAQ100,high,US,Coca-Cola Europacific Partners (NASDAQ100)
+CTSH,Cognizant,NASDAQ100,high,US,Cognizant (NASDAQ100)
+CEG,Constellation Energy,NASDAQ100,high,US,Constellation Energy (NASDAQ100)
+CPRT,Copart,NASDAQ100,high,US,Copart (NASDAQ100)
+CSGP,CoStar Group,NASDAQ100,high,US,CoStar Group (NASDAQ100)
+CSX,CSX Corporation,NASDAQ100,high,US,CSX Corporation (NASDAQ100)
+DDOG,Datadog,NASDAQ100,high,US,Datadog (NASDAQ100)
+FANG,Diamondback Energy,NASDAQ100,high,US,Diamondback Energy (NASDAQ100)
+DASH,DoorDash,NASDAQ100,high,US,DoorDash (NASDAQ100)
+EA,Electronic Arts,NASDAQ100,high,US,Electronic Arts (NASDAQ100)
+EXC,Exelon,NASDAQ100,high,US,Exelon (NASDAQ100)
+FAST,Fastenal,NASDAQ100,high,US,Fastenal (NASDAQ100)
+GEHC,GE HealthCare,NASDAQ100,high,US,GE HealthCare (NASDAQ100)
+GFS,GlobalFoundries,NASDAQ100,high,US,GlobalFoundries (NASDAQ100)
+HON,Honeywell,NASDAQ100,high,US,Honeywell (NASDAQ100)
+KDP,Keurig Dr Pepper,NASDAQ100,high,US,Keurig Dr Pepper (NASDAQ100)
+KHC,Kraft Heinz,NASDAQ100,high,US,Kraft Heinz (NASDAQ100)
+LIN,Linde plc,NASDAQ100,high,US,Linde plc (NASDAQ100)
+LULU,Lululemon,NASDAQ100,high,US,Lululemon (NASDAQ100)
+MRVL,Marvell Technology,NASDAQ100,high,US,Marvell Technology (NASDAQ100)
+MELI,Mercado Libre,NASDAQ100,high,US,Mercado Libre (NASDAQ100)
+MCHP,Microchip Technology,NASDAQ100,high,US,Microchip Technology (NASDAQ100)
+MSTR,MicroStrategy,NASDAQ100,high,US,MicroStrategy (NASDAQ100)
+MDLZ,Mondelez International,NASDAQ100,high,US,Mondelez International (NASDAQ100)
+MNST,Monster Beverage,NASDAQ100,high,US,Monster Beverage (NASDAQ100)
+NXPI,NXP Semiconductors,NASDAQ100,high,US,NXP Semiconductors (NASDAQ100)
+ORLY,O'Reilly Automotive,NASDAQ100,high,US,O'Reilly Automotive (NASDAQ100)
+ODFL,Old Dominion Freight Line,NASDAQ100,high,US,Old Dominion Freight Line (NASDAQ100)
+ON,Onsemi,NASDAQ100,high,US,Onsemi (NASDAQ100)
+PCAR,Paccar,NASDAQ100,high,US,Paccar (NASDAQ100)
+PLTR,Palantir Technologies,NASDAQ100,high,US,Palantir Technologies (NASDAQ100)
+PAYX,Paychex,NASDAQ100,high,US,Paychex (NASDAQ100)
+PDD,PDD Holdings,NASDAQ100,high,US,PDD Holdings (NASDAQ100)
+ROP,Roper Technologies,NASDAQ100,high,US,Roper Technologies (NASDAQ100)
+ROST,Ross Stores,NASDAQ100,high,US,Ross Stores (NASDAQ100)
+SHOP,Shopify,NASDAQ100,high,US,Shopify (NASDAQ100)
+SBUX,Starbucks,NASDAQ100,high,US,Starbucks (NASDAQ100)
+TTWO,Take-Two Interactive,NASDAQ100,high,US,Take-Two Interactive (NASDAQ100)
+TRI,Thomson Reuters,NASDAQ100,high,US,Thomson Reuters (NASDAQ100)
+TTD,Trade Desk (The),NASDAQ100,high,US,Trade Desk (The) (NASDAQ100)
+VRSK,Verisk Analytics,NASDAQ100,high,US,Verisk Analytics (NASDAQ100)
+WBD,Warner Bros. Discovery,NASDAQ100,high,US,Warner Bros. Discovery (NASDAQ100)
+WDAY,"Workday, Inc.",NASDAQ100,high,US,"Workday, Inc. (NASDAQ100)"
+XEL,Xcel Energy,NASDAQ100,high,US,Xcel Energy (NASDAQ100)
