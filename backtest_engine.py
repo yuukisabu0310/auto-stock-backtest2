@@ -319,7 +319,8 @@ class BacktestEngine:
             for date, row in data.iterrows():
                 # エントリー条件のチェック
                 if position is None:
-                    entry_signal = self._check_entry_conditions(row, symbol)
+                    # 単一銘柄用のエントリー条件チェック
+                    entry_signal = self._check_single_stock_entry_conditions(row, symbol)
                     if entry_signal:
                         position = {
                             'symbol': symbol,
@@ -331,7 +332,7 @@ class BacktestEngine:
                 
                 # エグジット条件のチェック
                 elif position:
-                    exit_signal = self._check_exit_conditions(row, position, date)
+                    exit_signal = self._check_single_stock_exit_conditions(row, position, date)
                     if exit_signal:
                         trade = Trade(
                             symbol=position['symbol'],
@@ -356,6 +357,104 @@ class BacktestEngine:
         except Exception as e:
             self.logger.error(f"単一銘柄バックテストエラー: {symbol}, {e}")
             return []
+    
+    def _check_single_stock_entry_conditions(self, row: pd.Series, symbol: str) -> Optional[str]:
+        """
+        単一銘柄のエントリー条件チェック
+        
+        Args:
+            row: 現在のデータ行
+            symbol: 銘柄コード
+        
+        Returns:
+            Optional[str]: エントリー理由
+        """
+        try:
+            # スイングトレード戦略
+            if self.strategy == "swing_trading":
+                # RSIが30以下で買われすぎ
+                if 'RSI' in row and row['RSI'] < 30:
+                    return "RSI_oversold"
+                
+                # MACDがゴールデンクロス
+                if 'MACD' in row and 'MACD_Signal' in row and row['MACD'] > row['MACD_Signal']:
+                    return "MACD_golden_cross"
+                
+                # 移動平均線のゴールデンクロス
+                if 'SMA_20' in row and 'SMA_50' in row and row['SMA_20'] > row['SMA_50']:
+                    return "SMA_golden_cross"
+            
+            # 中長期投資戦略
+            elif self.strategy == "long_term":
+                # 長期移動平均線の上昇トレンド
+                if 'SMA_200' in row and 'SMA_50' in row and row['SMA_200'] > row['SMA_50']:
+                    return "long_term_uptrend"
+                
+                # ボリンジャーバンドの下軌道タッチ
+                if 'BB_Lower' in row and row['Close'] <= row['BB_Lower']:
+                    return "bollinger_oversold"
+            
+            return None
+            
+        except Exception as e:
+            self.logger.error(f"エントリー条件チェックエラー: {symbol}, {e}")
+            return None
+    
+    def _check_single_stock_exit_conditions(self, row: pd.Series, position: dict, date: datetime) -> Optional[str]:
+        """
+        単一銘柄のエグジット条件チェック
+        
+        Args:
+            row: 現在のデータ行
+            position: ポジション情報
+            date: 現在の日付
+        
+        Returns:
+            Optional[str]: エグジット理由
+        """
+        try:
+            entry_price = position['entry_price']
+            current_price = row['Close']
+            
+            # 利益確定（10%以上）
+            if current_price >= entry_price * 1.10:
+                return "profit_taking"
+            
+            # 損切り（-5%以下）
+            if current_price <= entry_price * 0.95:
+                return "stop_loss"
+            
+            # スイングトレード戦略
+            if self.strategy == "swing_trading":
+                # RSIが70以上で売られすぎ
+                if 'RSI' in row and row['RSI'] > 70:
+                    return "RSI_overbought"
+                
+                # MACDがデッドクロス
+                if 'MACD' in row and 'MACD_Signal' in row and row['MACD'] < row['MACD_Signal']:
+                    return "MACD_dead_cross"
+                
+                # 保有期間が30日を超える
+                holding_days = (date - position['entry_date']).days
+                if holding_days > 30:
+                    return "time_exit"
+            
+            # 中長期投資戦略
+            elif self.strategy == "long_term":
+                # 保有期間が1年を超える
+                holding_days = (date - position['entry_date']).days
+                if holding_days > 365:
+                    return "long_term_exit"
+                
+                # 長期移動平均線の下降トレンド
+                if 'SMA_200' in row and 'SMA_50' in row and row['SMA_200'] < row['SMA_50']:
+                    return "trend_reversal"
+            
+            return None
+            
+        except Exception as e:
+            self.logger.error(f"エグジット条件チェックエラー: {position['symbol']}, {e}")
+            return None
     
     def _process_date(self, date: datetime, all_data: Dict[str, pd.DataFrame]):
         """特定日の処理"""
