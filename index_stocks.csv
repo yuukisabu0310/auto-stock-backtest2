@@ -42,10 +42,6 @@ CSCO,Cisco Systems Inc.,NASDAQ100,high,US,ネットワーク機器大手
 ADP,Automatic Data Processing,NASDAQ100,high,US,ビジネスサービス大手
 CMCSA,Comcast Corporation,NASDAQ100,high,US,通信大手
 TMUS,T-Mobile US Inc.,NASDAQ100,high,US,通信大手
-NFLX,Netflix Inc.,NASDAQ100,high,US,動画配信大手
-PYPL,PayPal Holdings Inc.,NASDAQ100,high,US,決済大手
-ADBE,Adobe Inc.,NASDAQ100,high,US,ソフトウェア大手
-CRM,Salesforce Inc.,NASDAQ100,high,US,クラウド大手
 ORCL,Oracle Corporation,NASDAQ100,high,US,ソフトウェア大手
 INTU,Intuit Inc.,NASDAQ100,high,US,ソフトウェア大手
 ISRG,Intuitive Surgical,NASDAQ100,high,US,医療機器大手
@@ -92,7 +88,6 @@ SYMC,Symantec Corporation,NASDAQ100,high,US,セキュリティソフト大手
 9433.T,KDDI株式会社,NIKKEI225,high,JP,通信大手
 7267.T,ホンダ技研工業株式会社,NIKKEI225,high,JP,自動車大手
 7269.T,スズキ株式会社,NIKKEI225,medium,JP,自動車大手
-7974.T,任天堂株式会社,NIKKEI225,high,JP,ゲーム大手
 4502.T,武田薬品工業株式会社,NIKKEI225,high,JP,製薬大手
 4519.T,中外製薬株式会社,NIKKEI225,high,JP,製薬大手
 4523.T,エーザイ株式会社,NIKKEI225,high,JP,製薬大手
@@ -132,7 +127,6 @@ SYMC,Symantec Corporation,NASDAQ100,high,US,セキュリティソフト大手
 6504.T,富士電機株式会社,NIKKEI225,medium,JP,電機大手
 6506.T,安川電機株式会社,NIKKEI225,high,JP,FA機器大手
 6508.T,明電舎株式会社,NIKKEI225,medium,JP,電機大手
-6594.T,ニデック株式会社,NIKKEI225,high,JP,モーター大手
 6645.T,オムロン株式会社,NIKKEI225,high,JP,制御機器大手
 6674.T,ジーエス・ユアサコーポレーション,NIKKEI225,medium,JP,電池大手
 6701.T,日本電気株式会社,NIKKEI225,high,JP,電機大手
@@ -141,14 +135,11 @@ SYMC,Symantec Corporation,NASDAQ100,high,US,セキュリティソフト大手
 6723.T,ルネサスエレクトロニクス株式会社,NIKKEI225,high,JP,半導体大手
 6724.T,セイコーエプソン株式会社,NIKKEI225,high,JP,プリンター大手
 6752.T,パナソニックホールディングス株式会社,NIKKEI225,high,JP,電機大手
-6758.T,ソニーグループ株式会社,NIKKEI225,high,JP,エンターテイメント大手
 6762.T,TDK株式会社,NIKKEI225,high,JP,電子部品大手
 6770.T,アルプスアルパイン株式会社,NIKKEI225,high,JP,電子部品大手
 6841.T,横河電機株式会社,NIKKEI225,high,JP,計測機器大手
 6857.T,アドバンテスト株式会社,NIKKEI225,high,JP,半導体テスト大手
-6861.T,キーエンス株式会社,NIKKEI225,high,JP,FA機器大手
 6902.T,デンソー株式会社,NIKKEI225,high,JP,自動車部品大手
-6954.T,ファナック株式会社,NIKKEI225,high,JP,工作機械大手
 6971.T,京セラ株式会社,NIKKEI225,high,JP,電子部品大手
 6976.T,太陽誘電株式会社,NIKKEI225,high,JP,電子部品大手
 6988.T,日東電工株式会社,NIKKEI225,high,JP,電子部品大手
@@ -157,9 +148,6 @@ SYMC,Symantec Corporation,NASDAQ100,high,US,セキュリティソフト大手
 7012.T,川崎重工業株式会社,NIKKEI225,high,JP,重工業大手
 7013.T,IHI株式会社,NIKKEI225,high,JP,重工業大手
 7201.T,日産自動車株式会社,NIKKEI225,high,JP,自動車大手
-7203.T,トヨタ自動車株式会社,NIKKEI225,high,JP,自動車大手
-7267.T,ホンダ技研工業株式会社,NIKKEI225,high,JP,自動車大手
-7269.T,スズキ株式会社,NIKKEI225,medium,JP,自動車大手
 7270.T,SUBARU株式会社,NIKKEI225,high,JP,自動車大手
 7272.T,ヤマハ発動機株式会社,NIKKEI225,medium,JP,バイク大手
 7731.T,ニコン株式会社,NIKKEI225,high,JP,光学機器大手
@@ -172,7 +160,6 @@ SYMC,Symantec Corporation,NASDAQ100,high,US,セキュリティソフト大手
 7911.T,凸版印刷株式会社,NIKKEI225,high,JP,印刷大手
 7912.T,大日本印刷株式会社,NIKKEI225,high,JP,印刷大手
 7951.T,ヤマハ株式会社,NIKKEI225,high,JP,楽器大手
-7974.T,任天堂株式会社,NIKKEI225,high,JP,ゲーム大手
 8001.T,伊藤忠商事株式会社,NIKKEI225,high,JP,商社大手
 8002.T,丸紅株式会社,NIKKEI225,high,JP,商社大手
 8015.T,豊田通商株式会社,NIKKEI225,high,JP,商社大手
@@ -187,7 +174,6 @@ SYMC,Symantec Corporation,NASDAQ100,high,US,セキュリティソフト大手
 8267.T,イオン株式会社,NIKKEI225,high,JP,小売大手
 8303.T,新生銀行株式会社,NIKKEI225,medium,JP,銀行大手
 8304.T,あおぞら銀行株式会社,NIKKEI225,medium,JP,銀行大手
-8306.T,三菱UFJフィナンシャル・グループ,NIKKEI225,high,JP,金融大手
 8308.T,りそなホールディングス株式会社,NIKKEI225,high,JP,金融大手
 8309.T,三井住友トラスト・ホールディングス株式会社,NIKKEI225,high,JP,金融大手
 8316.T,三井住友フィナンシャルグループ株式会社,NIKKEI225,high,JP,金融大手
@@ -224,7 +210,6 @@ SYMC,Symantec Corporation,NASDAQ100,high,US,セキュリティソフト大手
 9202.T,全日本空輸株式会社,NIKKEI225,high,JP,航空大手
 9301.T,三菱倉庫株式会社,NIKKEI225,medium,JP,倉庫大手
 9432.T,日本電信電話株式会社,NIKKEI225,high,JP,通信大手
-9433.T,KDDI株式会社,NIKKEI225,high,JP,通信大手
 9434.T,ソフトバンク株式会社,NIKKEI225,high,JP,通信大手
 9501.T,東京電力ホールディングス株式会社,NIKKEI225,high,JP,電力大手
 9502.T,中部電力株式会社,NIKKEI225,high,JP,電力大手
@@ -241,7 +226,6 @@ SYMC,Symantec Corporation,NASDAQ100,high,US,セキュリティソフト大手
 9810.T,日鉄物産株式会社,NIKKEI225,medium,JP,商社大手
 9843.T,ノーリツ鋼機株式会社,NIKKEI225,medium,JP,商社大手
 9983.T,ファーストリテイリング株式会社,NIKKEI225,high,JP,アパレル大手
-9984.T,ソフトバンクグループ株式会社,NIKKEI225,high,JP,通信大手
 9989.T,サンドラッグ株式会社,NIKKEI225,medium,JP,ドラッグストア大手
 9990.T,サックスバー・ホールディングス株式会社,NIKKEI225,medium,JP,ドラッグストア大手
 9997.T,スズケン株式会社,NIKKEI225,medium,JP,医薬品商社大手
@@ -682,61 +666,192 @@ YUM,Yum! Brands,SP500,high,US,Yum! Brands (S&P500)
 ZBRA,Zebra Technologies,SP500,high,US,Zebra Technologies (S&P500)
 ZBH,Zimmer Biomet,SP500,high,US,Zimmer Biomet (S&P500)
 ZTS,Zoetis,SP500,high,US,Zoetis (S&P500)
-ABNB,Airbnb,NASDAQ100,high,US,Airbnb (NASDAQ100)
-GOOG,Alphabet Inc.(Class C),NASDAQ100,high,US,Alphabet Inc.(Class C) (NASDAQ100)
-AEP,American Electric Power,NASDAQ100,high,US,American Electric Power (NASDAQ100)
-AMGN,Amgen,NASDAQ100,high,US,Amgen (NASDAQ100)
-ADI,Analog Devices,NASDAQ100,high,US,Analog Devices (NASDAQ100)
 APP,AppLovin,NASDAQ100,high,US,AppLovin (NASDAQ100)
 ARM,Arm Holdings,NASDAQ100,high,US,Arm Holdings (NASDAQ100)
 AZN,AstraZeneca,NASDAQ100,high,US,AstraZeneca (NASDAQ100)
-ADSK,Autodesk,NASDAQ100,high,US,Autodesk (NASDAQ100)
-AXON,Axon Enterprise,NASDAQ100,high,US,Axon Enterprise (NASDAQ100)
-BKR,Baker Hughes,NASDAQ100,high,US,Baker Hughes (NASDAQ100)
-CDW,CDW Corporation,NASDAQ100,high,US,CDW Corporation (NASDAQ100)
-CHTR,Charter Communications,NASDAQ100,high,US,Charter Communications (NASDAQ100)
-CTAS,Cintas,NASDAQ100,high,US,Cintas (NASDAQ100)
 CCEP,Coca-Cola Europacific Partners,NASDAQ100,high,US,Coca-Cola Europacific Partners (NASDAQ100)
-CTSH,Cognizant,NASDAQ100,high,US,Cognizant (NASDAQ100)
-CEG,Constellation Energy,NASDAQ100,high,US,Constellation Energy (NASDAQ100)
-CPRT,Copart,NASDAQ100,high,US,Copart (NASDAQ100)
-CSGP,CoStar Group,NASDAQ100,high,US,CoStar Group (NASDAQ100)
-CSX,CSX Corporation,NASDAQ100,high,US,CSX Corporation (NASDAQ100)
-DDOG,Datadog,NASDAQ100,high,US,Datadog (NASDAQ100)
-FANG,Diamondback Energy,NASDAQ100,high,US,Diamondback Energy (NASDAQ100)
-DASH,DoorDash,NASDAQ100,high,US,DoorDash (NASDAQ100)
-EA,Electronic Arts,NASDAQ100,high,US,Electronic Arts (NASDAQ100)
-EXC,Exelon,NASDAQ100,high,US,Exelon (NASDAQ100)
-FAST,Fastenal,NASDAQ100,high,US,Fastenal (NASDAQ100)
-GEHC,GE HealthCare,NASDAQ100,high,US,GE HealthCare (NASDAQ100)
 GFS,GlobalFoundries,NASDAQ100,high,US,GlobalFoundries (NASDAQ100)
-HON,Honeywell,NASDAQ100,high,US,Honeywell (NASDAQ100)
-KDP,Keurig Dr Pepper,NASDAQ100,high,US,Keurig Dr Pepper (NASDAQ100)
-KHC,Kraft Heinz,NASDAQ100,high,US,Kraft Heinz (NASDAQ100)
-LIN,Linde plc,NASDAQ100,high,US,Linde plc (NASDAQ100)
-LULU,Lululemon,NASDAQ100,high,US,Lululemon (NASDAQ100)
 MRVL,Marvell Technology,NASDAQ100,high,US,Marvell Technology (NASDAQ100)
 MELI,Mercado Libre,NASDAQ100,high,US,Mercado Libre (NASDAQ100)
-MCHP,Microchip Technology,NASDAQ100,high,US,Microchip Technology (NASDAQ100)
 MSTR,MicroStrategy,NASDAQ100,high,US,MicroStrategy (NASDAQ100)
-MDLZ,Mondelez International,NASDAQ100,high,US,Mondelez International (NASDAQ100)
-MNST,Monster Beverage,NASDAQ100,high,US,Monster Beverage (NASDAQ100)
-NXPI,NXP Semiconductors,NASDAQ100,high,US,NXP Semiconductors (NASDAQ100)
-ORLY,O'Reilly Automotive,NASDAQ100,high,US,O'Reilly Automotive (NASDAQ100)
-ODFL,Old Dominion Freight Line,NASDAQ100,high,US,Old Dominion Freight Line (NASDAQ100)
-ON,Onsemi,NASDAQ100,high,US,Onsemi (NASDAQ100)
-PCAR,Paccar,NASDAQ100,high,US,Paccar (NASDAQ100)
-PLTR,Palantir Technologies,NASDAQ100,high,US,Palantir Technologies (NASDAQ100)
-PAYX,Paychex,NASDAQ100,high,US,Paychex (NASDAQ100)
 PDD,PDD Holdings,NASDAQ100,high,US,PDD Holdings (NASDAQ100)
-ROP,Roper Technologies,NASDAQ100,high,US,Roper Technologies (NASDAQ100)
-ROST,Ross Stores,NASDAQ100,high,US,Ross Stores (NASDAQ100)
 SHOP,Shopify,NASDAQ100,high,US,Shopify (NASDAQ100)
-SBUX,Starbucks,NASDAQ100,high,US,Starbucks (NASDAQ100)
-TTWO,Take-Two Interactive,NASDAQ100,high,US,Take-Two Interactive (NASDAQ100)
 TRI,Thomson Reuters,NASDAQ100,high,US,Thomson Reuters (NASDAQ100)
-TTD,Trade Desk (The),NASDAQ100,high,US,Trade Desk (The) (NASDAQ100)
-VRSK,Verisk Analytics,NASDAQ100,high,US,Verisk Analytics (NASDAQ100)
-WBD,Warner Bros. Discovery,NASDAQ100,high,US,Warner Bros. Discovery (NASDAQ100)
-WDAY,"Workday, Inc.",NASDAQ100,high,US,"Workday, Inc. (NASDAQ100)"
-XEL,Xcel Energy,NASDAQ100,high,US,Xcel Energy (NASDAQ100)
+8233.T,,NIKKEI225,,,
+1332.T,,NIKKEI225,,,
+1333.T,,NIKKEI225,,,
+1417.T,,NIKKEI225,,,
+1605.T,,NIKKEI225,,,
+1719.T,,NIKKEI225,,,
+1721.T,,NIKKEI225,,,
+1801.T,,NIKKEI225,,,
+1802.T,,NIKKEI225,,,
+1803.T,,NIKKEI225,,,
+1812.T,,NIKKEI225,,,
+1925.T,,NIKKEI225,,,
+1928.T,,NIKKEI225,,,
+1963.T,,NIKKEI225,,,
+2001.T,,NIKKEI225,,,
+2002.T,,NIKKEI225,,,
+2109.T,,NIKKEI225,,,
+2121.T,,NIKKEI225,,,
+2127.T,,NIKKEI225,,,
+2175.T,,NIKKEI225,,,
+2201.T,,NIKKEI225,,,
+2212.T,,NIKKEI225,,,
+2269.T,,NIKKEI225,,,
+2282.T,,NIKKEI225,,,
+2331.T,,NIKKEI225,,,
+2371.T,,NIKKEI225,,,
+2413.T,,NIKKEI225,,,
+2432.T,,NIKKEI225,,,
+2501.T,,NIKKEI225,,,
+2502.T,,NIKKEI225,,,
+2503.T,,NIKKEI225,,,
+2531.T,,NIKKEI225,,,
+2587.T,,NIKKEI225,,,
+2593.T,,NIKKEI225,,,
+2651.T,,NIKKEI225,,,
+2670.T,,NIKKEI225,,,
+2702.T,,NIKKEI225,,,
+2768.T,,NIKKEI225,,,
+2801.T,,NIKKEI225,,,
+2802.T,,NIKKEI225,,,
+2871.T,,NIKKEI225,,,
+2914.T,,NIKKEI225,,,
+3003.T,,NIKKEI225,,,
+3038.T,,NIKKEI225,,,
+3048.T,,NIKKEI225,,,
+3064.T,,NIKKEI225,,,
+3086.T,,NIKKEI225,,,
+3099.T,,NIKKEI225,,,
+3101.T,,NIKKEI225,,,
+3103.T,,NIKKEI225,,,
+3105.T,,NIKKEI225,,,
+3116.T,,NIKKEI225,,,
+3148.T,,NIKKEI225,,,
+3167.T,,NIKKEI225,,,
+3182.T,,NIKKEI225,,,
+3197.T,,NIKKEI225,,,
+3231.T,,NIKKEI225,,,
+3244.T,,NIKKEI225,,,
+3258.T,,NIKKEI225,,,
+3281.T,,NIKKEI225,,,
+3288.T,,NIKKEI225,,,
+3289.T,,NIKKEI225,,,
+3291.T,,NIKKEI225,,,
+3349.T,,NIKKEI225,,,
+3382.T,,NIKKEI225,,,
+3401.T,,NIKKEI225,,,
+3402.T,,NIKKEI225,,,
+3405.T,,NIKKEI225,,,
+3407.T,,NIKKEI225,,,
+3436.T,,NIKKEI225,,,
+3479.T,,NIKKEI225,,,
+3501.T,,NIKKEI225,,,
+3502.T,,NIKKEI225,,,
+3532.T,,NIKKEI225,,,
+3549.T,,NIKKEI225,,,
+3563.T,,NIKKEI225,,,
+3626.T,,NIKKEI225,,,
+3635.T,,NIKKEI225,,,
+3659.T,,NIKKEI225,,,
+3665.T,,NIKKEI225,,,
+3679.T,,NIKKEI225,,,
+3681.T,,NIKKEI225,,,
+3738.T,,NIKKEI225,,,
+3765.T,,NIKKEI225,,,
+3769.T,,NIKKEI225,,,
+3778.T,,NIKKEI225,,,
+3861.T,,NIKKEI225,,,
+3863.T,,NIKKEI225,,,
+3864.T,,NIKKEI225,,,
+3891.T,,NIKKEI225,,,
+3902.T,,NIKKEI225,,,
+3904.T,,NIKKEI225,,,
+3908.T,,NIKKEI225,,,
+3923.T,,NIKKEI225,,,
+3932.T,,NIKKEI225,,,
+3941.T,,NIKKEI225,,,
+4004.T,,NIKKEI225,,,
+4005.T,,NIKKEI225,,,
+4021.T,,NIKKEI225,,,
+4041.T,,NIKKEI225,,,
+4042.T,,NIKKEI225,,,
+4043.T,,NIKKEI225,,,
+4061.T,,NIKKEI225,,,
+4062.T,,NIKKEI225,,,
+4063.T,,NIKKEI225,,,
+4151.T,,NIKKEI225,,,
+4183.T,,NIKKEI225,,,
+4188.T,,NIKKEI225,,,
+4208.T,,NIKKEI225,,,
+4220.T,,NIKKEI225,,,
+4247.T,,NIKKEI225,,,
+4272.T,,NIKKEI225,,,
+4307.T,,NIKKEI225,,,
+4324.T,,NIKKEI225,,,
+4348.T,,NIKKEI225,,,
+4403.T,,NIKKEI225,,,
+4452.T,,NIKKEI225,,,
+4503.T,,NIKKEI225,,,
+4506.T,,NIKKEI225,,,
+4507.T,,NIKKEI225,,,
+4521.T,,NIKKEI225,,,
+4543.T,,NIKKEI225,,,
+4612.T,,NIKKEI225,,,
+4613.T,,NIKKEI225,,,
+4631.T,,NIKKEI225,,,
+4661.T,,NIKKEI225,,,
+4689.T,,NIKKEI225,,,
+4704.T,,NIKKEI225,,,
+4716.T,,NIKKEI225,,,
+4739.T,,NIKKEI225,,,
+4755.T,,NIKKEI225,,,
+4921.T,,NIKKEI225,,,
+4967.T,,NIKKEI225,,,
+5019.T,,NIKKEI225,,,
+5020.T,,NIKKEI225,,,
+5101.T,,NIKKEI225,,,
+5301.T,,NIKKEI225,,,
+5332.T,,NIKKEI225,,,
+5333.T,,NIKKEI225,,,
+5334.T,,NIKKEI225,,,
+5541.T,,NIKKEI225,,,
+5631.T,,NIKKEI225,,,
+5703.T,,NIKKEI225,,,
+5707.T,,NIKKEI225,,,
+5714.T,,NIKKEI225,,,
+5901.T,,NIKKEI225,,,
+6098.T,,NIKKEI225,,,
+6103.T,,NIKKEI225,,,
+6113.T,,NIKKEI225,,,
+6178.T,,NIKKEI225,,,
+6183.T,,NIKKEI225,,,
+6201.T,,NIKKEI225,,,
+6268.T,,NIKKEI225,,,
+6273.T,,NIKKEI225,,,
+6471.T,,NIKKEI225,,,
+6472.T,,NIKKEI225,,,
+6473.T,,NIKKEI225,,,
+6516.T,,NIKKEI225,,,
+6586.T,,NIKKEI225,,,
+6753.T,,NIKKEI225,,,
+6869.T,,NIKKEI225,,,
+6920.T,,NIKKEI225,,,
+6923.T,,NIKKEI225,,,
+6952.T,,NIKKEI225,,,
+6963.T,,NIKKEI225,,,
+7003.T,,NIKKEI225,,,
+7186.T,,NIKKEI225,,,
+7205.T,,NIKKEI225,,,
+7211.T,,NIKKEI225,,,
+7832.T,,NIKKEI225,,,
+8020.T,,NIKKEI225,,,
+8253.T,,NIKKEI225,,,
+8270.T,,NIKKEI225,,,
+8355.T,,NIKKEI225,,,
+8424.T,,NIKKEI225,,,
+8425.T,,NIKKEI225,,,
+8439.T,,NIKKEI225,,,
+8697.T,,NIKKEI225,,,
