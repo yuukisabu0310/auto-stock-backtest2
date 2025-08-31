@@ -28,6 +28,82 @@
             padding: 20px;
         }
         
+        /* モバイル対応 */
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+            
+            .header h1 {
+                font-size: 2.5em;
+            }
+            
+            .header p {
+                font-size: 1em;
+            }
+            
+            .reports-grid {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+            
+            .report-card {
+                padding: 20px;
+            }
+            
+            .recent-reports {
+                padding: 20px;
+                overflow-x: auto;
+            }
+            
+            .reports-table {
+                min-width: 600px;
+                font-size: 0.9em;
+            }
+            
+            .reports-table th,
+            .reports-table td {
+                padding: 10px 8px;
+                white-space: nowrap;
+            }
+            
+            .reports-table td:nth-child(3) {
+                max-width: 200px;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+            }
+            
+            .strategy-badge {
+                font-size: 0.7em;
+                padding: 3px 8px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .header h1 {
+                font-size: 2em;
+            }
+            
+            .section-title {
+                font-size: 1.5em;
+            }
+            
+            .recent-reports h2 {
+                font-size: 1.5em;
+            }
+            
+            .reports-table {
+                min-width: 500px;
+                font-size: 0.8em;
+            }
+            
+            .reports-table th,
+            .reports-table td {
+                padding: 8px 6px;
+            }
+        }
+        
         .header {
             text-align: center;
             color: white;
@@ -177,6 +253,12 @@
             margin-top: 20px;
         }
         
+        .table-container {
+            overflow-x: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
         .reports-table th,
         .reports-table td {
             padding: 15px;
@@ -289,7 +371,8 @@
         <div class="recent-reports">
             <h2>📅 過去30日間のレポート履歴</h2>
 
-            <table class="reports-table">
+            <div class="table-container">
+                <table class="reports-table">
                 <thead>
                     <tr>
                         <th>日時</th>
@@ -449,6 +532,7 @@
 
                 </tbody>
             </table>
+            </div>
 
         </div>
         
