@@ -51,11 +51,11 @@ jobs:
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action"
         
-        # キャッシュファイル、レポート、ログを追加
-        git add cache/
+        # キャッシュファイル、レポート、ログを強制的に追加（.gitignoreを無視）
+        git add -f cache/
         git add reports/
-        git add logs/
-        git add results/
+        git add -f logs/
+        git add -f results/
         
         # 変更がある場合のみコミット
         if git diff --staged --quiet; then
