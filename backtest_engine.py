@@ -275,6 +275,9 @@ class BacktestEngine:
             for trade in all_trades:
                 self.portfolio.trades.append(trade)
             
+            # エクイティカーブを再構築
+            self._reconstruct_equity_curve(processed_data, start_date, end_date)
+            
             # 結果を計算
             results = self._calculate_results()
             
@@ -284,6 +287,92 @@ class BacktestEngine:
             return results
         else:
             return {"error": "有効な取引がありません"}
+    
+    def _reconstruct_equity_curve(self, stocks_data: Dict[str, pd.DataFrame], 
+                                 start_date: str, end_date: str):
+        """
+        エクイティカーブの再構築
+        
+        Args:
+            stocks_data: 銘柄データ辞書
+            start_date: 開始日
+            end_date: 終了日
+        """
+        try:
+            # 全取引を日付順にソート
+            all_trades = sorted(self.portfolio.trades, key=lambda x: x.entry_date)
+            
+            # 期間内の全日付を取得
+            start_dt = pd.to_datetime(start_date)
+            end_dt = pd.to_datetime(end_date)
+            
+            # 全銘柄の日付を統合
+            all_dates = set()
+            for data in stocks_data.values():
+                if not data.empty:
+                    period_data = data[(data.index >= start_dt) & (data.index <= end_dt)]
+                    all_dates.update(period_data.index)
+            
+            all_dates = sorted(list(all_dates))
+            
+            # ポートフォリオの初期化
+            self.portfolio.equity_curve = [self.portfolio.initial_capital]
+            self.portfolio.dates = [all_dates[0] if all_dates else start_dt]
+            
+            # 各日付でエクイティを計算
+            current_cash = self.portfolio.initial_capital
+            current_positions = {}  # {symbol: {'quantity': int, 'entry_price': float}}
+            
+            for date in all_dates:
+                # その日の取引を処理（エントリーとエグジット両方）
+                entry_trades = [t for t in all_trades if t.entry_date.date() == date.date()]
+                exit_trades = [t for t in all_trades if t.exit_date and t.exit_date.date() == date.date()]
+                
+                # エグジット取引の処理（先に処理）
+                for trade in exit_trades:
+                    if trade.symbol in current_positions:
+                        pos = current_positions[trade.symbol]
+                        if pos['quantity'] >= trade.quantity:
+                            # 決済処理
+                            current_cash += trade.quantity * trade.exit_price
+                            pos['quantity'] -= trade.quantity
+                            if pos['quantity'] <= 0:
+                                del current_positions[trade.symbol]
+                
+                # エントリー取引の処理
+                for trade in entry_trades:
+                    # ポジション追加
+                    if trade.symbol not in current_positions:
+                        current_positions[trade.symbol] = {
+                            'quantity': trade.quantity,
+                            'entry_price': trade.entry_price
+                        }
+                        current_cash -= trade.quantity * trade.entry_price
+                    else:
+                        # 既存ポジションの更新
+                        pos = current_positions[trade.symbol]
+                        pos['quantity'] += trade.quantity
+                        current_cash -= trade.quantity * trade.entry_price
+                
+                # 現在価格での総資産価値を計算
+                total_value = current_cash
+                for symbol, pos in current_positions.items():
+                    if symbol in stocks_data and not stocks_data[symbol].empty:
+                        if date in stocks_data[symbol].index:
+                            current_price = stocks_data[symbol].loc[date, 'Close']
+                            total_value += pos['quantity'] * current_price
+                
+                # エクイティカーブに追加
+                self.portfolio.equity_curve.append(total_value)
+                self.portfolio.dates.append(date)
+            
+            self.logger.info(f"エクイティカーブ再構築完了: {len(self.portfolio.equity_curve)}ポイント")
+            
+        except Exception as e:
+            self.logger.error(f"エクイティカーブ再構築エラー: {e}")
+            # フォールバック: 初期資本のみ
+            self.portfolio.equity_curve = [self.portfolio.initial_capital]
+            self.portfolio.dates = [pd.to_datetime(start_date)]
     
     def _run_single_stock_backtest(self, symbol: str, data: pd.DataFrame, 
                                   start_date: str, end_date: str) -> List[Trade]:
