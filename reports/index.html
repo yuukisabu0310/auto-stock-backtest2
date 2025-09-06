@@ -28,82 +28,6 @@
             padding: 20px;
         }
         
-        /* モバイル対応 */
-        @media (max-width: 768px) {
-            .container {
-                padding: 10px;
-            }
-            
-            .header h1 {
-                font-size: 2.5em;
-            }
-            
-            .header p {
-                font-size: 1em;
-            }
-            
-            .reports-grid {
-                grid-template-columns: 1fr;
-                gap: 15px;
-            }
-            
-            .report-card {
-                padding: 20px;
-            }
-            
-            .recent-reports {
-                padding: 20px;
-                overflow-x: auto;
-            }
-            
-            .reports-table {
-                min-width: 600px;
-                font-size: 0.9em;
-            }
-            
-            .reports-table th,
-            .reports-table td {
-                padding: 10px 8px;
-                white-space: nowrap;
-            }
-            
-            .reports-table td:nth-child(3) {
-                max-width: 200px;
-                overflow: hidden;
-                text-overflow: ellipsis;
-                white-space: nowrap;
-            }
-            
-            .strategy-badge {
-                font-size: 0.7em;
-                padding: 3px 8px;
-            }
-        }
-        
-        @media (max-width: 480px) {
-            .header h1 {
-                font-size: 2em;
-            }
-            
-            .section-title {
-                font-size: 1.5em;
-            }
-            
-            .recent-reports h2 {
-                font-size: 1.5em;
-            }
-            
-            .reports-table {
-                min-width: 500px;
-                font-size: 0.8em;
-            }
-            
-            .reports-table th,
-            .reports-table td {
-                padding: 8px 6px;
-            }
-        }
-        
         .header {
             text-align: center;
             color: white;
@@ -253,12 +177,6 @@
             margin-top: 20px;
         }
         
-        .table-container {
-            overflow-x: auto;
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-        
         .reports-table th,
         .reports-table td {
             padding: 15px;
@@ -340,7 +258,7 @@
         <div class="header">
             <h1>🚀 自動株式バックテスト</h1>
             <p>最新のバックテスト結果と過去30日間のレポート履歴</p>
-            <div class="timestamp">最終更新: 2025-08-31 21:03:36</div>
+            <div class="timestamp">最終更新: 2025-09-06 05:05:20</div>
         </div>
         
         <div class="latest-reports">
@@ -350,8 +268,8 @@
                 <div class="report-card">
                     <div class="report-icon">📈</div>
                     <div class="report-title">スイングトレード</div>
-                    <div class="report-date">2025-08-31 21:03</div>
-                    <a href="スイングトレード_20250831_210336.html" class="report-link" target="_blank">
+                    <div class="report-date">2025-09-06 05:05</div>
+                    <a href="スイングトレード_20250906_050520.html" class="report-link" target="_blank">
                         <i class="fas fa-external-link-alt"></i> レポートを開く
                     </a>
                 </div>
@@ -359,8 +277,8 @@
                 <div class="report-card">
                     <div class="report-icon">📊</div>
                     <div class="report-title">中長期投資</div>
-                    <div class="report-date">2025-08-30 16:56</div>
-                    <a href="中長期投資_20250830_165651.html" class="report-link" target="_blank">
+                    <div class="report-date">2025-09-06 05:05</div>
+                    <a href="中長期投資_20250906_050520.html" class="report-link" target="_blank">
                         <i class="fas fa-external-link-alt"></i> レポートを開く
                     </a>
                 </div>
@@ -371,8 +289,7 @@
         <div class="recent-reports">
             <h2>📅 過去30日間のレポート履歴</h2>
 
-            <div class="table-container">
-                <table class="reports-table">
+            <table class="reports-table">
                 <thead>
                     <tr>
                         <th>日時</th>
@@ -384,155 +301,35 @@
                 <tbody>
 
                     <tr>
-                        <td>2025-08-31 21:03</td>
+                        <td>2025-09-06 05:05</td>
                         <td><span class="strategy-badge strategy-swing">スイングトレード</span></td>
-                        <td>スイングトレード_20250831_210336.html</td>
-                        <td><a href="スイングトレード_20250831_210336.html" target="_blank"><i class="fas fa-external-link-alt"></i> 開く</a></td>
+                        <td>スイングトレード_20250906_050520.html</td>
+                        <td><a href="スイングトレード_20250906_050520.html" target="_blank"><i class="fas fa-external-link-alt"></i> 開く</a></td>
                     </tr>
 
                     <tr>
-                        <td>2025-08-31 21:03</td>
+                        <td>2025-09-06 05:05</td>
+                        <td><span class="strategy-badge strategy-long">中長期投資</span></td>
+                        <td>中長期投資_20250906_050520.html</td>
+                        <td><a href="中長期投資_20250906_050520.html" target="_blank"><i class="fas fa-external-link-alt"></i> 開く</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>2025-09-06 05:05</td>
                         <td><span class="strategy-badge strategy-summary">その他</span></td>
-                        <td>swing_trading_stocks_20250831_210334.html</td>
-                        <td><a href="swing_trading_stocks_20250831_210334.html" target="_blank"><i class="fas fa-external-link-alt"></i> 開く</a></td>
+                        <td>long_term_stocks_20250906_050519.html</td>
+                        <td><a href="long_term_stocks_20250906_050519.html" target="_blank"><i class="fas fa-external-link-alt"></i> 開く</a></td>
                     </tr>
 
                     <tr>
-                        <td>2025-08-31 18:24</td>
-                        <td><span class="strategy-badge strategy-swing">スイングトレード</span></td>
-                        <td>スイングトレード_20250831_182442.html</td>
-                        <td><a href="スイングトレード_20250831_182442.html" target="_blank"><i class="fas fa-external-link-alt"></i> 開く</a></td>
-                    </tr>
-
-                    <tr>
-                        <td>2025-08-31 18:24</td>
+                        <td>2025-09-06 04:58</td>
                         <td><span class="strategy-badge strategy-summary">その他</span></td>
-                        <td>swing_trading_stocks_20250831_182441.html</td>
-                        <td><a href="swing_trading_stocks_20250831_182441.html" target="_blank"><i class="fas fa-external-link-alt"></i> 開く</a></td>
-                    </tr>
-
-                    <tr>
-                        <td>2025-08-31 18:20</td>
-                        <td><span class="strategy-badge strategy-swing">スイングトレード</span></td>
-                        <td>スイングトレード_stocks_20250831_182058.html</td>
-                        <td><a href="スイングトレード_stocks_20250831_182058.html" target="_blank"><i class="fas fa-external-link-alt"></i> 開く</a></td>
-                    </tr>
-
-                    <tr>
-                        <td>2025-08-31 18:13</td>
-                        <td><span class="strategy-badge strategy-swing">スイングトレード</span></td>
-                        <td>スイングトレード_20250831_181318.html</td>
-                        <td><a href="スイングトレード_20250831_181318.html" target="_blank"><i class="fas fa-external-link-alt"></i> 開く</a></td>
-                    </tr>
-
-                    <tr>
-                        <td>2025-08-31 17:49</td>
-                        <td><span class="strategy-badge strategy-swing">スイングトレード</span></td>
-                        <td>スイングトレード_20250831_174903.html</td>
-                        <td><a href="スイングトレード_20250831_174903.html" target="_blank"><i class="fas fa-external-link-alt"></i> 開く</a></td>
-                    </tr>
-
-                    <tr>
-                        <td>2025-08-30 16:56</td>
-                        <td><span class="strategy-badge strategy-swing">スイングトレード</span></td>
-                        <td>スイングトレード_20250830_165651.html</td>
-                        <td><a href="スイングトレード_20250830_165651.html" target="_blank"><i class="fas fa-external-link-alt"></i> 開く</a></td>
-                    </tr>
-
-                    <tr>
-                        <td>2025-08-30 16:56</td>
-                        <td><span class="strategy-badge strategy-long">中長期投資</span></td>
-                        <td>中長期投資_20250830_165651.html</td>
-                        <td><a href="中長期投資_20250830_165651.html" target="_blank"><i class="fas fa-external-link-alt"></i> 開く</a></td>
-                    </tr>
-
-                    <tr>
-                        <td>2025-08-30 16:53</td>
-                        <td><span class="strategy-badge strategy-swing">スイングトレード</span></td>
-                        <td>スイングトレード_20250830_165328.html</td>
-                        <td><a href="スイングトレード_20250830_165328.html" target="_blank"><i class="fas fa-external-link-alt"></i> 開く</a></td>
-                    </tr>
-
-                    <tr>
-                        <td>2025-08-30 16:53</td>
-                        <td><span class="strategy-badge strategy-long">中長期投資</span></td>
-                        <td>中長期投資_20250830_165328.html</td>
-                        <td><a href="中長期投資_20250830_165328.html" target="_blank"><i class="fas fa-external-link-alt"></i> 開く</a></td>
-                    </tr>
-
-                    <tr>
-                        <td>2025-08-30 16:41</td>
-                        <td><span class="strategy-badge strategy-swing">スイングトレード</span></td>
-                        <td>スイングトレード_20250830_164158.html</td>
-                        <td><a href="スイングトレード_20250830_164158.html" target="_blank"><i class="fas fa-external-link-alt"></i> 開く</a></td>
-                    </tr>
-
-                    <tr>
-                        <td>2025-08-30 16:41</td>
-                        <td><span class="strategy-badge strategy-long">中長期投資</span></td>
-                        <td>中長期投資_20250830_164158.html</td>
-                        <td><a href="中長期投資_20250830_164158.html" target="_blank"><i class="fas fa-external-link-alt"></i> 開く</a></td>
-                    </tr>
-
-                    <tr>
-                        <td>2025-08-30 15:49</td>
-                        <td><span class="strategy-badge strategy-swing">スイングトレード</span></td>
-                        <td>スイングトレード_20250830_154913.html</td>
-                        <td><a href="スイングトレード_20250830_154913.html" target="_blank"><i class="fas fa-external-link-alt"></i> 開く</a></td>
-                    </tr>
-
-                    <tr>
-                        <td>2025-08-30 15:49</td>
-                        <td><span class="strategy-badge strategy-long">中長期投資</span></td>
-                        <td>中長期投資_20250830_154913.html</td>
-                        <td><a href="中長期投資_20250830_154913.html" target="_blank"><i class="fas fa-external-link-alt"></i> 開く</a></td>
-                    </tr>
-
-                    <tr>
-                        <td>2025-08-30 15:47</td>
-                        <td><span class="strategy-badge strategy-swing">スイングトレード</span></td>
-                        <td>スイングトレード_20250830_154714.html</td>
-                        <td><a href="スイングトレード_20250830_154714.html" target="_blank"><i class="fas fa-external-link-alt"></i> 開く</a></td>
-                    </tr>
-
-                    <tr>
-                        <td>2025-08-30 15:47</td>
-                        <td><span class="strategy-badge strategy-long">中長期投資</span></td>
-                        <td>中長期投資_20250830_154714.html</td>
-                        <td><a href="中長期投資_20250830_154714.html" target="_blank"><i class="fas fa-external-link-alt"></i> 開く</a></td>
-                    </tr>
-
-                    <tr>
-                        <td>2025-08-27 18:00</td>
-                        <td><span class="strategy-badge strategy-swing">スイングトレード</span></td>
-                        <td>スイングトレード_20250827_180020.html</td>
-                        <td><a href="スイングトレード_20250827_180020.html" target="_blank"><i class="fas fa-external-link-alt"></i> 開く</a></td>
-                    </tr>
-
-                    <tr>
-                        <td>2025-08-27 18:00</td>
-                        <td><span class="strategy-badge strategy-long">中長期投資</span></td>
-                        <td>中長期投資_20250827_180020.html</td>
-                        <td><a href="中長期投資_20250827_180020.html" target="_blank"><i class="fas fa-external-link-alt"></i> 開く</a></td>
-                    </tr>
-
-                    <tr>
-                        <td>2025-08-27 17:58</td>
-                        <td><span class="strategy-badge strategy-swing">スイングトレード</span></td>
-                        <td>スイングトレード_20250827_175805.html</td>
-                        <td><a href="スイングトレード_20250827_175805.html" target="_blank"><i class="fas fa-external-link-alt"></i> 開く</a></td>
-                    </tr>
-
-                    <tr>
-                        <td>2025-08-27 17:44</td>
-                        <td><span class="strategy-badge strategy-summary">その他</span></td>
-                        <td>テスト戦略_20250827_174436.html</td>
-                        <td><a href="テスト戦略_20250827_174436.html" target="_blank"><i class="fas fa-external-link-alt"></i> 開く</a></td>
+                        <td>swing_trading_stocks_20250906_045844.html</td>
+                        <td><a href="swing_trading_stocks_20250906_045844.html" target="_blank"><i class="fas fa-external-link-alt"></i> 開く</a></td>
                     </tr>
 
                 </tbody>
             </table>
-            </div>
 
         </div>
         
