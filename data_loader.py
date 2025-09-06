@@ -413,16 +413,19 @@ class DataLoader:
         all_stocks = []
         
         if strategy == "swing_trading":
-            # スイングトレード: 各指数から25銘柄ずつ
-            for index_name in indices:
-                stocks = self.random_sample_stocks(index_name, 25, random_seed)
+            # スイングトレード: 各指数から33-34銘柄ずつ（合計100銘柄）
+            stocks_per_index = [34, 33, 33]  # SP500, NASDAQ100, NIKKEI225
+            for i, index_name in enumerate(indices):
+                stocks = self.random_sample_stocks(index_name, stocks_per_index[i], random_seed)
                 all_stocks.extend(stocks)
             self.logger.info(f"スイングトレード用銘柄: {len(all_stocks)}銘柄")
             
         elif strategy == "long_term":
-            # 中長期投資: 各指数から50銘柄ずつ
-            for index_name in indices:
-                stocks = self.random_sample_stocks(index_name, 50, random_seed)
+            # 中長期投資: 各指数から適切な数ずつ（合計200銘柄）
+            # SP500: 74銘柄, NASDAQ100: 52銘柄(全銘柄), NIKKEI225: 74銘柄
+            stocks_per_index = [74, 52, 74]  # SP500, NASDAQ100, NIKKEI225
+            for i, index_name in enumerate(indices):
+                stocks = self.random_sample_stocks(index_name, stocks_per_index[i], random_seed)
                 all_stocks.extend(stocks)
             self.logger.info(f"中長期投資用銘柄: {len(all_stocks)}銘柄")
         
