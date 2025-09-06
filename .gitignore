@@ -138,8 +138,8 @@ logs/
 *.log
 
 # レポートファイル（動的に生成されるもの）
-reports/*.html
-!reports/index.html
+# reports/*.html  # GitHub Actionsで生成されるレポートは含める
+# !reports/index.html
 # summaryファイルは不要
 reports/summary_*.html
 
