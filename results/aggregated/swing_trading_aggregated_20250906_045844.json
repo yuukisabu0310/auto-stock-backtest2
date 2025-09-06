@@ -1,0 +1,16 @@
+{
+  "strategy": "swing_trading",
+  "total_runs": 3,
+  "first_run": 1,
+  "last_run": 3,
+  "aggregation_date": "2025-09-06 04:58:44",
+  "total_return_mean": 0.0,
+  "total_return_std": 0.0,
+  "total_return_min": 0.0,
+  "total_return_max": 0.0,
+  "total_return_median": 0.0,
+  "total_return_q25": 0.0,
+  "total_return_q75": 0.0,
+  "sharpe_ratio_mean": 0.0,
+  "sharpe_ratio_std": 0.0,
+  "sharpe_ratio_min": 
