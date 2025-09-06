@@ -15,7 +15,7 @@ from data_loader import DataLoader
 from backtest_engine import BacktestEngine
 from report_generator import ReportGenerator
 from backtest_aggregator import BacktestAggregator
-from config import TRADING_RULES, START_DATE, END_DATE
+from config import TRADING_RULES, START_DATE, END_DATE, get_backtest_period, DATA_START_DATE, DATA_END_DATE
 
 def setup_logging():
     """ログ設定"""
@@ -73,10 +73,10 @@ def run_single_backtest(strategy: str, random_seed: int,
         
         # 並列処理を使用する場合
         if use_parallel:
-            # 並列でデータ取得
-            stocks_data = data_loader.get_stock_data_batch(stocks, start_date, end_date)
+            # 並列でデータ取得（全期間から取得）
+            stocks_data = data_loader.get_stock_data_batch(stocks, DATA_START_DATE, DATA_END_DATE)
             
-            # 並列でバックテスト実行
+            # 並列でバックテスト実行（戦略別期間で実行）
             results = engine.run_backtest_parallel(stocks_data, start_date, end_date)
         else:
             # 従来の逐次処理
@@ -164,8 +164,6 @@ def run_multiple_backtests(strategy: str, num_runs: int,
     }
 
 def run_all_strategies_multiple_backtests(num_runs: int = 5, 
-                                         start_date: str = START_DATE,
-                                         end_date: str = END_DATE,
                                          base_seed: int = 42):
     """全戦略の複数回バックテスト実行"""
     logger = logging.getLogger(__name__)
@@ -181,6 +179,10 @@ def run_all_strategies_multiple_backtests(num_runs: int = 5,
     
     for strategy in strategies:
         logger.info(f"戦略実行中: {strategy}")
+        
+        # 戦略別の期間を取得
+        start_date, end_date = get_backtest_period(strategy)
+        logger.info(f"{strategy} バックテスト期間: {start_date} 〜 {end_date}")
         
         # 複数回バックテスト実行
         strategy_results = run_multiple_backtests(
@@ -261,8 +263,6 @@ def generate_individual_reports(all_results: Dict[str, Dict]) -> List[str]:
 def main():
     """メイン関数"""
     parser = argparse.ArgumentParser(description='自動株式バックテストシステム（指数別ランダム抽出版）')
-    parser.add_argument('--start-date', default=START_DATE, help='開始日 (YYYY-MM-DD)')
-    parser.add_argument('--end-date', default=END_DATE, help='終了日 (YYYY-MM-DD)')
     parser.add_argument('--strategy', choices=list(TRADING_RULES.keys()), 
                        help='特定の戦略のみ実行')
     parser.add_argument('--num-runs', type=int, default=5, help='実行回数（デフォルト: 5）')
@@ -277,7 +277,7 @@ def main():
     logger = logging.getLogger(__name__)
     
     logger.info("自動株式バックテストシステム開始（指数別ランダム抽出版）")
-    logger.info(f"期間: {args.start_date} 〜 {args.end_date}")
+    logger.info(f"データ取得期間: {DATA_START_DATE} 〜 {DATA_END_DATE}")
     logger.info(f"実行回数: {args.num_runs}")
     logger.info(f"ベースシード: {args.base_seed}")
     logger.info(f"並列処理: {args.use_parallel}")
@@ -295,15 +295,19 @@ def main():
             # 特定戦略のみ実行
             logger.info(f"戦略実行: {args.strategy}")
             
+            # 戦略別の期間を取得
+            start_date, end_date = get_backtest_period(args.strategy)
+            logger.info(f"{args.strategy} バックテスト期間: {start_date} 〜 {end_date}")
+            
             strategy_results = run_multiple_backtests(
-                args.strategy, args.num_runs, args.start_date, args.end_date, args.base_seed
+                args.strategy, args.num_runs, start_date, end_date, args.base_seed
             )
             all_results = {args.strategy: strategy_results}
             
         else:
             # 全戦略実行
             all_results = run_all_strategies_multiple_backtests(
-                args.num_runs, args.start_date, args.end_date, args.base_seed
+                args.num_runs, args.base_seed
             )
         
         # 個別レポート生成

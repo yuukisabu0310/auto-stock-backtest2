@@ -6,6 +6,32 @@ import os
 from datetime import datetime, timedelta
 
 # 基本設定
+# データ取得期間（去年12/31まで）
+DATA_END_YEAR = datetime.now().year - 1  # 去年
+DATA_START_DATE = "2004-12-31"  # 20年分のデータを取得するため
+DATA_END_DATE = f"{DATA_END_YEAR}-12-31"
+
+# バックテスト期間（戦略別）
+SWING_TRADING_YEARS = 5  # スイングトレード: 5年
+LONG_TERM_YEARS = 20     # 中長期投資: 20年
+
+# バックテスト期間計算
+def get_backtest_period(strategy: str) -> tuple:
+    """戦略別のバックテスト期間を取得"""
+    if strategy == "swing_trading":
+        years = SWING_TRADING_YEARS
+    elif strategy == "long_term":
+        years = LONG_TERM_YEARS
+    else:
+        years = SWING_TRADING_YEARS  # デフォルト
+    
+    # 去年12/31から逆算
+    end_date = datetime(DATA_END_YEAR, 12, 31)
+    start_date = datetime(end_date.year - years + 1, 1, 1)
+    
+    return start_date.strftime("%Y-%m-%d"), end_date.strftime("%Y-%m-%d")
+
+# 後方互換性のため（既存コード用）
 START_DATE = "2020-01-01"
 END_DATE = datetime.now().strftime("%Y-%m-%d")
 INITIAL_CAPITAL = 10000000  # 1000万円
