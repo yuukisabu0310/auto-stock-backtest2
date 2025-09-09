@@ -651,6 +651,12 @@ class ReportGenerator:
             padding: 20px;
             border-radius: 10px;
             text-align: center;
+            cursor: pointer;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }}
+        .stat-card:hover {{
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
         }}
         .stat-value {{
             font-size: 2em;
@@ -660,6 +666,71 @@ class ReportGenerator:
         .stat-label {{
             font-size: 0.9em;
             opacity: 0.9;
+        }}
+        .info-icon {{
+            font-size: 0.8em;
+            margin-left: 5px;
+            opacity: 0.7;
+        }}
+        .modal {{
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.5);
+        }}
+        .modal-content {{
+            background-color: white;
+            margin: 5% auto;
+            padding: 30px;
+            border-radius: 15px;
+            width: 80%;
+            max-width: 600px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            position: relative;
+        }}
+        .close {{
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            position: absolute;
+            right: 20px;
+            top: 15px;
+            cursor: pointer;
+        }}
+        .close:hover {{
+            color: #000;
+        }}
+        .modal-title {{
+            font-size: 1.5em;
+            font-weight: bold;
+            margin-bottom: 15px;
+            color: #333;
+        }}
+        .modal-description {{
+            font-size: 1em;
+            line-height: 1.6;
+            color: #555;
+            margin-bottom: 20px;
+        }}
+        .modal-formula {{
+            background-color: #f8f9fa;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 4px solid #007bff;
+            font-family: 'Courier New', monospace;
+            margin: 15px 0;
+        }}
+        .modal-interpretation {{
+            background-color: #e8f5e8;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 4px solid #28a745;
+            margin: 15px 0;
         }}
         .chart-section {{
             margin: 30px 0;
@@ -778,29 +849,29 @@ class ReportGenerator:
         </div>
         
         <div class="stats-grid">
-            <div class="stat-card">
+            <div class="stat-card" onclick="showMetricModal('total_return')">
                 <div class="stat-value">{stats['total_return_pct']:.2f}%</div>
-                <div class="stat-label">総リターン</div>
+                <div class="stat-label">総リターン <span class="info-icon">ℹ️</span></div>
             </div>
-            <div class="stat-card">
+            <div class="stat-card" onclick="showMetricModal('sharpe_ratio')">
                 <div class="stat-value">{stats['sharpe_ratio']:.2f}</div>
-                <div class="stat-label">シャープレシオ</div>
+                <div class="stat-label">シャープレシオ <span class="info-icon">ℹ️</span></div>
             </div>
-            <div class="stat-card">
+            <div class="stat-card" onclick="showMetricModal('max_drawdown')">
                 <div class="stat-value">{stats['max_drawdown_pct']:.2f}%</div>
-                <div class="stat-label">最大ドローダウン</div>
+                <div class="stat-label">最大ドローダウン <span class="info-icon">ℹ️</span></div>
             </div>
-            <div class="stat-card">
+            <div class="stat-card" onclick="showMetricModal('win_rate')">
                 <div class="stat-value">{stats['win_rate_pct']:.1f}%</div>
-                <div class="stat-label">勝率</div>
+                <div class="stat-label">勝率 <span class="info-icon">ℹ️</span></div>
             </div>
-            <div class="stat-card">
+            <div class="stat-card" onclick="showMetricModal('total_trades')">
                 <div class="stat-value">{stats['total_trades']}</div>
-                <div class="stat-label">総取引数</div>
+                <div class="stat-label">総取引数 <span class="info-icon">ℹ️</span></div>
             </div>
-            <div class="stat-card">
+            <div class="stat-card" onclick="showMetricModal('profit_factor')">
                 <div class="stat-value">{stats['profit_factor']:.2f}</div>
-                <div class="stat-label">プロフィットファクター</div>
+                <div class="stat-label">プロフィットファクター <span class="info-icon">ℹ️</span></div>
             </div>
         </div>
         
@@ -838,6 +909,91 @@ class ReportGenerator:
             {self._generate_trades_table(results.get('trades', []))}
         </div>
     </div>
+    
+    <!-- 指標説明モーダル -->
+    <div id="metricModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div id="modalContent"></div>
+        </div>
+    </div>
+    
+    <script>
+        // モーダル表示関数
+        function showMetricModal(metricType) {{
+            const modal = document.getElementById('metricModal');
+            const modalContent = document.getElementById('modalContent');
+            
+            const metricData = {{
+                'total_return': {{
+                    title: '総リターン (Total Return)',
+                    description: '投資期間全体での収益率を表す指標です。初期投資額に対する最終的な利益の割合を示します。',
+                    formula: '総リターン = (最終エクイティ - 初期資本) / 初期資本 × 100',
+                    interpretation: '• 正の値: 利益を獲得<br>• 負の値: 損失を発生<br>• 高い値ほど良いパフォーマンス'
+                }},
+                'sharpe_ratio': {{
+                    title: 'シャープレシオ (Sharpe Ratio)',
+                    description: 'リスク調整後のリターンを測定する指標です。リターンの変動性（リスク）を考慮した投資効率を表します。',
+                    formula: 'シャープレシオ = (平均リターン - リスクフリーレート) / リターンの標準偏差',
+                    interpretation: '• 1.0以上: 優秀なパフォーマンス<br>• 0.5-1.0: 良好なパフォーマンス<br>• 0.5未満: 改善が必要'
+                }},
+                'max_drawdown': {{
+                    title: '最大ドローダウン (Maximum Drawdown)',
+                    description: '投資期間中に発生した最大の損失幅を表す指標です。ピークからボトムまでの最大下落率を示します。',
+                    formula: '最大ドローダウン = (ピーク時の資産価値 - ボトム時の資産価値) / ピーク時の資産価値 × 100',
+                    interpretation: '• 0%: 損失なし<br>• -10%未満: 優秀なリスク管理<br>• -20%未満: 許容範囲<br>• -20%以上: リスク管理の見直しが必要'
+                }},
+                'win_rate': {{
+                    title: '勝率 (Win Rate)',
+                    description: '利益を上げた取引の割合を表す指標です。全取引数に対する勝ち取引の割合を示します。',
+                    formula: '勝率 = 利益取引数 / 総取引数 × 100',
+                    interpretation: '• 60%以上: 高い勝率<br>• 50-60%: 良好な勝率<br>• 50%未満: 改善が必要'
+                }},
+                'total_trades': {{
+                    title: '総取引数 (Total Trades)',
+                    description: 'バックテスト期間中に実行された取引の総数を表す指標です。戦略の活動度を示します。',
+                    formula: '総取引数 = エントリー取引数 + エグジット取引数',
+                    interpretation: '• 多い: 活発な取引戦略<br>• 少ない: 保守的な取引戦略<br>• 適度な取引数が理想的'
+                }},
+                'profit_factor': {{
+                    title: 'プロフィットファクター (Profit Factor)',
+                    description: '総利益と総損失の比率を表す指標です。利益効率を測定する重要な指標です。',
+                    formula: 'プロフィットファクター = 総利益 / |総損失|',
+                    interpretation: '• 2.0以上: 優秀な利益効率<br>• 1.5-2.0: 良好な利益効率<br>• 1.0-1.5: 改善が必要<br>• 1.0未満: 損失超過'
+                }}
+            }};
+            
+            const data = metricData[metricType];
+            modalContent.innerHTML = `
+                <div class="modal-title">${{data.title}}</div>
+                <div class="modal-description">${{data.description}}</div>
+                <div class="modal-formula"><strong>計算式:</strong><br>${{data.formula}}</div>
+                <div class="modal-interpretation"><strong>評価基準:</strong><br>${{data.interpretation}}</div>
+            `;
+            
+            modal.style.display = 'block';
+        }}
+        
+        // モーダルを閉じる
+        document.querySelector('.close').onclick = function() {{
+            document.getElementById('metricModal').style.display = 'none';
+        }}
+        
+        // モーダル外をクリックして閉じる
+        window.onclick = function(event) {{
+            const modal = document.getElementById('metricModal');
+            if (event.target == modal) {{
+                modal.style.display = 'none';
+            }}
+        }}
+        
+        // ESCキーでモーダルを閉じる
+        document.addEventListener('keydown', function(event) {{
+            if (event.key === 'Escape') {{
+                document.getElementById('metricModal').style.display = 'none';
+            }}
+        }});
+    </script>
 </body>
 </html>
         """
