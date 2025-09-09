@@ -305,6 +305,45 @@ class DataLoader:
             'JPM', 'JNJ', 'PG', 'UNH', 'HD', 'MA', 'V', 'PYPL', 'ADBE', 'CRM'
         ]
     
+    def get_vix_data(self, start_date: str = "2020-01-01", 
+                     end_date: str = "2025-08-31") -> pd.DataFrame:
+        """
+        VIX（恐怖指数）データを取得
+        
+        Args:
+            start_date: 開始日
+            end_date: 終了日
+        
+        Returns:
+            DataFrame: VIXデータ
+        """
+        try:
+            import yfinance as yf
+            
+            # VIXデータを取得
+            vix = yf.download("^VIX", start=start_date, end=end_date, progress=False)
+            
+            if vix.empty:
+                self.logger.warning("VIXデータが取得できませんでした")
+                return pd.DataFrame()
+            
+            # カラム名を統一
+            vix.columns = ['Open', 'High', 'Low', 'Close', 'Adj Close', 'Volume']
+            vix = vix.drop('Adj Close', axis=1)
+            
+            # 日付順にソート
+            vix = vix.sort_index()
+            
+            self.logger.info(f"VIXデータ取得成功: 形状 {vix.shape}")
+            return vix
+            
+        except ImportError:
+            self.logger.warning("yfinanceがインストールされていません")
+            return pd.DataFrame()
+        except Exception as e:
+            self.logger.error(f"VIXデータ取得エラー: {e}")
+            return pd.DataFrame()
+    
     def load_index_stocks_from_csv(self, csv_file: str = "index_stocks.csv") -> pd.DataFrame:
         """
         指数別銘柄リストをCSVファイルから読み込み

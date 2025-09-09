@@ -184,6 +184,9 @@ class BacktestEngine:
             self.logger.error("有効なデータがありません")
             return {}
         
+        # VIXデータを取得
+        self.vix_data = self.data_loader.get_vix_data(start_date, end_date)
+        
         # 日付範囲の取得
         all_dates = set()
         for data in all_data.values():
@@ -721,10 +724,52 @@ class BacktestEngine:
             "equity_curve": {
                 "dates": [d.strftime("%Y-%m-%d") for d in self.portfolio.dates],
                 "values": self.portfolio.equity_curve
-            }
+            },
+            "vix_data": self._prepare_vix_data(self.vix_data) if not self.vix_data.empty else {}
         }
         
         return results
+    
+    def _prepare_vix_data(self, vix_data: pd.DataFrame) -> Dict:
+        """
+        VIXデータをレポート用に準備
+        
+        Args:
+            vix_data: VIXデータのDataFrame
+        
+        Returns:
+            Dict: レポート用のVIXデータ
+        """
+        if vix_data.empty:
+            return {}
+        
+        # 日付とVIX値を抽出
+        vix_dates = [d.strftime("%Y-%m-%d") for d in vix_data.index]
+        vix_values = vix_data['Close'].tolist()
+        
+        # VIX統計を計算
+        vix_stats = {
+            "min": float(vix_data['Close'].min()),
+            "max": float(vix_data['Close'].max()),
+            "mean": float(vix_data['Close'].mean()),
+            "std": float(vix_data['Close'].std())
+        }
+        
+        # 高ボラティリティ期間を特定
+        high_vol_periods = []
+        for i, (date, value) in enumerate(zip(vix_dates, vix_values)):
+            if value > 30:  # VIX > 30を高ボラティリティとする
+                high_vol_periods.append({
+                    "date": date,
+                    "vix": value
+                })
+        
+        return {
+            "dates": vix_dates,
+            "values": vix_values,
+            "stats": vix_stats,
+            "high_volatility_periods": high_vol_periods
+        }
 
     def validate_data(self, data: pd.DataFrame) -> bool:
         """データの妥当性チェック"""

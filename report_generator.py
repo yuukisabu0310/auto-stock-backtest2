@@ -453,6 +453,10 @@ class ReportGenerator:
         if "equity_curve" in results:
             charts["drawdown"] = self._create_drawdown_chart(results["equity_curve"])
         
+        # VIXチャート
+        if "vix_data" in results and results["vix_data"]:
+            charts["vix"] = self._create_vix_chart(results["vix_data"])
+        
         return charts
     
     def _create_equity_chart(self, equity_data: Dict) -> str:
@@ -473,6 +477,42 @@ class ReportGenerator:
             yaxis_title='ポートフォリオ価値 (円)',
             hovermode='x unified',
             template='plotly_white'
+        )
+        
+        return fig.to_html(full_html=False, include_plotlyjs=False)
+    
+    def _create_vix_chart(self, vix_data: Dict) -> str:
+        """VIXチャート"""
+        fig = go.Figure()
+        
+        # VIXライン
+        fig.add_trace(go.Scatter(
+            x=vix_data["dates"],
+            y=vix_data["values"],
+            mode='lines',
+            name='VIX',
+            line=dict(color='red', width=2)
+        ))
+        
+        # 高ボラティリティ閾値ライン
+        fig.add_hline(y=30, line_dash="dash", line_color="orange", 
+                     annotation_text="高ボラティリティ (VIX > 30)")
+        fig.add_hline(y=50, line_dash="dash", line_color="red", 
+                     annotation_text="極端ボラティリティ (VIX > 50)")
+        
+        # 高ボラティリティ期間をハイライト
+        if "high_volatility_periods" in vix_data:
+            for period in vix_data["high_volatility_periods"]:
+                fig.add_vline(x=period["date"], line_dash="dot", 
+                             line_color="red", opacity=0.3)
+        
+        fig.update_layout(
+            title='VIX（恐怖指数）',
+            xaxis_title='日付',
+            yaxis_title='VIX',
+            hovermode='x unified',
+            template='plotly_white',
+            height=400
         )
         
         return fig.to_html(full_html=False, include_plotlyjs=False)
@@ -873,6 +913,18 @@ class ReportGenerator:
                 <div class="stat-value">{stats['profit_factor']:.2f}</div>
                 <div class="stat-label">プロフィットファクター <span class="info-icon">ℹ️</span></div>
             </div>
+            <div class="stat-card" onclick="showMetricModal('vix_max')">
+                <div class="stat-value">{stats['vix_max']:.1f}</div>
+                <div class="stat-label">VIX最大値 <span class="info-icon">ℹ️</span></div>
+            </div>
+            <div class="stat-card" onclick="showMetricModal('vix_mean')">
+                <div class="stat-value">{stats['vix_mean']:.1f}</div>
+                <div class="stat-label">VIX平均値 <span class="info-icon">ℹ️</span></div>
+            </div>
+            <div class="stat-card" onclick="showMetricModal('high_vol_periods')">
+                <div class="stat-value">{stats['high_vol_periods']}</div>
+                <div class="stat-label">高ボラティリティ期間 <span class="info-icon">ℹ️</span></div>
+            </div>
         </div>
         
         {strategy_conditions_html}
@@ -897,6 +949,11 @@ class ReportGenerator:
         <div class="chart-section">
             <div class="chart-title">📉 ドローダウン</div>
             {charts.get('drawdown', '')}
+        </div>
+        
+        <div class="chart-section">
+            <div class="chart-title">📊 VIX（恐怖指数）</div>
+            {charts.get('vix', '')}
         </div>
         
         <div class="chart-section">
@@ -960,6 +1017,24 @@ class ReportGenerator:
                     description: '総利益と総損失の比率を表す指標です。利益効率を測定する重要な指標です。',
                     formula: 'プロフィットファクター = 総利益 / |総損失|',
                     interpretation: '• 2.0以上: 優秀な利益効率<br>• 1.5-2.0: 良好な利益効率<br>• 1.0-1.5: 改善が必要<br>• 1.0未満: 損失超過'
+                }},
+                'vix_max': {{
+                    title: 'VIX最大値 (VIX Maximum)',
+                    description: 'バックテスト期間中のVIX（恐怖指数）の最大値を表します。市場の最大の恐怖レベルを示します。',
+                    formula: 'VIX最大値 = max(VIX値)',
+                    interpretation: '• 20未満: 低い恐怖レベル<br>• 20-30: 通常の恐怖レベル<br>• 30-50: 高い恐怖レベル<br>• 50以上: 極端な恐怖レベル'
+                }},
+                'vix_mean': {{
+                    title: 'VIX平均値 (VIX Average)',
+                    description: 'バックテスト期間中のVIX（恐怖指数）の平均値を表します。市場の平均的な恐怖レベルを示します。',
+                    formula: 'VIX平均値 = mean(VIX値)',
+                    interpretation: '• 15未満: 非常に低い恐怖レベル<br>• 15-20: 低い恐怖レベル<br>• 20-25: 通常の恐怖レベル<br>• 25以上: 高い恐怖レベル'
+                }},
+                'high_vol_periods': {{
+                    title: '高ボラティリティ期間 (High Volatility Periods)',
+                    description: 'VIXが30を超えた日数を表します。市場が高ボラティリティ状態だった期間を示します。',
+                    formula: '高ボラティリティ期間 = count(VIX > 30)',
+                    interpretation: '• 少ない: 安定した市場環境<br>• 中程度: 通常の市場環境<br>• 多い: 不安定な市場環境<br>• 非常に多い: 極めて不安定な市場環境'
                 }}
             }};
             
@@ -1010,6 +1085,17 @@ class ReportGenerator:
         stats['max_drawdown_pct'] = results.get('max_drawdown', 0) * 100
         stats['win_rate_pct'] = results.get('win_rate', 0) * 100
         stats['total_trades'] = results.get('total_trades', 0)
+        
+        # VIX統計
+        vix_data = results.get('vix_data', {})
+        if vix_data and 'stats' in vix_data:
+            stats['vix_max'] = vix_data['stats'].get('max', 0)
+            stats['vix_mean'] = vix_data['stats'].get('mean', 0)
+            stats['high_vol_periods'] = len(vix_data.get('high_volatility_periods', []))
+        else:
+            stats['vix_max'] = 0
+            stats['vix_mean'] = 0
+            stats['high_vol_periods'] = 0
         
         # プロフィットファクター
         avg_profit = results.get('avg_profit', 0)
