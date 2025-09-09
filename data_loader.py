@@ -320,16 +320,31 @@ class DataLoader:
         try:
             import yfinance as yf
             
-            # VIXデータを取得
-            vix = yf.download("^VIX", start=start_date, end=end_date, progress=False)
+            # VIXデータを取得（複数のシンボルを試行）
+            vix_symbols = ["^VIX", "VIX", "VIXCLS"]
+            vix = pd.DataFrame()
+            
+            for symbol in vix_symbols:
+                try:
+                    self.logger.info(f"VIXデータ取得試行: {symbol}")
+                    vix = yf.download(symbol, start=start_date, end=end_date, progress=False)
+                    if not vix.empty:
+                        self.logger.info(f"VIXデータ取得成功: {symbol}")
+                        break
+                except Exception as e:
+                    self.logger.warning(f"VIXデータ取得失敗: {symbol}, {e}")
+                    continue
             
             if vix.empty:
-                self.logger.warning("VIXデータが取得できませんでした")
+                self.logger.warning("すべてのVIXシンボルでデータ取得に失敗しました")
                 return pd.DataFrame()
             
             # カラム名を統一
-            vix.columns = ['Open', 'High', 'Low', 'Close', 'Adj Close', 'Volume']
-            vix = vix.drop('Adj Close', axis=1)
+            if len(vix.columns) == 6:  # Adj Closeが含まれている場合
+                vix.columns = ['Open', 'High', 'Low', 'Close', 'Adj Close', 'Volume']
+                vix = vix.drop('Adj Close', axis=1)
+            elif len(vix.columns) == 5:  # Adj Closeが含まれていない場合
+                vix.columns = ['Open', 'High', 'Low', 'Close', 'Volume']
             
             # 日付順にソート
             vix = vix.sort_index()

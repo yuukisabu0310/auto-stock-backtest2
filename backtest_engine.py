@@ -221,6 +221,9 @@ class BacktestEngine:
         self.logger.info(f"並列バックテスト開始: {len(stocks_data)}銘柄")
         start_time = time.time()
         
+        # VIXデータを取得
+        self.vix_data = self.data_loader.get_vix_data(start_date, end_date)
+        
         # データの前処理
         processed_data = {}
         for symbol, data in stocks_data.items():
