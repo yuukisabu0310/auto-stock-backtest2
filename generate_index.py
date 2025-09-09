@@ -61,8 +61,8 @@ def get_recent_reports(reports_dir: str = "reports", days: int = 30) -> List[Dic
     for file_path in files:
         filename = os.path.basename(file_path)
         
-        # index.htmlは除外
-        if filename == "index.html":
+        # index.htmlと銘柄一覧ファイルは除外
+        if filename == "index.html" or "_stocks_" in filename:
             continue
         
         # ファイル名から日時を抽出
