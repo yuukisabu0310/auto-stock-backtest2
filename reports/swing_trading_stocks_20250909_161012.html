@@ -1,0 +1,231 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>対象銘柄一覧 - swing_trading</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid #007bff;
+        }
+        .summary {
+            background-color: #e3f2fd;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        .summary h3 {
+            color: #1976d2;
+            margin-top: 0;
+        }
+        .index-section {
+            margin: 30px 0;
+            background-color: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 4px solid #28a745;
+        }
+        .index-section h3 {
+            color: #28a745;
+            margin-top: 0;
+            margin-bottom: 15px;
+        }
+        .stocks-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 10px;
+        }
+        .stock-item {
+            background-color: white;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #dee2e6;
+            text-align: center;
+            font-weight: bold;
+            color: #495057;
+        }
+        .stock-item:hover {
+            background-color: #e9ecef;
+            transform: translateY(-2px);
+            transition: all 0.2s ease;
+        }
+        .back-link {
+            text-align: center;
+            margin-top: 30px;
+        }
+        .back-link a {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+        .back-link a:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>📋 対象銘柄一覧</h1>
+            <h2>swing_trading</h2>
+            <p>生成日時: 2025年09月09日 16:10:12</p>
+        </div>
+        
+        <div class="summary">
+            <h3>📊 銘柄構成サマリー</h3>
+            <p><strong>総銘柄数:</strong> 100銘柄</p>
+            <p><strong>乱数シード:</strong> 501</p>
+            <p><strong>戦略:</strong> swing_trading</p>
+        </div>
+
+        <div class="index-section">
+            <h3>📈 SP500 (34銘柄)</h3>
+            <div class="stocks-grid">
+                <div class="stock-item">NTAP</div>
+                <div class="stock-item">CSGP</div>
+                <div class="stock-item">MCO</div>
+                <div class="stock-item">ENPH</div>
+                <div class="stock-item">CI</div>
+                <div class="stock-item">TTWO</div>
+                <div class="stock-item">DOW</div>
+                <div class="stock-item">EMN</div>
+                <div class="stock-item">K</div>
+                <div class="stock-item">EFX</div>
+                <div class="stock-item">BLK</div>
+                <div class="stock-item">PLD</div>
+                <div class="stock-item">EBAY</div>
+                <div class="stock-item">EMR</div>
+                <div class="stock-item">GDDY</div>
+                <div class="stock-item">PSA</div>
+                <div class="stock-item">HCA</div>
+                <div class="stock-item">META</div>
+                <div class="stock-item">ESS</div>
+                <div class="stock-item">DOC</div>
+                <div class="stock-item">PG</div>
+                <div class="stock-item">RCL</div>
+                <div class="stock-item">ERIE</div>
+                <div class="stock-item">CBOE</div>
+                <div class="stock-item">ADM</div>
+                <div class="stock-item">HIG</div>
+                <div class="stock-item">SJM</div>
+                <div class="stock-item">OMC</div>
+                <div class="stock-item">AAPL</div>
+                <div class="stock-item">HSY</div>
+                <div class="stock-item">ACGL</div>
+                <div class="stock-item">BG</div>
+                <div class="stock-item">FDS</div>
+                <div class="stock-item">EOG</div>
+
+            </div>
+        </div>
+
+        <div class="index-section">
+            <h3>📈 NASDAQ100 (33銘柄)</h3>
+            <div class="stocks-grid">
+                <div class="stock-item">SYMC</div>
+                <div class="stock-item">KLAC</div>
+                <div class="stock-item">TRI</div>
+                <div class="stock-item">MU</div>
+                <div class="stock-item">DXCM</div>
+                <div class="stock-item">PDD</div>
+                <div class="stock-item">AMAT</div>
+                <div class="stock-item">ASML</div>
+                <div class="stock-item">SPLK</div>
+                <div class="stock-item">MAR</div>
+                <div class="stock-item">VRTX</div>
+                <div class="stock-item">CCEP</div>
+                <div class="stock-item">MSTR</div>
+                <div class="stock-item">GRUB</div>
+                <div class="stock-item">UBER</div>
+                <div class="stock-item">AMD</div>
+                <div class="stock-item">ARM</div>
+                <div class="stock-item">PANW</div>
+                <div class="stock-item">INTC</div>
+                <div class="stock-item">CRWD</div>
+                <div class="stock-item">ALGN</div>
+                <div class="stock-item">CMCSA</div>
+                <div class="stock-item">IDXX</div>
+                <div class="stock-item">BKNG</div>
+                <div class="stock-item">MRVL</div>
+                <div class="stock-item">ZS</div>
+                <div class="stock-item">OKTA</div>
+                <div class="stock-item">LYFT</div>
+                <div class="stock-item">ORCL</div>
+                <div class="stock-item">BIIB</div>
+                <div class="stock-item">GILD</div>
+                <div class="stock-item">YELP</div>
+                <div class="stock-item">ADP</div>
+
+            </div>
+        </div>
+
+        <div class="index-section">
+            <h3>📈 NIKKEI225 (33銘柄)</h3>
+            <div class="stocks-grid">
+                <div class="stock-item">8425.T</div>
+                <div class="stock-item">9766.T</div>
+                <div class="stock-item">7832.T</div>
+                <div class="stock-item">2502.T</div>
+                <div class="stock-item">9022.T</div>
+                <div class="stock-item">2002.T</div>
+                <div class="stock-item">2201.T</div>
+                <div class="stock-item">4507.T</div>
+                <div class="stock-item">2651.T</div>
+                <div class="stock-item">8035.T</div>
+                <div class="stock-item">2269.T</div>
+                <div class="stock-item">2501.T</div>
+                <div class="stock-item">3659.T</div>
+                <div class="stock-item">3765.T</div>
+                <div class="stock-item">6594.T</div>
+                <div class="stock-item">2801.T</div>
+                <div class="stock-item">3769.T</div>
+                <div class="stock-item">7269.T</div>
+                <div class="stock-item">2768.T</div>
+                <div class="stock-item">8750.T</div>
+                <div class="stock-item">7013.T</div>
+                <div class="stock-item">3681.T</div>
+                <div class="stock-item">7203.T</div>
+                <div class="stock-item">3861.T</div>
+                <div class="stock-item">7012.T</div>
+                <div class="stock-item">8308.T</div>
+                <div class="stock-item">3103.T</div>
+                <div class="stock-item">2531.T</div>
+                <div class="stock-item">6701.T</div>
+                <div class="stock-item">4568.T</div>
+                <div class="stock-item">6841.T</div>
+                <div class="stock-item">8795.T</div>
+                <div class="stock-item">5541.T</div>
+
+            </div>
+        </div>
+
+        <div class="back-link">
+            <a href="javascript:history.back()">← バックテスト結果に戻る</a>
+        </div>
+    </div>
+</body>
+</html>
+        
