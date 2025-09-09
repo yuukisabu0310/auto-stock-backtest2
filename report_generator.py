@@ -438,28 +438,85 @@ class ReportGenerator:
         """チャートの生成"""
         charts = {}
         
+        # 共通の日付範囲を取得
+        date_range = self._get_common_date_range(results)
+        
         # エクイティカーブ
         if "equity_curve" in results:
-            charts["equity_curve"] = self._create_equity_chart(results["equity_curve"])
+            charts["equity_curve"] = self._create_equity_chart(results["equity_curve"], date_range)
         
         # 取引履歴
         if "trades" in results:
-            charts["trades"] = self._create_trades_chart(results["trades"])
+            charts["trades"] = self._create_trades_chart(results["trades"], date_range)
         
         # 月次リターン
-        charts["monthly_returns"] = self._create_monthly_returns_chart(results)
+        charts["monthly_returns"] = self._create_monthly_returns_chart(results, date_range)
         
         # ドローダウン
         if "equity_curve" in results:
-            charts["drawdown"] = self._create_drawdown_chart(results["equity_curve"])
+            charts["drawdown"] = self._create_drawdown_chart(results["equity_curve"], date_range)
         
         # VIXチャート
         if "vix_data" in results and results["vix_data"]:
-            charts["vix"] = self._create_vix_chart(results["vix_data"])
+            charts["vix"] = self._create_vix_chart(results["vix_data"], date_range)
         
         return charts
     
-    def _create_equity_chart(self, equity_data: Dict) -> str:
+    def _get_common_date_range(self, results: Dict) -> Dict:
+        """
+        全チャートで使用する共通の日付範囲を取得
+        
+        Args:
+            results: バックテスト結果
+        
+        Returns:
+            Dict: 日付範囲情報
+        """
+        date_ranges = []
+        
+        # エクイティカーブの日付範囲
+        if "equity_curve" in results and results["equity_curve"]:
+            equity_dates = results["equity_curve"]["dates"]
+            if equity_dates:
+                date_ranges.append((equity_dates[0], equity_dates[-1]))
+        
+        # VIXデータの日付範囲
+        if "vix_data" in results and results["vix_data"] and "dates" in results["vix_data"]:
+            vix_dates = results["vix_data"]["dates"]
+            if vix_dates:
+                date_ranges.append((vix_dates[0], vix_dates[-1]))
+        
+        # 取引履歴の日付範囲
+        if "trades" in results and results["trades"]:
+            trade_dates = []
+            for trade in results["trades"]:
+                if "entry_date" in trade:
+                    trade_dates.append(trade["entry_date"])
+                if "exit_date" in trade:
+                    trade_dates.append(trade["exit_date"])
+            if trade_dates:
+                trade_dates.sort()
+                date_ranges.append((trade_dates[0], trade_dates[-1]))
+        
+        if not date_ranges:
+            return {"start": None, "end": None}
+        
+        # 全範囲の開始日と終了日を取得
+        start_dates = [pd.to_datetime(dr[0]) for dr in date_ranges]
+        end_dates = [pd.to_datetime(dr[1]) for dr in date_ranges]
+        
+        # 最も早い開始日と最も遅い終了日
+        common_start = min(start_dates).strftime('%Y-%m-%d')
+        common_end = max(end_dates).strftime('%Y-%m-%d')
+        
+        return {
+            "start": common_start,
+            "end": common_end,
+            "start_date": pd.to_datetime(common_start),
+            "end_date": pd.to_datetime(common_end)
+        }
+    
+    def _create_equity_chart(self, equity_data: Dict, date_range: Dict = None) -> str:
         """エクイティカーブチャート"""
         fig = go.Figure()
         
@@ -471,9 +528,18 @@ class ReportGenerator:
             line=dict(color='blue', width=2)
         ))
         
+        # 共通の日付範囲を設定
+        xaxis_config = {
+            'title': '日付',
+            'hoverformat': '%Y-%m-%d'
+        }
+        
+        if date_range and date_range.get("start") and date_range.get("end"):
+            xaxis_config['range'] = [date_range["start"], date_range["end"]]
+        
         fig.update_layout(
             title='エクイティカーブ',
-            xaxis_title='日付',
+            xaxis=xaxis_config,
             yaxis_title='ポートフォリオ価値 (円)',
             hovermode='x unified',
             template='plotly_white'
@@ -481,7 +547,7 @@ class ReportGenerator:
         
         return fig.to_html(full_html=False, include_plotlyjs=False)
     
-    def _create_vix_chart(self, vix_data: Dict) -> str:
+    def _create_vix_chart(self, vix_data: Dict, date_range: Dict = None) -> str:
         """VIXチャート"""
         fig = go.Figure()
         
@@ -496,19 +562,28 @@ class ReportGenerator:
         
         # 高ボラティリティ閾値ライン
         fig.add_hline(y=30, line_dash="dash", line_color="orange", 
-                     annotation_text="高ボラティリティ (VIX > 30)")
+                      annotation_text="高ボラティリティ (VIX > 30)")
         fig.add_hline(y=50, line_dash="dash", line_color="red", 
-                     annotation_text="極端ボラティリティ (VIX > 50)")
+                      annotation_text="極端ボラティリティ (VIX > 50)")
         
         # 高ボラティリティ期間をハイライト
         if "high_volatility_periods" in vix_data:
             for period in vix_data["high_volatility_periods"]:
                 fig.add_vline(x=period["date"], line_dash="dot", 
-                             line_color="red", opacity=0.3)
+                              line_color="red", opacity=0.3)
+        
+        # 共通の日付範囲を設定
+        xaxis_config = {
+            'title': '日付',
+            'hoverformat': '%Y-%m-%d'
+        }
+        
+        if date_range and date_range.get("start") and date_range.get("end"):
+            xaxis_config['range'] = [date_range["start"], date_range["end"]]
         
         fig.update_layout(
             title='VIX（恐怖指数）',
-            xaxis_title='日付',
+            xaxis=xaxis_config,
             yaxis_title='VIX',
             hovermode='x unified',
             template='plotly_white',
@@ -517,7 +592,7 @@ class ReportGenerator:
         
         return fig.to_html(full_html=False, include_plotlyjs=False)
     
-    def _create_trades_chart(self, trades: List[Dict]) -> str:
+    def _create_trades_chart(self, trades: List[Dict], date_range: Dict = None) -> str:
         """取引履歴チャート"""
         if not trades:
             return ""
@@ -552,9 +627,18 @@ class ReportGenerator:
                 hovertemplate='<b>%{x}</b><br>損失: %{y:.2f}%<extra></extra>'
             ))
         
+        # 共通の日付範囲を設定
+        xaxis_config = {
+            'title': '決済日',
+            'hoverformat': '%Y-%m-%d'
+        }
+        
+        if date_range and date_range.get("start") and date_range.get("end"):
+            xaxis_config['range'] = [date_range["start"], date_range["end"]]
+        
         fig.update_layout(
             title='取引履歴',
-            xaxis_title='決済日',
+            xaxis=xaxis_config,
             yaxis_title='損益率 (%)',
             hovermode='closest',
             template='plotly_white'
@@ -562,7 +646,7 @@ class ReportGenerator:
         
         return fig.to_html(full_html=False, include_plotlyjs=False)
     
-    def _create_monthly_returns_chart(self, results: Dict) -> str:
+    def _create_monthly_returns_chart(self, results: Dict, date_range: Dict = None) -> str:
         """月次リターンチャート"""
         if "equity_curve" not in results:
             return ""
@@ -585,16 +669,25 @@ class ReportGenerator:
             name='月次リターン'
         ))
         
+        # 共通の日付範囲を設定
+        xaxis_config = {
+            'title': '月',
+            'hoverformat': '%Y-%m'
+        }
+        
+        if date_range and date_range.get("start") and date_range.get("end"):
+            xaxis_config['range'] = [date_range["start"], date_range["end"]]
+        
         fig.update_layout(
             title='月次リターン',
-            xaxis_title='月',
+            xaxis=xaxis_config,
             yaxis_title='リターン (%)',
             template='plotly_white'
         )
         
         return fig.to_html(full_html=False, include_plotlyjs=False)
     
-    def _create_drawdown_chart(self, equity_data: Dict) -> str:
+    def _create_drawdown_chart(self, equity_data: Dict, date_range: Dict = None) -> str:
         """ドローダウンチャート"""
         equity_series = pd.Series(
             equity_data["values"],
@@ -615,9 +708,18 @@ class ReportGenerator:
             name='ドローダウン'
         ))
         
+        # 共通の日付範囲を設定
+        xaxis_config = {
+            'title': '日付',
+            'hoverformat': '%Y-%m-%d'
+        }
+        
+        if date_range and date_range.get("start") and date_range.get("end"):
+            xaxis_config['range'] = [date_range["start"], date_range["end"]]
+        
         fig.update_layout(
             title='ドローダウン',
-            xaxis_title='日付',
+            xaxis=xaxis_config,
             yaxis_title='ドローダウン (%)',
             template='plotly_white'
         )
