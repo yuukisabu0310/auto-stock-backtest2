@@ -412,11 +412,16 @@ class ReportGenerator:
             self.logger.error(f"レポート生成エラー: {results['error']}")
             return ""
         
+        # 銘柄一覧レポートの生成（stocksとrandom_seedが提供されている場合）
+        stocks_report_path = ""
+        if stocks and random_seed is not None:
+            stocks_report_path = self.generate_stocks_list_report(stocks, strategy_name, random_seed)
+        
         # チャートの生成
         charts = self._generate_charts(results)
         
-        # HTMLレポートの生成
-        html_content = self._generate_html_report(results, strategy_name, charts, stocks, random_seed)
+        # HTMLレポートの生成（銘柄一覧レポートのパスを渡す）
+        html_content = self._generate_html_report(results, strategy_name, charts, stocks, random_seed, stocks_report_path)
         
         # ファイル保存
         timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
@@ -580,7 +585,7 @@ class ReportGenerator:
         return fig.to_html(full_html=False, include_plotlyjs=False)
     
     def _generate_html_report(self, results: Dict, strategy_name: str, charts: Dict[str, str], 
-                            stocks: List[str] = None, random_seed: int = None) -> str:
+                            stocks: List[str] = None, random_seed: int = None, stocks_report_path: str = "") -> str:
         """HTMLレポートの生成"""
         # 基本統計の計算
         stats = self._calculate_statistics(results)
@@ -591,9 +596,9 @@ class ReportGenerator:
         
         # 銘柄一覧へのリンク生成
         stocks_link_html = ""
-        if stocks and random_seed is not None:
-            timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-            stocks_filename = f"{strategy_name}_stocks_{timestamp}.html"
+        if stocks_report_path:
+            # 実際に生成された銘柄一覧レポートのファイル名を取得
+            stocks_filename = os.path.basename(stocks_report_path)
             stocks_link_html = f"""
         <div class="stocks-link">
             <a href="{stocks_filename}" target="_blank" class="stocks-link-btn">
