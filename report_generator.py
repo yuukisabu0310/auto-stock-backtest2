@@ -301,83 +301,238 @@ class ReportGenerator:
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>対象銘柄一覧 - {strategy_name}</title>
     <style>
-        body {{
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        
+        * {{
             margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }}
+        
+        body {{
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
             padding: 20px;
-            background-color: #f5f5f5;
+            color: #2d3748;
         }}
+        
         .container {{
-            max-width: 1200px;
+            max-width: 1400px;
             margin: 0 auto;
-            background-color: white;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+            border: 1px solid rgba(255, 255, 255, 0.2);
         }}
+        
         .header {{
             text-align: center;
-            margin-bottom: 30px;
-            padding-bottom: 20px;
-            border-bottom: 2px solid #007bff;
+            margin-bottom: 40px;
+            padding: 30px 0;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 15px;
+            color: white;
+            position: relative;
+            overflow: hidden;
         }}
+        
+        .header::before {{
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="white" opacity="0.1"/><circle cx="75" cy="75" r="1" fill="white" opacity="0.1"/><circle cx="50" cy="10" r="0.5" fill="white" opacity="0.1"/><circle cx="10" cy="60" r="0.5" fill="white" opacity="0.1"/><circle cx="90" cy="40" r="0.5" fill="white" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+            opacity: 0.3;
+        }}
+        
+        .header h1 {{
+            font-size: 2.5em;
+            font-weight: 700;
+            margin-bottom: 10px;
+            position: relative;
+            z-index: 1;
+        }}
+        
+        .header h2 {{
+            font-size: 1.5em;
+            font-weight: 500;
+            opacity: 0.9;
+            position: relative;
+            z-index: 1;
+        }}
+        
+        .header p {{
+            font-size: 1em;
+            opacity: 0.8;
+            margin-top: 10px;
+            position: relative;
+            z-index: 1;
+        }}
+        
         .summary {{
-            background-color: #e3f2fd;
-            padding: 20px;
-            border-radius: 10px;
-            margin-bottom: 30px;
+            background: linear-gradient(135deg, #e0f2fe 0%, #b3e5fc 100%);
+            padding: 25px;
+            border-radius: 15px;
+            margin-bottom: 40px;
             text-align: center;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
         }}
+        
         .summary h3 {{
-            color: #1976d2;
+            color: #0277bd;
             margin-top: 0;
-        }}
-        .index-section {{
-            margin: 30px 0;
-            background-color: #f8f9fa;
-            padding: 20px;
-            border-radius: 10px;
-            border-left: 4px solid #28a745;
-        }}
-        .index-section h3 {{
-            color: #28a745;
-            margin-top: 0;
-            margin-bottom: 15px;
-        }}
-        .stocks-grid {{
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             gap: 10px;
         }}
+        
+        .summary h3::before {{
+            content: '📊';
+            font-size: 1.2em;
+        }}
+        
+        .index-section {{
+            margin: 40px 0;
+            background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
+            padding: 30px;
+            border-radius: 15px;
+            border-left: 5px solid #22c55e;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+        }}
+        
+        .index-section h3 {{
+            color: #15803d;
+            margin-top: 0;
+            margin-bottom: 20px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }}
+        
+        .index-section h3::before {{
+            content: '📈';
+            font-size: 1.2em;
+        }}
+        
+        .stocks-grid {{
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+            gap: 15px;
+        }}
+        
         .stock-item {{
-            background-color: white;
-            padding: 10px;
-            border-radius: 5px;
-            border: 1px solid #dee2e6;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 15px;
+            border-radius: 10px;
+            border: 1px solid rgba(34, 197, 94, 0.2);
             text-align: center;
-            font-weight: bold;
-            color: #495057;
+            font-weight: 600;
+            color: #374151;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
         }}
+        
+        .stock-item::before {{
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(34, 197, 94, 0.1), transparent);
+            transition: left 0.5s;
+        }}
+        
+        .stock-item:hover::before {{
+            left: 100%;
+        }}
+        
         .stock-item:hover {{
-            background-color: #e9ecef;
-            transform: translateY(-2px);
-            transition: all 0.2s ease;
+            background: rgba(255, 255, 255, 1);
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 10px 25px rgba(34, 197, 94, 0.2);
+            border-color: #22c55e;
         }}
+        
         .back-link {{
             text-align: center;
-            margin-top: 30px;
+            margin-top: 40px;
         }}
+        
         .back-link a {{
             display: inline-block;
-            padding: 10px 20px;
-            background-color: #007bff;
+            padding: 15px 30px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
             text-decoration: none;
-            border-radius: 5px;
-            font-weight: bold;
+            border-radius: 10px;
+            font-weight: 600;
+            font-size: 1.1em;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
         }}
+        
         .back-link a:hover {{
-            background-color: #0056b3;
+            transform: translateY(-2px);
+            box-shadow: 0 12px 35px rgba(102, 126, 234, 0.4);
+        }}
+        
+        /* レスポンシブデザイン */
+        @media (max-width: 768px) {{
+            body {{
+                padding: 10px;
+            }}
+            
+            .container {{
+                padding: 20px;
+                border-radius: 15px;
+            }}
+            
+            .header {{
+                padding: 20px 0;
+                margin-bottom: 30px;
+            }}
+            
+            .header h1 {{
+                font-size: 2em;
+            }}
+            
+            .header h2 {{
+                font-size: 1.3em;
+            }}
+            
+            .stocks-grid {{
+                grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+                gap: 10px;
+            }}
+            
+            .stock-item {{
+                padding: 12px;
+                font-size: 0.9em;
+            }}
+        }}
+        
+        @media (max-width: 480px) {{
+            .stocks-grid {{
+                grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+            }}
+            
+            .header h1 {{
+                font-size: 1.8em;
+            }}
+            
+            .header h2 {{
+                font-size: 1.2em;
+            }}
         }}
     </style>
 </head>
@@ -799,58 +954,142 @@ class ReportGenerator:
     <title>バックテスト結果 - {strategy_name}</title>
     <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
     <style>
-        body {{
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        
+        * {{
             margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }}
+        
+        body {{
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
             padding: 20px;
-            background-color: #f5f5f5;
+            color: #2d3748;
         }}
+        
         .container {{
-            max-width: 1200px;
+            max-width: 1400px;
             margin: 0 auto;
-            background-color: white;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+            border: 1px solid rgba(255, 255, 255, 0.2);
         }}
+        
         .header {{
             text-align: center;
-            margin-bottom: 30px;
-            padding-bottom: 20px;
-            border-bottom: 2px solid #007bff;
+            margin-bottom: 40px;
+            padding: 30px 0;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 15px;
+            color: white;
+            position: relative;
+            overflow: hidden;
         }}
+        
+        .header::before {{
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="white" opacity="0.1"/><circle cx="75" cy="75" r="1" fill="white" opacity="0.1"/><circle cx="50" cy="10" r="0.5" fill="white" opacity="0.1"/><circle cx="10" cy="60" r="0.5" fill="white" opacity="0.1"/><circle cx="90" cy="40" r="0.5" fill="white" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+            opacity: 0.3;
+        }}
+        
+        .header h1 {{
+            font-size: 2.5em;
+            font-weight: 700;
+            margin-bottom: 10px;
+            position: relative;
+            z-index: 1;
+        }}
+        
+        .header h2 {{
+            font-size: 1.5em;
+            font-weight: 500;
+            opacity: 0.9;
+            position: relative;
+            z-index: 1;
+        }}
+        
+        .header p {{
+            font-size: 1em;
+            opacity: 0.8;
+            margin-top: 10px;
+            position: relative;
+            z-index: 1;
+        }}
+        
         .stats-grid {{
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px;
-            margin-bottom: 30px;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin-bottom: 40px;
         }}
+        
         .stat-card {{
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
-            padding: 20px;
-            border-radius: 10px;
+            padding: 25px;
+            border-radius: 15px;
             text-align: center;
             cursor: pointer;
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.1);
         }}
+        
+        .stat-card::before {{
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s;
+        }}
+        
+        .stat-card:hover::before {{
+            left: 100%;
+        }}
+        
         .stat-card:hover {{
-            transform: translateY(-2px);
-            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            transform: translateY(-5px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(102, 126, 234, 0.3);
         }}
+        
         .stat-value {{
-            font-size: 2em;
-            font-weight: bold;
-            margin-bottom: 5px;
+            font-size: 2.2em;
+            font-weight: 700;
+            margin-bottom: 8px;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }}
+        
         .stat-label {{
-            font-size: 0.9em;
+            font-size: 0.95em;
             opacity: 0.9;
+            font-weight: 500;
         }}
+        
         .info-icon {{
             font-size: 0.8em;
-            margin-left: 5px;
+            margin-left: 8px;
             opacity: 0.7;
+            cursor: help;
+            transition: opacity 0.2s ease;
+        }}
+        
+        .info-icon:hover {{
+            opacity: 1;
         }}
         .modal {{
             display: none;
@@ -860,147 +1099,259 @@ class ReportGenerator:
             top: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(0,0,0,0.5);
+            background: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(5px);
+            animation: fadeIn 0.3s ease;
         }}
+        
+        @keyframes fadeIn {{
+            from {{ opacity: 0; }}
+            to {{ opacity: 1; }}
+        }}
+        
         .modal-content {{
-            background-color: white;
-            margin: 5% auto;
+            background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+            margin: 3% auto;
+            padding: 40px;
+            border-radius: 20px;
+            width: 85%;
+            max-width: 700px;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.25);
+            position: relative;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            animation: slideIn 0.3s ease;
+        }}
+        
+        @keyframes slideIn {{
+            from {{ 
+                transform: translateY(-50px);
+                opacity: 0;
+            }}
+            to {{ 
+                transform: translateY(0);
+                opacity: 1;
+            }}
+        }}
+        
+        .close {{
+            color: #94a3b8;
+            float: right;
+            font-size: 32px;
+            font-weight: 300;
+            position: absolute;
+            right: 25px;
+            top: 20px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            line-height: 1;
+        }}
+        
+        .close:hover {{
+            color: #ef4444;
+            transform: scale(1.1);
+        }}
+        
+        .modal-title {{
+            font-size: 1.8em;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: #1e293b;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }}
+        
+        .modal-description {{
+            font-size: 1.1em;
+            line-height: 1.7;
+            color: #475569;
+            margin-bottom: 25px;
+        }}
+        
+        .modal-formula {{
+            background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%);
+            padding: 20px;
+            border-radius: 12px;
+            border-left: 5px solid #667eea;
+            font-family: 'JetBrains Mono', 'Courier New', monospace;
+            margin: 20px 0;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        }}
+        
+        .modal-interpretation {{
+            background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
+            padding: 20px;
+            border-radius: 12px;
+            border-left: 5px solid #22c55e;
+            margin: 20px 0;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        }}
+        
+        .chart-section {{
+            margin: 40px 0;
+            background: rgba(255, 255, 255, 0.7);
             padding: 30px;
             border-radius: 15px;
-            width: 80%;
-            max-width: 600px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-            position: relative;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.3);
         }}
-        .close {{
-            color: #aaa;
-            float: right;
-            font-size: 28px;
-            font-weight: bold;
-            position: absolute;
-            right: 20px;
-            top: 15px;
-            cursor: pointer;
-        }}
-        .close:hover {{
-            color: #000;
-        }}
-        .modal-title {{
-            font-size: 1.5em;
-            font-weight: bold;
-            margin-bottom: 15px;
-            color: #333;
-        }}
-        .modal-description {{
-            font-size: 1em;
-            line-height: 1.6;
-            color: #555;
-            margin-bottom: 20px;
-        }}
-        .modal-formula {{
-            background-color: #f8f9fa;
-            padding: 15px;
-            border-radius: 8px;
-            border-left: 4px solid #007bff;
-            font-family: 'Courier New', monospace;
-            margin: 15px 0;
-        }}
-        .modal-interpretation {{
-            background-color: #e8f5e8;
-            padding: 15px;
-            border-radius: 8px;
-            border-left: 4px solid #28a745;
-            margin: 15px 0;
-        }}
-        .chart-section {{
-            margin: 30px 0;
-        }}
+        
         .chart-title {{
-            font-size: 1.5em;
-            margin-bottom: 15px;
-            color: #333;
+            font-size: 1.6em;
+            margin-bottom: 20px;
+            color: #1e293b;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 10px;
         }}
+        
+        .chart-title::before {{
+            content: '📊';
+            font-size: 1.2em;
+        }}
+        
         .ai-analysis {{
-            background-color: #f8f9fa;
-            padding: 20px;
-            border-radius: 10px;
-            margin: 30px 0;
-            border-left: 4px solid #007bff;
+            background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+            padding: 25px;
+            border-radius: 15px;
+            margin: 40px 0;
+            border-left: 5px solid #f59e0b;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
         }}
+        
         .ai-analysis h3 {{
-            color: #007bff;
+            color: #92400e;
             margin-top: 0;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 8px;
         }}
+        
+        .ai-analysis h3::before {{
+            content: '🤖';
+            font-size: 1.1em;
+        }}
+        
         .trades-table {{
             width: 100%;
             border-collapse: collapse;
-            margin: 20px 0;
+            margin: 25px 0;
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
         }}
+        
         .trades-table th, .trades-table td {{
-            padding: 10px;
+            padding: 15px 12px;
             text-align: left;
-            border-bottom: 1px solid #ddd;
+            border-bottom: 1px solid #e2e8f0;
         }}
+        
         .trades-table th {{
-            background-color: #007bff;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 0.85em;
+            letter-spacing: 0.5px;
         }}
+        
+        .trades-table tr:hover {{
+            background-color: #f8fafc;
+        }}
+        
         .profit {{
-            color: green;
-            font-weight: bold;
+            color: #16a34a;
+            font-weight: 600;
         }}
+        
         .loss {{
-            color: red;
-            font-weight: bold;
+            color: #dc2626;
+            font-weight: 600;
         }}
         .strategy-conditions {{
-            background-color: #f8f9fa;
-            padding: 20px;
-            border-radius: 10px;
-            margin: 30px 0;
-            border-left: 4px solid #28a745;
+            background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
+            padding: 30px;
+            border-radius: 15px;
+            margin: 40px 0;
+            border-left: 5px solid #22c55e;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
         }}
+        
         .strategy-conditions h3 {{
-            color: #28a745;
+            color: #15803d;
             margin-top: 0;
-            margin-bottom: 20px;
+            margin-bottom: 25px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 10px;
         }}
+        
+        .strategy-conditions h3::before {{
+            content: '⚙️';
+            font-size: 1.2em;
+        }}
+        
         .conditions-grid {{
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 25px;
         }}
+        
         .condition-section {{
-            background-color: white;
-            padding: 15px;
-            border-radius: 8px;
-            border: 1px solid #dee2e6;
+            background: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 12px;
+            border: 1px solid rgba(34, 197, 94, 0.2);
+            transition: all 0.2s ease;
         }}
+        
+        .condition-section:hover {{
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+        }}
+        
         .condition-section h4 {{
-            color: #495057;
+            color: #1e293b;
             margin-top: 0;
             margin-bottom: 15px;
             font-size: 1.1em;
+            font-weight: 600;
         }}
+        
         .condition-section ul {{
             list-style: none;
             padding: 0;
             margin: 0;
         }}
+        
         .condition-section li {{
-            padding: 8px 0;
-            border-bottom: 1px solid #f1f3f4;
+            padding: 10px 0;
+            border-bottom: 1px solid #e2e8f0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }}
+        
         .condition-section li:last-child {{
             border-bottom: none;
         }}
+        
         .condition-section strong {{
-            color: #495057;
+            color: #374151;
+            font-weight: 600;
         }}
+        
         .stocks-link {{
             text-align: center;
-            margin: 20px 0;
+            margin: 30px 0;
         }}
+        
         .stocks-link-btn {{
             display: inline-block;
             padding: 12px 24px;
@@ -1017,6 +1368,150 @@ class ReportGenerator:
             transform: translateY(-2px);
             box-shadow: 0 6px 20px rgba(40, 167, 69, 0.4);
             background: linear-gradient(135deg, #218838 0%, #1ea085 100%);
+        }}
+        
+        /* レスポンシブデザイン */
+        @media (max-width: 768px) {{
+            body {{
+                padding: 10px;
+            }}
+            
+            .container {{
+                padding: 20px;
+                border-radius: 15px;
+            }}
+            
+            .header {{
+                padding: 20px 0;
+                margin-bottom: 30px;
+            }}
+            
+            .header h1 {{
+                font-size: 2em;
+            }}
+            
+            .header h2 {{
+                font-size: 1.3em;
+            }}
+            
+            .stats-grid {{
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+                gap: 15px;
+                margin-bottom: 30px;
+            }}
+            
+            .stat-card {{
+                padding: 20px;
+            }}
+            
+            .stat-value {{
+                font-size: 1.8em;
+            }}
+            
+            .chart-section {{
+                padding: 20px;
+                margin: 30px 0;
+            }}
+            
+            .chart-title {{
+                font-size: 1.4em;
+            }}
+            
+            .conditions-grid {{
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }}
+            
+            .modal-content {{
+                width: 95%;
+                margin: 5% auto;
+                padding: 25px;
+            }}
+            
+            .trades-table {{
+                font-size: 0.9em;
+            }}
+            
+            .trades-table th, .trades-table td {{
+                padding: 10px 8px;
+            }}
+        }}
+        
+        @media (max-width: 480px) {{
+            .stats-grid {{
+                grid-template-columns: 1fr;
+            }}
+            
+            .stat-value {{
+                font-size: 1.6em;
+            }}
+            
+            .header h1 {{
+                font-size: 1.8em;
+            }}
+            
+            .header h2 {{
+                font-size: 1.2em;
+            }}
+        }}
+        
+        /* スクロールバーのスタイリング */
+        ::-webkit-scrollbar {{
+            width: 8px;
+        }}
+        
+        ::-webkit-scrollbar-track {{
+            background: #f1f1f1;
+            border-radius: 4px;
+        }}
+        
+        ::-webkit-scrollbar-thumb {{
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 4px;
+        }}
+        
+        ::-webkit-scrollbar-thumb:hover {{
+            background: linear-gradient(135deg, #5a67d8 0%, #6b46c1 100%);
+        }}
+        
+        /* ローディングアニメーション */
+        .loading {{
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 3px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            border-top-color: #fff;
+            animation: spin 1s ease-in-out infinite;
+        }}
+        
+        @keyframes spin {{
+            to {{ transform: rotate(360deg); }}
+        }}
+        
+        /* フローティングアクションボタン */
+        .floating-btn {{
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 24px;
+            text-decoration: none;
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
+            transition: all 0.3s ease;
+            z-index: 100;
+        }}
+        
+        .floating-btn:hover {{
+            transform: scale(1.1);
+            box-shadow: 0 12px 35px rgba(102, 126, 234, 0.4);
         }}
     </style>
 </head>
