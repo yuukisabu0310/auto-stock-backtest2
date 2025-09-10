@@ -65,6 +65,22 @@ def run_single_backtest_from_cache(strategy: str, random_seed: int,
             logger.error(f"銘柄リストが空: {strategy}")
             return {"error": "銘柄リストが空"}
         
+        # 利用可能なキャッシュファイルを確認
+        import os
+        cache_files = [f for f in os.listdir("cache") if f.endswith(".pkl")]
+        
+        # 利用可能な銘柄のみをフィルタリング
+        available_stocks = []
+        for stock in stocks:
+            cache_file = f"{stock}_1d_2004-12-31_2024-12-31.pkl"
+            if cache_file in cache_files:
+                available_stocks.append(stock)
+        
+        if not available_stocks:
+            logger.error(f"利用可能な銘柄がありません: {strategy}")
+            return {"error": "利用可能な銘柄がありません"}
+        
+        stocks = available_stocks
         logger.info(f"使用銘柄数: {len(stocks)}")
         logger.info(f"使用銘柄: {stocks[:10]}...")  # 最初の10銘柄のみ表示
         
