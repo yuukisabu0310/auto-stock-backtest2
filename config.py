@@ -95,9 +95,9 @@ TRADING_RULES = {
         "name": "スイングトレード",
         "timeframe": "1d",
         "max_holding_days": 30,
-        "max_positions": 5,
+        "max_positions": 15,  # 5 → 15に増加（システムトレード向け）
         "risk_per_trade": 0.015,  # 1.5%
-        "max_position_size": 0.25,  # 25%
+        "max_position_size": 0.10,  # 25% → 10%に調整（分散投資）
         "entry_conditions": {
             "golden_cross": True,  # 5日 > 25日
             "rsi_range": (40, 50),
@@ -120,9 +120,9 @@ TRADING_RULES = {
         "name": "中長期投資",
         "timeframe": "1wk",
         "max_holding_days": 365 * 2,  # 2年
-        "max_positions": 10,
+        "max_positions": 25,  # 10 → 25に増加（システムトレード向け）
         "risk_per_trade": 0.015,  # 1.5%
-        "max_position_size": 0.15,  # 15%
+        "max_position_size": 0.08,  # 15% → 8%に調整（分散投資）
         "entry_conditions": {
             "above_ma200": True,  # 200日線上
             "fundamental_growth": True,
