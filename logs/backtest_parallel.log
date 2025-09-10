@@ -109,3 +109,114 @@
 2025-09-10 07:25:48,758 - __main__ - INFO - 個別レポート生成完了: 0ファイル
 2025-09-10 07:25:48,760 - __main__ - WARNING - index.html更新エラー: cannot import name 'update_index_html' from 'main' (/home/runner/work/auto-stock-backtest2/auto-stock-backtest2/main.py)
 2025-09-10 07:25:48,760 - __main__ - INFO - 並列化自動株式バックテストシステム完了
+2025-09-10 07:37:09,573 - __main__ - INFO - 並列化自動株式バックテストシステム開始
+2025-09-10 07:37:09,574 - __main__ - INFO - データ取得期間: 2004-12-31 〜 2024-12-31
+2025-09-10 07:37:09,574 - __main__ - INFO - 実行回数: 3
+2025-09-10 07:37:09,574 - __main__ - INFO - ベースシード: 42
+2025-09-10 07:37:09,574 - __main__ - INFO - 並列実行: False
+2025-09-10 07:37:09,574 - __main__ - INFO - ローカルテストモード: True
+2025-09-10 07:37:09,574 - __main__ - INFO - キャッシュ専用バックテスト実行
+2025-09-10 07:37:09,574 - __main__ - INFO - === キャッシュ専用バックテスト開始 ===
+2025-09-10 07:37:09,574 - __main__ - INFO - swing_trading バックテスト期間: 2021-08-01 〜 2025-08-31
+2025-09-10 07:37:09,574 - __main__.swing_trading - INFO - 戦略複数回バックテスト開始: swing_trading, 実行回数: 3
+2025-09-10 07:37:09,574 - __main__.swing_trading - INFO - 実行 1/3
+2025-09-10 07:37:09,574 - __main__.swing_trading - INFO - キャッシュ専用バックテスト開始: swing_trading, シード: 43
+2025-09-10 07:37:09,574 - backtest_engine.swing_trading.cache_only - INFO - バックテスト開始: swing_trading
+2025-09-10 07:37:09,575 - backtest_engine.swing_trading.cache_only - WARNING - キャッシュからデータ取得失敗: 2, キャッシュファイルが見つかりません: 2
+2025-09-10 07:37:09,575 - backtest_engine.swing_trading.cache_only - WARNING - キャッシュからデータ取得失敗: 0, キャッシュファイルが見つかりません: 0
+2025-09-10 07:37:09,576 - backtest_engine.swing_trading.cache_only - WARNING - キャッシュからデータ取得失敗: 2, キャッシュファイルが見つかりません: 2
+2025-09-10 07:37:09,576 - backtest_engine.swing_trading.cache_only - WARNING - キャッシュからデータ取得失敗: 1, キャッシュファイルが見つかりません: 1
+2025-09-10 07:37:09,577 - backtest_engine.swing_trading.cache_only - WARNING - キャッシュからデータ取得失敗: -, キャッシュファイルが見つかりません: -
+2025-09-10 07:37:09,577 - backtest_engine.swing_trading.cache_only - WARNING - キャッシュからデータ取得失敗: 0, キャッシュファイルが見つかりません: 0
+2025-09-10 07:37:09,578 - backtest_engine.swing_trading.cache_only - WARNING - キャッシュからデータ取得失敗: 8, キャッシュファイルが見つかりません: 8
+2025-09-10 07:37:09,578 - backtest_engine.swing_trading.cache_only - WARNING - キャッシュからデータ取得失敗: -, キャッシュファイルが見つかりません: -
+2025-09-10 07:37:09,579 - backtest_engine.swing_trading.cache_only - WARNING - キャッシュからデータ取得失敗: 0, キャッシュファイルが見つかりません: 0
+2025-09-10 07:37:09,579 - backtest_engine.swing_trading.cache_only - WARNING - キャッシュからデータ取得失敗: 1, キャッシュファイルが見つかりません: 1
+2025-09-10 07:37:09,579 - backtest_engine.swing_trading.cache_only - ERROR - 有効なデータがありません
+2025-09-10 07:37:09,580 - __main__.swing_trading - WARNING - 実行 1 失敗: 結果なし
+2025-09-10 07:37:09,580 - __main__.swing_trading - INFO - 実行 2/3
+2025-09-10 07:37:09,580 - __main__.swing_trading - INFO - キャッシュ専用バックテスト開始: swing_trading, シード: 44
+2025-09-10 07:37:09,580 - backtest_engine.swing_trading.cache_only - INFO - バックテスト開始: swing_trading
+2025-09-10 07:37:09,580 - backtest_engine.swing_trading.cache_only - WARNING - キャッシュからデータ取得失敗: 2, キャッシュファイルが見つかりません: 2
+2025-09-10 07:37:09,581 - backtest_engine.swing_trading.cache_only - WARNING - キャッシュからデータ取得失敗: 0, キャッシュファイルが見つかりません: 0
+2025-09-10 07:37:09,581 - backtest_engine.swing_trading.cache_only - WARNING - キャッシュからデータ取得失敗: 2, キャッシュファイルが見つかりません: 2
+2025-09-10 07:37:09,582 - backtest_engine.swing_trading.cache_only - WARNING - キャッシュからデータ取得失敗: 1, キャッシュファイルが見つかりません: 1
+2025-09-10 07:37:09,582 - backtest_engine.swing_trading.cache_only - WARNING - キャッシュからデータ取得失敗: -, キャッシュファイルが見つかりません: -
+2025-09-10 07:37:09,583 - backtest_engine.swing_trading.cache_only - WARNING - キャッシュからデータ取得失敗: 0, キャッシュファイルが見つかりません: 0
+2025-09-10 07:37:09,583 - backtest_engine.swing_trading.cache_only - WARNING - キャッシュからデータ取得失敗: 8, キャッシュファイルが見つかりません: 8
+2025-09-10 07:37:09,584 - backtest_engine.swing_trading.cache_only - WARNING - キャッシュからデータ取得失敗: -, キャッシュファイルが見つかりません: -
+2025-09-10 07:37:09,584 - backtest_engine.swing_trading.cache_only - WARNING - キャッシュからデータ取得失敗: 0, キャッシュファイルが見つかりません: 0
+2025-09-10 07:37:09,585 - backtest_engine.swing_trading.cache_only - WARNING - キャッシュからデータ取得失敗: 1, キャッシュファイルが見つかりません: 1
+2025-09-10 07:37:09,585 - backtest_engine.swing_trading.cache_only - ERROR - 有効なデータがありません
+2025-09-10 07:37:09,585 - __main__.swing_trading - WARNING - 実行 2 失敗: 結果なし
+2025-09-10 07:37:09,585 - __main__.swing_trading - INFO - 実行 3/3
+2025-09-10 07:37:09,585 - __main__.swing_trading - INFO - キャッシュ専用バックテスト開始: swing_trading, シード: 45
+2025-09-10 07:37:09,585 - backtest_engine.swing_trading.cache_only - INFO - バックテスト開始: swing_trading
+2025-09-10 07:37:09,586 - backtest_engine.swing_trading.cache_only - WARNING - キャッシュからデータ取得失敗: 2, キャッシュファイルが見つかりません: 2
+2025-09-10 07:37:09,586 - backtest_engine.swing_trading.cache_only - WARNING - キャッシュからデータ取得失敗: 0, キャッシュファイルが見つかりません: 0
+2025-09-10 07:37:09,587 - backtest_engine.swing_trading.cache_only - WARNING - キャッシュからデータ取得失敗: 2, キャッシュファイルが見つかりません: 2
+2025-09-10 07:37:09,587 - backtest_engine.swing_trading.cache_only - WARNING - キャッシュからデータ取得失敗: 1, キャッシュファイルが見つかりません: 1
+2025-09-10 07:37:09,588 - backtest_engine.swing_trading.cache_only - WARNING - キャッシュからデータ取得失敗: -, キャッシュファイルが見つかりません: -
+2025-09-10 07:37:09,588 - backtest_engine.swing_trading.cache_only - WARNING - キャッシュからデータ取得失敗: 0, キャッシュファイルが見つかりません: 0
+2025-09-10 07:37:09,588 - backtest_engine.swing_trading.cache_only - WARNING - キャッシュからデータ取得失敗: 8, キャッシュファイルが見つかりません: 8
+2025-09-10 07:37:09,589 - backtest_engine.swing_trading.cache_only - WARNING - キャッシュからデータ取得失敗: -, キャッシュファイルが見つかりません: -
+2025-09-10 07:37:09,589 - backtest_engine.swing_trading.cache_only - WARNING - キャッシュからデータ取得失敗: 0, キャッシュファイルが見つかりません: 0
+2025-09-10 07:37:09,590 - backtest_engine.swing_trading.cache_only - WARNING - キャッシュからデータ取得失敗: 1, キャッシュファイルが見つかりません: 1
+2025-09-10 07:37:09,590 - backtest_engine.swing_trading.cache_only - ERROR - 有効なデータがありません
+2025-09-10 07:37:09,590 - __main__.swing_trading - WARNING - 実行 3 失敗: 結果なし
+2025-09-10 07:37:09,590 - __main__.swing_trading - INFO - 戦略複数回バックテスト完了: swing_trading
+2025-09-10 07:37:09,590 - __main__.swing_trading - INFO - 成功回数: 0/3
+2025-09-10 07:37:09,590 - __main__ - INFO - long_term バックテスト期間: 2006-08-01 〜 2025-08-31
+2025-09-10 07:37:09,590 - __main__.long_term - INFO - 戦略複数回バックテスト開始: long_term, 実行回数: 3
+2025-09-10 07:37:09,590 - __main__.long_term - INFO - 実行 1/3
+2025-09-10 07:37:09,590 - __main__.long_term - INFO - キャッシュ専用バックテスト開始: long_term, シード: 43
+2025-09-10 07:37:09,591 - backtest_engine.long_term.cache_only - INFO - バックテスト開始: long_term
+2025-09-10 07:37:09,591 - backtest_engine.long_term.cache_only - WARNING - キャッシュからデータ取得失敗: 2, キャッシュファイルが見つかりません: 2
+2025-09-10 07:37:09,592 - backtest_engine.long_term.cache_only - WARNING - キャッシュからデータ取得失敗: 0, キャッシュファイルが見つかりません: 0
+2025-09-10 07:37:09,592 - backtest_engine.long_term.cache_only - WARNING - キャッシュからデータ取得失敗: 0, キャッシュファイルが見つかりません: 0
+2025-09-10 07:37:09,593 - backtest_engine.long_term.cache_only - WARNING - キャッシュからデータ取得失敗: 6, キャッシュファイルが見つかりません: 6
+2025-09-10 07:37:09,593 - backtest_engine.long_term.cache_only - WARNING - キャッシュからデータ取得失敗: -, キャッシュファイルが見つかりません: -
+2025-09-10 07:37:09,594 - backtest_engine.long_term.cache_only - WARNING - キャッシュからデータ取得失敗: 0, キャッシュファイルが見つかりません: 0
+2025-09-10 07:37:09,594 - backtest_engine.long_term.cache_only - WARNING - キャッシュからデータ取得失敗: 8, キャッシュファイルが見つかりません: 8
+2025-09-10 07:37:09,595 - backtest_engine.long_term.cache_only - WARNING - キャッシュからデータ取得失敗: -, キャッシュファイルが見つかりません: -
+2025-09-10 07:37:09,595 - backtest_engine.long_term.cache_only - WARNING - キャッシュからデータ取得失敗: 0, キャッシュファイルが見つかりません: 0
+2025-09-10 07:37:09,595 - backtest_engine.long_term.cache_only - WARNING - キャッシュからデータ取得失敗: 1, キャッシュファイルが見つかりません: 1
+2025-09-10 07:37:09,596 - backtest_engine.long_term.cache_only - ERROR - 有効なデータがありません
+2025-09-10 07:37:09,596 - __main__.long_term - WARNING - 実行 1 失敗: 結果なし
+2025-09-10 07:37:09,596 - __main__.long_term - INFO - 実行 2/3
+2025-09-10 07:37:09,596 - __main__.long_term - INFO - キャッシュ専用バックテスト開始: long_term, シード: 44
+2025-09-10 07:37:09,596 - backtest_engine.long_term.cache_only - INFO - バックテスト開始: long_term
+2025-09-10 07:37:09,596 - backtest_engine.long_term.cache_only - WARNING - キャッシュからデータ取得失敗: 2, キャッシュファイルが見つかりません: 2
+2025-09-10 07:37:09,597 - backtest_engine.long_term.cache_only - WARNING - キャッシュからデータ取得失敗: 0, キャッシュファイルが見つかりません: 0
+2025-09-10 07:37:09,597 - backtest_engine.long_term.cache_only - WARNING - キャッシュからデータ取得失敗: 0, キャッシュファイルが見つかりません: 0
+2025-09-10 07:37:09,598 - backtest_engine.long_term.cache_only - WARNING - キャッシュからデータ取得失敗: 6, キャッシュファイルが見つかりません: 6
+2025-09-10 07:37:09,598 - backtest_engine.long_term.cache_only - WARNING - キャッシュからデータ取得失敗: -, キャッシュファイルが見つかりません: -
+2025-09-10 07:37:09,599 - backtest_engine.long_term.cache_only - WARNING - キャッシュからデータ取得失敗: 0, キャッシュファイルが見つかりません: 0
+2025-09-10 07:37:09,599 - backtest_engine.long_term.cache_only - WARNING - キャッシュからデータ取得失敗: 8, キャッシュファイルが見つかりません: 8
+2025-09-10 07:37:09,600 - backtest_engine.long_term.cache_only - WARNING - キャッシュからデータ取得失敗: -, キャッシュファイルが見つかりません: -
+2025-09-10 07:37:09,600 - backtest_engine.long_term.cache_only - WARNING - キャッシュからデータ取得失敗: 0, キャッシュファイルが見つかりません: 0
+2025-09-10 07:37:09,601 - backtest_engine.long_term.cache_only - WARNING - キャッシュからデータ取得失敗: 1, キャッシュファイルが見つかりません: 1
+2025-09-10 07:37:09,601 - backtest_engine.long_term.cache_only - ERROR - 有効なデータがありません
+2025-09-10 07:37:09,601 - __main__.long_term - WARNING - 実行 2 失敗: 結果なし
+2025-09-10 07:37:09,601 - __main__.long_term - INFO - 実行 3/3
+2025-09-10 07:37:09,601 - __main__.long_term - INFO - キャッシュ専用バックテスト開始: long_term, シード: 45
+2025-09-10 07:37:09,601 - backtest_engine.long_term.cache_only - INFO - バックテスト開始: long_term
+2025-09-10 07:37:09,602 - backtest_engine.long_term.cache_only - WARNING - キャッシュからデータ取得失敗: 2, キャッシュファイルが見つかりません: 2
+2025-09-10 07:37:09,602 - backtest_engine.long_term.cache_only - WARNING - キャッシュからデータ取得失敗: 0, キャッシュファイルが見つかりません: 0
+2025-09-10 07:37:09,603 - backtest_engine.long_term.cache_only - WARNING - キャッシュからデータ取得失敗: 0, キャッシュファイルが見つかりません: 0
+2025-09-10 07:37:09,603 - backtest_engine.long_term.cache_only - WARNING - キャッシュからデータ取得失敗: 6, キャッシュファイルが見つかりません: 6
+2025-09-10 07:37:09,603 - backtest_engine.long_term.cache_only - WARNING - キャッシュからデータ取得失敗: -, キャッシュファイルが見つかりません: -
+2025-09-10 07:37:09,604 - backtest_engine.long_term.cache_only - WARNING - キャッシュからデータ取得失敗: 0, キャッシュファイルが見つかりません: 0
+2025-09-10 07:37:09,604 - backtest_engine.long_term.cache_only - WARNING - キャッシュからデータ取得失敗: 8, キャッシュファイルが見つかりません: 8
+2025-09-10 07:37:09,605 - backtest_engine.long_term.cache_only - WARNING - キャッシュからデータ取得失敗: -, キャッシュファイルが見つかりません: -
+2025-09-10 07:37:09,605 - backtest_engine.long_term.cache_only - WARNING - キャッシュからデータ取得失敗: 0, キャッシュファイルが見つかりません: 0
+2025-09-10 07:37:09,606 - backtest_engine.long_term.cache_only - WARNING - キャッシュからデータ取得失敗: 1, キャッシュファイルが見つかりません: 1
+2025-09-10 07:37:09,606 - backtest_engine.long_term.cache_only - ERROR - 有効なデータがありません
+2025-09-10 07:37:09,606 - __main__.long_term - WARNING - 実行 3 失敗: 結果なし
+2025-09-10 07:37:09,606 - __main__.long_term - INFO - 戦略複数回バックテスト完了: long_term
+2025-09-10 07:37:09,606 - __main__.long_term - INFO - 成功回数: 0/3
+2025-09-10 07:37:09,606 - __main__ - INFO - === キャッシュ専用バックテスト完了 ===
+2025-09-10 07:37:09,606 - __main__ - INFO - 個別レポート生成開始
+2025-09-10 07:37:09,606 - __main__ - INFO - 個別レポート生成完了: 0ファイル
+2025-09-10 07:37:09,609 - __main__ - WARNING - index.html更新エラー: cannot import name 'update_index_html' from 'main' (/home/runner/work/auto-stock-backtest2/auto-stock-backtest2/main.py)
+2025-09-10 07:37:09,609 - __main__ - INFO - 並列化自動株式バックテストシステム完了
