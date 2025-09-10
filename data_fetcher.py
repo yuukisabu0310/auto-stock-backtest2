@@ -85,8 +85,8 @@ class DataFetcher:
         self.logger.info(f"取得期間: {start_date} ～ {end_date}")
         
         try:
-            # 並列でデータ取得
-            stocks_data = self.data_loader.get_stock_data_batch(
+            # 並列でデータ取得（完全取得モード）
+            stocks_data = self.data_loader.get_stock_data_batch_force(
                 list(all_stocks), start_date, end_date
             )
             

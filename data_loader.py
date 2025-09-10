@@ -748,3 +748,99 @@ class DataLoader:
         self.logger.info(f"並列データ取得完了: {len(symbols)}銘柄, 所要時間: {elapsed_time:.2f}秒")
         
         return results
+    
+    def get_stock_data_batch_force(self, symbols: List[str], start_date: str = "2020-01-01", 
+                                   end_date: str = "2025-08-31", interval: str = "1d") -> Dict[str, pd.DataFrame]:
+        """
+        複数銘柄のデータを並列で取得（完全取得モード）
+        不完全データと未取得銘柄のみを取得
+        
+        Args:
+            symbols: 銘柄コードリスト
+            start_date: 開始日
+            end_date: 終了日
+            interval: 時間間隔
+        
+        Returns:
+            Dict: 銘柄コードをキーとしたデータ辞書
+        """
+        self.logger.info(f"完全取得モードで並列データ取得開始: {len(symbols)}銘柄")
+        start_time = time.time()
+        
+        # 取得対象銘柄をフィルタリング
+        target_symbols = []
+        for symbol in symbols:
+            cache_file = os.path.join(self.cache_dir, f"{symbol}_{interval}_{start_date}_{end_date}.pkl")
+            
+            if not os.path.exists(cache_file):
+                # キャッシュファイルが存在しない場合
+                target_symbols.append(symbol)
+                self.logger.info(f"未取得銘柄を追加: {symbol}")
+            else:
+                # キャッシュファイルが存在する場合、データの完全性をチェック
+                try:
+                    with open(cache_file, 'rb') as f:
+                        existing_data = pickle.load(f)
+                    
+                    if existing_data.empty:
+                        # 空のデータの場合
+                        target_symbols.append(symbol)
+                        self.logger.info(f"空データ銘柄を追加: {symbol}")
+                    else:
+                        # データの完全性をチェック
+                        missing_periods = self._get_missing_periods(existing_data, start_date, end_date)
+                        if missing_periods:
+                            # 不完全データの場合
+                            target_symbols.append(symbol)
+                            self.logger.info(f"不完全データ銘柄を追加: {symbol} (不足期間: {len(missing_periods)}個)")
+                        else:
+                            # 完全なデータの場合
+                            self.logger.info(f"完全データ銘柄をスキップ: {symbol}")
+                            
+                except Exception as e:
+                    # キャッシュファイルの読み込みエラーの場合
+                    target_symbols.append(symbol)
+                    self.logger.warning(f"キャッシュ読み込みエラー銘柄を追加: {symbol}, {e}")
+        
+        if not target_symbols:
+            self.logger.info("取得対象の銘柄がありません（すべて完全なデータが存在）")
+            return {}
+        
+        self.logger.info(f"取得対象銘柄数: {len(target_symbols)}/{len(symbols)}")
+        
+        # 並列処理でデータ取得
+        with concurrent.futures.ThreadPoolExecutor(max_workers=self.max_workers) as executor:
+            # 部分関数を作成（引数を固定）
+            get_data_func = partial(
+                self.get_stock_data, 
+                start_date=start_date, 
+                end_date=end_date, 
+                interval=interval
+            )
+            
+            # 並列実行
+            future_to_symbol = {executor.submit(get_data_func, symbol): symbol for symbol in target_symbols}
+            
+            results = {}
+            completed = 0
+            
+            for future in concurrent.futures.as_completed(future_to_symbol):
+                symbol = future_to_symbol[future]
+                completed += 1
+                
+                try:
+                    data = future.result()
+                    results[symbol] = data
+                    
+                    # 進捗表示
+                    if completed % 10 == 0 or completed == len(target_symbols):
+                        self.logger.info(f"データ取得進捗: {completed}/{len(target_symbols)} 完了")
+                        
+                except Exception as e:
+                    self.logger.error(f"データ取得エラー: {symbol}, {e}")
+                    results[symbol] = pd.DataFrame()
+        
+        elapsed_time = time.time() - start_time
+        self.logger.info(f"完全取得モード並列データ取得完了: {len(results)}銘柄, 所要時間: {elapsed_time:.2f}秒")
+        
+        return results
