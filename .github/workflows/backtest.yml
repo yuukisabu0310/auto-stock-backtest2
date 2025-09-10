@@ -70,6 +70,6 @@ jobs:
         if git diff --staged --quiet; then
           echo "No changes to commit"
         else
-          git commit -m "Daily backtest results $(date +'%Y-%m-%d %H:%M:%S')"
+          git commit -m "Daily backtest results $(TZ='Asia/Tokyo' date +'%Y-%m-%d %H:%M:%S JST')"
           git push
         fi

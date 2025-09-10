@@ -11,6 +11,7 @@ from datetime import datetime
 import json
 from typing import Dict, List
 import logging
+import pytz
 
 from config import REPORT_DIR, REPORT_TEMPLATES, TRADING_RULES
 
@@ -21,6 +22,35 @@ class ReportGenerator:
         self.report_dir = REPORT_DIR
         self.logger = logging.getLogger(__name__)
         self._ensure_report_dir()
+    
+    def _get_jst_datetime(self) -> datetime:
+        """
+        現在の日本時間を取得
+        
+        Returns:
+            datetime: 日本時間の現在日時
+        """
+        utc_now = datetime.now(pytz.UTC)
+        jst = pytz.timezone('Asia/Tokyo')
+        return utc_now.astimezone(jst)
+    
+    def _get_jst_timestamp(self) -> str:
+        """
+        日本時間のタイムスタンプ文字列を取得
+        
+        Returns:
+            str: 日本時間のタイムスタンプ（YYYYMMDD_HHMMSS形式）
+        """
+        return self._get_jst_datetime().strftime("%Y%m%d_%H%M%S")
+    
+    def _get_jst_datetime_str(self) -> str:
+        """
+        日本時間の日時文字列を取得
+        
+        Returns:
+            str: 日本時間の日時（YYYY年MM月DD日 HH:MM:SS形式）
+        """
+        return self._get_jst_datetime().strftime('%Y年%m月%d日 %H:%M:%S')
     
     def _ensure_report_dir(self):
         """レポートディレクトリの作成"""
@@ -189,7 +219,7 @@ class ReportGenerator:
         html_content = self._generate_stocks_list_html(stocks_by_index, strategy_name, random_seed)
         
         # ファイル保存
-        timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+        timestamp = self._get_jst_timestamp()
         filename = f"{strategy_name}_stocks_{timestamp}.html"
         filepath = os.path.join(self.report_dir, filename)
         
@@ -356,7 +386,7 @@ class ReportGenerator:
         <div class="header">
             <h1>📋 対象銘柄一覧</h1>
             <h2>{strategy_name}</h2>
-            <p>生成日時: {datetime.now().strftime('%Y年%m月%d日 %H:%M:%S')}</p>
+            <p>生成日時: {self._get_jst_datetime_str()}</p>
         </div>
         
         <div class="summary">
@@ -424,7 +454,7 @@ class ReportGenerator:
         html_content = self._generate_html_report(results, strategy_name, charts, stocks, random_seed, stocks_report_path)
         
         # ファイル保存
-        timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+        timestamp = self._get_jst_timestamp()
         filename = f"{strategy_name}_{timestamp}.html"
         filepath = os.path.join(self.report_dir, filename)
         
@@ -995,7 +1025,7 @@ class ReportGenerator:
         <div class="header">
             <h1>バックテスト結果レポート</h1>
             <h2>{strategy_name}</h2>
-            <p>生成日時: {datetime.now().strftime('%Y年%m月%d日 %H:%M:%S')}</p>
+            <p>生成日時: {self._get_jst_datetime_str()}</p>
         </div>
         
         <div class="stats-grid">
