@@ -69,14 +69,14 @@ def run_single_backtest_from_cache(strategy: str, random_seed: int,
         import os
         from config import get_data_period
         
-        # 動的なデータ取得期間を計算
-        data_start, data_end = get_data_period()
+        # 既存のキャッシュファイルを検索（2004-12-31 ～ 2024-12-31）
         cache_files = [f for f in os.listdir("cache") if f.endswith(".pkl")]
         
         # 利用可能な銘柄のみをフィルタリング
         available_stocks = []
         for stock in stocks:
-            cache_file = f"{stock}_1d_{data_start}_{data_end}.pkl"
+            # 既存のキャッシュファイル（2004-12-31 ～ 2024-12-31）を検索
+            cache_file = f"{stock}_1d_2004-12-31_2024-12-31.pkl"
             if cache_file in cache_files:
                 available_stocks.append(stock)
         
