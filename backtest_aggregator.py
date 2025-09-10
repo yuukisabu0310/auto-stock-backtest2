@@ -47,6 +47,14 @@ class BacktestAggregator:
             return [self._convert_timestamps(item) for item in obj]
         elif isinstance(obj, (np.integer, np.floating)):
             return float(obj)
+        elif isinstance(obj, np.int32):
+            return int(obj)
+        elif isinstance(obj, np.int64):
+            return int(obj)
+        elif isinstance(obj, np.float32):
+            return float(obj)
+        elif isinstance(obj, np.float64):
+            return float(obj)
         elif isinstance(obj, np.ndarray):
             return obj.tolist()
         else:

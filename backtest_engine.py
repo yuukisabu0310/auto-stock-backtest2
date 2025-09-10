@@ -14,6 +14,7 @@ import concurrent.futures
 from functools import partial
 
 from data_loader import DataLoader
+from cache_data_loader import CacheOnlyDataLoader
 from technical_indicators import TechnicalIndicators
 from config import TRADING_RULES, INITIAL_CAPITAL
 
@@ -140,13 +141,20 @@ class Portfolio:
 class BacktestEngine:
     """バックテストエンジン"""
     
-    def __init__(self, strategy: str):
+    def __init__(self, strategy: str, cache_only: bool = False):
         self.strategy = strategy
         self.rules = TRADING_RULES[strategy]
-        self.data_loader = DataLoader()
+        
+        # データローダーの選択
+        if cache_only:
+            self.data_loader = CacheOnlyDataLoader()
+            self.logger = logging.getLogger(f"{__name__}.{strategy}.cache_only")
+        else:
+            self.data_loader = DataLoader()
+            self.logger = logging.getLogger(f"{__name__}.{strategy}.full")
+        
         self.indicators = TechnicalIndicators()
         self.portfolio = Portfolio()
-        self.logger = logging.getLogger(__name__)
         
         # 戦略固有の設定
         self.max_positions = self.rules["max_positions"]
@@ -167,8 +175,74 @@ class BacktestEngine:
         """
         self.logger.info(f"バックテスト開始: {self.strategy}")
         
-        # データ取得
+        # データ取得（キャッシュ専用モードの場合は専用メソッドを使用）
+        if isinstance(self.data_loader, CacheOnlyDataLoader):
+            all_data = self._get_data_from_cache(symbols, start_date, end_date)
+        else:
+            all_data = self._get_data_from_loader(symbols, start_date, end_date)
+        
+        if not all_data:
+            self.logger.error("有効なデータがありません")
+            return {}
+        
+        # VIXデータを取得
+        if isinstance(self.data_loader, CacheOnlyDataLoader):
+            self.vix_data = self.data_loader.get_vix_data_from_cache(start_date, end_date)
+        else:
+            self.vix_data = self.data_loader.get_vix_data(start_date, end_date)
+        
+        # 日付範囲の取得
+        all_dates = set()
+        for data in all_data.values():
+            all_dates.update(data.index)
+        
+        # バックテスト実行
+        return self._execute_backtest(all_data, start_date, end_date)
+    
+    def _get_data_from_cache(self, symbols: List[str], start_date: str, end_date: str) -> Dict[str, pd.DataFrame]:
+        """
+        キャッシュからデータを取得
+        
+        Args:
+            symbols: 対象銘柄リスト
+            start_date: 開始日
+            end_date: 終了日
+        
+        Returns:
+            Dict: 銘柄コードをキーとしたデータ辞書
+        """
         all_data = {}
+        
+        for symbol in symbols:
+            try:
+                data = self.data_loader.get_stock_data_from_cache(
+                    symbol, start_date, end_date, 
+                    interval=self.rules["timeframe"]
+                )
+                if not data.empty:
+                    data = self.data_loader.clean_data(data)
+                    if self.data_loader.validate_data(data):
+                        data = self.indicators.calculate_all_indicators(data)
+                        all_data[symbol] = data
+            except (FileNotFoundError, ValueError) as e:
+                self.logger.warning(f"キャッシュからデータ取得失敗: {symbol}, {e}")
+        
+        return all_data
+    
+    def _get_data_from_loader(self, symbols: List[str], start_date: str, end_date: str) -> Dict[str, pd.DataFrame]:
+        """
+        データローダーからデータを取得（従来の方法）
+        
+        Args:
+            symbols: 対象銘柄リスト
+            start_date: 開始日
+            end_date: 終了日
+        
+        Returns:
+            Dict: 銘柄コードをキーとしたデータ辞書
+        """
+        all_data = {}
+        
         for symbol in symbols:
             data = self.data_loader.get_stock_data(
                 symbol, start_date, end_date, 
@@ -180,17 +254,25 @@ class BacktestEngine:
                     data = self.indicators.calculate_all_indicators(data)
                     all_data[symbol] = data
         
-        if not all_data:
-            self.logger.error("有効なデータがありません")
-            return {}
+        return all_data
+    
+    def _execute_backtest(self, all_data: Dict[str, pd.DataFrame], start_date: str, end_date: str) -> Dict:
+        """
+        バックテストの実行部分
         
-        # VIXデータを取得
-        self.vix_data = self.data_loader.get_vix_data(start_date, end_date)
+        Args:
+            all_data: 銘柄データ辞書
+            start_date: 開始日
+            end_date: 終了日
         
+        Returns:
+            Dict: バックテスト結果
+        """
         # 日付範囲の取得
         all_dates = set()
         for data in all_data.values():
             all_dates.update(data.index)
+        
         all_dates = sorted(list(all_dates))
         
         # バックテスト実行
@@ -465,6 +547,14 @@ class BacktestEngine:
             Optional[str]: エントリー理由
         """
         try:
+            # VIXが30以上の場合、取引しない
+            if hasattr(self, 'vix_data') and not self.vix_data.empty:
+                current_date = row.name
+                if current_date in self.vix_data.index:
+                    vix_value = self.vix_data.loc[current_date, 'Close']
+                    if vix_value >= 30:
+                        return None  # VIXが高いため取引しない
+            
             # スイングトレード戦略
             if self.strategy == "swing_trading":
                 # RSIが30以下で買われすぎ

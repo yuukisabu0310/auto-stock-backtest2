@@ -16,7 +16,7 @@ from functools import partial
 class DataLoader:
     """データローダークラス"""
     
-    def __init__(self, cache_dir: str = "cache", max_workers: int = 5):
+    def __init__(self, cache_dir: str = "cache", max_workers: int = 5, local_test_mode: bool = False):
         """
         初期化
         
@@ -26,10 +26,24 @@ class DataLoader:
         """
         self.cache_dir = cache_dir
         self.max_workers = max_workers
+        self.local_test_mode = local_test_mode
         self.logger = logging.getLogger(__name__)
         
         # キャッシュディレクトリの作成
         os.makedirs(cache_dir, exist_ok=True)
+    
+    def _file_exists(self, filename: str) -> bool:
+        """
+        ファイルの存在確認
+        
+        Args:
+            filename: ファイル名
+        
+        Returns:
+            bool: ファイルの存在
+        """
+        filepath = os.path.join(self.cache_dir, filename)
+        return os.path.exists(filepath)
     
     def get_stock_data(self, symbol: str, start_date: str = "2020-01-01", 
                        end_date: str = "2025-08-31", interval: str = "1d", 
@@ -640,24 +654,42 @@ class DataLoader:
         indices = ["SP500", "NASDAQ100", "NIKKEI225"]  # TOPIX500を除外
         all_stocks = []
         
-        if strategy == "swing_trading":
-            # スイングトレード: 各指数から33-34銘柄ずつ（合計100銘柄）
-            stocks_per_index = [34, 33, 33]  # SP500, NASDAQ100, NIKKEI225
-            for i, index_name in enumerate(indices):
-                stocks = self.random_sample_stocks(index_name, stocks_per_index[i], random_seed)
-                all_stocks.extend(stocks)
-            self.logger.info(f"スイングトレード用銘柄: {len(all_stocks)}銘柄")
-            
-        elif strategy == "long_term":
-            # 中長期投資: 各指数から適切な数ずつ（合計200銘柄）
-            # SP500: 74銘柄, NASDAQ100: 52銘柄(全銘柄), NIKKEI225: 74銘柄
-            stocks_per_index = [74, 52, 74]  # SP500, NASDAQ100, NIKKEI225
-            for i, index_name in enumerate(indices):
-                stocks = self.random_sample_stocks(index_name, stocks_per_index[i], random_seed)
-                all_stocks.extend(stocks)
-            self.logger.info(f"中長期投資用銘柄: {len(all_stocks)}銘柄")
-        
+        # ローカルテストモードの場合は銘柄数を削減
+        if hasattr(self, 'local_test_mode') and self.local_test_mode:
+            if strategy == "swing_trading":
+                # スイングトレード: 各指数から10銘柄ずつ（合計30銘柄）
+                stocks_per_index = [10, 10, 10]  # SP500, NASDAQ100, NIKKEI225
+                for i, index_name in enumerate(indices):
+                    stocks = self.random_sample_stocks(index_name, stocks_per_index[i], random_seed)
+                    all_stocks.extend(stocks)
+                self.logger.info(f"スイングトレード用銘柄（ローカルテスト）: {len(all_stocks)}銘柄")
+                
+            elif strategy == "long_term":
+                # 中長期投資: 各指数から10銘柄ずつ（合計30銘柄）
+                stocks_per_index = [10, 10, 10]  # SP500, NASDAQ100, NIKKEI225
+                for i, index_name in enumerate(indices):
+                    stocks = self.random_sample_stocks(index_name, stocks_per_index[i], random_seed)
+                    all_stocks.extend(stocks)
+                self.logger.info(f"中長期投資用銘柄（ローカルテスト）: {len(all_stocks)}銘柄")
         else:
+            if strategy == "swing_trading":
+                # スイングトレード: 各指数から33-34銘柄ずつ（合計100銘柄）
+                stocks_per_index = [34, 33, 33]  # SP500, NASDAQ100, NIKKEI225
+                for i, index_name in enumerate(indices):
+                    stocks = self.random_sample_stocks(index_name, stocks_per_index[i], random_seed)
+                    all_stocks.extend(stocks)
+                self.logger.info(f"スイングトレード用銘柄: {len(all_stocks)}銘柄")
+                
+            elif strategy == "long_term":
+                # 中長期投資: 各指数から適切な数ずつ（合計200銘柄）
+                # SP500: 74銘柄, NASDAQ100: 52銘柄(全銘柄), NIKKEI225: 74銘柄
+                stocks_per_index = [74, 52, 74]  # SP500, NASDAQ100, NIKKEI225
+                for i, index_name in enumerate(indices):
+                    stocks = self.random_sample_stocks(index_name, stocks_per_index[i], random_seed)
+                    all_stocks.extend(stocks)
+                self.logger.info(f"中長期投資用銘柄: {len(all_stocks)}銘柄")
+        
+        if not all_stocks:
             self.logger.error(f"未対応の戦略: {strategy}")
             return []
         

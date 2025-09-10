@@ -15,7 +15,7 @@ from data_loader import DataLoader
 from backtest_engine import BacktestEngine
 from report_generator import ReportGenerator
 from backtest_aggregator import BacktestAggregator
-from config import TRADING_RULES, START_DATE, END_DATE, get_backtest_period, DATA_START_DATE, DATA_END_DATE
+from config import TRADING_RULES, START_DATE, END_DATE, get_backtest_period, DATA_START_DATE, DATA_END_DATE, LOCAL_TEST_MODE, LOCAL_TEST_STOCKS, LOCAL_TEST_RUNS
 
 def setup_logging():
     """ログ設定"""
@@ -32,7 +32,7 @@ def setup_logging():
 
 def get_index_summary() -> Dict[str, int]:
     """指数別銘柄数の取得"""
-    data_loader = DataLoader()
+    data_loader = DataLoader(local_test_mode=LOCAL_TEST_MODE)
     return data_loader.get_index_summary()
 
 def run_single_backtest(strategy: str, random_seed: int, 
@@ -244,7 +244,7 @@ def generate_individual_reports(all_results: Dict[str, Dict]) -> List[str]:
                 latest_seed = base_seed + total_runs
                 
                 # 最新の銘柄リストを取得
-                data_loader = DataLoader()
+                data_loader = DataLoader(local_test_mode=LOCAL_TEST_MODE)
                 latest_stocks = data_loader.get_strategy_stocks(strategy_key, latest_seed)
             except Exception as e:
                 logger.warning(f"銘柄リスト取得エラー: {e}")
@@ -265,7 +265,7 @@ def main():
     parser = argparse.ArgumentParser(description='自動株式バックテストシステム（指数別ランダム抽出版）')
     parser.add_argument('--strategy', choices=list(TRADING_RULES.keys()), 
                        help='特定の戦略のみ実行')
-    parser.add_argument('--num-runs', type=int, default=5, help='実行回数（デフォルト: 5）')
+    parser.add_argument('--num-runs', type=int, default=LOCAL_TEST_RUNS if LOCAL_TEST_MODE else 3, help='実行回数（デフォルト: ローカルテスト時2回、通常時3回）')
     parser.add_argument('--base-seed', type=int, default=42, help='ベース乱数シード（デフォルト: 42）')
     parser.add_argument('--show-indices', action='store_true', help='指数別銘柄数を表示')
     parser.add_argument('--use-parallel', action='store_true', help='並列処理を使用する')

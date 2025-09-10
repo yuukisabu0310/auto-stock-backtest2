@@ -1,0 +1,25 @@
+[33mcommit bc4eda85b256474889f97bb9c9c20ae48b75e14e[m
+Author: GitHub Action <action@github.com>
+Date:   Sat Sep 6 07:04:30 2025 +0000
+
+    Daily backtest results and cache update 2025-09-06 07:04:30
+
+cache/AVGO_1d_2004-12-31_2024-12-31.pkl
+cache/AWK_1d_2004-12-31_2024-12-31.pkl
+cache/DG_1d_2004-12-31_2024-12-31.pkl
+cache/TDG_1d_2004-12-31_2024-12-31.pkl
+cache/ULTA_1d_2004-12-31_2024-12-31.pkl
+logs/backtest.log
+reports/index.html
+reports/long_term_stocks_20250906_070427.html
+reports/swing_trading_stocks_20250906_065529.html
+"reports/\343\202\271\343\202\244\343\203\263\343\202\260\343\203\210\343\203\254\343\203\274\343\203\211_20250906_070428.html"
+"reports/\344\270\255\351\225\267\346\234\237\346\212\225\350\263\207_20250906_070429.html"
+results/aggregated/long_term_aggregated_20250906_070427.json
+results/aggregated/swing_trading_aggregated_20250906_065530.json
+results/individual/long_term_run_001_seed_43_20250906_065810.json
+results/individual/long_term_run_002_seed_44_20250906_070106.json
+results/individual/long_term_run_003_seed_45_20250906_070427.json
+results/individual/swing_trading_run_001_seed_43_20250906_065417.json
+results/individual/swing_trading_run_002_seed_44_20250906_065453.json
+results/individual/swing_trading_run_003_seed_45_20250906_065529.json

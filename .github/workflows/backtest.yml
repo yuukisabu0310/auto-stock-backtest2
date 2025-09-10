@@ -2,11 +2,17 @@ name: Daily Backtest
 
 on:
   schedule:
-    # 毎日06:00に実行（UTC時間、日本時間は15:00）
-    - cron: '0 6 * * *'
+    # 毎日06:30に実行（JST時間、UTC時間は21:30前日）
+    # データ取得の30分後に実行
+    - cron: '30 21 * * *'
   workflow_dispatch:
   push:
     branches: [ main ]
+    paths:
+      - 'main_parallel.py'
+      - 'backtest_engine.py'
+      - 'report_generator.py'
+      - 'config.py'
 
 permissions:
   contents: write
@@ -36,23 +42,23 @@ jobs:
         python -m pip install --upgrade pip
         pip install -r requirements.txt
         
-    - name: Create cache directory
+    - name: Create directories
       run: |
         mkdir -p cache
         mkdir -p logs
         mkdir -p results
+        mkdir -p reports
         
-    - name: Run backtest
+    - name: Run cache-only backtest
       run: |
-        python main.py --num-runs 3 --base-seed 42
+        python main_parallel.py --cache-only --num-runs 3 --base-seed 42
         
     - name: Commit and push results
       run: |
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action"
         
-        # キャッシュファイル、レポート、ログを強制的に追加（.gitignoreを無視）
-        git add -f cache/
+        # レポート、ログ、結果を強制的に追加（.gitignoreを無視）
         git add reports/
         git add -f logs/
         git add -f results/
@@ -61,6 +67,6 @@ jobs:
         if git diff --staged --quiet; then
           echo "No changes to commit"
         else
-          git commit -m "Daily backtest results and cache update $(date +'%Y-%m-%d %H:%M:%S')"
+          git commit -m "Daily backtest results $(date +'%Y-%m-%d %H:%M:%S')"
           git push
         fi

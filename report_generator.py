@@ -593,7 +593,7 @@ class ReportGenerator:
         return fig.to_html(full_html=False, include_plotlyjs=False)
     
     def _create_trades_chart(self, trades: List[Dict], date_range: Dict = None) -> str:
-        """取引履歴チャート"""
+        """取引履歴チャート（累積損益率）"""
         if not trades:
             return ""
         
@@ -601,30 +601,38 @@ class ReportGenerator:
         df['entry_date'] = pd.to_datetime(df['entry_date'])
         df['exit_date'] = pd.to_datetime(df['exit_date'])
         
+        # 決済日でソート
+        df = df.sort_values('exit_date')
+        
+        # 累積損益率を計算
+        df['cumulative_profit'] = df['profit_loss_pct'].cumsum() * 100
+        
         fig = go.Figure()
         
-        # 利益取引
+        # 利益取引の累積
         profit_trades = df[df['profit_loss'] > 0]
         if not profit_trades.empty:
             fig.add_trace(go.Scatter(
                 x=profit_trades['exit_date'],
-                y=profit_trades['profit_loss_pct'] * 100,
-                mode='markers',
+                y=profit_trades['cumulative_profit'],
+                mode='lines+markers',
                 name='利益取引',
-                marker=dict(color='green', size=8),
-                hovertemplate='<b>%{x}</b><br>利益: %{y:.2f}%<extra></extra>'
+                line=dict(color='green', width=2),
+                marker=dict(color='green', size=6),
+                hovertemplate='<b>%{x}</b><br>累積利益: %{y:.2f}%<extra></extra>'
             ))
         
-        # 損失取引
+        # 損失取引の累積
         loss_trades = df[df['profit_loss'] < 0]
         if not loss_trades.empty:
             fig.add_trace(go.Scatter(
                 x=loss_trades['exit_date'],
-                y=loss_trades['profit_loss_pct'] * 100,
-                mode='markers',
+                y=loss_trades['cumulative_profit'],
+                mode='lines+markers',
                 name='損失取引',
-                marker=dict(color='red', size=8),
-                hovertemplate='<b>%{x}</b><br>損失: %{y:.2f}%<extra></extra>'
+                line=dict(color='red', width=2),
+                marker=dict(color='red', size=6),
+                hovertemplate='<b>%{x}</b><br>累積損益: %{y:.2f}%<extra></extra>'
             ))
         
         # 共通の日付範囲を設定
@@ -639,7 +647,7 @@ class ReportGenerator:
         fig.update_layout(
             title='取引履歴',
             xaxis=xaxis_config,
-            yaxis_title='損益率 (%)',
+            yaxis_title='累積損益率 (%)',
             hovermode='closest',
             template='plotly_white'
         )
@@ -1015,18 +1023,6 @@ class ReportGenerator:
                 <div class="stat-value">{stats['profit_factor']:.2f}</div>
                 <div class="stat-label">プロフィットファクター <span class="info-icon">ℹ️</span></div>
             </div>
-            <div class="stat-card" onclick="showMetricModal('vix_max')">
-                <div class="stat-value">{stats['vix_max']:.1f}</div>
-                <div class="stat-label">VIX最大値 <span class="info-icon">ℹ️</span></div>
-            </div>
-            <div class="stat-card" onclick="showMetricModal('vix_mean')">
-                <div class="stat-value">{stats['vix_mean']:.1f}</div>
-                <div class="stat-label">VIX平均値 <span class="info-icon">ℹ️</span></div>
-            </div>
-            <div class="stat-card" onclick="showMetricModal('high_vol_periods')">
-                <div class="stat-value">{stats['high_vol_periods']}</div>
-                <div class="stat-label">高ボラティリティ期間 <span class="info-icon">ℹ️</span></div>
-            </div>
         </div>
         
         {strategy_conditions_html}
@@ -1119,24 +1115,6 @@ class ReportGenerator:
                     description: '総利益と総損失の比率を表す指標です。利益効率を測定する重要な指標です。',
                     formula: 'プロフィットファクター = 総利益 / |総損失|',
                     interpretation: '• 2.0以上: 優秀な利益効率<br>• 1.5-2.0: 良好な利益効率<br>• 1.0-1.5: 改善が必要<br>• 1.0未満: 損失超過'
-                }},
-                'vix_max': {{
-                    title: 'VIX最大値 (VIX Maximum)',
-                    description: 'バックテスト期間中のVIX（恐怖指数）の最大値を表します。市場の最大の恐怖レベルを示します。',
-                    formula: 'VIX最大値 = max(VIX値)',
-                    interpretation: '• 20未満: 低い恐怖レベル<br>• 20-30: 通常の恐怖レベル<br>• 30-50: 高い恐怖レベル<br>• 50以上: 極端な恐怖レベル'
-                }},
-                'vix_mean': {{
-                    title: 'VIX平均値 (VIX Average)',
-                    description: 'バックテスト期間中のVIX（恐怖指数）の平均値を表します。市場の平均的な恐怖レベルを示します。',
-                    formula: 'VIX平均値 = mean(VIX値)',
-                    interpretation: '• 15未満: 非常に低い恐怖レベル<br>• 15-20: 低い恐怖レベル<br>• 20-25: 通常の恐怖レベル<br>• 25以上: 高い恐怖レベル'
-                }},
-                'high_vol_periods': {{
-                    title: '高ボラティリティ期間 (High Volatility Periods)',
-                    description: 'VIXが30を超えた日数を表します。市場が高ボラティリティ状態だった期間を示します。',
-                    formula: '高ボラティリティ期間 = count(VIX > 30)',
-                    interpretation: '• 少ない: 安定した市場環境<br>• 中程度: 通常の市場環境<br>• 多い: 不安定な市場環境<br>• 非常に多い: 極めて不安定な市場環境'
                 }}
             }};
             
@@ -1187,17 +1165,6 @@ class ReportGenerator:
         stats['max_drawdown_pct'] = results.get('max_drawdown', 0) * 100
         stats['win_rate_pct'] = results.get('win_rate', 0) * 100
         stats['total_trades'] = results.get('total_trades', 0)
-        
-        # VIX統計
-        vix_data = results.get('vix_data', {})
-        if vix_data and 'stats' in vix_data:
-            stats['vix_max'] = vix_data['stats'].get('max', 0)
-            stats['vix_mean'] = vix_data['stats'].get('mean', 0)
-            stats['high_vol_periods'] = len(vix_data.get('high_volatility_periods', []))
-        else:
-            stats['vix_max'] = 0
-            stats['vix_mean'] = 0
-            stats['high_vol_periods'] = 0
         
         # プロフィットファクター
         avg_profit = results.get('avg_profit', 0)
