@@ -5,8 +5,9 @@
 
 import logging
 from typing import List, Set, Dict
+from datetime import datetime
 from data_loader import DataLoader
-from config import DATA_START_DATE, DATA_END_DATE, LOCAL_TEST_MODE
+from config import get_data_period, LOCAL_TEST_MODE
 
 class DataFetcher:
     """データ取得専用クラス"""
@@ -53,7 +54,8 @@ class DataFetcher:
         return all_stocks
     
     def fetch_all_stocks_data(self, strategies: List[str], 
-                             num_runs: int = 3, base_seed: int = 42) -> Dict[str, int]:
+                             num_runs: int = 3, base_seed: int = 42,
+                             execution_date: datetime = None) -> Dict[str, int]:
         """
         全戦略の銘柄データを一括取得
         
@@ -61,11 +63,15 @@ class DataFetcher:
             strategies: 戦略リスト
             num_runs: 実行回数
             base_seed: ベース乱数シード
+            execution_date: 実行日（Noneの場合は現在日時）
         
         Returns:
             Dict[str, int]: 取得結果の統計
         """
         self.logger.info("=== フェーズ1: データ取得開始 ===")
+        
+        # 動的なデータ取得期間を計算
+        start_date, end_date = get_data_period(execution_date)
         
         # 全銘柄を収集
         all_stocks = self.collect_all_strategy_stocks(strategies, num_runs, base_seed)
@@ -76,12 +82,12 @@ class DataFetcher:
         
         # 一括データ取得
         self.logger.info(f"一括データ取得開始: {len(all_stocks)}銘柄")
-        self.logger.info(f"取得期間: {DATA_START_DATE} ～ {DATA_END_DATE}")
+        self.logger.info(f"取得期間: {start_date} ～ {end_date}")
         
         try:
             # 並列でデータ取得
             stocks_data = self.data_loader.get_stock_data_batch(
-                list(all_stocks), DATA_START_DATE, DATA_END_DATE
+                list(all_stocks), start_date, end_date
             )
             
             success_count = len(stocks_data)
@@ -91,7 +97,7 @@ class DataFetcher:
             
             # VIXデータも取得
             self.logger.info("VIXデータを取得中...")
-            vix_data = self.data_loader.get_vix_data(DATA_START_DATE, DATA_END_DATE)
+            vix_data = self.data_loader.get_vix_data(start_date, end_date)
             if not vix_data.empty:
                 self.logger.info(f"VIXデータ取得成功: {len(vix_data)}行")
             else:

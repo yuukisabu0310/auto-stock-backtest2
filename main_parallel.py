@@ -67,12 +67,16 @@ def run_single_backtest_from_cache(strategy: str, random_seed: int,
         
         # 利用可能なキャッシュファイルを確認
         import os
+        from config import get_data_period
+        
+        # 動的なデータ取得期間を計算
+        data_start, data_end = get_data_period()
         cache_files = [f for f in os.listdir("cache") if f.endswith(".pkl")]
         
         # 利用可能な銘柄のみをフィルタリング
         available_stocks = []
         for stock in stocks:
-            cache_file = f"{stock}_1d_2004-12-31_2024-12-31.pkl"
+            cache_file = f"{stock}_1d_{data_start}_{data_end}.pkl"
             if cache_file in cache_files:
                 available_stocks.append(stock)
         
@@ -185,7 +189,9 @@ def run_parallel_strategies(num_runs: int = 3, base_seed: int = 42):
     data_fetcher = DataFetcher()
     
     try:
-        fetch_results = data_fetcher.fetch_all_stocks_data(strategies, num_runs, base_seed)
+        # 実行日を渡して動的なデータ取得期間を使用
+        execution_date = datetime.now()
+        fetch_results = data_fetcher.fetch_all_stocks_data(strategies, num_runs, base_seed, execution_date)
         logger.info(f"データ取得結果: {fetch_results}")
         
         if fetch_results["success"] == 0:
@@ -410,7 +416,9 @@ def main():
             logger.info("データ取得のみ実行")
             data_fetcher = DataFetcher()
             strategies = ["swing_trading", "long_term"]
-            results = data_fetcher.fetch_all_stocks_data(strategies, args.num_runs, args.base_seed)
+            # 実行日を渡して動的なデータ取得期間を使用
+            execution_date = datetime.now()
+            results = data_fetcher.fetch_all_stocks_data(strategies, args.num_runs, args.base_seed, execution_date)
             logger.info(f"データ取得完了: {results}")
             return
         

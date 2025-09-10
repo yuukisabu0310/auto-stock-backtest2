@@ -6,10 +6,36 @@ import os
 from datetime import datetime, timedelta
 
 # 基本設定
-# データ取得期間（去年12/31まで）
-DATA_END_YEAR = datetime.now().year - 1  # 去年
-DATA_START_DATE = "2004-12-31"  # 20年分のデータを取得するため
-DATA_END_DATE = f"{DATA_END_YEAR}-12-31"
+# データ取得期間（実行日の前月末日まで）
+def get_data_period(execution_date: datetime = None) -> tuple:
+    """
+    データ取得期間を取得
+    実行日の前月末日から過去20年を計算
+    
+    Args:
+        execution_date: 実行日（Noneの場合は現在日時）
+    
+    Returns:
+        tuple: (start_date, end_date) の文字列タプル
+    """
+    if execution_date is None:
+        execution_date = datetime.now()
+    
+    # 実行日の前月末日を計算
+    if execution_date.month == 1:
+        # 1月の場合は前年12月
+        end_date = datetime(execution_date.year - 1, 12, 31)
+    else:
+        # その他の月は前月の最終日
+        end_date = datetime(execution_date.year, execution_date.month, 1) - timedelta(days=1)
+    
+    # 前月末日から過去20年を計算
+    start_date = datetime(end_date.year - 20 + 1, end_date.month, 1)
+    
+    return start_date.strftime("%Y-%m-%d"), end_date.strftime("%Y-%m-%d")
+
+# デフォルトのデータ取得期間（現在日時基準）
+DATA_START_DATE, DATA_END_DATE = get_data_period()
 
 # バックテスト期間（戦略別）
 SWING_TRADING_YEARS = 5  # スイングトレード: 5年
