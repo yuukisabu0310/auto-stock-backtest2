@@ -53,8 +53,74 @@ class DataFetcher:
         self.logger.info(f"全戦略の銘柄収集完了: {len(all_stocks)}銘柄")
         return all_stocks
     
+    def fetch_all_index_stocks_data(self, execution_date: datetime = None) -> Dict[str, int]:
+        """
+        全指数の全銘柄データを取得（期間変更時は差分取得）
+        
+        Args:
+            execution_date: 実行日
+        
+        Returns:
+            Dict[str, int]: 取得結果の統計
+        """
+        self.logger.info("=== 全指数全銘柄データ取得開始 ===")
+        
+        # 動的なデータ取得期間を計算
+        start_date, end_date = get_data_period(execution_date)
+        
+        # 全銘柄を取得
+        all_stocks = self.data_loader.get_all_index_stocks()
+        
+        if not all_stocks:
+            self.logger.error("取得対象の銘柄がありません")
+            return {"total": 0, "success": 0, "failed": 0}
+        
+        # 期間変更判定
+        should_fetch_differential = self.data_loader.should_fetch_differential_data(start_date, end_date)
+        
+        if should_fetch_differential:
+            self.logger.info(f"差分データ取得開始: {len(all_stocks)}銘柄")
+            self.logger.info(f"取得期間: {start_date} ～ {end_date}")
+            
+            try:
+                # 並列でデータ取得（完全取得モード）
+                stocks_data = self.data_loader.get_stock_data_batch_force(
+                    all_stocks, start_date, end_date
+                )
+                
+                success_count = len(stocks_data)
+                failed_count = len(all_stocks) - success_count
+                
+                self.logger.info(f"データ取得完了: 成功 {success_count}銘柄, 失敗 {failed_count}銘柄")
+                
+                # メタデータを保存
+                self.data_loader.save_fetch_metadata(start_date, end_date, success_count)
+                
+                # VIXデータも取得
+                self.logger.info("VIXデータを取得中...")
+                vix_data = self.data_loader.get_vix_data(start_date, end_date)
+                if not vix_data.empty:
+                    self.logger.info(f"VIXデータ取得成功: {len(vix_data)}行")
+                else:
+                    self.logger.warning("VIXデータの取得に失敗しました")
+                
+                self.logger.info("=== 全指数全銘柄データ取得完了 ===")
+                
+                return {
+                    "total": len(all_stocks),
+                    "success": success_count,
+                    "failed": failed_count
+                }
+                
+            except Exception as e:
+                self.logger.error(f"データ取得エラー: {e}")
+                return {"total": len(all_stocks), "success": 0, "failed": len(all_stocks)}
+        else:
+            self.logger.info("期間変更なし - データ取得をスキップ")
+            return {"total": len(all_stocks), "success": 0, "failed": 0, "skipped": True}
+    
     def fetch_all_stocks_data(self, strategies: List[str], 
-                             num_runs: int = 3, base_seed: int = 42,
+                             num_runs: int = 3, base_seed: int = 42, 
                              execution_date: datetime = None) -> Dict[str, int]:
         """
         全戦略の銘柄データを一括取得

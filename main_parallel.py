@@ -177,6 +177,34 @@ def run_strategy_multiple_backtests(strategy: str, num_runs: int,
         "results": all_results
     }
 
+def run_all_index_stocks_fetch():
+    """全指数全銘柄データ取得実行"""
+    logger = logging.getLogger(__name__)
+    logger.info("=== 全指数全銘柄データ取得システム開始 ===")
+    
+    # データ取得実行
+    data_fetcher = DataFetcher()
+    
+    try:
+        # 実行日を渡して動的なデータ取得期間を使用
+        execution_date = datetime.now()
+        fetch_results = data_fetcher.fetch_all_index_stocks_data(execution_date)
+        logger.info(f"全指数全銘柄データ取得結果: {fetch_results}")
+        
+        if "skipped" in fetch_results and fetch_results["skipped"]:
+            logger.info("期間変更なし - データ取得をスキップしました")
+        elif fetch_results["success"] == 0:
+            logger.error("データ取得に失敗しました")
+            return False
+        else:
+            logger.info(f"データ取得成功: {fetch_results['success']}銘柄")
+        
+        return True
+        
+    except Exception as e:
+        logger.error(f"データ取得エラー: {e}")
+        return False
+
 def run_parallel_strategies(num_runs: int = 3, base_seed: int = 42):
     """並列化された全戦略バックテスト実行"""
     logger = logging.getLogger(__name__)
@@ -397,6 +425,7 @@ def main():
     parser.add_argument('--parallel', action='store_true', help='並列実行を使用する')
     parser.add_argument('--data-only', action='store_true', help='データ取得のみ実行')
     parser.add_argument('--cache-only', action='store_true', help='キャッシュからのみバックテスト実行')
+    parser.add_argument('--all-stocks', action='store_true', help='全指数全銘柄データ取得実行')
     
     args = parser.parse_args()
     
@@ -412,6 +441,16 @@ def main():
     logger.info(f"ローカルテストモード: {LOCAL_TEST_MODE}")
     
     try:
+        if args.all_stocks:
+            # 全指数全銘柄データ取得実行
+            logger.info("全指数全銘柄データ取得実行")
+            success = run_all_index_stocks_fetch()
+            if success:
+                logger.info("全指数全銘柄データ取得完了")
+            else:
+                logger.error("全指数全銘柄データ取得失敗")
+            return
+            
         if args.data_only:
             # データ取得のみ実行
             logger.info("データ取得のみ実行")

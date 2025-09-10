@@ -260,8 +260,8 @@ class DataLoader:
                 
                 # シンボル形式の変換
                 if symbol.endswith('.T'):
-                    # 日本株の場合: 7203.T -> 7203.jp
-                    stooq_symbol = symbol.replace('.T', '.jp')
+                    # 日本株の場合: 7203.T -> 7203.JP
+                    stooq_symbol = symbol.replace('.T', '.JP')
                 else:
                     # 米国株の場合: AAPL -> AAPL
                     stooq_symbol = symbol
@@ -279,7 +279,7 @@ class DataLoader:
                 # データ取得
                 data = web.DataReader(
                     stooq_symbol, 
-                    'stooq', 
+                    data_source='stooq', 
                     start=start_date, 
                     end=end_date
                 )
@@ -694,6 +694,104 @@ class DataLoader:
             return []
         
         return all_stocks
+    
+    def get_all_index_stocks(self) -> List[str]:
+        """
+        全指数の全銘柄を取得
+        
+        Returns:
+            List[str]: 全銘柄リスト（SP500 + NASDAQ100 + NIKKEI225）
+        """
+        indices = ["SP500", "NASDAQ100", "NIKKEI225"]
+        all_stocks = []
+        
+        for index_name in indices:
+            stocks = self.get_stocks_by_index(index_name)
+            all_stocks.extend(stocks)
+            self.logger.info(f"指数 {index_name} から {len(stocks)} 銘柄を取得")
+        
+        self.logger.info(f"全指数の全銘柄取得完了: {len(all_stocks)}銘柄")
+        return all_stocks
+    
+    def get_fetch_metadata(self) -> Dict:
+        """
+        データ取得のメタデータを取得
+        
+        Returns:
+            Dict: メタデータ（前回取得期間、取得日時など）
+        """
+        metadata_file = os.path.join(self.cache_dir, "fetch_metadata.json")
+        
+        if os.path.exists(metadata_file):
+            try:
+                import json
+                with open(metadata_file, 'r', encoding='utf-8') as f:
+                    metadata = json.load(f)
+                return metadata
+            except Exception as e:
+                self.logger.warning(f"メタデータ読み込みエラー: {e}")
+        
+        return {}
+    
+    def save_fetch_metadata(self, start_date: str, end_date: str, fetch_count: int = 0):
+        """
+        データ取得のメタデータを保存
+        
+        Args:
+            start_date: 取得開始日
+            end_date: 取得終了日
+            fetch_count: 取得銘柄数
+        """
+        import json
+        from datetime import datetime
+        
+        metadata = {
+            "last_fetch_period": {
+                "start_date": start_date,
+                "end_date": end_date
+            },
+            "last_fetch_time": datetime.now().isoformat(),
+            "last_fetch_count": fetch_count
+        }
+        
+        metadata_file = os.path.join(self.cache_dir, "fetch_metadata.json")
+        try:
+            with open(metadata_file, 'w', encoding='utf-8') as f:
+                json.dump(metadata, f, ensure_ascii=False, indent=2)
+            self.logger.info(f"メタデータ保存完了: {start_date} ～ {end_date}")
+        except Exception as e:
+            self.logger.error(f"メタデータ保存エラー: {e}")
+    
+    def should_fetch_differential_data(self, current_start_date: str, current_end_date: str) -> bool:
+        """
+        差分データ取得が必要かどうかを判定
+        
+        Args:
+            current_start_date: 現在の要求開始日
+            current_end_date: 現在の要求終了日
+        
+        Returns:
+            bool: 差分取得が必要かどうか
+        """
+        metadata = self.get_fetch_metadata()
+        
+        if not metadata or "last_fetch_period" not in metadata:
+            self.logger.info("前回の取得期間データなし - 全データ取得が必要")
+            return True
+        
+        last_period = metadata["last_fetch_period"]
+        last_start = last_period.get("start_date", "")
+        last_end = last_period.get("end_date", "")
+        
+        # 期間が異なる場合は差分取得が必要
+        if last_start != current_start_date or last_end != current_end_date:
+            self.logger.info(f"期間変更検出 - 差分取得が必要")
+            self.logger.info(f"前回期間: {last_start} ～ {last_end}")
+            self.logger.info(f"現在期間: {current_start_date} ～ {current_end_date}")
+            return True
+        
+        self.logger.info("期間変更なし - 差分取得不要")
+        return False
 
     def get_stock_data_batch(self, symbols: List[str], start_date: str = "2020-01-01", 
                             end_date: str = "2025-08-31", interval: str = "1d") -> Dict[str, pd.DataFrame]:
