@@ -220,3 +220,1630 @@
 2025-09-10 07:37:09,606 - __main__ - INFO - 個別レポート生成完了: 0ファイル
 2025-09-10 07:37:09,609 - __main__ - WARNING - index.html更新エラー: cannot import name 'update_index_html' from 'main' (/home/runner/work/auto-stock-backtest2/auto-stock-backtest2/main.py)
 2025-09-10 07:37:09,609 - __main__ - INFO - 並列化自動株式バックテストシステム完了
+2025-09-10 17:45:44,404 - __main__ - INFO - 並列化自動株式バックテストシステム開始
+2025-09-10 17:45:44,404 - __main__ - INFO - データ取得期間: 2004-12-31 〜 2024-12-31
+2025-09-10 17:45:44,404 - __main__ - INFO - 実行回数: 2
+2025-09-10 17:45:44,405 - __main__ - INFO - ベースシード: 42
+2025-09-10 17:45:44,405 - __main__ - INFO - 並列実行: False
+2025-09-10 17:45:44,405 - __main__ - INFO - ローカルテストモード: True
+2025-09-10 17:45:44,406 - __main__ - INFO - キャッシュ専用バックテスト実行
+2025-09-10 17:45:44,406 - __main__ - INFO - === キャッシュ専用バックテスト開始 ===
+2025-09-10 17:45:44,406 - __main__ - INFO - swing_trading バックテスト期間: 2021-08-01 〜 2025-08-31
+2025-09-10 17:45:44,406 - __main__.swing_trading - INFO - 戦略複数回バックテスト開始: swing_trading, 実行回数: 2
+2025-09-10 17:45:44,406 - __main__.swing_trading - INFO - 実行 1/2
+2025-09-10 17:45:44,406 - __main__.swing_trading - INFO - キャッシュ専用バックテスト開始: swing_trading, シード: 43
+2025-09-10 17:45:44,406 - backtest_engine.swing_trading.cache_only - INFO - バックテスト開始: swing_trading
+2025-09-10 17:45:44,407 - backtest_engine.swing_trading.cache_only - WARNING - キャッシュからデータ取得失敗: 2, キャッシュファイルが見つかりません: 2
+2025-09-10 17:45:44,408 - backtest_engine.swing_trading.cache_only - WARNING - キャッシュからデータ取得失敗: 0, キャッシュファイルが見つかりません: 0
+2025-09-10 17:45:44,409 - backtest_engine.swing_trading.cache_only - WARNING - キャッシュからデータ取得失敗: 2, キャッシュファイルが見つかりません: 2
+2025-09-10 17:45:44,410 - backtest_engine.swing_trading.cache_only - WARNING - キャッシュからデータ取得失敗: 1, キャッシュファイルが見つかりません: 1
+2025-09-10 17:45:44,411 - backtest_engine.swing_trading.cache_only - WARNING - キャッシュからデータ取得失敗: -, キャッシュファイルが見つかりません: -
+2025-09-10 17:45:44,412 - backtest_engine.swing_trading.cache_only - WARNING - キャッシュからデータ取得失敗: 0, キャッシュファイルが見つかりません: 0
+2025-09-10 17:45:44,412 - backtest_engine.swing_trading.cache_only - WARNING - キャッシュからデータ取得失敗: 8, キャッシュファイルが見つかりません: 8
+2025-09-10 17:45:44,414 - backtest_engine.swing_trading.cache_only - WARNING - キャッシュからデータ取得失敗: -, キャッシュファイルが見つかりません: -
+2025-09-10 17:45:44,415 - backtest_engine.swing_trading.cache_only - WARNING - キャッシュからデータ取得失敗: 0, キャッシュファイルが見つかりません: 0
+2025-09-10 17:45:44,416 - backtest_engine.swing_trading.cache_only - WARNING - キャッシュからデータ取得失敗: 1, キャッシュファイルが見つかりません: 1
+2025-09-10 17:45:44,416 - backtest_engine.swing_trading.cache_only - ERROR - 有効なデータがありません
+2025-09-10 17:45:44,416 - __main__.swing_trading - WARNING - 実行 1 失敗: 結果なし
+2025-09-10 17:45:44,416 - __main__.swing_trading - INFO - 実行 2/2
+2025-09-10 17:45:44,417 - __main__.swing_trading - INFO - キャッシュ専用バックテスト開始: swing_trading, シード: 44
+2025-09-10 17:45:44,417 - backtest_engine.swing_trading.cache_only - INFO - バックテスト開始: swing_trading
+2025-09-10 17:45:44,418 - backtest_engine.swing_trading.cache_only - WARNING - キャッシュからデータ取得失敗: 2, キャッシュファイルが見つかりません: 2
+2025-09-10 17:45:44,420 - backtest_engine.swing_trading.cache_only - WARNING - キャッシュからデータ取得失敗: 0, キャッシュファイルが見つかりません: 0
+2025-09-10 17:45:44,421 - backtest_engine.swing_trading.cache_only - WARNING - キャッシュからデータ取得失敗: 2, キャッシュファイルが見つかりません: 2
+2025-09-10 17:45:44,422 - backtest_engine.swing_trading.cache_only - WARNING - キャッシュからデータ取得失敗: 1, キャッシュファイルが見つかりません: 1
+2025-09-10 17:45:44,423 - backtest_engine.swing_trading.cache_only - WARNING - キャッシュからデータ取得失敗: -, キャッシュファイルが見つかりません: -
+2025-09-10 17:45:44,424 - backtest_engine.swing_trading.cache_only - WARNING - キャッシュからデータ取得失敗: 0, キャッシュファイルが見つかりません: 0
+2025-09-10 17:45:44,424 - backtest_engine.swing_trading.cache_only - WARNING - キャッシュからデータ取得失敗: 8, キャッシュファイルが見つかりません: 8
+2025-09-10 17:45:44,425 - backtest_engine.swing_trading.cache_only - WARNING - キャッシュからデータ取得失敗: -, キャッシュファイルが見つかりません: -
+2025-09-10 17:45:44,426 - backtest_engine.swing_trading.cache_only - WARNING - キャッシュからデータ取得失敗: 0, キャッシュファイルが見つかりません: 0
+2025-09-10 17:45:44,427 - backtest_engine.swing_trading.cache_only - WARNING - キャッシュからデータ取得失敗: 1, キャッシュファイルが見つかりません: 1
+2025-09-10 17:45:44,427 - backtest_engine.swing_trading.cache_only - ERROR - 有効なデータがありません
+2025-09-10 17:45:44,428 - __main__.swing_trading - WARNING - 実行 2 失敗: 結果なし
+2025-09-10 17:45:44,428 - __main__.swing_trading - INFO - 戦略複数回バックテスト完了: swing_trading
+2025-09-10 17:45:44,428 - __main__.swing_trading - INFO - 成功回数: 0/2
+2025-09-10 17:45:44,428 - __main__ - INFO - long_term バックテスト期間: 2006-08-01 〜 2025-08-31
+2025-09-10 17:45:44,429 - __main__.long_term - INFO - 戦略複数回バックテスト開始: long_term, 実行回数: 2
+2025-09-10 17:45:44,429 - __main__.long_term - INFO - 実行 1/2
+2025-09-10 17:45:44,429 - __main__.long_term - INFO - キャッシュ専用バックテスト開始: long_term, シード: 43
+2025-09-10 17:45:44,430 - backtest_engine.long_term.cache_only - INFO - バックテスト開始: long_term
+2025-09-10 17:45:44,431 - backtest_engine.long_term.cache_only - WARNING - キャッシュからデータ取得失敗: 2, キャッシュファイルが見つかりません: 2
+2025-09-10 17:45:44,432 - backtest_engine.long_term.cache_only - WARNING - キャッシュからデータ取得失敗: 0, キャッシュファイルが見つかりません: 0
+2025-09-10 17:45:44,432 - backtest_engine.long_term.cache_only - WARNING - キャッシュからデータ取得失敗: 0, キャッシュファイルが見つかりません: 0
+2025-09-10 17:45:44,434 - backtest_engine.long_term.cache_only - WARNING - キャッシュからデータ取得失敗: 6, キャッシュファイルが見つかりません: 6
+2025-09-10 17:45:44,435 - backtest_engine.long_term.cache_only - WARNING - キャッシュからデータ取得失敗: -, キャッシュファイルが見つかりません: -
+2025-09-10 17:45:44,436 - backtest_engine.long_term.cache_only - WARNING - キャッシュからデータ取得失敗: 0, キャッシュファイルが見つかりません: 0
+2025-09-10 17:45:44,438 - backtest_engine.long_term.cache_only - WARNING - キャッシュからデータ取得失敗: 8, キャッシュファイルが見つかりません: 8
+2025-09-10 17:45:44,439 - backtest_engine.long_term.cache_only - WARNING - キャッシュからデータ取得失敗: -, キャッシュファイルが見つかりません: -
+2025-09-10 17:45:44,440 - backtest_engine.long_term.cache_only - WARNING - キャッシュからデータ取得失敗: 0, キャッシュファイルが見つかりません: 0
+2025-09-10 17:45:44,440 - backtest_engine.long_term.cache_only - WARNING - キャッシュからデータ取得失敗: 1, キャッシュファイルが見つかりません: 1
+2025-09-10 17:45:44,441 - backtest_engine.long_term.cache_only - ERROR - 有効なデータがありません
+2025-09-10 17:45:44,441 - __main__.long_term - WARNING - 実行 1 失敗: 結果なし
+2025-09-10 17:45:44,441 - __main__.long_term - INFO - 実行 2/2
+2025-09-10 17:45:44,441 - __main__.long_term - INFO - キャッシュ専用バックテスト開始: long_term, シード: 44
+2025-09-10 17:45:44,442 - backtest_engine.long_term.cache_only - INFO - バックテスト開始: long_term
+2025-09-10 17:45:44,443 - backtest_engine.long_term.cache_only - WARNING - キャッシュからデータ取得失敗: 2, キャッシュファイルが見つかりません: 2
+2025-09-10 17:45:44,443 - backtest_engine.long_term.cache_only - WARNING - キャッシュからデータ取得失敗: 0, キャッシュファイルが見つかりません: 0
+2025-09-10 17:45:44,444 - backtest_engine.long_term.cache_only - WARNING - キャッシュからデータ取得失敗: 0, キャッシュファイルが見つかりません: 0
+2025-09-10 17:45:44,445 - backtest_engine.long_term.cache_only - WARNING - キャッシュからデータ取得失敗: 6, キャッシュファイルが見つかりません: 6
+2025-09-10 17:45:44,446 - backtest_engine.long_term.cache_only - WARNING - キャッシュからデータ取得失敗: -, キャッシュファイルが見つかりません: -
+2025-09-10 17:45:44,447 - backtest_engine.long_term.cache_only - WARNING - キャッシュからデータ取得失敗: 0, キャッシュファイルが見つかりません: 0
+2025-09-10 17:45:44,448 - backtest_engine.long_term.cache_only - WARNING - キャッシュからデータ取得失敗: 8, キャッシュファイルが見つかりません: 8
+2025-09-10 17:45:44,448 - backtest_engine.long_term.cache_only - WARNING - キャッシュからデータ取得失敗: -, キャッシュファイルが見つかりません: -
+2025-09-10 17:45:44,449 - backtest_engine.long_term.cache_only - WARNING - キャッシュからデータ取得失敗: 0, キャッシュファイルが見つかりません: 0
+2025-09-10 17:45:44,450 - backtest_engine.long_term.cache_only - WARNING - キャッシュからデータ取得失敗: 1, キャッシュファイルが見つかりません: 1
+2025-09-10 17:45:44,451 - backtest_engine.long_term.cache_only - ERROR - 有効なデータがありません
+2025-09-10 17:45:44,451 - __main__.long_term - WARNING - 実行 2 失敗: 結果なし
+2025-09-10 17:45:44,451 - __main__.long_term - INFO - 戦略複数回バックテスト完了: long_term
+2025-09-10 17:45:44,451 - __main__.long_term - INFO - 成功回数: 0/2
+2025-09-10 17:45:44,451 - __main__ - INFO - === キャッシュ専用バックテスト完了 ===
+2025-09-10 17:45:44,452 - __main__ - INFO - 個別レポート生成開始
+2025-09-10 17:45:44,452 - __main__ - INFO - 個別レポート生成完了: 0ファイル
+2025-09-10 17:45:44,454 - __main__ - WARNING - index.html更新エラー: cannot import name 'update_index_html' from 'main' (C:\Users\yuuki\株自動シュミレート\auto-stock-backtest2\main.py)
+2025-09-10 17:45:44,455 - __main__ - INFO - 並列化自動株式バックテストシステム完了
+2025-09-10 17:46:05,192 - __main__ - INFO - 並列化自動株式バックテストシステム開始
+2025-09-10 17:46:05,192 - __main__ - INFO - データ取得期間: 2004-12-31 〜 2024-12-31
+2025-09-10 17:46:05,194 - __main__ - INFO - 実行回数: 1
+2025-09-10 17:46:05,194 - __main__ - INFO - ベースシード: 42
+2025-09-10 17:46:05,194 - __main__ - INFO - 並列実行: False
+2025-09-10 17:46:05,194 - __main__ - INFO - ローカルテストモード: True
+2025-09-10 17:46:05,194 - __main__ - INFO - データ取得のみ実行
+2025-09-10 17:46:05,195 - data_fetcher - INFO - === フェーズ1: データ取得開始 ===
+2025-09-10 17:46:05,195 - data_fetcher - INFO - 全戦略の銘柄を収集中...
+2025-09-10 17:46:05,195 - data_fetcher - INFO - 戦略 swing_trading の銘柄を収集中...
+2025-09-10 17:46:05,209 - data_loader - INFO - 指数銘柄CSVファイルから読み込み: 856銘柄
+2025-09-10 17:46:05,221 - data_loader - INFO - 指数銘柄リスト取得: SP500, 銘柄数=474
+2025-09-10 17:46:05,223 - data_loader - INFO - 指数 SP500 から 10 銘柄をランダム抽出: ['WMT', 'CCI', 'PNR', 'SLB', 'T', 'DOC', 'ERIE', 'OXY', 'PCG', 'STT']
+2025-09-10 17:46:05,232 - data_loader - INFO - 指数銘柄CSVファイルから読み込み: 856銘柄
+2025-09-10 17:46:05,234 - data_loader - INFO - 指数銘柄リスト取得: NASDAQ100, 銘柄数=52
+2025-09-10 17:46:05,237 - data_loader - INFO - 指数 NASDAQ100 から 10 銘柄をランダム抽出: ['CSCO', 'KLAC', 'CCEP', 'MSTR', 'REGN', 'UBER', 'MAR', 'ARM', 'ORCL', 'MRVL']
+2025-09-10 17:46:05,242 - data_loader - INFO - 指数銘柄CSVファイルから読み込み: 856銘柄
+2025-09-10 17:46:05,243 - data_loader - INFO - 指数銘柄リスト取得: NIKKEI225, 銘柄数=330
+2025-09-10 17:46:05,244 - data_loader - INFO - 指数 NIKKEI225 から 10 銘柄をランダム抽出: ['4922.T', '9810.T', '7731.T', '3769.T', '2768.T', '6508.T', '3679.T', '6471.T', '4062.T', '6753.T']
+2025-09-10 17:46:05,244 - data_loader - INFO - スイングトレード用銘柄（ローカルテスト）: 30銘柄
+2025-09-10 17:46:05,245 - data_fetcher - INFO -   swing_trading 実行1: 30銘柄
+2025-09-10 17:46:05,245 - data_fetcher - INFO - 戦略 long_term の銘柄を収集中...
+2025-09-10 17:46:05,249 - data_loader - INFO - 指数銘柄CSVファイルから読み込み: 856銘柄
+2025-09-10 17:46:05,250 - data_loader - INFO - 指数銘柄リスト取得: SP500, 銘柄数=474
+2025-09-10 17:46:05,251 - data_loader - INFO - 指数 SP500 から 10 銘柄をランダム抽出: ['WMT', 'CCI', 'PNR', 'SLB', 'T', 'DOC', 'ERIE', 'OXY', 'PCG', 'STT']
+2025-09-10 17:46:05,257 - data_loader - INFO - 指数銘柄CSVファイルから読み込み: 856銘柄
+2025-09-10 17:46:05,258 - data_loader - INFO - 指数銘柄リスト取得: NASDAQ100, 銘柄数=52
+2025-09-10 17:46:05,258 - data_loader - INFO - 指数 NASDAQ100 から 10 銘柄をランダム抽出: ['CSCO', 'KLAC', 'CCEP', 'MSTR', 'REGN', 'UBER', 'MAR', 'ARM', 'ORCL', 'MRVL']
+2025-09-10 17:46:05,262 - data_loader - INFO - 指数銘柄CSVファイルから読み込み: 856銘柄
+2025-09-10 17:46:05,262 - data_loader - INFO - 指数銘柄リスト取得: NIKKEI225, 銘柄数=330
+2025-09-10 17:46:05,262 - data_loader - INFO - 指数 NIKKEI225 から 10 銘柄をランダム抽出: ['4922.T', '9810.T', '7731.T', '3769.T', '2768.T', '6508.T', '3679.T', '6471.T', '4062.T', '6753.T']
+2025-09-10 17:46:05,263 - data_loader - INFO - 中長期投資用銘柄（ローカルテスト）: 30銘柄
+2025-09-10 17:46:05,263 - data_fetcher - INFO -   long_term 実行1: 30銘柄
+2025-09-10 17:46:05,263 - data_fetcher - INFO - 全戦略の銘柄収集完了: 30銘柄
+2025-09-10 17:46:05,263 - data_fetcher - INFO - 一括データ取得開始: 30銘柄
+2025-09-10 17:46:05,264 - data_fetcher - INFO - 取得期間: 2004-12-31 ～ 2024-12-31
+2025-09-10 17:46:05,264 - data_loader - INFO - 並列データ取得開始: 30銘柄
+2025-09-10 17:46:05,290 - data_loader - WARNING - キャッシュ読み込みエラー: WMT, No module named 'numpy._core'
+2025-09-10 17:46:05,290 - data_loader - INFO - 既存データなし、全期間を取得: 2004-12-31 〜 2024-12-31
+2025-09-10 17:46:05,291 - data_loader - INFO - 差分データ取得開始: WMT (不足期間: 1個)
+2025-09-10 17:46:05,291 - data_loader - INFO - 既存キャッシュを読み込み: MAR
+2025-09-10 17:46:05,292 - data_loader - WARNING - キャッシュ読み込みエラー: 7731.T, No module named 'numpy._core'
+2025-09-10 17:46:05,292 - data_loader - INFO - 不足期間 1/1 のデータを取得: WMT (2004-12-31 〜 2024-12-31)
+2025-09-10 17:46:05,292 - data_loader - INFO - 既存キャッシュを読み込み: CCEP
+2025-09-10 17:46:05,292 - data_loader - WARNING - キャッシュ読み込みエラー: CCI, No module named 'numpy._core'
+2025-09-10 17:46:05,295 - data_loader - INFO - 要求期間: 2004-12-31 〜 2024-12-31
+2025-09-10 17:46:05,296 - data_loader - INFO - 既存データなし、全期間を取得: 2004-12-31 〜 2024-12-31
+2025-09-10 17:46:05,297 - data_loader - INFO - 要求期間: 2004-12-31 〜 2024-12-31
+2025-09-10 17:46:05,298 - data_loader - INFO - 既存データなし、全期間を取得: 2004-12-31 〜 2024-12-31
+2025-09-10 17:46:05,298 - data_loader - INFO - 既存データ期間: 2004-12-31 〜 2024-12-31
+2025-09-10 17:46:05,298 - data_loader - INFO - 不足期間なし
+2025-09-10 17:46:05,298 - data_loader - INFO - 既存データ期間: 2004-12-31 〜 2024-12-31
+2025-09-10 17:46:05,299 - data_loader - INFO - 差分データ取得開始: CCI (不足期間: 1個)
+2025-09-10 17:46:05,299 - data_loader - INFO - 差分データ取得開始: 7731.T (不足期間: 1個)
+2025-09-10 17:46:05,299 - data_loader - INFO - キャッシュから完全なデータを取得: MAR
+2025-09-10 17:46:05,299 - data_loader - INFO - 不足期間なし
+2025-09-10 17:46:05,300 - data_loader - INFO - 不足期間 1/1 のデータを取得: CCI (2004-12-31 〜 2024-12-31)
+2025-09-10 17:46:05,300 - data_loader - INFO - 不足期間 1/1 のデータを取得: 7731.T (2004-12-31 〜 2024-12-31)
+2025-09-10 17:46:05,304 - data_loader - INFO - キャッシュから完全なデータを取得: CCEP
+2025-09-10 17:46:05,316 - data_loader - INFO - 既存キャッシュを読み込み: ERIE
+2025-09-10 17:46:05,317 - data_loader - INFO - 要求期間: 2004-12-31 〜 2024-12-31
+2025-09-10 17:46:05,319 - data_loader - INFO - 既存データ期間: 2005-02-25 〜 2024-12-31
+2025-09-10 17:46:05,319 - data_loader - INFO - 不足期間を特定: [('2004-12-31', '2005-02-25')]
+2025-09-10 17:46:05,319 - data_loader - INFO - 差分データ取得開始: ERIE (不足期間: 1個)
+2025-09-10 17:46:05,320 - data_loader - INFO - 不足期間 1/1 のデータを取得: ERIE (2004-12-31 〜 2005-02-25)
+2025-09-10 17:46:05,322 - data_loader - WARNING - キャッシュ読み込みエラー: 2768.T, No module named 'numpy._core'
+2025-09-10 17:46:05,322 - data_loader - INFO - 既存データなし、全期間を取得: 2004-12-31 〜 2024-12-31
+2025-09-10 17:46:05,323 - data_loader - INFO - 差分データ取得開始: 2768.T (不足期間: 1個)
+2025-09-10 17:46:05,323 - data_loader - INFO - 不足期間 1/1 のデータを取得: 2768.T (2004-12-31 〜 2024-12-31)
+2025-09-10 17:46:05,607 - data_loader - INFO - stooq.comからデータ取得: WMT -> WMT
+2025-09-10 17:46:05,607 - data_loader - INFO - stooq.comからデータ取得: 7731.T -> 7731.jp
+2025-09-10 17:46:05,612 - data_loader - INFO - stooq.comからデータ取得: CCI -> CCI
+2025-09-10 17:46:05,612 - data_loader - INFO - stooq.comからデータ取得: ERIE -> ERIE
+2025-09-10 17:46:05,614 - data_loader - INFO - stooq.comからデータ取得: 2768.T -> 2768.jp
+2025-09-10 17:46:07,051 - data_loader - WARNING - stooq.com エラー: ERIE (試行 1), StooqDailyReader request returned no data; check URL for invalid inputs: https://stooq.com/q/d/l/
+2025-09-10 17:46:07,052 - data_loader - WARNING - stooq.com エラー: 2768.T (試行 1), StooqDailyReader request returned no data; check URL for invalid inputs: https://stooq.com/q/d/l/
+2025-09-10 17:46:07,052 - data_loader - WARNING - stooq.com エラー: 7731.T (試行 1), StooqDailyReader request returned no data; check URL for invalid inputs: https://stooq.com/q/d/l/
+2025-09-10 17:46:07,053 - data_loader - WARNING - stooq.com エラー: WMT (試行 1), StooqDailyReader request returned no data; check URL for invalid inputs: https://stooq.com/q/d/l/
+2025-09-10 17:46:07,053 - data_loader - WARNING - stooq.com エラー: CCI (試行 1), StooqDailyReader request returned no data; check URL for invalid inputs: https://stooq.com/q/d/l/
+2025-09-10 17:46:08,064 - data_loader - INFO - stooq.comからデータ取得: 7731.T -> 7731.jp
+2025-09-10 17:46:08,065 - data_loader - INFO - stooq.comからデータ取得: ERIE -> ERIE
+2025-09-10 17:46:08,066 - data_loader - INFO - stooq.comからデータ取得: CCI -> CCI
+2025-09-10 17:46:08,067 - data_loader - INFO - stooq.comからデータ取得: WMT -> WMT
+2025-09-10 17:46:08,070 - data_loader - INFO - stooq.comからデータ取得: 2768.T -> 2768.jp
+2025-09-10 17:46:09,094 - data_loader - WARNING - stooq.com エラー: ERIE (試行 2), StooqDailyReader request returned no data; check URL for invalid inputs: https://stooq.com/q/d/l/
+2025-09-10 17:46:09,094 - data_loader - WARNING - stooq.com エラー: 7731.T (試行 2), StooqDailyReader request returned no data; check URL for invalid inputs: https://stooq.com/q/d/l/
+2025-09-10 17:46:09,095 - data_loader - WARNING - stooq.com エラー: CCI (試行 2), StooqDailyReader request returned no data; check URL for invalid inputs: https://stooq.com/q/d/l/
+2025-09-10 17:46:09,130 - data_loader - WARNING - stooq.com エラー: 2768.T (試行 2), StooqDailyReader request returned no data; check URL for invalid inputs: https://stooq.com/q/d/l/
+2025-09-10 17:46:09,130 - data_loader - WARNING - stooq.com エラー: WMT (試行 2), StooqDailyReader request returned no data; check URL for invalid inputs: https://stooq.com/q/d/l/
+2025-09-10 17:46:11,105 - data_loader - INFO - stooq.comからデータ取得: 7731.T -> 7731.jp
+2025-09-10 17:46:11,106 - data_loader - INFO - stooq.comからデータ取得: CCI -> CCI
+2025-09-10 17:46:11,107 - data_loader - INFO - stooq.comからデータ取得: ERIE -> ERIE
+2025-09-10 17:46:11,137 - data_loader - INFO - stooq.comからデータ取得: 2768.T -> 2768.jp
+2025-09-10 17:46:11,138 - data_loader - INFO - stooq.comからデータ取得: WMT -> WMT
+2025-09-10 17:46:12,418 - data_loader - WARNING - stooq.com エラー: CCI (試行 3), StooqDailyReader request returned no data; check URL for invalid inputs: https://stooq.com/q/d/l/
+2025-09-10 17:46:12,418 - data_loader - WARNING - stooq.com エラー: 7731.T (試行 3), StooqDailyReader request returned no data; check URL for invalid inputs: https://stooq.com/q/d/l/
+2025-09-10 17:46:12,421 - data_loader - ERROR - 期間データ取得失敗: CCI (2004-12-31 〜 2024-12-31), stooq.com データ取得失敗: CCI
+2025-09-10 17:46:12,421 - data_loader - WARNING - stooq.com エラー: 2768.T (試行 3), StooqDailyReader request returned no data; check URL for invalid inputs: https://stooq.com/q/d/l/
+2025-09-10 17:46:12,422 - data_loader - ERROR - 期間データ取得失敗: 7731.T (2004-12-31 〜 2024-12-31), stooq.com データ取得失敗: 7731.T
+2025-09-10 17:46:12,422 - data_loader - WARNING - stooq.com エラー: WMT (試行 3), StooqDailyReader request returned no data; check URL for invalid inputs: https://stooq.com/q/d/l/
+2025-09-10 17:46:12,422 - data_loader - ERROR - データ取得完全失敗: CCI
+2025-09-10 17:46:12,424 - data_loader - ERROR - 期間データ取得失敗: 2768.T (2004-12-31 〜 2024-12-31), stooq.com データ取得失敗: 2768.T
+2025-09-10 17:46:12,424 - data_loader - WARNING - stooq.com エラー: ERIE (試行 3), StooqDailyReader request returned no data; check URL for invalid inputs: https://stooq.com/q/d/l/
+2025-09-10 17:46:12,424 - data_loader - ERROR - データ取得完全失敗: 7731.T
+2025-09-10 17:46:12,426 - data_loader - ERROR - 期間データ取得失敗: WMT (2004-12-31 〜 2024-12-31), stooq.com データ取得失敗: WMT
+2025-09-10 17:46:12,427 - data_loader - ERROR - データ取得完全失敗: 2768.T
+2025-09-10 17:46:12,428 - data_loader - ERROR - 期間データ取得失敗: ERIE (2004-12-31 〜 2005-02-25), stooq.com データ取得失敗: ERIE
+2025-09-10 17:46:12,429 - data_loader - ERROR - データ取得完全失敗: WMT
+2025-09-10 17:46:12,430 - data_loader - WARNING - 新規データ取得失敗、既存キャッシュを使用: ERIE
+2025-09-10 17:46:12,438 - data_loader - INFO - 既存キャッシュを読み込み: REGN
+2025-09-10 17:46:12,439 - data_loader - INFO - 要求期間: 2004-12-31 〜 2024-12-31
+2025-09-10 17:46:12,439 - data_loader - INFO - 既存データ期間: 2005-02-25 〜 2024-12-31
+2025-09-10 17:46:12,439 - data_loader - INFO - 不足期間を特定: [('2004-12-31', '2005-02-25')]
+2025-09-10 17:46:12,440 - data_loader - INFO - 差分データ取得開始: REGN (不足期間: 1個)
+2025-09-10 17:46:12,440 - data_loader - INFO - 不足期間 1/1 のデータを取得: REGN (2004-12-31 〜 2005-02-25)
+2025-09-10 17:46:12,440 - data_loader - INFO - stooq.comからデータ取得: REGN -> REGN
+2025-09-10 17:46:12,443 - data_loader - WARNING - キャッシュ読み込みエラー: SLB, No module named 'numpy._core'
+2025-09-10 17:46:12,443 - data_loader - WARNING - キャッシュ読み込みエラー: 3679.T, No module named 'numpy._core'
+2025-09-10 17:46:12,443 - data_loader - INFO - 既存データなし、全期間を取得: 2004-12-31 〜 2024-12-31
+2025-09-10 17:46:12,444 - data_loader - INFO - 既存キャッシュを読み込み: ORCL
+2025-09-10 17:46:12,444 - data_loader - WARNING - キャッシュ読み込みエラー: 4062.T, No module named 'numpy._core'
+2025-09-10 17:46:12,444 - data_loader - INFO - 既存データなし、全期間を取得: 2004-12-31 〜 2024-12-31
+2025-09-10 17:46:12,444 - data_loader - INFO - 差分データ取得開始: SLB (不足期間: 1個)
+2025-09-10 17:46:12,445 - data_loader - INFO - 要求期間: 2004-12-31 〜 2024-12-31
+2025-09-10 17:46:12,445 - data_loader - INFO - 既存データなし、全期間を取得: 2004-12-31 〜 2024-12-31
+2025-09-10 17:46:12,445 - data_loader - INFO - 差分データ取得開始: 3679.T (不足期間: 1個)
+2025-09-10 17:46:12,445 - data_loader - INFO - 不足期間 1/1 のデータを取得: SLB (2004-12-31 〜 2024-12-31)
+2025-09-10 17:46:12,445 - data_loader - INFO - 既存データ期間: 2004-12-31 〜 2024-12-31
+2025-09-10 17:46:12,445 - data_loader - INFO - 差分データ取得開始: 4062.T (不足期間: 1個)
+2025-09-10 17:46:12,446 - data_loader - INFO - 不足期間 1/1 のデータを取得: 3679.T (2004-12-31 〜 2024-12-31)
+2025-09-10 17:46:12,446 - data_loader - INFO - stooq.comからデータ取得: SLB -> SLB
+2025-09-10 17:46:12,446 - data_loader - INFO - 不足期間なし
+2025-09-10 17:46:12,446 - data_loader - INFO - 不足期間 1/1 のデータを取得: 4062.T (2004-12-31 〜 2024-12-31)
+2025-09-10 17:46:12,446 - data_loader - INFO - stooq.comからデータ取得: 3679.T -> 3679.jp
+2025-09-10 17:46:12,448 - data_loader - INFO - キャッシュから完全なデータを取得: ORCL
+2025-09-10 17:46:12,449 - data_loader - INFO - stooq.comからデータ取得: 4062.T -> 4062.jp
+2025-09-10 17:46:12,459 - data_loader - INFO - 既存キャッシュを読み込み: DOC
+2025-09-10 17:46:12,460 - data_loader - INFO - 要求期間: 2004-12-31 〜 2024-12-31
+2025-09-10 17:46:12,460 - data_loader - INFO - 既存データ期間: 2005-02-25 〜 2024-12-31
+2025-09-10 17:46:12,460 - data_loader - INFO - 不足期間を特定: [('2004-12-31', '2005-02-25')]
+2025-09-10 17:46:12,460 - data_loader - INFO - 差分データ取得開始: DOC (不足期間: 1個)
+2025-09-10 17:46:12,461 - data_loader - INFO - 不足期間 1/1 のデータを取得: DOC (2004-12-31 〜 2005-02-25)
+2025-09-10 17:46:12,461 - data_loader - INFO - stooq.comからデータ取得: DOC -> DOC
+2025-09-10 17:46:13,499 - data_loader - WARNING - stooq.com エラー: 3679.T (試行 1), StooqDailyReader request returned no data; check URL for invalid inputs: https://stooq.com/q/d/l/
+2025-09-10 17:46:13,499 - data_loader - WARNING - stooq.com エラー: SLB (試行 1), StooqDailyReader request returned no data; check URL for invalid inputs: https://stooq.com/q/d/l/
+2025-09-10 17:46:13,500 - data_loader - WARNING - stooq.com エラー: DOC (試行 1), StooqDailyReader request returned no data; check URL for invalid inputs: https://stooq.com/q/d/l/
+2025-09-10 17:46:13,500 - data_loader - WARNING - stooq.com エラー: REGN (試行 1), StooqDailyReader request returned no data; check URL for invalid inputs: https://stooq.com/q/d/l/
+2025-09-10 17:46:13,500 - data_loader - WARNING - stooq.com エラー: 4062.T (試行 1), StooqDailyReader request returned no data; check URL for invalid inputs: https://stooq.com/q/d/l/
+2025-09-10 17:46:14,508 - data_loader - INFO - stooq.comからデータ取得: DOC -> DOC
+2025-09-10 17:46:14,509 - data_loader - INFO - stooq.comからデータ取得: SLB -> SLB
+2025-09-10 17:46:14,510 - data_loader - INFO - stooq.comからデータ取得: 4062.T -> 4062.jp
+2025-09-10 17:46:14,512 - data_loader - INFO - stooq.comからデータ取得: 3679.T -> 3679.jp
+2025-09-10 17:46:14,514 - data_loader - INFO - stooq.comからデータ取得: REGN -> REGN
+2025-09-10 17:46:15,537 - data_loader - WARNING - stooq.com エラー: DOC (試行 2), StooqDailyReader request returned no data; check URL for invalid inputs: https://stooq.com/q/d/l/
+2025-09-10 17:46:15,542 - data_loader - WARNING - stooq.com エラー: 3679.T (試行 2), StooqDailyReader request returned no data; check URL for invalid inputs: https://stooq.com/q/d/l/
+2025-09-10 17:46:15,586 - data_loader - WARNING - stooq.com エラー: SLB (試行 2), StooqDailyReader request returned no data; check URL for invalid inputs: https://stooq.com/q/d/l/
+2025-09-10 17:46:15,587 - data_loader - WARNING - stooq.com エラー: 4062.T (試行 2), StooqDailyReader request returned no data; check URL for invalid inputs: https://stooq.com/q/d/l/
+2025-09-10 17:46:15,587 - data_loader - WARNING - stooq.com エラー: REGN (試行 2), StooqDailyReader request returned no data; check URL for invalid inputs: https://stooq.com/q/d/l/
+2025-09-10 17:46:17,549 - data_loader - INFO - stooq.comからデータ取得: DOC -> DOC
+2025-09-10 17:46:17,550 - data_loader - INFO - stooq.comからデータ取得: 3679.T -> 3679.jp
+2025-09-10 17:46:17,595 - data_loader - INFO - stooq.comからデータ取得: REGN -> REGN
+2025-09-10 17:46:17,596 - data_loader - INFO - stooq.comからデータ取得: 4062.T -> 4062.jp
+2025-09-10 17:46:17,597 - data_loader - INFO - stooq.comからデータ取得: SLB -> SLB
+2025-09-10 17:46:18,614 - data_loader - WARNING - stooq.com エラー: SLB (試行 3), StooqDailyReader request returned no data; check URL for invalid inputs: https://stooq.com/q/d/l/
+2025-09-10 17:46:18,614 - data_loader - WARNING - stooq.com エラー: REGN (試行 3), StooqDailyReader request returned no data; check URL for invalid inputs: https://stooq.com/q/d/l/
+2025-09-10 17:46:18,615 - data_loader - ERROR - 期間データ取得失敗: SLB (2004-12-31 〜 2024-12-31), stooq.com データ取得失敗: SLB
+2025-09-10 17:46:18,617 - data_loader - ERROR - 期間データ取得失敗: REGN (2004-12-31 〜 2005-02-25), stooq.com データ取得失敗: REGN
+2025-09-10 17:46:18,617 - data_loader - ERROR - データ取得完全失敗: SLB
+2025-09-10 17:46:18,617 - data_loader - WARNING - 新規データ取得失敗、既存キャッシュを使用: REGN
+2025-09-10 17:46:18,619 - data_loader - INFO - データ取得進捗: 10/30 完了
+2025-09-10 17:46:18,620 - data_loader - WARNING - stooq.com エラー: DOC (試行 3), StooqDailyReader request returned no data; check URL for invalid inputs: https://stooq.com/q/d/l/
+2025-09-10 17:46:18,622 - data_loader - ERROR - 期間データ取得失敗: DOC (2004-12-31 〜 2005-02-25), stooq.com データ取得失敗: DOC
+2025-09-10 17:46:18,622 - data_loader - WARNING - 新規データ取得失敗、既存キャッシュを使用: DOC
+2025-09-10 17:46:18,629 - data_loader - INFO - 既存キャッシュを読み込み: CSCO
+2025-09-10 17:46:18,629 - data_loader - WARNING - キャッシュ読み込みエラー: PCG, No module named 'numpy._core'
+2025-09-10 17:46:18,630 - data_loader - INFO - 要求期間: 2004-12-31 〜 2024-12-31
+2025-09-10 17:46:18,630 - data_loader - INFO - 既存データなし、全期間を取得: 2004-12-31 〜 2024-12-31
+2025-09-10 17:46:18,630 - data_loader - INFO - 既存データ期間: 2004-12-31 〜 2024-12-31
+2025-09-10 17:46:18,630 - data_loader - INFO - 差分データ取得開始: PCG (不足期間: 1個)
+2025-09-10 17:46:18,630 - data_loader - INFO - 不足期間なし
+2025-09-10 17:46:18,631 - data_loader - INFO - 不足期間 1/1 のデータを取得: PCG (2004-12-31 〜 2024-12-31)
+2025-09-10 17:46:18,631 - data_loader - INFO - キャッシュから完全なデータを取得: CSCO
+2025-09-10 17:46:18,631 - data_loader - INFO - stooq.comからデータ取得: PCG -> PCG
+2025-09-10 17:46:18,632 - data_loader - INFO - 既存キャッシュを読み込み: MRVL
+2025-09-10 17:46:18,635 - data_loader - INFO - 要求期間: 2004-12-31 〜 2024-12-31
+2025-09-10 17:46:18,635 - data_loader - INFO - 既存データ期間: 2004-12-31 〜 2024-12-31
+2025-09-10 17:46:18,635 - data_loader - INFO - 不足期間なし
+2025-09-10 17:46:18,636 - data_loader - INFO - キャッシュから完全なデータを取得: MRVL
+2025-09-10 17:46:18,642 - data_loader - WARNING - キャッシュ読み込みエラー: 4922.T, No module named 'numpy._core'
+2025-09-10 17:46:18,642 - data_loader - INFO - 既存データなし、全期間を取得: 2004-12-31 〜 2024-12-31
+2025-09-10 17:46:18,642 - data_loader - INFO - 差分データ取得開始: 4922.T (不足期間: 1個)
+2025-09-10 17:46:18,642 - data_loader - INFO - 不足期間 1/1 のデータを取得: 4922.T (2004-12-31 〜 2024-12-31)
+2025-09-10 17:46:18,642 - data_loader - INFO - stooq.comからデータ取得: 4922.T -> 4922.jp
+2025-09-10 17:46:18,645 - data_loader - WARNING - キャッシュ読み込みエラー: T, No module named 'numpy._core'
+2025-09-10 17:46:18,645 - data_loader - INFO - 既存データなし、全期間を取得: 2004-12-31 〜 2024-12-31
+2025-09-10 17:46:18,645 - data_loader - INFO - 差分データ取得開始: T (不足期間: 1個)
+2025-09-10 17:46:18,645 - data_loader - INFO - 不足期間 1/1 のデータを取得: T (2004-12-31 〜 2024-12-31)
+2025-09-10 17:46:18,646 - data_loader - INFO - stooq.comからデータ取得: T -> T
+2025-09-10 17:46:18,654 - data_loader - WARNING - stooq.com エラー: 3679.T (試行 3), StooqDailyReader request returned no data; check URL for invalid inputs: https://stooq.com/q/d/l/
+2025-09-10 17:46:18,655 - data_loader - ERROR - 期間データ取得失敗: 3679.T (2004-12-31 〜 2024-12-31), stooq.com データ取得失敗: 3679.T
+2025-09-10 17:46:18,656 - data_loader - WARNING - stooq.com エラー: 4062.T (試行 3), StooqDailyReader request returned no data; check URL for invalid inputs: https://stooq.com/q/d/l/
+2025-09-10 17:46:18,656 - data_loader - ERROR - データ取得完全失敗: 3679.T
+2025-09-10 17:46:18,658 - data_loader - ERROR - 期間データ取得失敗: 4062.T (2004-12-31 〜 2024-12-31), stooq.com データ取得失敗: 4062.T
+2025-09-10 17:46:18,659 - data_loader - ERROR - データ取得完全失敗: 4062.T
+2025-09-10 17:46:18,668 - data_loader - INFO - 既存キャッシュを読み込み: STT
+2025-09-10 17:46:18,668 - data_loader - WARNING - キャッシュ読み込みエラー: 6753.T, No module named 'numpy._core'
+2025-09-10 17:46:18,669 - data_loader - INFO - 要求期間: 2004-12-31 〜 2024-12-31
+2025-09-10 17:46:18,669 - data_loader - INFO - 既存データなし、全期間を取得: 2004-12-31 〜 2024-12-31
+2025-09-10 17:46:18,669 - data_loader - INFO - 既存データ期間: 2004-12-31 〜 2024-12-31
+2025-09-10 17:46:18,670 - data_loader - INFO - 差分データ取得開始: 6753.T (不足期間: 1個)
+2025-09-10 17:46:18,670 - data_loader - INFO - 不足期間なし
+2025-09-10 17:46:18,670 - data_loader - INFO - 不足期間 1/1 のデータを取得: 6753.T (2004-12-31 〜 2024-12-31)
+2025-09-10 17:46:18,670 - data_loader - INFO - キャッシュから完全なデータを取得: STT
+2025-09-10 17:46:18,670 - data_loader - INFO - stooq.comからデータ取得: 6753.T -> 6753.jp
+2025-09-10 17:46:18,680 - data_loader - WARNING - キャッシュ読み込みエラー: 6471.T, No module named 'numpy._core'
+2025-09-10 17:46:18,680 - data_loader - INFO - 既存データなし、全期間を取得: 2004-12-31 〜 2024-12-31
+2025-09-10 17:46:18,680 - data_loader - INFO - 差分データ取得開始: 6471.T (不足期間: 1個)
+2025-09-10 17:46:18,680 - data_loader - INFO - 不足期間 1/1 のデータを取得: 6471.T (2004-12-31 〜 2024-12-31)
+2025-09-10 17:46:18,681 - data_loader - INFO - stooq.comからデータ取得: 6471.T -> 6471.jp
+2025-09-10 17:46:19,675 - data_loader - WARNING - stooq.com エラー: T (試行 1), StooqDailyReader request returned no data; check URL for invalid inputs: https://stooq.com/q/d/l/
+2025-09-10 17:46:19,680 - data_loader - WARNING - stooq.com エラー: PCG (試行 1), StooqDailyReader request returned no data; check URL for invalid inputs: https://stooq.com/q/d/l/
+2025-09-10 17:46:19,682 - data_loader - WARNING - stooq.com エラー: 4922.T (試行 1), StooqDailyReader request returned no data; check URL for invalid inputs: https://stooq.com/q/d/l/
+2025-09-10 17:46:19,742 - data_loader - WARNING - stooq.com エラー: 6471.T (試行 1), StooqDailyReader request returned no data; check URL for invalid inputs: https://stooq.com/q/d/l/
+2025-09-10 17:46:19,744 - data_loader - WARNING - stooq.com エラー: 6753.T (試行 1), StooqDailyReader request returned no data; check URL for invalid inputs: https://stooq.com/q/d/l/
+2025-09-10 17:46:20,683 - data_loader - INFO - stooq.comからデータ取得: PCG -> PCG
+2025-09-10 17:46:20,684 - data_loader - INFO - stooq.comからデータ取得: T -> T
+2025-09-10 17:46:20,699 - data_loader - INFO - stooq.comからデータ取得: 4922.T -> 4922.jp
+2025-09-10 17:46:20,746 - data_loader - INFO - stooq.comからデータ取得: 6753.T -> 6753.jp
+2025-09-10 17:46:20,747 - data_loader - INFO - stooq.comからデータ取得: 6471.T -> 6471.jp
+2025-09-10 17:46:21,727 - data_loader - WARNING - stooq.com エラー: PCG (試行 2), StooqDailyReader request returned no data; check URL for invalid inputs: https://stooq.com/q/d/l/
+2025-09-10 17:46:21,732 - data_loader - WARNING - stooq.com エラー: T (試行 2), StooqDailyReader request returned no data; check URL for invalid inputs: https://stooq.com/q/d/l/
+2025-09-10 17:46:21,732 - data_loader - WARNING - stooq.com エラー: 4922.T (試行 2), StooqDailyReader request returned no data; check URL for invalid inputs: https://stooq.com/q/d/l/
+2025-09-10 17:46:21,789 - data_loader - WARNING - stooq.com エラー: 6471.T (試行 2), StooqDailyReader request returned no data; check URL for invalid inputs: https://stooq.com/q/d/l/
+2025-09-10 17:46:21,790 - data_loader - WARNING - stooq.com エラー: 6753.T (試行 2), StooqDailyReader request returned no data; check URL for invalid inputs: https://stooq.com/q/d/l/
+2025-09-10 17:46:23,732 - data_loader - INFO - stooq.comからデータ取得: PCG -> PCG
+2025-09-10 17:46:23,747 - data_loader - INFO - stooq.comからデータ取得: T -> T
+2025-09-10 17:46:23,748 - data_loader - INFO - stooq.comからデータ取得: 4922.T -> 4922.jp
+2025-09-10 17:46:23,792 - data_loader - INFO - stooq.comからデータ取得: 6471.T -> 6471.jp
+2025-09-10 17:46:23,795 - data_loader - INFO - stooq.comからデータ取得: 6753.T -> 6753.jp
+2025-09-10 17:46:24,800 - data_loader - WARNING - stooq.com エラー: 4922.T (試行 3), StooqDailyReader request returned no data; check URL for invalid inputs: https://stooq.com/q/d/l/
+2025-09-10 17:46:24,800 - data_loader - WARNING - stooq.com エラー: PCG (試行 3), StooqDailyReader request returned no data; check URL for invalid inputs: https://stooq.com/q/d/l/
+2025-09-10 17:46:24,800 - data_loader - WARNING - stooq.com エラー: T (試行 3), StooqDailyReader request returned no data; check URL for invalid inputs: https://stooq.com/q/d/l/
+2025-09-10 17:46:24,802 - data_loader - ERROR - 期間データ取得失敗: 4922.T (2004-12-31 〜 2024-12-31), stooq.com データ取得失敗: 4922.T
+2025-09-10 17:46:24,802 - data_loader - WARNING - stooq.com エラー: 6753.T (試行 3), StooqDailyReader request returned no data; check URL for invalid inputs: https://stooq.com/q/d/l/
+2025-09-10 17:46:24,804 - data_loader - ERROR - 期間データ取得失敗: PCG (2004-12-31 〜 2024-12-31), stooq.com データ取得失敗: PCG
+2025-09-10 17:46:24,806 - data_loader - ERROR - 期間データ取得失敗: T (2004-12-31 〜 2024-12-31), stooq.com データ取得失敗: T
+2025-09-10 17:46:24,806 - data_loader - ERROR - データ取得完全失敗: 4922.T
+2025-09-10 17:46:24,807 - data_loader - ERROR - 期間データ取得失敗: 6753.T (2004-12-31 〜 2024-12-31), stooq.com データ取得失敗: 6753.T
+2025-09-10 17:46:24,807 - data_loader - ERROR - データ取得完全失敗: PCG
+2025-09-10 17:46:24,808 - data_loader - ERROR - データ取得完全失敗: T
+2025-09-10 17:46:24,809 - data_loader - ERROR - データ取得完全失敗: 6753.T
+2025-09-10 17:46:24,811 - data_loader - INFO - データ取得進捗: 20/30 完了
+2025-09-10 17:46:24,818 - data_loader - INFO - 既存キャッシュを読み込み: UBER
+2025-09-10 17:46:24,818 - data_loader - INFO - 要求期間: 2004-12-31 〜 2024-12-31
+2025-09-10 17:46:24,819 - data_loader - INFO - 既存データ期間: 2019-05-10 〜 2024-12-31
+2025-09-10 17:46:24,819 - data_loader - INFO - 不足期間を特定: [('2004-12-31', '2019-05-10')]
+2025-09-10 17:46:24,819 - data_loader - INFO - 差分データ取得開始: UBER (不足期間: 1個)
+2025-09-10 17:46:24,819 - data_loader - INFO - 不足期間 1/1 のデータを取得: UBER (2004-12-31 〜 2019-05-10)
+2025-09-10 17:46:24,820 - data_loader - INFO - stooq.comからデータ取得: UBER -> UBER
+2025-09-10 17:46:24,825 - data_loader - WARNING - キャッシュ読み込みエラー: PNR, No module named 'numpy._core'
+2025-09-10 17:46:24,825 - data_loader - INFO - 既存データなし、全期間を取得: 2004-12-31 〜 2024-12-31
+2025-09-10 17:46:24,825 - data_loader - INFO - 差分データ取得開始: PNR (不足期間: 1個)
+2025-09-10 17:46:24,825 - data_loader - INFO - 不足期間 1/1 のデータを取得: PNR (2004-12-31 〜 2024-12-31)
+2025-09-10 17:46:24,826 - data_loader - INFO - stooq.comからデータ取得: PNR -> PNR
+2025-09-10 17:46:24,828 - data_loader - WARNING - キャッシュ読み込みエラー: 3769.T, No module named 'numpy._core'
+2025-09-10 17:46:24,828 - data_loader - INFO - 既存データなし、全期間を取得: 2004-12-31 〜 2024-12-31
+2025-09-10 17:46:24,828 - data_loader - INFO - 差分データ取得開始: 3769.T (不足期間: 1個)
+2025-09-10 17:46:24,828 - data_loader - INFO - 不足期間 1/1 のデータを取得: 3769.T (2004-12-31 〜 2024-12-31)
+2025-09-10 17:46:24,829 - data_loader - INFO - stooq.comからデータ取得: 3769.T -> 3769.jp
+2025-09-10 17:46:24,831 - data_loader - INFO - 既存キャッシュを読み込み: KLAC
+2025-09-10 17:46:24,831 - data_loader - INFO - 要求期間: 2004-12-31 〜 2024-12-31
+2025-09-10 17:46:24,832 - data_loader - INFO - 既存データ期間: 2004-12-31 〜 2024-12-31
+2025-09-10 17:46:24,832 - data_loader - INFO - 不足期間なし
+2025-09-10 17:46:24,832 - data_loader - INFO - キャッシュから完全なデータを取得: KLAC
+2025-09-10 17:46:24,835 - data_loader - WARNING - stooq.com エラー: 6471.T (試行 3), StooqDailyReader request returned no data; check URL for invalid inputs: https://stooq.com/q/d/l/
+2025-09-10 17:46:24,838 - data_loader - ERROR - 期間データ取得失敗: 6471.T (2004-12-31 〜 2024-12-31), stooq.com データ取得失敗: 6471.T
+2025-09-10 17:46:24,838 - data_loader - ERROR - データ取得完全失敗: 6471.T
+2025-09-10 17:46:24,842 - data_loader - INFO - 既存キャッシュを読み込み: MSTR
+2025-09-10 17:46:24,842 - data_loader - INFO - 要求期間: 2004-12-31 〜 2024-12-31
+2025-09-10 17:46:24,842 - data_loader - INFO - 既存データ期間: 2005-02-25 〜 2024-12-31
+2025-09-10 17:46:24,842 - data_loader - INFO - 不足期間を特定: [('2004-12-31', '2005-02-25')]
+2025-09-10 17:46:24,842 - data_loader - INFO - 差分データ取得開始: MSTR (不足期間: 1個)
+2025-09-10 17:46:24,844 - data_loader - INFO - 不足期間 1/1 のデータを取得: MSTR (2004-12-31 〜 2005-02-25)
+2025-09-10 17:46:24,844 - data_loader - INFO - stooq.comからデータ取得: MSTR -> MSTR
+2025-09-10 17:46:24,848 - data_loader - WARNING - キャッシュ読み込みエラー: 6508.T, No module named 'numpy._core'
+2025-09-10 17:46:24,848 - data_loader - INFO - 既存データなし、全期間を取得: 2004-12-31 〜 2024-12-31
+2025-09-10 17:46:24,848 - data_loader - INFO - 差分データ取得開始: 6508.T (不足期間: 1個)
+2025-09-10 17:46:24,849 - data_loader - INFO - 不足期間 1/1 のデータを取得: 6508.T (2004-12-31 〜 2024-12-31)
+2025-09-10 17:46:24,849 - data_loader - INFO - stooq.comからデータ取得: 6508.T -> 6508.jp
+2025-09-10 17:46:25,829 - data_loader - WARNING - stooq.com エラー: PNR (試行 1), StooqDailyReader request returned no data; check URL for invalid inputs: https://stooq.com/q/d/l/
+2025-09-10 17:46:25,844 - data_loader - WARNING - stooq.com エラー: 3769.T (試行 1), StooqDailyReader request returned no data; check URL for invalid inputs: https://stooq.com/q/d/l/
+2025-09-10 17:46:25,844 - data_loader - WARNING - stooq.com エラー: UBER (試行 1), StooqDailyReader request returned no data; check URL for invalid inputs: https://stooq.com/q/d/l/
+2025-09-10 17:46:25,880 - data_loader - WARNING - stooq.com エラー: 6508.T (試行 1), StooqDailyReader request returned no data; check URL for invalid inputs: https://stooq.com/q/d/l/
+2025-09-10 17:46:25,880 - data_loader - WARNING - stooq.com エラー: MSTR (試行 1), StooqDailyReader request returned no data; check URL for invalid inputs: https://stooq.com/q/d/l/
+2025-09-10 17:46:26,842 - data_loader - INFO - stooq.comからデータ取得: PNR -> PNR
+2025-09-10 17:46:26,858 - data_loader - INFO - stooq.comからデータ取得: 3769.T -> 3769.jp
+2025-09-10 17:46:26,859 - data_loader - INFO - stooq.comからデータ取得: UBER -> UBER
+2025-09-10 17:46:26,888 - data_loader - INFO - stooq.comからデータ取得: 6508.T -> 6508.jp
+2025-09-10 17:46:26,890 - data_loader - INFO - stooq.comからデータ取得: MSTR -> MSTR
+2025-09-10 17:46:27,868 - data_loader - WARNING - stooq.com エラー: UBER (試行 2), StooqDailyReader request returned no data; check URL for invalid inputs: https://stooq.com/q/d/l/
+2025-09-10 17:46:27,869 - data_loader - WARNING - stooq.com エラー: PNR (試行 2), StooqDailyReader request returned no data; check URL for invalid inputs: https://stooq.com/q/d/l/
+2025-09-10 17:46:27,870 - data_loader - WARNING - stooq.com エラー: 3769.T (試行 2), StooqDailyReader request returned no data; check URL for invalid inputs: https://stooq.com/q/d/l/
+2025-09-10 17:46:27,937 - data_loader - WARNING - stooq.com エラー: MSTR (試行 2), StooqDailyReader request returned no data; check URL for invalid inputs: https://stooq.com/q/d/l/
+2025-09-10 17:46:27,937 - data_loader - WARNING - stooq.com エラー: 6508.T (試行 2), StooqDailyReader request returned no data; check URL for invalid inputs: https://stooq.com/q/d/l/
+2025-09-10 17:46:29,884 - data_loader - INFO - stooq.comからデータ取得: UBER -> UBER
+2025-09-10 17:46:29,885 - data_loader - INFO - stooq.comからデータ取得: PNR -> PNR
+2025-09-10 17:46:29,888 - data_loader - INFO - stooq.comからデータ取得: 3769.T -> 3769.jp
+2025-09-10 17:46:29,946 - data_loader - INFO - stooq.comからデータ取得: 6508.T -> 6508.jp
+2025-09-10 17:46:29,947 - data_loader - INFO - stooq.comからデータ取得: MSTR -> MSTR
+2025-09-10 17:46:31,212 - data_loader - WARNING - stooq.com エラー: 6508.T (試行 3), StooqDailyReader request returned no data; check URL for invalid inputs: https://stooq.com/q/d/l/
+2025-09-10 17:46:31,212 - data_loader - WARNING - stooq.com エラー: 3769.T (試行 3), StooqDailyReader request returned no data; check URL for invalid inputs: https://stooq.com/q/d/l/
+2025-09-10 17:46:31,212 - data_loader - WARNING - stooq.com エラー: UBER (試行 3), StooqDailyReader request returned no data; check URL for invalid inputs: https://stooq.com/q/d/l/
+2025-09-10 17:46:31,214 - data_loader - WARNING - stooq.com エラー: MSTR (試行 3), StooqDailyReader request returned no data; check URL for invalid inputs: https://stooq.com/q/d/l/
+2025-09-10 17:46:31,214 - data_loader - WARNING - stooq.com エラー: PNR (試行 3), StooqDailyReader request returned no data; check URL for invalid inputs: https://stooq.com/q/d/l/
+2025-09-10 17:46:31,215 - data_loader - ERROR - 期間データ取得失敗: 6508.T (2004-12-31 〜 2024-12-31), stooq.com データ取得失敗: 6508.T
+2025-09-10 17:46:31,216 - data_loader - ERROR - 期間データ取得失敗: 3769.T (2004-12-31 〜 2024-12-31), stooq.com データ取得失敗: 3769.T
+2025-09-10 17:46:31,217 - data_loader - ERROR - 期間データ取得失敗: UBER (2004-12-31 〜 2019-05-10), stooq.com データ取得失敗: UBER
+2025-09-10 17:46:31,219 - data_loader - ERROR - 期間データ取得失敗: MSTR (2004-12-31 〜 2005-02-25), stooq.com データ取得失敗: MSTR
+2025-09-10 17:46:31,221 - data_loader - ERROR - 期間データ取得失敗: PNR (2004-12-31 〜 2024-12-31), stooq.com データ取得失敗: PNR
+2025-09-10 17:46:31,221 - data_loader - ERROR - データ取得完全失敗: 6508.T
+2025-09-10 17:46:31,222 - data_loader - ERROR - データ取得完全失敗: 3769.T
+2025-09-10 17:46:31,222 - data_loader - WARNING - 新規データ取得失敗、既存キャッシュを使用: UBER
+2025-09-10 17:46:31,222 - data_loader - WARNING - 新規データ取得失敗、既存キャッシュを使用: MSTR
+2025-09-10 17:46:31,222 - data_loader - ERROR - データ取得完全失敗: PNR
+2025-09-10 17:46:31,224 - data_loader - INFO - 既存データなし、全期間を取得: 2004-12-31 〜 2024-12-31
+2025-09-10 17:46:31,225 - data_loader - INFO - 差分データ取得開始: 9810.T (不足期間: 1個)
+2025-09-10 17:46:31,225 - data_loader - INFO - 不足期間 1/1 のデータを取得: 9810.T (2004-12-31 〜 2024-12-31)
+2025-09-10 17:46:31,225 - data_loader - INFO - stooq.comからデータ取得: 9810.T -> 9810.jp
+2025-09-10 17:46:31,231 - data_loader - INFO - 既存キャッシュを読み込み: ARM
+2025-09-10 17:46:31,232 - data_loader - INFO - 要求期間: 2004-12-31 〜 2024-12-31
+2025-09-10 17:46:31,232 - data_loader - INFO - 既存データ期間: 2023-09-14 〜 2024-12-31
+2025-09-10 17:46:31,232 - data_loader - INFO - 不足期間を特定: [('2004-12-31', '2023-09-14')]
+2025-09-10 17:46:31,232 - data_loader - INFO - 差分データ取得開始: ARM (不足期間: 1個)
+2025-09-10 17:46:31,232 - data_loader - INFO - 不足期間 1/1 のデータを取得: ARM (2004-12-31 〜 2023-09-14)
+2025-09-10 17:46:31,233 - data_loader - INFO - stooq.comからデータ取得: ARM -> ARM
+2025-09-10 17:46:31,253 - data_loader - WARNING - キャッシュ読み込みエラー: OXY, No module named 'numpy._core'
+2025-09-10 17:46:31,255 - data_loader - INFO - 既存データなし、全期間を取得: 2004-12-31 〜 2024-12-31
+2025-09-10 17:46:31,255 - data_loader - INFO - 差分データ取得開始: OXY (不足期間: 1個)
+2025-09-10 17:46:31,255 - data_loader - INFO - 不足期間 1/1 のデータを取得: OXY (2004-12-31 〜 2024-12-31)
+2025-09-10 17:46:31,255 - data_loader - INFO - stooq.comからデータ取得: OXY -> OXY
+2025-09-10 17:46:32,246 - data_loader - WARNING - stooq.com エラー: 9810.T (試行 1), StooqDailyReader request returned no data; check URL for invalid inputs: https://stooq.com/q/d/l/
+2025-09-10 17:46:32,279 - data_loader - WARNING - stooq.com エラー: ARM (試行 1), StooqDailyReader request returned no data; check URL for invalid inputs: https://stooq.com/q/d/l/
+2025-09-10 17:46:32,341 - data_loader - WARNING - stooq.com エラー: OXY (試行 1), StooqDailyReader request returned no data; check URL for invalid inputs: https://stooq.com/q/d/l/
+2025-09-10 17:46:33,253 - data_loader - INFO - stooq.comからデータ取得: 9810.T -> 9810.jp
+2025-09-10 17:46:33,285 - data_loader - INFO - stooq.comからデータ取得: ARM -> ARM
+2025-09-10 17:46:33,347 - data_loader - INFO - stooq.comからデータ取得: OXY -> OXY
+2025-09-10 17:46:34,285 - data_loader - WARNING - stooq.com エラー: 9810.T (試行 2), StooqDailyReader request returned no data; check URL for invalid inputs: https://stooq.com/q/d/l/
+2025-09-10 17:46:34,324 - data_loader - WARNING - stooq.com エラー: ARM (試行 2), StooqDailyReader request returned no data; check URL for invalid inputs: https://stooq.com/q/d/l/
+2025-09-10 17:46:34,390 - data_loader - WARNING - stooq.com エラー: OXY (試行 2), StooqDailyReader request returned no data; check URL for invalid inputs: https://stooq.com/q/d/l/
+2025-09-10 17:46:36,292 - data_loader - INFO - stooq.comからデータ取得: 9810.T -> 9810.jp
+2025-09-10 17:46:36,338 - data_loader - INFO - stooq.comからデータ取得: ARM -> ARM
+2025-09-10 17:46:36,402 - data_loader - INFO - stooq.comからデータ取得: OXY -> OXY
+2025-09-10 17:46:37,592 - data_loader - WARNING - stooq.com エラー: 9810.T (試行 3), StooqDailyReader request returned no data; check URL for invalid inputs: https://stooq.com/q/d/l/
+2025-09-10 17:46:37,592 - data_loader - ERROR - 期間データ取得失敗: 9810.T (2004-12-31 〜 2024-12-31), stooq.com データ取得失敗: 9810.T
+2025-09-10 17:46:37,594 - data_loader - ERROR - データ取得完全失敗: 9810.T
+2025-09-10 17:46:37,595 - data_loader - WARNING - stooq.com エラー: OXY (試行 3), StooqDailyReader request returned no data; check URL for invalid inputs: https://stooq.com/q/d/l/
+2025-09-10 17:46:37,596 - data_loader - ERROR - 期間データ取得失敗: OXY (2004-12-31 〜 2024-12-31), stooq.com データ取得失敗: OXY
+2025-09-10 17:46:37,596 - data_loader - ERROR - データ取得完全失敗: OXY
+2025-09-10 17:46:37,597 - data_loader - WARNING - stooq.com エラー: ARM (試行 3), StooqDailyReader request returned no data; check URL for invalid inputs: https://stooq.com/q/d/l/
+2025-09-10 17:46:37,599 - data_loader - ERROR - 期間データ取得失敗: ARM (2004-12-31 〜 2023-09-14), stooq.com データ取得失敗: ARM
+2025-09-10 17:46:37,599 - data_loader - WARNING - 新規データ取得失敗、既存キャッシュを使用: ARM
+2025-09-10 17:46:37,599 - data_loader - INFO - データ取得進捗: 30/30 完了
+2025-09-10 17:46:37,600 - data_loader - INFO - 並列データ取得完了: 30銘柄, 所要時間: 32.34秒
+2025-09-10 17:46:37,600 - data_fetcher - INFO - データ取得完了: 成功 30銘柄, 失敗 0銘柄
+2025-09-10 17:46:37,600 - data_fetcher - INFO - VIXデータを取得中...
+2025-09-10 17:46:37,610 - data_loader - INFO - VIXキャッシュデータを読み込み: (5218, 5)
+2025-09-10 17:46:37,611 - data_fetcher - INFO - VIXデータ取得成功: 5218行
+2025-09-10 17:46:37,611 - data_fetcher - INFO - === フェーズ1: データ取得完了 ===
+2025-09-10 17:46:37,612 - __main__ - INFO - データ取得完了: {'total': 30, 'success': 30, 'failed': 0}
+2025-09-10 17:46:51,455 - __main__ - INFO - 並列化自動株式バックテストシステム開始
+2025-09-10 17:46:51,455 - __main__ - INFO - データ取得期間: 2004-12-31 〜 2024-12-31
+2025-09-10 17:46:51,456 - __main__ - INFO - 実行回数: 2
+2025-09-10 17:46:51,456 - __main__ - INFO - ベースシード: 42
+2025-09-10 17:46:51,456 - __main__ - INFO - 並列実行: False
+2025-09-10 17:46:51,456 - __main__ - INFO - ローカルテストモード: True
+2025-09-10 17:46:51,456 - __main__ - INFO - キャッシュ専用バックテスト実行
+2025-09-10 17:46:51,457 - __main__ - INFO - === キャッシュ専用バックテスト開始 ===
+2025-09-10 17:46:51,457 - __main__ - INFO - swing_trading バックテスト期間: 2021-08-01 〜 2025-08-31
+2025-09-10 17:46:51,457 - __main__.swing_trading - INFO - 戦略複数回バックテスト開始: swing_trading, 実行回数: 2
+2025-09-10 17:46:51,457 - __main__.swing_trading - INFO - 実行 1/2
+2025-09-10 17:46:51,457 - __main__.swing_trading - INFO - キャッシュ専用バックテスト開始: swing_trading, シード: 43
+2025-09-10 17:46:51,458 - backtest_engine.swing_trading.cache_only - INFO - バックテスト開始: swing_trading
+2025-09-10 17:46:51,459 - backtest_engine.swing_trading.cache_only - WARNING - キャッシュからデータ取得失敗: 2, キャッシュファイルが見つかりません: 2
+2025-09-10 17:46:51,460 - backtest_engine.swing_trading.cache_only - WARNING - キャッシュからデータ取得失敗: 0, キャッシュファイルが見つかりません: 0
+2025-09-10 17:46:51,460 - backtest_engine.swing_trading.cache_only - WARNING - キャッシュからデータ取得失敗: 2, キャッシュファイルが見つかりません: 2
+2025-09-10 17:46:51,462 - backtest_engine.swing_trading.cache_only - WARNING - キャッシュからデータ取得失敗: 1, キャッシュファイルが見つかりません: 1
+2025-09-10 17:46:51,462 - backtest_engine.swing_trading.cache_only - WARNING - キャッシュからデータ取得失敗: -, キャッシュファイルが見つかりません: -
+2025-09-10 17:46:51,464 - backtest_engine.swing_trading.cache_only - WARNING - キャッシュからデータ取得失敗: 0, キャッシュファイルが見つかりません: 0
+2025-09-10 17:46:51,465 - backtest_engine.swing_trading.cache_only - WARNING - キャッシュからデータ取得失敗: 8, キャッシュファイルが見つかりません: 8
+2025-09-10 17:46:51,466 - backtest_engine.swing_trading.cache_only - WARNING - キャッシュからデータ取得失敗: -, キャッシュファイルが見つかりません: -
+2025-09-10 17:46:51,466 - backtest_engine.swing_trading.cache_only - WARNING - キャッシュからデータ取得失敗: 0, キャッシュファイルが見つかりません: 0
+2025-09-10 17:46:51,467 - backtest_engine.swing_trading.cache_only - WARNING - キャッシュからデータ取得失敗: 1, キャッシュファイルが見つかりません: 1
+2025-09-10 17:46:51,468 - backtest_engine.swing_trading.cache_only - ERROR - 有効なデータがありません
+2025-09-10 17:46:51,468 - __main__.swing_trading - WARNING - 実行 1 失敗: 結果なし
+2025-09-10 17:46:51,468 - __main__.swing_trading - INFO - 実行 2/2
+2025-09-10 17:46:51,468 - __main__.swing_trading - INFO - キャッシュ専用バックテスト開始: swing_trading, シード: 44
+2025-09-10 17:46:51,469 - backtest_engine.swing_trading.cache_only - INFO - バックテスト開始: swing_trading
+2025-09-10 17:46:51,470 - backtest_engine.swing_trading.cache_only - WARNING - キャッシュからデータ取得失敗: 2, キャッシュファイルが見つかりません: 2
+2025-09-10 17:46:51,472 - backtest_engine.swing_trading.cache_only - WARNING - キャッシュからデータ取得失敗: 0, キャッシュファイルが見つかりません: 0
+2025-09-10 17:46:51,473 - backtest_engine.swing_trading.cache_only - WARNING - キャッシュからデータ取得失敗: 2, キャッシュファイルが見つかりません: 2
+2025-09-10 17:46:51,474 - backtest_engine.swing_trading.cache_only - WARNING - キャッシュからデータ取得失敗: 1, キャッシュファイルが見つかりません: 1
+2025-09-10 17:46:51,475 - backtest_engine.swing_trading.cache_only - WARNING - キャッシュからデータ取得失敗: -, キャッシュファイルが見つかりません: -
+2025-09-10 17:46:51,475 - backtest_engine.swing_trading.cache_only - WARNING - キャッシュからデータ取得失敗: 0, キャッシュファイルが見つかりません: 0
+2025-09-10 17:46:51,477 - backtest_engine.swing_trading.cache_only - WARNING - キャッシュからデータ取得失敗: 8, キャッシュファイルが見つかりません: 8
+2025-09-10 17:46:51,478 - backtest_engine.swing_trading.cache_only - WARNING - キャッシュからデータ取得失敗: -, キャッシュファイルが見つかりません: -
+2025-09-10 17:46:51,479 - backtest_engine.swing_trading.cache_only - WARNING - キャッシュからデータ取得失敗: 0, キャッシュファイルが見つかりません: 0
+2025-09-10 17:46:51,480 - backtest_engine.swing_trading.cache_only - WARNING - キャッシュからデータ取得失敗: 1, キャッシュファイルが見つかりません: 1
+2025-09-10 17:46:51,480 - backtest_engine.swing_trading.cache_only - ERROR - 有効なデータがありません
+2025-09-10 17:46:51,481 - __main__.swing_trading - WARNING - 実行 2 失敗: 結果なし
+2025-09-10 17:46:51,481 - __main__.swing_trading - INFO - 戦略複数回バックテスト完了: swing_trading
+2025-09-10 17:46:51,481 - __main__.swing_trading - INFO - 成功回数: 0/2
+2025-09-10 17:46:51,481 - __main__ - INFO - long_term バックテスト期間: 2006-08-01 〜 2025-08-31
+2025-09-10 17:46:51,481 - __main__.long_term - INFO - 戦略複数回バックテスト開始: long_term, 実行回数: 2
+2025-09-10 17:46:51,482 - __main__.long_term - INFO - 実行 1/2
+2025-09-10 17:46:51,482 - __main__.long_term - INFO - キャッシュ専用バックテスト開始: long_term, シード: 43
+2025-09-10 17:46:51,482 - backtest_engine.long_term.cache_only - INFO - バックテスト開始: long_term
+2025-09-10 17:46:51,483 - backtest_engine.long_term.cache_only - WARNING - キャッシュからデータ取得失敗: 2, キャッシュファイルが見つかりません: 2
+2025-09-10 17:46:51,484 - backtest_engine.long_term.cache_only - WARNING - キャッシュからデータ取得失敗: 0, キャッシュファイルが見つかりません: 0
+2025-09-10 17:46:51,484 - backtest_engine.long_term.cache_only - WARNING - キャッシュからデータ取得失敗: 0, キャッシュファイルが見つかりません: 0
+2025-09-10 17:46:51,486 - backtest_engine.long_term.cache_only - WARNING - キャッシュからデータ取得失敗: 6, キャッシュファイルが見つかりません: 6
+2025-09-10 17:46:51,488 - backtest_engine.long_term.cache_only - WARNING - キャッシュからデータ取得失敗: -, キャッシュファイルが見つかりません: -
+2025-09-10 17:46:51,489 - backtest_engine.long_term.cache_only - WARNING - キャッシュからデータ取得失敗: 0, キャッシュファイルが見つかりません: 0
+2025-09-10 17:46:51,490 - backtest_engine.long_term.cache_only - WARNING - キャッシュからデータ取得失敗: 8, キャッシュファイルが見つかりません: 8
+2025-09-10 17:46:51,491 - backtest_engine.long_term.cache_only - WARNING - キャッシュからデータ取得失敗: -, キャッシュファイルが見つかりません: -
+2025-09-10 17:46:51,492 - backtest_engine.long_term.cache_only - WARNING - キャッシュからデータ取得失敗: 0, キャッシュファイルが見つかりません: 0
+2025-09-10 17:46:51,493 - backtest_engine.long_term.cache_only - WARNING - キャッシュからデータ取得失敗: 1, キャッシュファイルが見つかりません: 1
+2025-09-10 17:46:51,493 - backtest_engine.long_term.cache_only - ERROR - 有効なデータがありません
+2025-09-10 17:46:51,493 - __main__.long_term - WARNING - 実行 1 失敗: 結果なし
+2025-09-10 17:46:51,493 - __main__.long_term - INFO - 実行 2/2
+2025-09-10 17:46:51,494 - __main__.long_term - INFO - キャッシュ専用バックテスト開始: long_term, シード: 44
+2025-09-10 17:46:51,494 - backtest_engine.long_term.cache_only - INFO - バックテスト開始: long_term
+2025-09-10 17:46:51,495 - backtest_engine.long_term.cache_only - WARNING - キャッシュからデータ取得失敗: 2, キャッシュファイルが見つかりません: 2
+2025-09-10 17:46:51,496 - backtest_engine.long_term.cache_only - WARNING - キャッシュからデータ取得失敗: 0, キャッシュファイルが見つかりません: 0
+2025-09-10 17:46:51,497 - backtest_engine.long_term.cache_only - WARNING - キャッシュからデータ取得失敗: 0, キャッシュファイルが見つかりません: 0
+2025-09-10 17:46:51,498 - backtest_engine.long_term.cache_only - WARNING - キャッシュからデータ取得失敗: 6, キャッシュファイルが見つかりません: 6
+2025-09-10 17:46:51,499 - backtest_engine.long_term.cache_only - WARNING - キャッシュからデータ取得失敗: -, キャッシュファイルが見つかりません: -
+2025-09-10 17:46:51,499 - backtest_engine.long_term.cache_only - WARNING - キャッシュからデータ取得失敗: 0, キャッシュファイルが見つかりません: 0
+2025-09-10 17:46:51,500 - backtest_engine.long_term.cache_only - WARNING - キャッシュからデータ取得失敗: 8, キャッシュファイルが見つかりません: 8
+2025-09-10 17:46:51,502 - backtest_engine.long_term.cache_only - WARNING - キャッシュからデータ取得失敗: -, キャッシュファイルが見つかりません: -
+2025-09-10 17:46:51,503 - backtest_engine.long_term.cache_only - WARNING - キャッシュからデータ取得失敗: 0, キャッシュファイルが見つかりません: 0
+2025-09-10 17:46:51,506 - backtest_engine.long_term.cache_only - WARNING - キャッシュからデータ取得失敗: 1, キャッシュファイルが見つかりません: 1
+2025-09-10 17:46:51,506 - backtest_engine.long_term.cache_only - ERROR - 有効なデータがありません
+2025-09-10 17:46:51,506 - __main__.long_term - WARNING - 実行 2 失敗: 結果なし
+2025-09-10 17:46:51,506 - __main__.long_term - INFO - 戦略複数回バックテスト完了: long_term
+2025-09-10 17:46:51,507 - __main__.long_term - INFO - 成功回数: 0/2
+2025-09-10 17:46:51,507 - __main__ - INFO - === キャッシュ専用バックテスト完了 ===
+2025-09-10 17:46:51,507 - __main__ - INFO - 個別レポート生成開始
+2025-09-10 17:46:51,508 - __main__ - INFO - 個別レポート生成完了: 0ファイル
+2025-09-10 17:46:51,510 - __main__ - WARNING - index.html更新エラー: cannot import name 'update_index_html' from 'main' (C:\Users\yuuki\株自動シュミレート\auto-stock-backtest2\main.py)
+2025-09-10 17:46:51,510 - __main__ - INFO - 並列化自動株式バックテストシステム完了
+2025-09-10 17:48:39,586 - __main__ - INFO - 並列化自動株式バックテストシステム開始
+2025-09-10 17:48:39,586 - __main__ - INFO - データ取得期間: 2004-12-31 〜 2024-12-31
+2025-09-10 17:48:39,587 - __main__ - INFO - 実行回数: 2
+2025-09-10 17:48:39,587 - __main__ - INFO - ベースシード: 42
+2025-09-10 17:48:39,587 - __main__ - INFO - 並列実行: False
+2025-09-10 17:48:39,587 - __main__ - INFO - ローカルテストモード: True
+2025-09-10 17:48:39,587 - __main__ - INFO - キャッシュ専用バックテスト実行
+2025-09-10 17:48:39,588 - __main__ - INFO - === キャッシュ専用バックテスト開始 ===
+2025-09-10 17:48:39,588 - __main__ - INFO - swing_trading バックテスト期間: 2021-08-01 〜 2025-08-31
+2025-09-10 17:48:39,588 - __main__.swing_trading - INFO - 戦略複数回バックテスト開始: swing_trading, 実行回数: 2
+2025-09-10 17:48:39,588 - __main__.swing_trading - INFO - 実行 1/2
+2025-09-10 17:48:39,588 - __main__.swing_trading - INFO - キャッシュ専用バックテスト開始: swing_trading, シード: 43
+2025-09-10 17:48:39,589 - backtest_engine.swing_trading.cache_only - INFO - バックテスト開始: swing_trading
+2025-09-10 17:48:39,590 - backtest_engine.swing_trading.cache_only - WARNING - キャッシュからデータ取得失敗: 2, キャッシュファイルが見つかりません: 2
+2025-09-10 17:48:39,591 - backtest_engine.swing_trading.cache_only - WARNING - キャッシュからデータ取得失敗: 0, キャッシュファイルが見つかりません: 0
+2025-09-10 17:48:39,592 - backtest_engine.swing_trading.cache_only - WARNING - キャッシュからデータ取得失敗: 2, キャッシュファイルが見つかりません: 2
+2025-09-10 17:48:39,593 - backtest_engine.swing_trading.cache_only - WARNING - キャッシュからデータ取得失敗: 1, キャッシュファイルが見つかりません: 1
+2025-09-10 17:48:39,594 - backtest_engine.swing_trading.cache_only - WARNING - キャッシュからデータ取得失敗: -, キャッシュファイルが見つかりません: -
+2025-09-10 17:48:39,595 - backtest_engine.swing_trading.cache_only - WARNING - キャッシュからデータ取得失敗: 0, キャッシュファイルが見つかりません: 0
+2025-09-10 17:48:39,596 - backtest_engine.swing_trading.cache_only - WARNING - キャッシュからデータ取得失敗: 8, キャッシュファイルが見つかりません: 8
+2025-09-10 17:48:39,597 - backtest_engine.swing_trading.cache_only - WARNING - キャッシュからデータ取得失敗: -, キャッシュファイルが見つかりません: -
+2025-09-10 17:48:39,598 - backtest_engine.swing_trading.cache_only - WARNING - キャッシュからデータ取得失敗: 0, キャッシュファイルが見つかりません: 0
+2025-09-10 17:48:39,599 - backtest_engine.swing_trading.cache_only - WARNING - キャッシュからデータ取得失敗: 1, キャッシュファイルが見つかりません: 1
+2025-09-10 17:48:39,599 - backtest_engine.swing_trading.cache_only - ERROR - 有効なデータがありません
+2025-09-10 17:48:39,599 - __main__.swing_trading - WARNING - 実行 1 失敗: 結果なし
+2025-09-10 17:48:39,599 - __main__.swing_trading - INFO - 実行 2/2
+2025-09-10 17:48:39,599 - __main__.swing_trading - INFO - キャッシュ専用バックテスト開始: swing_trading, シード: 44
+2025-09-10 17:48:39,600 - backtest_engine.swing_trading.cache_only - INFO - バックテスト開始: swing_trading
+2025-09-10 17:48:39,601 - backtest_engine.swing_trading.cache_only - WARNING - キャッシュからデータ取得失敗: 2, キャッシュファイルが見つかりません: 2
+2025-09-10 17:48:39,602 - backtest_engine.swing_trading.cache_only - WARNING - キャッシュからデータ取得失敗: 0, キャッシュファイルが見つかりません: 0
+2025-09-10 17:48:39,603 - backtest_engine.swing_trading.cache_only - WARNING - キャッシュからデータ取得失敗: 2, キャッシュファイルが見つかりません: 2
+2025-09-10 17:48:39,604 - backtest_engine.swing_trading.cache_only - WARNING - キャッシュからデータ取得失敗: 1, キャッシュファイルが見つかりません: 1
+2025-09-10 17:48:39,605 - backtest_engine.swing_trading.cache_only - WARNING - キャッシュからデータ取得失敗: -, キャッシュファイルが見つかりません: -
+2025-09-10 17:48:39,606 - backtest_engine.swing_trading.cache_only - WARNING - キャッシュからデータ取得失敗: 0, キャッシュファイルが見つかりません: 0
+2025-09-10 17:48:39,607 - backtest_engine.swing_trading.cache_only - WARNING - キャッシュからデータ取得失敗: 8, キャッシュファイルが見つかりません: 8
+2025-09-10 17:48:39,608 - backtest_engine.swing_trading.cache_only - WARNING - キャッシュからデータ取得失敗: -, キャッシュファイルが見つかりません: -
+2025-09-10 17:48:39,609 - backtest_engine.swing_trading.cache_only - WARNING - キャッシュからデータ取得失敗: 0, キャッシュファイルが見つかりません: 0
+2025-09-10 17:48:39,610 - backtest_engine.swing_trading.cache_only - WARNING - キャッシュからデータ取得失敗: 1, キャッシュファイルが見つかりません: 1
+2025-09-10 17:48:39,611 - backtest_engine.swing_trading.cache_only - ERROR - 有効なデータがありません
+2025-09-10 17:48:39,611 - __main__.swing_trading - WARNING - 実行 2 失敗: 結果なし
+2025-09-10 17:48:39,611 - __main__.swing_trading - INFO - 戦略複数回バックテスト完了: swing_trading
+2025-09-10 17:48:39,611 - __main__.swing_trading - INFO - 成功回数: 0/2
+2025-09-10 17:48:39,611 - __main__ - INFO - long_term バックテスト期間: 2006-08-01 〜 2025-08-31
+2025-09-10 17:48:39,612 - __main__.long_term - INFO - 戦略複数回バックテスト開始: long_term, 実行回数: 2
+2025-09-10 17:48:39,612 - __main__.long_term - INFO - 実行 1/2
+2025-09-10 17:48:39,612 - __main__.long_term - INFO - キャッシュ専用バックテスト開始: long_term, シード: 43
+2025-09-10 17:48:39,612 - backtest_engine.long_term.cache_only - INFO - バックテスト開始: long_term
+2025-09-10 17:48:39,613 - backtest_engine.long_term.cache_only - WARNING - キャッシュからデータ取得失敗: 2, キャッシュファイルが見つかりません: 2
+2025-09-10 17:48:39,615 - backtest_engine.long_term.cache_only - WARNING - キャッシュからデータ取得失敗: 0, キャッシュファイルが見つかりません: 0
+2025-09-10 17:48:39,616 - backtest_engine.long_term.cache_only - WARNING - キャッシュからデータ取得失敗: 0, キャッシュファイルが見つかりません: 0
+2025-09-10 17:48:39,617 - backtest_engine.long_term.cache_only - WARNING - キャッシュからデータ取得失敗: 6, キャッシュファイルが見つかりません: 6
+2025-09-10 17:48:39,618 - backtest_engine.long_term.cache_only - WARNING - キャッシュからデータ取得失敗: -, キャッシュファイルが見つかりません: -
+2025-09-10 17:48:39,619 - backtest_engine.long_term.cache_only - WARNING - キャッシュからデータ取得失敗: 0, キャッシュファイルが見つかりません: 0
+2025-09-10 17:48:39,619 - backtest_engine.long_term.cache_only - WARNING - キャッシュからデータ取得失敗: 8, キャッシュファイルが見つかりません: 8
+2025-09-10 17:48:39,620 - backtest_engine.long_term.cache_only - WARNING - キャッシュからデータ取得失敗: -, キャッシュファイルが見つかりません: -
+2025-09-10 17:48:39,622 - backtest_engine.long_term.cache_only - WARNING - キャッシュからデータ取得失敗: 0, キャッシュファイルが見つかりません: 0
+2025-09-10 17:48:39,623 - backtest_engine.long_term.cache_only - WARNING - キャッシュからデータ取得失敗: 1, キャッシュファイルが見つかりません: 1
+2025-09-10 17:48:39,623 - backtest_engine.long_term.cache_only - ERROR - 有効なデータがありません
+2025-09-10 17:48:39,624 - __main__.long_term - WARNING - 実行 1 失敗: 結果なし
+2025-09-10 17:48:39,624 - __main__.long_term - INFO - 実行 2/2
+2025-09-10 17:48:39,624 - __main__.long_term - INFO - キャッシュ専用バックテスト開始: long_term, シード: 44
+2025-09-10 17:48:39,624 - backtest_engine.long_term.cache_only - INFO - バックテスト開始: long_term
+2025-09-10 17:48:39,625 - backtest_engine.long_term.cache_only - WARNING - キャッシュからデータ取得失敗: 2, キャッシュファイルが見つかりません: 2
+2025-09-10 17:48:39,626 - backtest_engine.long_term.cache_only - WARNING - キャッシュからデータ取得失敗: 0, キャッシュファイルが見つかりません: 0
+2025-09-10 17:48:39,627 - backtest_engine.long_term.cache_only - WARNING - キャッシュからデータ取得失敗: 0, キャッシュファイルが見つかりません: 0
+2025-09-10 17:48:39,629 - backtest_engine.long_term.cache_only - WARNING - キャッシュからデータ取得失敗: 6, キャッシュファイルが見つかりません: 6
+2025-09-10 17:48:39,630 - backtest_engine.long_term.cache_only - WARNING - キャッシュからデータ取得失敗: -, キャッシュファイルが見つかりません: -
+2025-09-10 17:48:39,631 - backtest_engine.long_term.cache_only - WARNING - キャッシュからデータ取得失敗: 0, キャッシュファイルが見つかりません: 0
+2025-09-10 17:48:39,632 - backtest_engine.long_term.cache_only - WARNING - キャッシュからデータ取得失敗: 8, キャッシュファイルが見つかりません: 8
+2025-09-10 17:48:39,633 - backtest_engine.long_term.cache_only - WARNING - キャッシュからデータ取得失敗: -, キャッシュファイルが見つかりません: -
+2025-09-10 17:48:39,634 - backtest_engine.long_term.cache_only - WARNING - キャッシュからデータ取得失敗: 0, キャッシュファイルが見つかりません: 0
+2025-09-10 17:48:39,635 - backtest_engine.long_term.cache_only - WARNING - キャッシュからデータ取得失敗: 1, キャッシュファイルが見つかりません: 1
+2025-09-10 17:48:39,635 - backtest_engine.long_term.cache_only - ERROR - 有効なデータがありません
+2025-09-10 17:48:39,635 - __main__.long_term - WARNING - 実行 2 失敗: 結果なし
+2025-09-10 17:48:39,636 - __main__.long_term - INFO - 戦略複数回バックテスト完了: long_term
+2025-09-10 17:48:39,636 - __main__.long_term - INFO - 成功回数: 0/2
+2025-09-10 17:48:39,636 - __main__ - INFO - === キャッシュ専用バックテスト完了 ===
+2025-09-10 17:48:39,636 - __main__ - INFO - 個別レポート生成開始
+2025-09-10 17:48:39,637 - __main__ - INFO - 個別レポート生成完了: 0ファイル
+2025-09-10 17:48:39,638 - __main__ - WARNING - index.html更新エラー: cannot import name 'update_index_html' from 'main' (C:\Users\yuuki\株自動シュミレート\auto-stock-backtest2\main.py)
+2025-09-10 17:48:39,638 - __main__ - INFO - 並列化自動株式バックテストシステム完了
+2025-09-10 17:57:06,178 - __main__ - INFO - 並列化自動株式バックテストシステム開始
+2025-09-10 17:57:06,179 - __main__ - INFO - データ取得期間: 2004-12-31 〜 2024-12-31
+2025-09-10 17:57:06,179 - __main__ - INFO - 実行回数: 2
+2025-09-10 17:57:06,179 - __main__ - INFO - ベースシード: 42
+2025-09-10 17:57:06,179 - __main__ - INFO - 並列実行: False
+2025-09-10 17:57:06,180 - __main__ - INFO - ローカルテストモード: True
+2025-09-10 17:57:06,180 - __main__ - INFO - キャッシュ専用バックテスト実行
+2025-09-10 17:57:06,180 - __main__ - INFO - === キャッシュ専用バックテスト開始 ===
+2025-09-10 17:57:06,180 - __main__ - INFO - swing_trading バックテスト期間: 2021-08-01 〜 2025-08-31
+2025-09-10 17:57:06,180 - __main__.swing_trading - INFO - 戦略複数回バックテスト開始: swing_trading, 実行回数: 2
+2025-09-10 17:57:06,181 - __main__.swing_trading - INFO - 実行 1/2
+2025-09-10 17:57:06,181 - __main__.swing_trading - INFO - キャッシュ専用バックテスト開始: swing_trading, シード: 43
+2025-09-10 17:57:06,181 - backtest_engine.swing_trading.cache_only - INFO - バックテスト開始: swing_trading
+2025-09-10 17:57:06,182 - backtest_engine.swing_trading.cache_only - WARNING - キャッシュからデータ取得失敗: 2, キャッシュファイルが見つかりません: 2
+2025-09-10 17:57:06,183 - backtest_engine.swing_trading.cache_only - WARNING - キャッシュからデータ取得失敗: 0, キャッシュファイルが見つかりません: 0
+2025-09-10 17:57:06,184 - backtest_engine.swing_trading.cache_only - WARNING - キャッシュからデータ取得失敗: 2, キャッシュファイルが見つかりません: 2
+2025-09-10 17:57:06,185 - backtest_engine.swing_trading.cache_only - WARNING - キャッシュからデータ取得失敗: 1, キャッシュファイルが見つかりません: 1
+2025-09-10 17:57:06,185 - backtest_engine.swing_trading.cache_only - WARNING - キャッシュからデータ取得失敗: -, キャッシュファイルが見つかりません: -
+2025-09-10 17:57:06,187 - backtest_engine.swing_trading.cache_only - WARNING - キャッシュからデータ取得失敗: 0, キャッシュファイルが見つかりません: 0
+2025-09-10 17:57:06,188 - backtest_engine.swing_trading.cache_only - WARNING - キャッシュからデータ取得失敗: 8, キャッシュファイルが見つかりません: 8
+2025-09-10 17:57:06,189 - backtest_engine.swing_trading.cache_only - WARNING - キャッシュからデータ取得失敗: -, キャッシュファイルが見つかりません: -
+2025-09-10 17:57:06,190 - backtest_engine.swing_trading.cache_only - WARNING - キャッシュからデータ取得失敗: 0, キャッシュファイルが見つかりません: 0
+2025-09-10 17:57:06,191 - backtest_engine.swing_trading.cache_only - WARNING - キャッシュからデータ取得失敗: 1, キャッシュファイルが見つかりません: 1
+2025-09-10 17:57:06,191 - backtest_engine.swing_trading.cache_only - ERROR - 有効なデータがありません
+2025-09-10 17:57:06,191 - __main__.swing_trading - WARNING - 実行 1 失敗: 結果なし
+2025-09-10 17:57:06,191 - __main__.swing_trading - INFO - 実行 2/2
+2025-09-10 17:57:06,192 - __main__.swing_trading - INFO - キャッシュ専用バックテスト開始: swing_trading, シード: 44
+2025-09-10 17:57:06,192 - backtest_engine.swing_trading.cache_only - INFO - バックテスト開始: swing_trading
+2025-09-10 17:57:06,193 - backtest_engine.swing_trading.cache_only - WARNING - キャッシュからデータ取得失敗: 2, キャッシュファイルが見つかりません: 2
+2025-09-10 17:57:06,194 - backtest_engine.swing_trading.cache_only - WARNING - キャッシュからデータ取得失敗: 0, キャッシュファイルが見つかりません: 0
+2025-09-10 17:57:06,194 - backtest_engine.swing_trading.cache_only - WARNING - キャッシュからデータ取得失敗: 2, キャッシュファイルが見つかりません: 2
+2025-09-10 17:57:06,195 - backtest_engine.swing_trading.cache_only - WARNING - キャッシュからデータ取得失敗: 1, キャッシュファイルが見つかりません: 1
+2025-09-10 17:57:06,196 - backtest_engine.swing_trading.cache_only - WARNING - キャッシュからデータ取得失敗: -, キャッシュファイルが見つかりません: -
+2025-09-10 17:57:06,197 - backtest_engine.swing_trading.cache_only - WARNING - キャッシュからデータ取得失敗: 0, キャッシュファイルが見つかりません: 0
+2025-09-10 17:57:06,198 - backtest_engine.swing_trading.cache_only - WARNING - キャッシュからデータ取得失敗: 8, キャッシュファイルが見つかりません: 8
+2025-09-10 17:57:06,199 - backtest_engine.swing_trading.cache_only - WARNING - キャッシュからデータ取得失敗: -, キャッシュファイルが見つかりません: -
+2025-09-10 17:57:06,200 - backtest_engine.swing_trading.cache_only - WARNING - キャッシュからデータ取得失敗: 0, キャッシュファイルが見つかりません: 0
+2025-09-10 17:57:06,201 - backtest_engine.swing_trading.cache_only - WARNING - キャッシュからデータ取得失敗: 1, キャッシュファイルが見つかりません: 1
+2025-09-10 17:57:06,201 - backtest_engine.swing_trading.cache_only - ERROR - 有効なデータがありません
+2025-09-10 17:57:06,201 - __main__.swing_trading - WARNING - 実行 2 失敗: 結果なし
+2025-09-10 17:57:06,202 - __main__.swing_trading - INFO - 戦略複数回バックテスト完了: swing_trading
+2025-09-10 17:57:06,202 - __main__.swing_trading - INFO - 成功回数: 0/2
+2025-09-10 17:57:06,202 - __main__ - INFO - long_term バックテスト期間: 2006-08-01 〜 2025-08-31
+2025-09-10 17:57:06,202 - __main__.long_term - INFO - 戦略複数回バックテスト開始: long_term, 実行回数: 2
+2025-09-10 17:57:06,202 - __main__.long_term - INFO - 実行 1/2
+2025-09-10 17:57:06,202 - __main__.long_term - INFO - キャッシュ専用バックテスト開始: long_term, シード: 43
+2025-09-10 17:57:06,203 - backtest_engine.long_term.cache_only - INFO - バックテスト開始: long_term
+2025-09-10 17:57:06,204 - backtest_engine.long_term.cache_only - WARNING - キャッシュからデータ取得失敗: 2, キャッシュファイルが見つかりません: 2
+2025-09-10 17:57:06,205 - backtest_engine.long_term.cache_only - WARNING - キャッシュからデータ取得失敗: 0, キャッシュファイルが見つかりません: 0
+2025-09-10 17:57:06,206 - backtest_engine.long_term.cache_only - WARNING - キャッシュからデータ取得失敗: 0, キャッシュファイルが見つかりません: 0
+2025-09-10 17:57:06,207 - backtest_engine.long_term.cache_only - WARNING - キャッシュからデータ取得失敗: 6, キャッシュファイルが見つかりません: 6
+2025-09-10 17:57:06,207 - backtest_engine.long_term.cache_only - WARNING - キャッシュからデータ取得失敗: -, キャッシュファイルが見つかりません: -
+2025-09-10 17:57:06,208 - backtest_engine.long_term.cache_only - WARNING - キャッシュからデータ取得失敗: 0, キャッシュファイルが見つかりません: 0
+2025-09-10 17:57:06,209 - backtest_engine.long_term.cache_only - WARNING - キャッシュからデータ取得失敗: 8, キャッシュファイルが見つかりません: 8
+2025-09-10 17:57:06,210 - backtest_engine.long_term.cache_only - WARNING - キャッシュからデータ取得失敗: -, キャッシュファイルが見つかりません: -
+2025-09-10 17:57:06,211 - backtest_engine.long_term.cache_only - WARNING - キャッシュからデータ取得失敗: 0, キャッシュファイルが見つかりません: 0
+2025-09-10 17:57:06,212 - backtest_engine.long_term.cache_only - WARNING - キャッシュからデータ取得失敗: 1, キャッシュファイルが見つかりません: 1
+2025-09-10 17:57:06,212 - backtest_engine.long_term.cache_only - ERROR - 有効なデータがありません
+2025-09-10 17:57:06,212 - __main__.long_term - WARNING - 実行 1 失敗: 結果なし
+2025-09-10 17:57:06,212 - __main__.long_term - INFO - 実行 2/2
+2025-09-10 17:57:06,213 - __main__.long_term - INFO - キャッシュ専用バックテスト開始: long_term, シード: 44
+2025-09-10 17:57:06,213 - backtest_engine.long_term.cache_only - INFO - バックテスト開始: long_term
+2025-09-10 17:57:06,214 - backtest_engine.long_term.cache_only - WARNING - キャッシュからデータ取得失敗: 2, キャッシュファイルが見つかりません: 2
+2025-09-10 17:57:06,215 - backtest_engine.long_term.cache_only - WARNING - キャッシュからデータ取得失敗: 0, キャッシュファイルが見つかりません: 0
+2025-09-10 17:57:06,216 - backtest_engine.long_term.cache_only - WARNING - キャッシュからデータ取得失敗: 0, キャッシュファイルが見つかりません: 0
+2025-09-10 17:57:06,217 - backtest_engine.long_term.cache_only - WARNING - キャッシュからデータ取得失敗: 6, キャッシュファイルが見つかりません: 6
+2025-09-10 17:57:06,219 - backtest_engine.long_term.cache_only - WARNING - キャッシュからデータ取得失敗: -, キャッシュファイルが見つかりません: -
+2025-09-10 17:57:06,220 - backtest_engine.long_term.cache_only - WARNING - キャッシュからデータ取得失敗: 0, キャッシュファイルが見つかりません: 0
+2025-09-10 17:57:06,221 - backtest_engine.long_term.cache_only - WARNING - キャッシュからデータ取得失敗: 8, キャッシュファイルが見つかりません: 8
+2025-09-10 17:57:06,222 - backtest_engine.long_term.cache_only - WARNING - キャッシュからデータ取得失敗: -, キャッシュファイルが見つかりません: -
+2025-09-10 17:57:06,223 - backtest_engine.long_term.cache_only - WARNING - キャッシュからデータ取得失敗: 0, キャッシュファイルが見つかりません: 0
+2025-09-10 17:57:06,224 - backtest_engine.long_term.cache_only - WARNING - キャッシュからデータ取得失敗: 1, キャッシュファイルが見つかりません: 1
+2025-09-10 17:57:06,224 - backtest_engine.long_term.cache_only - ERROR - 有効なデータがありません
+2025-09-10 17:57:06,224 - __main__.long_term - WARNING - 実行 2 失敗: 結果なし
+2025-09-10 17:57:06,224 - __main__.long_term - INFO - 戦略複数回バックテスト完了: long_term
+2025-09-10 17:57:06,224 - __main__.long_term - INFO - 成功回数: 0/2
+2025-09-10 17:57:06,225 - __main__ - INFO - === キャッシュ専用バックテスト完了 ===
+2025-09-10 17:57:06,225 - __main__ - INFO - 個別レポート生成開始
+2025-09-10 17:57:06,225 - __main__ - INFO - 個別レポート生成完了: 0ファイル
+2025-09-10 17:57:06,226 - __main__ - WARNING - index.html更新エラー: cannot import name 'update_index_html' from 'main' (C:\Users\yuuki\株自動シュミレート\auto-stock-backtest2\main.py)
+2025-09-10 17:57:06,226 - __main__ - INFO - 並列化自動株式バックテストシステム完了
+2025-09-10 18:01:12,310 - __main__ - INFO - 並列化自動株式バックテストシステム開始
+2025-09-10 18:01:12,310 - __main__ - INFO - データ取得期間: 2006-08-01 〜 2025-08-31
+2025-09-10 18:01:12,311 - __main__ - INFO - 実行回数: 1
+2025-09-10 18:01:12,311 - __main__ - INFO - ベースシード: 42
+2025-09-10 18:01:12,311 - __main__ - INFO - 並列実行: False
+2025-09-10 18:01:12,311 - __main__ - INFO - ローカルテストモード: True
+2025-09-10 18:01:12,311 - __main__ - INFO - データ取得のみ実行
+2025-09-10 18:01:12,312 - data_fetcher - INFO - === フェーズ1: データ取得開始 ===
+2025-09-10 18:01:12,312 - data_fetcher - INFO - 全戦略の銘柄を収集中...
+2025-09-10 18:01:12,312 - data_fetcher - INFO - 戦略 swing_trading の銘柄を収集中...
+2025-09-10 18:01:12,315 - data_loader - INFO - 指数銘柄CSVファイルから読み込み: 856銘柄
+2025-09-10 18:01:12,317 - data_loader - INFO - 指数銘柄リスト取得: SP500, 銘柄数=474
+2025-09-10 18:01:12,317 - data_loader - INFO - 指数 SP500 から 10 銘柄をランダム抽出: ['WMT', 'CCI', 'PNR', 'SLB', 'T', 'DOC', 'ERIE', 'OXY', 'PCG', 'STT']
+2025-09-10 18:01:12,321 - data_loader - INFO - 指数銘柄CSVファイルから読み込み: 856銘柄
+2025-09-10 18:01:12,321 - data_loader - INFO - 指数銘柄リスト取得: NASDAQ100, 銘柄数=52
+2025-09-10 18:01:12,321 - data_loader - INFO - 指数 NASDAQ100 から 10 銘柄をランダム抽出: ['CSCO', 'KLAC', 'CCEP', 'MSTR', 'REGN', 'UBER', 'MAR', 'ARM', 'ORCL', 'MRVL']
+2025-09-10 18:01:12,323 - data_loader - INFO - 指数銘柄CSVファイルから読み込み: 856銘柄
+2025-09-10 18:01:12,324 - data_loader - INFO - 指数銘柄リスト取得: NIKKEI225, 銘柄数=330
+2025-09-10 18:01:12,324 - data_loader - INFO - 指数 NIKKEI225 から 10 銘柄をランダム抽出: ['4922.T', '9810.T', '7731.T', '3769.T', '2768.T', '6508.T', '3679.T', '6471.T', '4062.T', '6753.T']
+2025-09-10 18:01:12,324 - data_loader - INFO - スイングトレード用銘柄（ローカルテスト）: 30銘柄
+2025-09-10 18:01:12,325 - data_fetcher - INFO -   swing_trading 実行1: 30銘柄
+2025-09-10 18:01:12,325 - data_fetcher - INFO - 戦略 long_term の銘柄を収集中...
+2025-09-10 18:01:12,328 - data_loader - INFO - 指数銘柄CSVファイルから読み込み: 856銘柄
+2025-09-10 18:01:12,328 - data_loader - INFO - 指数銘柄リスト取得: SP500, 銘柄数=474
+2025-09-10 18:01:12,330 - data_loader - INFO - 指数 SP500 から 10 銘柄をランダム抽出: ['WMT', 'CCI', 'PNR', 'SLB', 'T', 'DOC', 'ERIE', 'OXY', 'PCG', 'STT']
+2025-09-10 18:01:12,332 - data_loader - INFO - 指数銘柄CSVファイルから読み込み: 856銘柄
+2025-09-10 18:01:12,333 - data_loader - INFO - 指数銘柄リスト取得: NASDAQ100, 銘柄数=52
+2025-09-10 18:01:12,333 - data_loader - INFO - 指数 NASDAQ100 から 10 銘柄をランダム抽出: ['CSCO', 'KLAC', 'CCEP', 'MSTR', 'REGN', 'UBER', 'MAR', 'ARM', 'ORCL', 'MRVL']
+2025-09-10 18:01:12,336 - data_loader - INFO - 指数銘柄CSVファイルから読み込み: 856銘柄
+2025-09-10 18:01:12,336 - data_loader - INFO - 指数銘柄リスト取得: NIKKEI225, 銘柄数=330
+2025-09-10 18:01:12,337 - data_loader - INFO - 指数 NIKKEI225 から 10 銘柄をランダム抽出: ['4922.T', '9810.T', '7731.T', '3769.T', '2768.T', '6508.T', '3679.T', '6471.T', '4062.T', '6753.T']
+2025-09-10 18:01:12,337 - data_loader - INFO - 中長期投資用銘柄（ローカルテスト）: 30銘柄
+2025-09-10 18:01:12,337 - data_fetcher - INFO -   long_term 実行1: 30銘柄
+2025-09-10 18:01:12,337 - data_fetcher - INFO - 全戦略の銘柄収集完了: 30銘柄
+2025-09-10 18:01:12,337 - data_fetcher - INFO - 一括データ取得開始: 30銘柄
+2025-09-10 18:01:12,337 - data_fetcher - INFO - 取得期間: 2006-08-01 ～ 2025-08-31
+2025-09-10 18:01:12,337 - data_loader - INFO - 並列データ取得開始: 30銘柄
+2025-09-10 18:01:12,343 - data_loader - INFO - 既存データなし、全期間を取得: 2006-08-01 〜 2025-08-31
+2025-09-10 18:01:12,344 - data_loader - INFO - 既存データなし、全期間を取得: 2006-08-01 〜 2025-08-31
+2025-09-10 18:01:12,344 - data_loader - INFO - 差分データ取得開始: CCI (不足期間: 1個)
+2025-09-10 18:01:12,344 - data_loader - INFO - 差分データ取得開始: OXY (不足期間: 1個)
+2025-09-10 18:01:12,345 - data_loader - INFO - 既存データなし、全期間を取得: 2006-08-01 〜 2025-08-31
+2025-09-10 18:01:12,345 - data_loader - INFO - 不足期間 1/1 のデータを取得: CCI (2006-08-01 〜 2025-08-31)
+2025-09-10 18:01:12,346 - data_loader - INFO - 既存データなし、全期間を取得: 2006-08-01 〜 2025-08-31
+2025-09-10 18:01:12,346 - data_loader - INFO - 不足期間 1/1 のデータを取得: OXY (2006-08-01 〜 2025-08-31)
+2025-09-10 18:01:12,347 - data_loader - INFO - 既存データなし、全期間を取得: 2006-08-01 〜 2025-08-31
+2025-09-10 18:01:12,347 - data_loader - INFO - 差分データ取得開始: SLB (不足期間: 1個)
+2025-09-10 18:01:12,347 - data_loader - INFO - 差分データ取得開始: DOC (不足期間: 1個)
+2025-09-10 18:01:12,348 - data_loader - INFO - 差分データ取得開始: MRVL (不足期間: 1個)
+2025-09-10 18:01:12,348 - data_loader - INFO - 不足期間 1/1 のデータを取得: SLB (2006-08-01 〜 2025-08-31)
+2025-09-10 18:01:12,348 - data_loader - INFO - 不足期間 1/1 のデータを取得: DOC (2006-08-01 〜 2025-08-31)
+2025-09-10 18:01:12,348 - data_loader - INFO - 不足期間 1/1 のデータを取得: MRVL (2006-08-01 〜 2025-08-31)
+2025-09-10 18:01:12,507 - data_loader - INFO - stooq.comからデータ取得: CCI -> CCI
+2025-09-10 18:01:12,507 - data_loader - INFO - stooq.comからデータ取得: OXY -> OXY
+2025-09-10 18:01:12,507 - data_loader - INFO - stooq.comからデータ取得: SLB -> SLB
+2025-09-10 18:01:12,512 - data_loader - INFO - stooq.comからデータ取得: DOC -> DOC
+2025-09-10 18:01:12,513 - data_loader - INFO - stooq.comからデータ取得: MRVL -> MRVL
+2025-09-10 18:01:15,124 - data_loader - WARNING - stooq.com エラー: SLB (試行 1), StooqDailyReader request returned no data; check URL for invalid inputs: https://stooq.com/q/d/l/
+2025-09-10 18:01:15,124 - data_loader - WARNING - stooq.com エラー: OXY (試行 1), StooqDailyReader request returned no data; check URL for invalid inputs: https://stooq.com/q/d/l/
+2025-09-10 18:01:15,125 - data_loader - WARNING - stooq.com エラー: DOC (試行 1), StooqDailyReader request returned no data; check URL for invalid inputs: https://stooq.com/q/d/l/
+2025-09-10 18:01:15,125 - data_loader - WARNING - stooq.com エラー: MRVL (試行 1), StooqDailyReader request returned no data; check URL for invalid inputs: https://stooq.com/q/d/l/
+2025-09-10 18:01:15,125 - data_loader - WARNING - stooq.com エラー: CCI (試行 1), StooqDailyReader request returned no data; check URL for invalid inputs: https://stooq.com/q/d/l/
+2025-09-10 18:01:16,141 - data_loader - INFO - stooq.comからデータ取得: SLB -> SLB
+2025-09-10 18:01:16,143 - data_loader - INFO - stooq.comからデータ取得: MRVL -> MRVL
+2025-09-10 18:01:16,144 - data_loader - INFO - stooq.comからデータ取得: OXY -> OXY
+2025-09-10 18:01:16,145 - data_loader - INFO - stooq.comからデータ取得: DOC -> DOC
+2025-09-10 18:01:16,148 - data_loader - INFO - stooq.comからデータ取得: CCI -> CCI
+2025-09-10 18:01:17,187 - data_loader - WARNING - stooq.com エラー: OXY (試行 2), StooqDailyReader request returned no data; check URL for invalid inputs: https://stooq.com/q/d/l/
+2025-09-10 18:01:17,219 - data_loader - WARNING - stooq.com エラー: SLB (試行 2), StooqDailyReader request returned no data; check URL for invalid inputs: https://stooq.com/q/d/l/
+2025-09-10 18:01:17,219 - data_loader - WARNING - stooq.com エラー: DOC (試行 2), StooqDailyReader request returned no data; check URL for invalid inputs: https://stooq.com/q/d/l/
+2025-09-10 18:01:17,219 - data_loader - WARNING - stooq.com エラー: MRVL (試行 2), StooqDailyReader request returned no data; check URL for invalid inputs: https://stooq.com/q/d/l/
+2025-09-10 18:01:17,219 - data_loader - WARNING - stooq.com エラー: CCI (試行 2), StooqDailyReader request returned no data; check URL for invalid inputs: https://stooq.com/q/d/l/
+2025-09-10 18:01:19,192 - data_loader - INFO - stooq.comからデータ取得: OXY -> OXY
+2025-09-10 18:01:19,229 - data_loader - INFO - stooq.comからデータ取得: MRVL -> MRVL
+2025-09-10 18:01:19,230 - data_loader - INFO - stooq.comからデータ取得: CCI -> CCI
+2025-09-10 18:01:19,232 - data_loader - INFO - stooq.comからデータ取得: SLB -> SLB
+2025-09-10 18:01:19,234 - data_loader - INFO - stooq.comからデータ取得: DOC -> DOC
+2025-09-10 18:01:20,389 - data_loader - WARNING - stooq.com エラー: OXY (試行 3), StooqDailyReader request returned no data; check URL for invalid inputs: https://stooq.com/q/d/l/
+2025-09-10 18:01:20,389 - data_loader - WARNING - stooq.com エラー: CCI (試行 3), StooqDailyReader request returned no data; check URL for invalid inputs: https://stooq.com/q/d/l/
+2025-09-10 18:01:20,389 - data_loader - ERROR - 期間データ取得失敗: OXY (2006-08-01 〜 2025-08-31), stooq.com データ取得失敗: OXY
+2025-09-10 18:01:20,389 - data_loader - WARNING - stooq.com エラー: SLB (試行 3), StooqDailyReader request returned no data; check URL for invalid inputs: https://stooq.com/q/d/l/
+2025-09-10 18:01:20,389 - data_loader - ERROR - 期間データ取得失敗: CCI (2006-08-01 〜 2025-08-31), stooq.com データ取得失敗: CCI
+2025-09-10 18:01:20,389 - data_loader - WARNING - stooq.com エラー: MRVL (試行 3), StooqDailyReader request returned no data; check URL for invalid inputs: https://stooq.com/q/d/l/
+2025-09-10 18:01:20,389 - data_loader - ERROR - データ取得完全失敗: OXY
+2025-09-10 18:01:20,389 - data_loader - WARNING - stooq.com エラー: DOC (試行 3), StooqDailyReader request returned no data; check URL for invalid inputs: https://stooq.com/q/d/l/
+2025-09-10 18:01:20,395 - data_loader - ERROR - 期間データ取得失敗: SLB (2006-08-01 〜 2025-08-31), stooq.com データ取得失敗: SLB
+2025-09-10 18:01:20,395 - data_loader - ERROR - データ取得完全失敗: CCI
+2025-09-10 18:01:20,397 - data_loader - ERROR - 期間データ取得失敗: MRVL (2006-08-01 〜 2025-08-31), stooq.com データ取得失敗: MRVL
+2025-09-10 18:01:20,399 - data_loader - INFO - 既存データなし、全期間を取得: 2006-08-01 〜 2025-08-31
+2025-09-10 18:01:20,400 - data_loader - ERROR - 期間データ取得失敗: DOC (2006-08-01 〜 2025-08-31), stooq.com データ取得失敗: DOC
+2025-09-10 18:01:20,401 - data_loader - ERROR - データ取得完全失敗: SLB
+2025-09-10 18:01:20,402 - data_loader - ERROR - データ取得完全失敗: MRVL
+2025-09-10 18:01:20,402 - data_loader - INFO - 既存データなし、全期間を取得: 2006-08-01 〜 2025-08-31
+2025-09-10 18:01:20,402 - data_loader - INFO - 差分データ取得開始: REGN (不足期間: 1個)
+2025-09-10 18:01:20,402 - data_loader - ERROR - データ取得完全失敗: DOC
+2025-09-10 18:01:20,403 - data_loader - INFO - 既存データなし、全期間を取得: 2006-08-01 〜 2025-08-31
+2025-09-10 18:01:20,404 - data_loader - INFO - 既存データなし、全期間を取得: 2006-08-01 〜 2025-08-31
+2025-09-10 18:01:20,404 - data_loader - INFO - 差分データ取得開始: 6471.T (不足期間: 1個)
+2025-09-10 18:01:20,404 - data_loader - INFO - 不足期間 1/1 のデータを取得: REGN (2006-08-01 〜 2025-08-31)
+2025-09-10 18:01:20,405 - data_loader - INFO - 既存データなし、全期間を取得: 2006-08-01 〜 2025-08-31
+2025-09-10 18:01:20,405 - data_loader - INFO - 差分データ取得開始: 2768.T (不足期間: 1個)
+2025-09-10 18:01:20,405 - data_loader - INFO - 差分データ取得開始: UBER (不足期間: 1個)
+2025-09-10 18:01:20,406 - data_loader - INFO - 不足期間 1/1 のデータを取得: 6471.T (2006-08-01 〜 2025-08-31)
+2025-09-10 18:01:20,406 - data_loader - INFO - stooq.comからデータ取得: REGN -> REGN
+2025-09-10 18:01:20,406 - data_loader - INFO - 差分データ取得開始: STT (不足期間: 1個)
+2025-09-10 18:01:20,406 - data_loader - INFO - 不足期間 1/1 のデータを取得: 2768.T (2006-08-01 〜 2025-08-31)
+2025-09-10 18:01:20,406 - data_loader - INFO - 不足期間 1/1 のデータを取得: UBER (2006-08-01 〜 2025-08-31)
+2025-09-10 18:01:20,407 - data_loader - INFO - stooq.comからデータ取得: 6471.T -> 6471.jp
+2025-09-10 18:01:20,408 - data_loader - INFO - 不足期間 1/1 のデータを取得: STT (2006-08-01 〜 2025-08-31)
+2025-09-10 18:01:20,409 - data_loader - INFO - stooq.comからデータ取得: 2768.T -> 2768.jp
+2025-09-10 18:01:20,409 - data_loader - INFO - stooq.comからデータ取得: UBER -> UBER
+2025-09-10 18:01:20,411 - data_loader - INFO - stooq.comからデータ取得: STT -> STT
+2025-09-10 18:01:21,449 - data_loader - WARNING - stooq.com エラー: 2768.T (試行 1), StooqDailyReader request returned no data; check URL for invalid inputs: https://stooq.com/q/d/l/
+2025-09-10 18:01:21,449 - data_loader - WARNING - stooq.com エラー: REGN (試行 1), StooqDailyReader request returned no data; check URL for invalid inputs: https://stooq.com/q/d/l/
+2025-09-10 18:01:21,449 - data_loader - WARNING - stooq.com エラー: 6471.T (試行 1), StooqDailyReader request returned no data; check URL for invalid inputs: https://stooq.com/q/d/l/
+2025-09-10 18:01:21,449 - data_loader - WARNING - stooq.com エラー: UBER (試行 1), StooqDailyReader request returned no data; check URL for invalid inputs: https://stooq.com/q/d/l/
+2025-09-10 18:01:21,449 - data_loader - WARNING - stooq.com エラー: STT (試行 1), StooqDailyReader request returned no data; check URL for invalid inputs: https://stooq.com/q/d/l/
+2025-09-10 18:01:22,457 - data_loader - INFO - stooq.comからデータ取得: 2768.T -> 2768.jp
+2025-09-10 18:01:22,459 - data_loader - INFO - stooq.comからデータ取得: 6471.T -> 6471.jp
+2025-09-10 18:01:22,460 - data_loader - INFO - stooq.comからデータ取得: STT -> STT
+2025-09-10 18:01:22,463 - data_loader - INFO - stooq.comからデータ取得: REGN -> REGN
+2025-09-10 18:01:22,464 - data_loader - INFO - stooq.comからデータ取得: UBER -> UBER
+2025-09-10 18:01:23,772 - data_loader - WARNING - stooq.com エラー: REGN (試行 2), StooqDailyReader request returned no data; check URL for invalid inputs: https://stooq.com/q/d/l/
+2025-09-10 18:01:23,773 - data_loader - WARNING - stooq.com エラー: STT (試行 2), StooqDailyReader request returned no data; check URL for invalid inputs: https://stooq.com/q/d/l/
+2025-09-10 18:01:23,773 - data_loader - WARNING - stooq.com エラー: UBER (試行 2), StooqDailyReader request returned no data; check URL for invalid inputs: https://stooq.com/q/d/l/
+2025-09-10 18:01:23,774 - data_loader - WARNING - stooq.com エラー: 6471.T (試行 2), StooqDailyReader request returned no data; check URL for invalid inputs: https://stooq.com/q/d/l/
+2025-09-10 18:01:23,774 - data_loader - WARNING - stooq.com エラー: 2768.T (試行 2), StooqDailyReader request returned no data; check URL for invalid inputs: https://stooq.com/q/d/l/
+2025-09-10 18:01:25,777 - data_loader - INFO - stooq.comからデータ取得: 2768.T -> 2768.jp
+2025-09-10 18:01:25,779 - data_loader - INFO - stooq.comからデータ取得: UBER -> UBER
+2025-09-10 18:01:25,781 - data_loader - INFO - stooq.comからデータ取得: REGN -> REGN
+2025-09-10 18:01:25,782 - data_loader - INFO - stooq.comからデータ取得: 6471.T -> 6471.jp
+2025-09-10 18:01:25,783 - data_loader - INFO - stooq.comからデータ取得: STT -> STT
+2025-09-10 18:01:27,262 - data_loader - WARNING - stooq.com エラー: 2768.T (試行 3), StooqDailyReader request returned no data; check URL for invalid inputs: https://stooq.com/q/d/l/
+2025-09-10 18:01:27,262 - data_loader - WARNING - stooq.com エラー: UBER (試行 3), StooqDailyReader request returned no data; check URL for invalid inputs: https://stooq.com/q/d/l/
+2025-09-10 18:01:27,263 - data_loader - WARNING - stooq.com エラー: REGN (試行 3), StooqDailyReader request returned no data; check URL for invalid inputs: https://stooq.com/q/d/l/
+2025-09-10 18:01:27,264 - data_loader - ERROR - 期間データ取得失敗: 2768.T (2006-08-01 〜 2025-08-31), stooq.com データ取得失敗: 2768.T
+2025-09-10 18:01:27,265 - data_loader - ERROR - 期間データ取得失敗: UBER (2006-08-01 〜 2025-08-31), stooq.com データ取得失敗: UBER
+2025-09-10 18:01:27,267 - data_loader - ERROR - 期間データ取得失敗: REGN (2006-08-01 〜 2025-08-31), stooq.com データ取得失敗: REGN
+2025-09-10 18:01:27,267 - data_loader - ERROR - データ取得完全失敗: 2768.T
+2025-09-10 18:01:27,267 - data_loader - ERROR - データ取得完全失敗: UBER
+2025-09-10 18:01:27,267 - data_loader - ERROR - データ取得完全失敗: REGN
+2025-09-10 18:01:27,268 - data_loader - INFO - 既存データなし、全期間を取得: 2006-08-01 〜 2025-08-31
+2025-09-10 18:01:27,269 - data_loader - INFO - 既存データなし、全期間を取得: 2006-08-01 〜 2025-08-31
+2025-09-10 18:01:27,269 - data_loader - INFO - 既存データなし、全期間を取得: 2006-08-01 〜 2025-08-31
+2025-09-10 18:01:27,269 - data_loader - INFO - 差分データ取得開始: CCEP (不足期間: 1個)
+2025-09-10 18:01:27,269 - data_loader - INFO - 差分データ取得開始: 9810.T (不足期間: 1個)
+2025-09-10 18:01:27,270 - data_loader - INFO - 差分データ取得開始: PNR (不足期間: 1個)
+2025-09-10 18:01:27,270 - data_loader - INFO - 不足期間 1/1 のデータを取得: CCEP (2006-08-01 〜 2025-08-31)
+2025-09-10 18:01:27,270 - data_loader - INFO - 不足期間 1/1 のデータを取得: 9810.T (2006-08-01 〜 2025-08-31)
+2025-09-10 18:01:27,270 - data_loader - INFO - 不足期間 1/1 のデータを取得: PNR (2006-08-01 〜 2025-08-31)
+2025-09-10 18:01:27,270 - data_loader - INFO - stooq.comからデータ取得: CCEP -> CCEP
+2025-09-10 18:01:27,271 - data_loader - INFO - stooq.comからデータ取得: 9810.T -> 9810.jp
+2025-09-10 18:01:27,271 - data_loader - INFO - stooq.comからデータ取得: PNR -> PNR
+2025-09-10 18:01:27,297 - data_loader - WARNING - stooq.com エラー: STT (試行 3), StooqDailyReader request returned no data; check URL for invalid inputs: https://stooq.com/q/d/l/
+2025-09-10 18:01:27,297 - data_loader - WARNING - stooq.com エラー: 6471.T (試行 3), StooqDailyReader request returned no data; check URL for invalid inputs: https://stooq.com/q/d/l/
+2025-09-10 18:01:27,298 - data_loader - ERROR - 期間データ取得失敗: STT (2006-08-01 〜 2025-08-31), stooq.com データ取得失敗: STT
+2025-09-10 18:01:27,300 - data_loader - ERROR - 期間データ取得失敗: 6471.T (2006-08-01 〜 2025-08-31), stooq.com データ取得失敗: 6471.T
+2025-09-10 18:01:27,300 - data_loader - ERROR - データ取得完全失敗: STT
+2025-09-10 18:01:27,300 - data_loader - ERROR - データ取得完全失敗: 6471.T
+2025-09-10 18:01:27,300 - data_loader - INFO - 既存データなし、全期間を取得: 2006-08-01 〜 2025-08-31
+2025-09-10 18:01:27,300 - data_loader - INFO - 既存データなし、全期間を取得: 2006-08-01 〜 2025-08-31
+2025-09-10 18:01:27,300 - data_loader - INFO - データ取得進捗: 10/30 完了
+2025-09-10 18:01:27,300 - data_loader - INFO - 差分データ取得開始: 4922.T (不足期間: 1個)
+2025-09-10 18:01:27,300 - data_loader - INFO - 差分データ取得開始: ERIE (不足期間: 1個)
+2025-09-10 18:01:27,300 - data_loader - INFO - 不足期間 1/1 のデータを取得: 4922.T (2006-08-01 〜 2025-08-31)
+2025-09-10 18:01:27,300 - data_loader - INFO - 不足期間 1/1 のデータを取得: ERIE (2006-08-01 〜 2025-08-31)
+2025-09-10 18:01:27,300 - data_loader - INFO - stooq.comからデータ取得: 4922.T -> 4922.jp
+2025-09-10 18:01:27,300 - data_loader - INFO - stooq.comからデータ取得: ERIE -> ERIE
+2025-09-10 18:01:28,268 - data_loader - WARNING - stooq.com エラー: 9810.T (試行 1), StooqDailyReader request returned no data; check URL for invalid inputs: https://stooq.com/q/d/l/
+2025-09-10 18:01:28,318 - data_loader - WARNING - stooq.com エラー: CCEP (試行 1), StooqDailyReader request returned no data; check URL for invalid inputs: https://stooq.com/q/d/l/
+2025-09-10 18:01:28,318 - data_loader - WARNING - stooq.com エラー: PNR (試行 1), StooqDailyReader request returned no data; check URL for invalid inputs: https://stooq.com/q/d/l/
+2025-09-10 18:01:28,318 - data_loader - WARNING - stooq.com エラー: ERIE (試行 1), StooqDailyReader request returned no data; check URL for invalid inputs: https://stooq.com/q/d/l/
+2025-09-10 18:01:28,378 - data_loader - WARNING - stooq.com エラー: 4922.T (試行 1), StooqDailyReader request returned no data; check URL for invalid inputs: https://stooq.com/q/d/l/
+2025-09-10 18:01:29,277 - data_loader - INFO - stooq.comからデータ取得: 9810.T -> 9810.jp
+2025-09-10 18:01:29,327 - data_loader - INFO - stooq.comからデータ取得: ERIE -> ERIE
+2025-09-10 18:01:29,329 - data_loader - INFO - stooq.comからデータ取得: PNR -> PNR
+2025-09-10 18:01:29,331 - data_loader - INFO - stooq.comからデータ取得: CCEP -> CCEP
+2025-09-10 18:01:29,394 - data_loader - INFO - stooq.comからデータ取得: 4922.T -> 4922.jp
+2025-09-10 18:01:30,326 - data_loader - WARNING - stooq.com エラー: 9810.T (試行 2), StooqDailyReader request returned no data; check URL for invalid inputs: https://stooq.com/q/d/l/
+2025-09-10 18:01:30,361 - data_loader - WARNING - stooq.com エラー: CCEP (試行 2), StooqDailyReader request returned no data; check URL for invalid inputs: https://stooq.com/q/d/l/
+2025-09-10 18:01:30,361 - data_loader - WARNING - stooq.com エラー: ERIE (試行 2), StooqDailyReader request returned no data; check URL for invalid inputs: https://stooq.com/q/d/l/
+2025-09-10 18:01:30,361 - data_loader - WARNING - stooq.com エラー: PNR (試行 2), StooqDailyReader request returned no data; check URL for invalid inputs: https://stooq.com/q/d/l/
+2025-09-10 18:01:30,429 - data_loader - WARNING - stooq.com エラー: 4922.T (試行 2), StooqDailyReader request returned no data; check URL for invalid inputs: https://stooq.com/q/d/l/
+2025-09-10 18:01:32,328 - data_loader - INFO - stooq.comからデータ取得: 9810.T -> 9810.jp
+2025-09-10 18:01:32,380 - data_loader - INFO - stooq.comからデータ取得: PNR -> PNR
+2025-09-10 18:01:32,381 - data_loader - INFO - stooq.comからデータ取得: ERIE -> ERIE
+2025-09-10 18:01:32,382 - data_loader - INFO - stooq.comからデータ取得: CCEP -> CCEP
+2025-09-10 18:01:32,445 - data_loader - INFO - stooq.comからデータ取得: 4922.T -> 4922.jp
+2025-09-10 18:01:33,638 - data_loader - WARNING - stooq.com エラー: 4922.T (試行 3), StooqDailyReader request returned no data; check URL for invalid inputs: https://stooq.com/q/d/l/
+2025-09-10 18:01:33,638 - data_loader - WARNING - stooq.com エラー: ERIE (試行 3), StooqDailyReader request returned no data; check URL for invalid inputs: https://stooq.com/q/d/l/
+2025-09-10 18:01:33,638 - data_loader - ERROR - 期間データ取得失敗: 4922.T (2006-08-01 〜 2025-08-31), stooq.com データ取得失敗: 4922.T
+2025-09-10 18:01:33,638 - data_loader - WARNING - stooq.com エラー: CCEP (試行 3), StooqDailyReader request returned no data; check URL for invalid inputs: https://stooq.com/q/d/l/
+2025-09-10 18:01:33,638 - data_loader - ERROR - 期間データ取得失敗: ERIE (2006-08-01 〜 2025-08-31), stooq.com データ取得失敗: ERIE
+2025-09-10 18:01:33,638 - data_loader - ERROR - データ取得完全失敗: 4922.T
+2025-09-10 18:01:33,645 - data_loader - ERROR - 期間データ取得失敗: CCEP (2006-08-01 〜 2025-08-31), stooq.com データ取得失敗: CCEP
+2025-09-10 18:01:33,645 - data_loader - ERROR - データ取得完全失敗: ERIE
+2025-09-10 18:01:33,645 - data_loader - INFO - 既存データなし、全期間を取得: 2006-08-01 〜 2025-08-31
+2025-09-10 18:01:33,645 - data_loader - ERROR - データ取得完全失敗: CCEP
+2025-09-10 18:01:33,648 - data_loader - INFO - 既存データなし、全期間を取得: 2006-08-01 〜 2025-08-31
+2025-09-10 18:01:33,648 - data_loader - INFO - 差分データ取得開始: MAR (不足期間: 1個)
+2025-09-10 18:01:33,648 - data_loader - INFO - 既存データなし、全期間を取得: 2006-08-01 〜 2025-08-31
+2025-09-10 18:01:33,648 - data_loader - INFO - 差分データ取得開始: 3679.T (不足期間: 1個)
+2025-09-10 18:01:33,648 - data_loader - INFO - 不足期間 1/1 のデータを取得: MAR (2006-08-01 〜 2025-08-31)
+2025-09-10 18:01:33,648 - data_loader - INFO - 差分データ取得開始: MSTR (不足期間: 1個)
+2025-09-10 18:01:33,648 - data_loader - INFO - 不足期間 1/1 のデータを取得: 3679.T (2006-08-01 〜 2025-08-31)
+2025-09-10 18:01:33,648 - data_loader - INFO - stooq.comからデータ取得: MAR -> MAR
+2025-09-10 18:01:33,648 - data_loader - INFO - 不足期間 1/1 のデータを取得: MSTR (2006-08-01 〜 2025-08-31)
+2025-09-10 18:01:33,648 - data_loader - INFO - stooq.comからデータ取得: 3679.T -> 3679.jp
+2025-09-10 18:01:33,648 - data_loader - WARNING - stooq.com エラー: 9810.T (試行 3), StooqDailyReader request returned no data; check URL for invalid inputs: https://stooq.com/q/d/l/
+2025-09-10 18:01:33,648 - data_loader - WARNING - stooq.com エラー: PNR (試行 3), StooqDailyReader request returned no data; check URL for invalid inputs: https://stooq.com/q/d/l/
+2025-09-10 18:01:33,648 - data_loader - INFO - stooq.comからデータ取得: MSTR -> MSTR
+2025-09-10 18:01:33,648 - data_loader - ERROR - 期間データ取得失敗: 9810.T (2006-08-01 〜 2025-08-31), stooq.com データ取得失敗: 9810.T
+2025-09-10 18:01:33,658 - data_loader - ERROR - 期間データ取得失敗: PNR (2006-08-01 〜 2025-08-31), stooq.com データ取得失敗: PNR
+2025-09-10 18:01:33,661 - data_loader - ERROR - データ取得完全失敗: 9810.T
+2025-09-10 18:01:33,661 - data_loader - ERROR - データ取得完全失敗: PNR
+2025-09-10 18:01:33,661 - data_loader - INFO - 既存データなし、全期間を取得: 2006-08-01 〜 2025-08-31
+2025-09-10 18:01:33,661 - data_loader - INFO - 既存データなし、全期間を取得: 2006-08-01 〜 2025-08-31
+2025-09-10 18:01:33,661 - data_loader - INFO - 差分データ取得開始: 3769.T (不足期間: 1個)
+2025-09-10 18:01:33,661 - data_loader - INFO - 差分データ取得開始: KLAC (不足期間: 1個)
+2025-09-10 18:01:33,661 - data_loader - INFO - 不足期間 1/1 のデータを取得: 3769.T (2006-08-01 〜 2025-08-31)
+2025-09-10 18:01:33,661 - data_loader - INFO - 不足期間 1/1 のデータを取得: KLAC (2006-08-01 〜 2025-08-31)
+2025-09-10 18:01:33,661 - data_loader - INFO - stooq.comからデータ取得: 3769.T -> 3769.jp
+2025-09-10 18:01:33,661 - data_loader - INFO - stooq.comからデータ取得: KLAC -> KLAC
+2025-09-10 18:01:34,729 - data_loader - WARNING - stooq.com エラー: KLAC (試行 1), StooqDailyReader request returned no data; check URL for invalid inputs: https://stooq.com/q/d/l/
+2025-09-10 18:01:34,768 - data_loader - WARNING - stooq.com エラー: 3679.T (試行 1), StooqDailyReader request returned no data; check URL for invalid inputs: https://stooq.com/q/d/l/
+2025-09-10 18:01:34,768 - data_loader - WARNING - stooq.com エラー: 3769.T (試行 1), StooqDailyReader request returned no data; check URL for invalid inputs: https://stooq.com/q/d/l/
+2025-09-10 18:01:34,768 - data_loader - WARNING - stooq.com エラー: MSTR (試行 1), StooqDailyReader request returned no data; check URL for invalid inputs: https://stooq.com/q/d/l/
+2025-09-10 18:01:34,768 - data_loader - WARNING - stooq.com エラー: MAR (試行 1), StooqDailyReader request returned no data; check URL for invalid inputs: https://stooq.com/q/d/l/
+2025-09-10 18:01:35,745 - data_loader - INFO - stooq.comからデータ取得: KLAC -> KLAC
+2025-09-10 18:01:35,780 - data_loader - INFO - stooq.comからデータ取得: MAR -> MAR
+2025-09-10 18:01:35,782 - data_loader - INFO - stooq.comからデータ取得: MSTR -> MSTR
+2025-09-10 18:01:35,783 - data_loader - INFO - stooq.comからデータ取得: 3769.T -> 3769.jp
+2025-09-10 18:01:35,785 - data_loader - INFO - stooq.comからデータ取得: 3679.T -> 3679.jp
+2025-09-10 18:01:36,788 - data_loader - WARNING - stooq.com エラー: KLAC (試行 2), StooqDailyReader request returned no data; check URL for invalid inputs: https://stooq.com/q/d/l/
+2025-09-10 18:01:36,818 - data_loader - WARNING - stooq.com エラー: MAR (試行 2), StooqDailyReader request returned no data; check URL for invalid inputs: https://stooq.com/q/d/l/
+2025-09-10 18:01:36,818 - data_loader - WARNING - stooq.com エラー: MSTR (試行 2), StooqDailyReader request returned no data; check URL for invalid inputs: https://stooq.com/q/d/l/
+2025-09-10 18:01:36,818 - data_loader - WARNING - stooq.com エラー: 3679.T (試行 2), StooqDailyReader request returned no data; check URL for invalid inputs: https://stooq.com/q/d/l/
+2025-09-10 18:01:36,818 - data_loader - WARNING - stooq.com エラー: 3769.T (試行 2), StooqDailyReader request returned no data; check URL for invalid inputs: https://stooq.com/q/d/l/
+2025-09-10 18:01:38,797 - data_loader - INFO - stooq.comからデータ取得: KLAC -> KLAC
+2025-09-10 18:01:38,831 - data_loader - INFO - stooq.comからデータ取得: 3679.T -> 3679.jp
+2025-09-10 18:01:38,833 - data_loader - INFO - stooq.comからデータ取得: 3769.T -> 3769.jp
+2025-09-10 18:01:38,834 - data_loader - INFO - stooq.comからデータ取得: MSTR -> MSTR
+2025-09-10 18:01:38,835 - data_loader - INFO - stooq.comからデータ取得: MAR -> MAR
+2025-09-10 18:01:40,158 - data_loader - WARNING - stooq.com エラー: KLAC (試行 3), StooqDailyReader request returned no data; check URL for invalid inputs: https://stooq.com/q/d/l/
+2025-09-10 18:01:40,158 - data_loader - ERROR - 期間データ取得失敗: KLAC (2006-08-01 〜 2025-08-31), stooq.com データ取得失敗: KLAC
+2025-09-10 18:01:40,158 - data_loader - ERROR - データ取得完全失敗: KLAC
+2025-09-10 18:01:40,160 - data_loader - INFO - 既存データなし、全期間を取得: 2006-08-01 〜 2025-08-31
+2025-09-10 18:01:40,160 - data_loader - INFO - 差分データ取得開始: T (不足期間: 1個)
+2025-09-10 18:01:40,161 - data_loader - INFO - 不足期間 1/1 のデータを取得: T (2006-08-01 〜 2025-08-31)
+2025-09-10 18:01:40,161 - data_loader - INFO - stooq.comからデータ取得: T -> T
+2025-09-10 18:01:40,189 - data_loader - WARNING - stooq.com エラー: MAR (試行 3), StooqDailyReader request returned no data; check URL for invalid inputs: https://stooq.com/q/d/l/
+2025-09-10 18:01:40,189 - data_loader - WARNING - stooq.com エラー: 3769.T (試行 3), StooqDailyReader request returned no data; check URL for invalid inputs: https://stooq.com/q/d/l/
+2025-09-10 18:01:40,189 - data_loader - ERROR - 期間データ取得失敗: MAR (2006-08-01 〜 2025-08-31), stooq.com データ取得失敗: MAR
+2025-09-10 18:01:40,189 - data_loader - ERROR - 期間データ取得失敗: 3769.T (2006-08-01 〜 2025-08-31), stooq.com データ取得失敗: 3769.T
+2025-09-10 18:01:40,189 - data_loader - WARNING - stooq.com エラー: 3679.T (試行 3), StooqDailyReader request returned no data; check URL for invalid inputs: https://stooq.com/q/d/l/
+2025-09-10 18:01:40,189 - data_loader - ERROR - データ取得完全失敗: MAR
+2025-09-10 18:01:40,189 - data_loader - WARNING - stooq.com エラー: MSTR (試行 3), StooqDailyReader request returned no data; check URL for invalid inputs: https://stooq.com/q/d/l/
+2025-09-10 18:01:40,193 - data_loader - ERROR - データ取得完全失敗: 3769.T
+2025-09-10 18:01:40,195 - data_loader - ERROR - 期間データ取得失敗: 3679.T (2006-08-01 〜 2025-08-31), stooq.com データ取得失敗: 3679.T
+2025-09-10 18:01:40,195 - data_loader - INFO - 既存データなし、全期間を取得: 2006-08-01 〜 2025-08-31
+2025-09-10 18:01:40,198 - data_loader - ERROR - 期間データ取得失敗: MSTR (2006-08-01 〜 2025-08-31), stooq.com データ取得失敗: MSTR
+2025-09-10 18:01:40,198 - data_loader - INFO - 既存データなし、全期間を取得: 2006-08-01 〜 2025-08-31
+2025-09-10 18:01:40,198 - data_loader - ERROR - データ取得完全失敗: 3679.T
+2025-09-10 18:01:40,198 - data_loader - INFO - 差分データ取得開始: CSCO (不足期間: 1個)
+2025-09-10 18:01:40,198 - data_loader - ERROR - データ取得完全失敗: MSTR
+2025-09-10 18:01:40,198 - data_loader - INFO - 差分データ取得開始: 6753.T (不足期間: 1個)
+2025-09-10 18:01:40,198 - data_loader - INFO - 既存データなし、全期間を取得: 2006-08-01 〜 2025-08-31
+2025-09-10 18:01:40,198 - data_loader - INFO - 不足期間 1/1 のデータを取得: CSCO (2006-08-01 〜 2025-08-31)
+2025-09-10 18:01:40,198 - data_loader - INFO - 既存データなし、全期間を取得: 2006-08-01 〜 2025-08-31
+2025-09-10 18:01:40,198 - data_loader - INFO - データ取得進捗: 20/30 完了
+2025-09-10 18:01:40,198 - data_loader - INFO - 不足期間 1/1 のデータを取得: 6753.T (2006-08-01 〜 2025-08-31)
+2025-09-10 18:01:40,198 - data_loader - INFO - 差分データ取得開始: PCG (不足期間: 1個)
+2025-09-10 18:01:40,198 - data_loader - INFO - stooq.comからデータ取得: CSCO -> CSCO
+2025-09-10 18:01:40,198 - data_loader - INFO - 差分データ取得開始: WMT (不足期間: 1個)
+2025-09-10 18:01:40,198 - data_loader - INFO - stooq.comからデータ取得: 6753.T -> 6753.jp
+2025-09-10 18:01:40,198 - data_loader - INFO - 不足期間 1/1 のデータを取得: PCG (2006-08-01 〜 2025-08-31)
+2025-09-10 18:01:40,198 - data_loader - INFO - 不足期間 1/1 のデータを取得: WMT (2006-08-01 〜 2025-08-31)
+2025-09-10 18:01:40,198 - data_loader - INFO - stooq.comからデータ取得: PCG -> PCG
+2025-09-10 18:01:40,208 - data_loader - INFO - stooq.comからデータ取得: WMT -> WMT
+2025-09-10 18:01:41,178 - data_loader - WARNING - stooq.com エラー: T (試行 1), StooqDailyReader request returned no data; check URL for invalid inputs: https://stooq.com/q/d/l/
+2025-09-10 18:01:41,219 - data_loader - WARNING - stooq.com エラー: 6753.T (試行 1), StooqDailyReader request returned no data; check URL for invalid inputs: https://stooq.com/q/d/l/
+2025-09-10 18:01:41,219 - data_loader - WARNING - stooq.com エラー: CSCO (試行 1), StooqDailyReader request returned no data; check URL for invalid inputs: https://stooq.com/q/d/l/
+2025-09-10 18:01:41,219 - data_loader - WARNING - stooq.com エラー: WMT (試行 1), StooqDailyReader request returned no data; check URL for invalid inputs: https://stooq.com/q/d/l/
+2025-09-10 18:01:41,285 - data_loader - WARNING - stooq.com エラー: PCG (試行 1), StooqDailyReader request returned no data; check URL for invalid inputs: https://stooq.com/q/d/l/
+2025-09-10 18:01:42,186 - data_loader - INFO - stooq.comからデータ取得: T -> T
+2025-09-10 18:01:42,234 - data_loader - INFO - stooq.comからデータ取得: 6753.T -> 6753.jp
+2025-09-10 18:01:42,234 - data_loader - INFO - stooq.comからデータ取得: WMT -> WMT
+2025-09-10 18:01:42,234 - data_loader - INFO - stooq.comからデータ取得: CSCO -> CSCO
+2025-09-10 18:01:42,296 - data_loader - INFO - stooq.comからデータ取得: PCG -> PCG
+2025-09-10 18:01:43,240 - data_loader - WARNING - stooq.com エラー: T (試行 2), StooqDailyReader request returned no data; check URL for invalid inputs: https://stooq.com/q/d/l/
+2025-09-10 18:01:43,268 - data_loader - WARNING - stooq.com エラー: WMT (試行 2), StooqDailyReader request returned no data; check URL for invalid inputs: https://stooq.com/q/d/l/
+2025-09-10 18:01:43,339 - data_loader - WARNING - stooq.com エラー: 6753.T (試行 2), StooqDailyReader request returned no data; check URL for invalid inputs: https://stooq.com/q/d/l/
+2025-09-10 18:01:43,340 - data_loader - WARNING - stooq.com エラー: PCG (試行 2), StooqDailyReader request returned no data; check URL for invalid inputs: https://stooq.com/q/d/l/
+2025-09-10 18:01:43,340 - data_loader - WARNING - stooq.com エラー: CSCO (試行 2), StooqDailyReader request returned no data; check URL for invalid inputs: https://stooq.com/q/d/l/
+2025-09-10 18:01:45,248 - data_loader - INFO - stooq.comからデータ取得: T -> T
+2025-09-10 18:01:45,280 - data_loader - INFO - stooq.comからデータ取得: WMT -> WMT
+2025-09-10 18:01:45,343 - data_loader - INFO - stooq.comからデータ取得: 6753.T -> 6753.jp
+2025-09-10 18:01:45,343 - data_loader - INFO - stooq.comからデータ取得: PCG -> PCG
+2025-09-10 18:01:45,343 - data_loader - INFO - stooq.comからデータ取得: CSCO -> CSCO
+2025-09-10 18:01:46,608 - data_loader - WARNING - stooq.com エラー: PCG (試行 3), StooqDailyReader request returned no data; check URL for invalid inputs: https://stooq.com/q/d/l/
+2025-09-10 18:01:46,608 - data_loader - WARNING - stooq.com エラー: WMT (試行 3), StooqDailyReader request returned no data; check URL for invalid inputs: https://stooq.com/q/d/l/
+2025-09-10 18:01:46,608 - data_loader - WARNING - stooq.com エラー: CSCO (試行 3), StooqDailyReader request returned no data; check URL for invalid inputs: https://stooq.com/q/d/l/
+2025-09-10 18:01:46,611 - data_loader - WARNING - stooq.com エラー: T (試行 3), StooqDailyReader request returned no data; check URL for invalid inputs: https://stooq.com/q/d/l/
+2025-09-10 18:01:46,611 - data_loader - WARNING - stooq.com エラー: 6753.T (試行 3), StooqDailyReader request returned no data; check URL for invalid inputs: https://stooq.com/q/d/l/
+2025-09-10 18:01:46,613 - data_loader - ERROR - 期間データ取得失敗: PCG (2006-08-01 〜 2025-08-31), stooq.com データ取得失敗: PCG
+2025-09-10 18:01:46,614 - data_loader - ERROR - 期間データ取得失敗: WMT (2006-08-01 〜 2025-08-31), stooq.com データ取得失敗: WMT
+2025-09-10 18:01:46,614 - data_loader - ERROR - 期間データ取得失敗: CSCO (2006-08-01 〜 2025-08-31), stooq.com データ取得失敗: CSCO
+2025-09-10 18:01:46,614 - data_loader - ERROR - 期間データ取得失敗: T (2006-08-01 〜 2025-08-31), stooq.com データ取得失敗: T
+2025-09-10 18:01:46,617 - data_loader - ERROR - 期間データ取得失敗: 6753.T (2006-08-01 〜 2025-08-31), stooq.com データ取得失敗: 6753.T
+2025-09-10 18:01:46,619 - data_loader - ERROR - データ取得完全失敗: PCG
+2025-09-10 18:01:46,619 - data_loader - ERROR - データ取得完全失敗: WMT
+2025-09-10 18:01:46,619 - data_loader - ERROR - データ取得完全失敗: CSCO
+2025-09-10 18:01:46,619 - data_loader - ERROR - データ取得完全失敗: T
+2025-09-10 18:01:46,620 - data_loader - ERROR - データ取得完全失敗: 6753.T
+2025-09-10 18:01:46,621 - data_loader - INFO - 既存データなし、全期間を取得: 2006-08-01 〜 2025-08-31
+2025-09-10 18:01:46,621 - data_loader - INFO - 既存データなし、全期間を取得: 2006-08-01 〜 2025-08-31
+2025-09-10 18:01:46,622 - data_loader - INFO - 既存データなし、全期間を取得: 2006-08-01 〜 2025-08-31
+2025-09-10 18:01:46,622 - data_loader - INFO - 既存データなし、全期間を取得: 2006-08-01 〜 2025-08-31
+2025-09-10 18:01:46,622 - data_loader - INFO - 既存データなし、全期間を取得: 2006-08-01 〜 2025-08-31
+2025-09-10 18:01:46,622 - data_loader - INFO - 差分データ取得開始: ORCL (不足期間: 1個)
+2025-09-10 18:01:46,622 - data_loader - INFO - 差分データ取得開始: 6508.T (不足期間: 1個)
+2025-09-10 18:01:46,622 - data_loader - INFO - 差分データ取得開始: 4062.T (不足期間: 1個)
+2025-09-10 18:01:46,622 - data_loader - INFO - 差分データ取得開始: ARM (不足期間: 1個)
+2025-09-10 18:01:46,622 - data_loader - INFO - 差分データ取得開始: 7731.T (不足期間: 1個)
+2025-09-10 18:01:46,622 - data_loader - INFO - 不足期間 1/1 のデータを取得: ORCL (2006-08-01 〜 2025-08-31)
+2025-09-10 18:01:46,622 - data_loader - INFO - 不足期間 1/1 のデータを取得: 6508.T (2006-08-01 〜 2025-08-31)
+2025-09-10 18:01:46,622 - data_loader - INFO - 不足期間 1/1 のデータを取得: 4062.T (2006-08-01 〜 2025-08-31)
+2025-09-10 18:01:46,622 - data_loader - INFO - 不足期間 1/1 のデータを取得: ARM (2006-08-01 〜 2025-08-31)
+2025-09-10 18:01:46,622 - data_loader - INFO - 不足期間 1/1 のデータを取得: 7731.T (2006-08-01 〜 2025-08-31)
+2025-09-10 18:01:46,622 - data_loader - INFO - stooq.comからデータ取得: ORCL -> ORCL
+2025-09-10 18:01:46,622 - data_loader - INFO - stooq.comからデータ取得: 6508.T -> 6508.jp
+2025-09-10 18:01:46,622 - data_loader - INFO - stooq.comからデータ取得: 4062.T -> 4062.jp
+2025-09-10 18:01:46,622 - data_loader - INFO - stooq.comからデータ取得: ARM -> ARM
+2025-09-10 18:01:46,622 - data_loader - INFO - stooq.comからデータ取得: 7731.T -> 7731.jp
+2025-09-10 18:01:47,675 - data_loader - WARNING - stooq.com エラー: 6508.T (試行 1), StooqDailyReader request returned no data; check URL for invalid inputs: https://stooq.com/q/d/l/
+2025-09-10 18:01:47,675 - data_loader - WARNING - stooq.com エラー: ORCL (試行 1), StooqDailyReader request returned no data; check URL for invalid inputs: https://stooq.com/q/d/l/
+2025-09-10 18:01:47,678 - data_loader - WARNING - stooq.com エラー: 7731.T (試行 1), StooqDailyReader request returned no data; check URL for invalid inputs: https://stooq.com/q/d/l/
+2025-09-10 18:01:47,722 - data_loader - WARNING - stooq.com エラー: ARM (試行 1), StooqDailyReader request returned no data; check URL for invalid inputs: https://stooq.com/q/d/l/
+2025-09-10 18:01:47,722 - data_loader - WARNING - stooq.com エラー: 4062.T (試行 1), StooqDailyReader request returned no data; check URL for invalid inputs: https://stooq.com/q/d/l/
+2025-09-10 18:01:48,681 - data_loader - INFO - stooq.comからデータ取得: ORCL -> ORCL
+2025-09-10 18:01:48,682 - data_loader - INFO - stooq.comからデータ取得: 7731.T -> 7731.jp
+2025-09-10 18:01:48,682 - data_loader - INFO - stooq.comからデータ取得: 6508.T -> 6508.jp
+2025-09-10 18:01:48,733 - data_loader - INFO - stooq.comからデータ取得: ARM -> ARM
+2025-09-10 18:01:48,733 - data_loader - INFO - stooq.comからデータ取得: 4062.T -> 4062.jp
+2025-09-10 18:01:49,715 - data_loader - WARNING - stooq.com エラー: ORCL (試行 2), StooqDailyReader request returned no data; check URL for invalid inputs: https://stooq.com/q/d/l/
+2025-09-10 18:01:49,718 - data_loader - WARNING - stooq.com エラー: 7731.T (試行 2), StooqDailyReader request returned no data; check URL for invalid inputs: https://stooq.com/q/d/l/
+2025-09-10 18:01:49,719 - data_loader - WARNING - stooq.com エラー: 6508.T (試行 2), StooqDailyReader request returned no data; check URL for invalid inputs: https://stooq.com/q/d/l/
+2025-09-10 18:01:49,779 - data_loader - WARNING - stooq.com エラー: ARM (試行 2), StooqDailyReader request returned no data; check URL for invalid inputs: https://stooq.com/q/d/l/
+2025-09-10 18:01:49,780 - data_loader - WARNING - stooq.com エラー: 4062.T (試行 2), StooqDailyReader request returned no data; check URL for invalid inputs: https://stooq.com/q/d/l/
+2025-09-10 18:01:51,730 - data_loader - INFO - stooq.comからデータ取得: 7731.T -> 7731.jp
+2025-09-10 18:01:51,730 - data_loader - INFO - stooq.comからデータ取得: ORCL -> ORCL
+2025-09-10 18:01:51,730 - data_loader - INFO - stooq.comからデータ取得: 6508.T -> 6508.jp
+2025-09-10 18:01:51,781 - data_loader - INFO - stooq.comからデータ取得: ARM -> ARM
+2025-09-10 18:01:51,797 - data_loader - INFO - stooq.comからデータ取得: 4062.T -> 4062.jp
+2025-09-10 18:01:52,788 - data_loader - WARNING - stooq.com エラー: 7731.T (試行 3), StooqDailyReader request returned no data; check URL for invalid inputs: https://stooq.com/q/d/l/
+2025-09-10 18:01:52,788 - data_loader - WARNING - stooq.com エラー: ORCL (試行 3), StooqDailyReader request returned no data; check URL for invalid inputs: https://stooq.com/q/d/l/
+2025-09-10 18:01:52,788 - data_loader - ERROR - 期間データ取得失敗: 7731.T (2006-08-01 〜 2025-08-31), stooq.com データ取得失敗: 7731.T
+2025-09-10 18:01:52,788 - data_loader - WARNING - stooq.com エラー: 6508.T (試行 3), StooqDailyReader request returned no data; check URL for invalid inputs: https://stooq.com/q/d/l/
+2025-09-10 18:01:52,788 - data_loader - ERROR - 期間データ取得失敗: ORCL (2006-08-01 〜 2025-08-31), stooq.com データ取得失敗: ORCL
+2025-09-10 18:01:52,788 - data_loader - ERROR - データ取得完全失敗: 7731.T
+2025-09-10 18:01:52,796 - data_loader - ERROR - 期間データ取得失敗: 6508.T (2006-08-01 〜 2025-08-31), stooq.com データ取得失敗: 6508.T
+2025-09-10 18:01:52,796 - data_loader - ERROR - データ取得完全失敗: ORCL
+2025-09-10 18:01:52,796 - data_loader - ERROR - データ取得完全失敗: 6508.T
+2025-09-10 18:01:52,849 - data_loader - WARNING - stooq.com エラー: 4062.T (試行 3), StooqDailyReader request returned no data; check URL for invalid inputs: https://stooq.com/q/d/l/
+2025-09-10 18:01:52,849 - data_loader - WARNING - stooq.com エラー: ARM (試行 3), StooqDailyReader request returned no data; check URL for invalid inputs: https://stooq.com/q/d/l/
+2025-09-10 18:01:52,849 - data_loader - ERROR - 期間データ取得失敗: 4062.T (2006-08-01 〜 2025-08-31), stooq.com データ取得失敗: 4062.T
+2025-09-10 18:01:52,849 - data_loader - ERROR - 期間データ取得失敗: ARM (2006-08-01 〜 2025-08-31), stooq.com データ取得失敗: ARM
+2025-09-10 18:01:52,849 - data_loader - ERROR - データ取得完全失敗: 4062.T
+2025-09-10 18:01:52,849 - data_loader - ERROR - データ取得完全失敗: ARM
+2025-09-10 18:01:52,849 - data_loader - INFO - データ取得進捗: 30/30 完了
+2025-09-10 18:01:52,849 - data_loader - INFO - 並列データ取得完了: 30銘柄, 所要時間: 40.51秒
+2025-09-10 18:01:52,849 - data_fetcher - INFO - データ取得完了: 成功 30銘柄, 失敗 0銘柄
+2025-09-10 18:01:52,849 - data_fetcher - INFO - VIXデータを取得中...
+2025-09-10 18:01:52,858 - data_loader - INFO - 既存データなし、全期間を取得: 2006-08-01 〜 2025-08-31
+2025-09-10 18:01:52,858 - data_loader - INFO - VIX差分取得期間: [('2006-08-01', '2025-08-31')]
+2025-09-10 18:01:53,118 - data_loader - INFO - VIX差分取得試行: ^VIX (2006-08-01 - 2025-08-31)
+2025-09-10 18:01:53,230 - yfinance - ERROR - Failed to get ticker '^VIX' reason: Expecting value: line 1 column 1 (char 0)
+2025-09-10 18:01:53,245 - yfinance - ERROR - 
+1 Failed download:
+2025-09-10 18:01:53,245 - yfinance - ERROR - ['^VIX']: Exception('%ticker%: No timezone found, symbol may be delisted')
+2025-09-10 18:01:53,245 - data_loader - INFO - VIX差分取得試行: VIX (2006-08-01 - 2025-08-31)
+2025-09-10 18:01:53,319 - yfinance - ERROR - Failed to get ticker 'VIX' reason: Expecting value: line 1 column 1 (char 0)
+2025-09-10 18:01:53,328 - yfinance - ERROR - 
+1 Failed download:
+2025-09-10 18:01:53,328 - yfinance - ERROR - ['VIX']: Exception('%ticker%: No timezone found, symbol may be delisted')
+2025-09-10 18:01:53,328 - data_loader - INFO - VIX差分取得試行: VIXCLS (2006-08-01 - 2025-08-31)
+2025-09-10 18:01:53,389 - yfinance - ERROR - Failed to get ticker 'VIXCLS' reason: Expecting value: line 1 column 1 (char 0)
+2025-09-10 18:01:53,397 - yfinance - ERROR - 
+1 Failed download:
+2025-09-10 18:01:53,397 - yfinance - ERROR - ['VIXCLS']: Exception('%ticker%: No timezone found, symbol may be delisted')
+2025-09-10 18:01:53,448 - data_loader - INFO - VIXデータをシミュレート: (4979, 5)
+2025-09-10 18:01:53,448 - data_loader - INFO - VIXデータをキャッシュに保存: cache\VIX_1d_2006-08-01_2025-08-31.pkl
+2025-09-10 18:01:53,448 - data_fetcher - INFO - VIXデータ取得成功: 4979行
+2025-09-10 18:01:53,448 - data_fetcher - INFO - === フェーズ1: データ取得完了 ===
+2025-09-10 18:01:53,448 - __main__ - INFO - データ取得完了: {'total': 30, 'success': 30, 'failed': 0}
+2025-09-10 18:02:13,180 - __main__ - INFO - 並列化自動株式バックテストシステム開始
+2025-09-10 18:02:13,188 - __main__ - INFO - データ取得期間: 2006-08-01 〜 2025-08-31
+2025-09-10 18:02:13,188 - __main__ - INFO - 実行回数: 2
+2025-09-10 18:02:13,188 - __main__ - INFO - ベースシード: 42
+2025-09-10 18:02:13,188 - __main__ - INFO - 並列実行: False
+2025-09-10 18:02:13,188 - __main__ - INFO - ローカルテストモード: True
+2025-09-10 18:02:13,188 - __main__ - INFO - キャッシュ専用バックテスト実行
+2025-09-10 18:02:13,188 - __main__ - INFO - === キャッシュ専用バックテスト開始 ===
+2025-09-10 18:02:13,188 - __main__ - INFO - swing_trading バックテスト期間: 2021-08-01 〜 2025-08-31
+2025-09-10 18:02:13,188 - __main__.swing_trading - INFO - 戦略複数回バックテスト開始: swing_trading, 実行回数: 2
+2025-09-10 18:02:13,188 - __main__.swing_trading - INFO - 実行 1/2
+2025-09-10 18:02:13,188 - __main__.swing_trading - INFO - キャッシュ専用バックテスト開始: swing_trading, シード: 43
+2025-09-10 18:02:13,188 - backtest_engine.swing_trading.cache_only - INFO - バックテスト開始: swing_trading
+2025-09-10 18:02:13,188 - backtest_engine.swing_trading.cache_only - WARNING - キャッシュからデータ取得失敗: 2, キャッシュファイルが見つかりません: 2
+2025-09-10 18:02:13,188 - backtest_engine.swing_trading.cache_only - WARNING - キャッシュからデータ取得失敗: 0, キャッシュファイルが見つかりません: 0
+2025-09-10 18:02:13,188 - backtest_engine.swing_trading.cache_only - WARNING - キャッシュからデータ取得失敗: 2, キャッシュファイルが見つかりません: 2
+2025-09-10 18:02:13,194 - backtest_engine.swing_trading.cache_only - WARNING - キャッシュからデータ取得失敗: 1, キャッシュファイルが見つかりません: 1
+2025-09-10 18:02:13,195 - backtest_engine.swing_trading.cache_only - WARNING - キャッシュからデータ取得失敗: -, キャッシュファイルが見つかりません: -
+2025-09-10 18:02:13,196 - backtest_engine.swing_trading.cache_only - WARNING - キャッシュからデータ取得失敗: 0, キャッシュファイルが見つかりません: 0
+2025-09-10 18:02:13,197 - backtest_engine.swing_trading.cache_only - WARNING - キャッシュからデータ取得失敗: 8, キャッシュファイルが見つかりません: 8
+2025-09-10 18:02:13,198 - backtest_engine.swing_trading.cache_only - WARNING - キャッシュからデータ取得失敗: -, キャッシュファイルが見つかりません: -
+2025-09-10 18:02:13,199 - backtest_engine.swing_trading.cache_only - WARNING - キャッシュからデータ取得失敗: 0, キャッシュファイルが見つかりません: 0
+2025-09-10 18:02:13,200 - backtest_engine.swing_trading.cache_only - WARNING - キャッシュからデータ取得失敗: 1, キャッシュファイルが見つかりません: 1
+2025-09-10 18:02:13,200 - backtest_engine.swing_trading.cache_only - ERROR - 有効なデータがありません
+2025-09-10 18:02:13,200 - __main__.swing_trading - WARNING - 実行 1 失敗: 結果なし
+2025-09-10 18:02:13,201 - __main__.swing_trading - INFO - 実行 2/2
+2025-09-10 18:02:13,201 - __main__.swing_trading - INFO - キャッシュ専用バックテスト開始: swing_trading, シード: 44
+2025-09-10 18:02:13,201 - backtest_engine.swing_trading.cache_only - INFO - バックテスト開始: swing_trading
+2025-09-10 18:02:13,202 - backtest_engine.swing_trading.cache_only - WARNING - キャッシュからデータ取得失敗: 2, キャッシュファイルが見つかりません: 2
+2025-09-10 18:02:13,203 - backtest_engine.swing_trading.cache_only - WARNING - キャッシュからデータ取得失敗: 0, キャッシュファイルが見つかりません: 0
+2025-09-10 18:02:13,204 - backtest_engine.swing_trading.cache_only - WARNING - キャッシュからデータ取得失敗: 2, キャッシュファイルが見つかりません: 2
+2025-09-10 18:02:13,205 - backtest_engine.swing_trading.cache_only - WARNING - キャッシュからデータ取得失敗: 1, キャッシュファイルが見つかりません: 1
+2025-09-10 18:02:13,206 - backtest_engine.swing_trading.cache_only - WARNING - キャッシュからデータ取得失敗: -, キャッシュファイルが見つかりません: -
+2025-09-10 18:02:13,206 - backtest_engine.swing_trading.cache_only - WARNING - キャッシュからデータ取得失敗: 0, キャッシュファイルが見つかりません: 0
+2025-09-10 18:02:13,208 - backtest_engine.swing_trading.cache_only - WARNING - キャッシュからデータ取得失敗: 8, キャッシュファイルが見つかりません: 8
+2025-09-10 18:02:13,209 - backtest_engine.swing_trading.cache_only - WARNING - キャッシュからデータ取得失敗: -, キャッシュファイルが見つかりません: -
+2025-09-10 18:02:13,210 - backtest_engine.swing_trading.cache_only - WARNING - キャッシュからデータ取得失敗: 0, キャッシュファイルが見つかりません: 0
+2025-09-10 18:02:13,211 - backtest_engine.swing_trading.cache_only - WARNING - キャッシュからデータ取得失敗: 1, キャッシュファイルが見つかりません: 1
+2025-09-10 18:02:13,211 - backtest_engine.swing_trading.cache_only - ERROR - 有効なデータがありません
+2025-09-10 18:02:13,212 - __main__.swing_trading - WARNING - 実行 2 失敗: 結果なし
+2025-09-10 18:02:13,212 - __main__.swing_trading - INFO - 戦略複数回バックテスト完了: swing_trading
+2025-09-10 18:02:13,212 - __main__.swing_trading - INFO - 成功回数: 0/2
+2025-09-10 18:02:13,213 - __main__ - INFO - long_term バックテスト期間: 2006-08-01 〜 2025-08-31
+2025-09-10 18:02:13,213 - __main__.long_term - INFO - 戦略複数回バックテスト開始: long_term, 実行回数: 2
+2025-09-10 18:02:13,213 - __main__.long_term - INFO - 実行 1/2
+2025-09-10 18:02:13,213 - __main__.long_term - INFO - キャッシュ専用バックテスト開始: long_term, シード: 43
+2025-09-10 18:02:13,213 - backtest_engine.long_term.cache_only - INFO - バックテスト開始: long_term
+2025-09-10 18:02:13,215 - backtest_engine.long_term.cache_only - WARNING - キャッシュからデータ取得失敗: 2, キャッシュファイルが見つかりません: 2
+2025-09-10 18:02:13,216 - backtest_engine.long_term.cache_only - WARNING - キャッシュからデータ取得失敗: 0, キャッシュファイルが見つかりません: 0
+2025-09-10 18:02:13,216 - backtest_engine.long_term.cache_only - WARNING - キャッシュからデータ取得失敗: 0, キャッシュファイルが見つかりません: 0
+2025-09-10 18:02:13,218 - backtest_engine.long_term.cache_only - WARNING - キャッシュからデータ取得失敗: 6, キャッシュファイルが見つかりません: 6
+2025-09-10 18:02:13,219 - backtest_engine.long_term.cache_only - WARNING - キャッシュからデータ取得失敗: -, キャッシュファイルが見つかりません: -
+2025-09-10 18:02:13,221 - backtest_engine.long_term.cache_only - WARNING - キャッシュからデータ取得失敗: 0, キャッシュファイルが見つかりません: 0
+2025-09-10 18:02:13,222 - backtest_engine.long_term.cache_only - WARNING - キャッシュからデータ取得失敗: 8, キャッシュファイルが見つかりません: 8
+2025-09-10 18:02:13,223 - backtest_engine.long_term.cache_only - WARNING - キャッシュからデータ取得失敗: -, キャッシュファイルが見つかりません: -
+2025-09-10 18:02:13,223 - backtest_engine.long_term.cache_only - WARNING - キャッシュからデータ取得失敗: 0, キャッシュファイルが見つかりません: 0
+2025-09-10 18:02:13,223 - backtest_engine.long_term.cache_only - WARNING - キャッシュからデータ取得失敗: 1, キャッシュファイルが見つかりません: 1
+2025-09-10 18:02:13,223 - backtest_engine.long_term.cache_only - ERROR - 有効なデータがありません
+2025-09-10 18:02:13,223 - __main__.long_term - WARNING - 実行 1 失敗: 結果なし
+2025-09-10 18:02:13,223 - __main__.long_term - INFO - 実行 2/2
+2025-09-10 18:02:13,223 - __main__.long_term - INFO - キャッシュ専用バックテスト開始: long_term, シード: 44
+2025-09-10 18:02:13,223 - backtest_engine.long_term.cache_only - INFO - バックテスト開始: long_term
+2025-09-10 18:02:13,223 - backtest_engine.long_term.cache_only - WARNING - キャッシュからデータ取得失敗: 2, キャッシュファイルが見つかりません: 2
+2025-09-10 18:02:13,223 - backtest_engine.long_term.cache_only - WARNING - キャッシュからデータ取得失敗: 0, キャッシュファイルが見つかりません: 0
+2025-09-10 18:02:13,223 - backtest_engine.long_term.cache_only - WARNING - キャッシュからデータ取得失敗: 0, キャッシュファイルが見つかりません: 0
+2025-09-10 18:02:13,229 - backtest_engine.long_term.cache_only - WARNING - キャッシュからデータ取得失敗: 6, キャッシュファイルが見つかりません: 6
+2025-09-10 18:02:13,230 - backtest_engine.long_term.cache_only - WARNING - キャッシュからデータ取得失敗: -, キャッシュファイルが見つかりません: -
+2025-09-10 18:02:13,231 - backtest_engine.long_term.cache_only - WARNING - キャッシュからデータ取得失敗: 0, キャッシュファイルが見つかりません: 0
+2025-09-10 18:02:13,233 - backtest_engine.long_term.cache_only - WARNING - キャッシュからデータ取得失敗: 8, キャッシュファイルが見つかりません: 8
+2025-09-10 18:02:13,234 - backtest_engine.long_term.cache_only - WARNING - キャッシュからデータ取得失敗: -, キャッシュファイルが見つかりません: -
+2025-09-10 18:02:13,235 - backtest_engine.long_term.cache_only - WARNING - キャッシュからデータ取得失敗: 0, キャッシュファイルが見つかりません: 0
+2025-09-10 18:02:13,235 - backtest_engine.long_term.cache_only - WARNING - キャッシュからデータ取得失敗: 1, キャッシュファイルが見つかりません: 1
+2025-09-10 18:02:13,235 - backtest_engine.long_term.cache_only - ERROR - 有効なデータがありません
+2025-09-10 18:02:13,235 - __main__.long_term - WARNING - 実行 2 失敗: 結果なし
+2025-09-10 18:02:13,236 - __main__.long_term - INFO - 戦略複数回バックテスト完了: long_term
+2025-09-10 18:02:13,236 - __main__.long_term - INFO - 成功回数: 0/2
+2025-09-10 18:02:13,236 - __main__ - INFO - === キャッシュ専用バックテスト完了 ===
+2025-09-10 18:02:13,236 - __main__ - INFO - 個別レポート生成開始
+2025-09-10 18:02:13,237 - __main__ - INFO - 個別レポート生成完了: 0ファイル
+2025-09-10 18:02:13,238 - __main__ - WARNING - index.html更新エラー: cannot import name 'update_index_html' from 'main' (C:\Users\yuuki\株自動シュミレート\auto-stock-backtest2\main.py)
+2025-09-10 18:02:13,239 - __main__ - INFO - 並列化自動株式バックテストシステム完了
+2025-09-10 18:02:41,896 - __main__ - INFO - 並列化自動株式バックテストシステム開始
+2025-09-10 18:02:41,896 - __main__ - INFO - データ取得期間: 2006-08-01 〜 2025-08-31
+2025-09-10 18:02:41,896 - __main__ - INFO - 実行回数: 2
+2025-09-10 18:02:41,896 - __main__ - INFO - ベースシード: 42
+2025-09-10 18:02:41,896 - __main__ - INFO - 並列実行: False
+2025-09-10 18:02:41,897 - __main__ - INFO - ローカルテストモード: True
+2025-09-10 18:02:41,897 - __main__ - INFO - キャッシュ専用バックテスト実行
+2025-09-10 18:02:41,897 - __main__ - INFO - === キャッシュ専用バックテスト開始 ===
+2025-09-10 18:02:41,897 - __main__ - INFO - swing_trading バックテスト期間: 2021-08-01 〜 2025-08-31
+2025-09-10 18:02:41,898 - __main__.swing_trading - INFO - 戦略複数回バックテスト開始: swing_trading, 実行回数: 2
+2025-09-10 18:02:41,898 - __main__.swing_trading - INFO - 実行 1/2
+2025-09-10 18:02:41,898 - __main__.swing_trading - INFO - キャッシュ専用バックテスト開始: swing_trading, シード: 43
+2025-09-10 18:02:41,898 - backtest_engine.swing_trading.cache_only - INFO - バックテスト開始: swing_trading
+2025-09-10 18:02:41,898 - backtest_engine.swing_trading.cache_only - WARNING - キャッシュからデータ取得失敗: 2, キャッシュファイルが見つかりません: 2
+2025-09-10 18:02:41,898 - backtest_engine.swing_trading.cache_only - WARNING - キャッシュからデータ取得失敗: 0, キャッシュファイルが見つかりません: 0
+2025-09-10 18:02:41,898 - backtest_engine.swing_trading.cache_only - WARNING - キャッシュからデータ取得失敗: 2, キャッシュファイルが見つかりません: 2
+2025-09-10 18:02:41,902 - backtest_engine.swing_trading.cache_only - WARNING - キャッシュからデータ取得失敗: 1, キャッシュファイルが見つかりません: 1
+2025-09-10 18:02:41,902 - backtest_engine.swing_trading.cache_only - WARNING - キャッシュからデータ取得失敗: -, キャッシュファイルが見つかりません: -
+2025-09-10 18:02:41,903 - backtest_engine.swing_trading.cache_only - WARNING - キャッシュからデータ取得失敗: 0, キャッシュファイルが見つかりません: 0
+2025-09-10 18:02:41,904 - backtest_engine.swing_trading.cache_only - WARNING - キャッシュからデータ取得失敗: 8, キャッシュファイルが見つかりません: 8
+2025-09-10 18:02:41,905 - backtest_engine.swing_trading.cache_only - WARNING - キャッシュからデータ取得失敗: -, キャッシュファイルが見つかりません: -
+2025-09-10 18:02:41,906 - backtest_engine.swing_trading.cache_only - WARNING - キャッシュからデータ取得失敗: 0, キャッシュファイルが見つかりません: 0
+2025-09-10 18:02:41,906 - backtest_engine.swing_trading.cache_only - WARNING - キャッシュからデータ取得失敗: 1, キャッシュファイルが見つかりません: 1
+2025-09-10 18:02:41,906 - backtest_engine.swing_trading.cache_only - ERROR - 有効なデータがありません
+2025-09-10 18:02:41,906 - __main__.swing_trading - WARNING - 実行 1 失敗: 結果なし
+2025-09-10 18:02:41,906 - __main__.swing_trading - INFO - 実行 2/2
+2025-09-10 18:02:41,908 - __main__.swing_trading - INFO - キャッシュ専用バックテスト開始: swing_trading, シード: 44
+2025-09-10 18:02:41,908 - backtest_engine.swing_trading.cache_only - INFO - バックテスト開始: swing_trading
+2025-09-10 18:02:41,908 - backtest_engine.swing_trading.cache_only - WARNING - キャッシュからデータ取得失敗: 2, キャッシュファイルが見つかりません: 2
+2025-09-10 18:02:41,908 - backtest_engine.swing_trading.cache_only - WARNING - キャッシュからデータ取得失敗: 0, キャッシュファイルが見つかりません: 0
+2025-09-10 18:02:41,908 - backtest_engine.swing_trading.cache_only - WARNING - キャッシュからデータ取得失敗: 2, キャッシュファイルが見つかりません: 2
+2025-09-10 18:02:41,908 - backtest_engine.swing_trading.cache_only - WARNING - キャッシュからデータ取得失敗: 1, キャッシュファイルが見つかりません: 1
+2025-09-10 18:02:41,913 - backtest_engine.swing_trading.cache_only - WARNING - キャッシュからデータ取得失敗: -, キャッシュファイルが見つかりません: -
+2025-09-10 18:02:41,915 - backtest_engine.swing_trading.cache_only - WARNING - キャッシュからデータ取得失敗: 0, キャッシュファイルが見つかりません: 0
+2025-09-10 18:02:41,916 - backtest_engine.swing_trading.cache_only - WARNING - キャッシュからデータ取得失敗: 8, キャッシュファイルが見つかりません: 8
+2025-09-10 18:02:41,916 - backtest_engine.swing_trading.cache_only - WARNING - キャッシュからデータ取得失敗: -, キャッシュファイルが見つかりません: -
+2025-09-10 18:02:41,917 - backtest_engine.swing_trading.cache_only - WARNING - キャッシュからデータ取得失敗: 0, キャッシュファイルが見つかりません: 0
+2025-09-10 18:02:41,918 - backtest_engine.swing_trading.cache_only - WARNING - キャッシュからデータ取得失敗: 1, キャッシュファイルが見つかりません: 1
+2025-09-10 18:02:41,918 - backtest_engine.swing_trading.cache_only - ERROR - 有効なデータがありません
+2025-09-10 18:02:41,918 - __main__.swing_trading - WARNING - 実行 2 失敗: 結果なし
+2025-09-10 18:02:41,918 - __main__.swing_trading - INFO - 戦略複数回バックテスト完了: swing_trading
+2025-09-10 18:02:41,918 - __main__.swing_trading - INFO - 成功回数: 0/2
+2025-09-10 18:02:41,919 - __main__ - INFO - long_term バックテスト期間: 2006-08-01 〜 2025-08-31
+2025-09-10 18:02:41,919 - __main__.long_term - INFO - 戦略複数回バックテスト開始: long_term, 実行回数: 2
+2025-09-10 18:02:41,919 - __main__.long_term - INFO - 実行 1/2
+2025-09-10 18:02:41,919 - __main__.long_term - INFO - キャッシュ専用バックテスト開始: long_term, シード: 43
+2025-09-10 18:02:41,920 - backtest_engine.long_term.cache_only - INFO - バックテスト開始: long_term
+2025-09-10 18:02:41,921 - backtest_engine.long_term.cache_only - WARNING - キャッシュからデータ取得失敗: 2, キャッシュファイルが見つかりません: 2
+2025-09-10 18:02:41,921 - backtest_engine.long_term.cache_only - WARNING - キャッシュからデータ取得失敗: 0, キャッシュファイルが見つかりません: 0
+2025-09-10 18:02:41,922 - backtest_engine.long_term.cache_only - WARNING - キャッシュからデータ取得失敗: 0, キャッシュファイルが見つかりません: 0
+2025-09-10 18:02:41,924 - backtest_engine.long_term.cache_only - WARNING - キャッシュからデータ取得失敗: 6, キャッシュファイルが見つかりません: 6
+2025-09-10 18:02:41,924 - backtest_engine.long_term.cache_only - WARNING - キャッシュからデータ取得失敗: -, キャッシュファイルが見つかりません: -
+2025-09-10 18:02:41,925 - backtest_engine.long_term.cache_only - WARNING - キャッシュからデータ取得失敗: 0, キャッシュファイルが見つかりません: 0
+2025-09-10 18:02:41,926 - backtest_engine.long_term.cache_only - WARNING - キャッシュからデータ取得失敗: 8, キャッシュファイルが見つかりません: 8
+2025-09-10 18:02:41,927 - backtest_engine.long_term.cache_only - WARNING - キャッシュからデータ取得失敗: -, キャッシュファイルが見つかりません: -
+2025-09-10 18:02:41,928 - backtest_engine.long_term.cache_only - WARNING - キャッシュからデータ取得失敗: 0, キャッシュファイルが見つかりません: 0
+2025-09-10 18:02:41,929 - backtest_engine.long_term.cache_only - WARNING - キャッシュからデータ取得失敗: 1, キャッシュファイルが見つかりません: 1
+2025-09-10 18:02:41,929 - backtest_engine.long_term.cache_only - ERROR - 有効なデータがありません
+2025-09-10 18:02:41,929 - __main__.long_term - WARNING - 実行 1 失敗: 結果なし
+2025-09-10 18:02:41,930 - __main__.long_term - INFO - 実行 2/2
+2025-09-10 18:02:41,930 - __main__.long_term - INFO - キャッシュ専用バックテスト開始: long_term, シード: 44
+2025-09-10 18:02:41,930 - backtest_engine.long_term.cache_only - INFO - バックテスト開始: long_term
+2025-09-10 18:02:41,931 - backtest_engine.long_term.cache_only - WARNING - キャッシュからデータ取得失敗: 2, キャッシュファイルが見つかりません: 2
+2025-09-10 18:02:41,933 - backtest_engine.long_term.cache_only - WARNING - キャッシュからデータ取得失敗: 0, キャッシュファイルが見つかりません: 0
+2025-09-10 18:02:41,933 - backtest_engine.long_term.cache_only - WARNING - キャッシュからデータ取得失敗: 0, キャッシュファイルが見つかりません: 0
+2025-09-10 18:02:41,933 - backtest_engine.long_term.cache_only - WARNING - キャッシュからデータ取得失敗: 6, キャッシュファイルが見つかりません: 6
+2025-09-10 18:02:41,935 - backtest_engine.long_term.cache_only - WARNING - キャッシュからデータ取得失敗: -, キャッシュファイルが見つかりません: -
+2025-09-10 18:02:41,937 - backtest_engine.long_term.cache_only - WARNING - キャッシュからデータ取得失敗: 0, キャッシュファイルが見つかりません: 0
+2025-09-10 18:02:41,937 - backtest_engine.long_term.cache_only - WARNING - キャッシュからデータ取得失敗: 8, キャッシュファイルが見つかりません: 8
+2025-09-10 18:02:41,938 - backtest_engine.long_term.cache_only - WARNING - キャッシュからデータ取得失敗: -, キャッシュファイルが見つかりません: -
+2025-09-10 18:02:41,939 - backtest_engine.long_term.cache_only - WARNING - キャッシュからデータ取得失敗: 0, キャッシュファイルが見つかりません: 0
+2025-09-10 18:02:41,940 - backtest_engine.long_term.cache_only - WARNING - キャッシュからデータ取得失敗: 1, キャッシュファイルが見つかりません: 1
+2025-09-10 18:02:41,940 - backtest_engine.long_term.cache_only - ERROR - 有効なデータがありません
+2025-09-10 18:02:41,940 - __main__.long_term - WARNING - 実行 2 失敗: 結果なし
+2025-09-10 18:02:41,940 - __main__.long_term - INFO - 戦略複数回バックテスト完了: long_term
+2025-09-10 18:02:41,940 - __main__.long_term - INFO - 成功回数: 0/2
+2025-09-10 18:02:41,940 - __main__ - INFO - === キャッシュ専用バックテスト完了 ===
+2025-09-10 18:02:41,940 - __main__ - INFO - 個別レポート生成開始
+2025-09-10 18:02:41,940 - __main__ - INFO - 個別レポート生成完了: 0ファイル
+2025-09-10 18:02:41,940 - __main__ - WARNING - index.html更新エラー: cannot import name 'update_index_html' from 'main' (C:\Users\yuuki\株自動シュミレート\auto-stock-backtest2\main.py)
+2025-09-10 18:02:41,940 - __main__ - INFO - 並列化自動株式バックテストシステム完了
+2025-09-10 18:13:06,180 - __main__ - INFO - 並列化自動株式バックテストシステム開始
+2025-09-10 18:13:06,180 - __main__ - INFO - データ取得期間: 2006-08-01 〜 2025-08-31
+2025-09-10 18:13:06,180 - __main__ - INFO - 実行回数: 1
+2025-09-10 18:13:06,180 - __main__ - INFO - ベースシード: 42
+2025-09-10 18:13:06,181 - __main__ - INFO - 並列実行: False
+2025-09-10 18:13:06,181 - __main__ - INFO - ローカルテストモード: True
+2025-09-10 18:13:06,181 - __main__ - INFO - データ取得のみ実行
+2025-09-10 18:13:06,181 - data_fetcher - INFO - === フェーズ1: データ取得開始 ===
+2025-09-10 18:13:06,182 - data_fetcher - INFO - 全戦略の銘柄を収集中...
+2025-09-10 18:13:06,182 - data_fetcher - INFO - 戦略 swing_trading の銘柄を収集中...
+2025-09-10 18:13:06,185 - data_loader - INFO - 指数銘柄CSVファイルから読み込み: 856銘柄
+2025-09-10 18:13:06,187 - data_loader - INFO - 指数銘柄リスト取得: SP500, 銘柄数=474
+2025-09-10 18:13:06,187 - data_loader - INFO - 指数 SP500 から 10 銘柄をランダム抽出: ['WMT', 'CCI', 'PNR', 'SLB', 'T', 'DOC', 'ERIE', 'OXY', 'PCG', 'STT']
+2025-09-10 18:13:06,189 - data_loader - INFO - 指数銘柄CSVファイルから読み込み: 856銘柄
+2025-09-10 18:13:06,190 - data_loader - INFO - 指数銘柄リスト取得: NASDAQ100, 銘柄数=52
+2025-09-10 18:13:06,190 - data_loader - INFO - 指数 NASDAQ100 から 10 銘柄をランダム抽出: ['CSCO', 'KLAC', 'CCEP', 'MSTR', 'REGN', 'UBER', 'MAR', 'ARM', 'ORCL', 'MRVL']
+2025-09-10 18:13:06,193 - data_loader - INFO - 指数銘柄CSVファイルから読み込み: 856銘柄
+2025-09-10 18:13:06,193 - data_loader - INFO - 指数銘柄リスト取得: NIKKEI225, 銘柄数=330
+2025-09-10 18:13:06,194 - data_loader - INFO - 指数 NIKKEI225 から 10 銘柄をランダム抽出: ['4922.T', '9810.T', '7731.T', '3769.T', '2768.T', '6508.T', '3679.T', '6471.T', '4062.T', '6753.T']
+2025-09-10 18:13:06,194 - data_loader - INFO - スイングトレード用銘柄（ローカルテスト）: 30銘柄
+2025-09-10 18:13:06,194 - data_fetcher - INFO -   swing_trading 実行1: 30銘柄
+2025-09-10 18:13:06,194 - data_fetcher - INFO - 戦略 long_term の銘柄を収集中...
+2025-09-10 18:13:06,197 - data_loader - INFO - 指数銘柄CSVファイルから読み込み: 856銘柄
+2025-09-10 18:13:06,198 - data_loader - INFO - 指数銘柄リスト取得: SP500, 銘柄数=474
+2025-09-10 18:13:06,198 - data_loader - INFO - 指数 SP500 から 10 銘柄をランダム抽出: ['WMT', 'CCI', 'PNR', 'SLB', 'T', 'DOC', 'ERIE', 'OXY', 'PCG', 'STT']
+2025-09-10 18:13:06,200 - data_loader - INFO - 指数銘柄CSVファイルから読み込み: 856銘柄
+2025-09-10 18:13:06,201 - data_loader - INFO - 指数銘柄リスト取得: NASDAQ100, 銘柄数=52
+2025-09-10 18:13:06,201 - data_loader - INFO - 指数 NASDAQ100 から 10 銘柄をランダム抽出: ['CSCO', 'KLAC', 'CCEP', 'MSTR', 'REGN', 'UBER', 'MAR', 'ARM', 'ORCL', 'MRVL']
+2025-09-10 18:13:06,204 - data_loader - INFO - 指数銘柄CSVファイルから読み込み: 856銘柄
+2025-09-10 18:13:06,205 - data_loader - INFO - 指数銘柄リスト取得: NIKKEI225, 銘柄数=330
+2025-09-10 18:13:06,205 - data_loader - INFO - 指数 NIKKEI225 から 10 銘柄をランダム抽出: ['4922.T', '9810.T', '7731.T', '3769.T', '2768.T', '6508.T', '3679.T', '6471.T', '4062.T', '6753.T']
+2025-09-10 18:13:06,205 - data_loader - INFO - 中長期投資用銘柄（ローカルテスト）: 30銘柄
+2025-09-10 18:13:06,206 - data_fetcher - INFO -   long_term 実行1: 30銘柄
+2025-09-10 18:13:06,206 - data_fetcher - INFO - 全戦略の銘柄収集完了: 30銘柄
+2025-09-10 18:13:06,206 - data_fetcher - INFO - 一括データ取得開始: 30銘柄
+2025-09-10 18:13:06,206 - data_fetcher - INFO - 取得期間: 2006-08-01 ～ 2025-08-31
+2025-09-10 18:13:06,206 - data_loader - INFO - 並列データ取得開始: 30銘柄
+2025-09-10 18:13:06,211 - data_loader - INFO - 既存データなし、全期間を取得: 2006-08-01 〜 2025-08-31
+2025-09-10 18:13:06,213 - data_loader - INFO - 差分データ取得開始: 3679.T (不足期間: 1個)
+2025-09-10 18:13:06,213 - data_loader - INFO - 既存データなし、全期間を取得: 2006-08-01 〜 2025-08-31
+2025-09-10 18:13:06,213 - data_loader - INFO - 既存データなし、全期間を取得: 2006-08-01 〜 2025-08-31
+2025-09-10 18:13:06,213 - data_loader - INFO - 不足期間 1/1 のデータを取得: 3679.T (2006-08-01 〜 2025-08-31)
+2025-09-10 18:13:06,213 - data_loader - INFO - 既存データなし、全期間を取得: 2006-08-01 〜 2025-08-31
+2025-09-10 18:13:06,215 - data_loader - INFO - 差分データ取得開始: CCEP (不足期間: 1個)
+2025-09-10 18:13:06,215 - data_loader - INFO - 既存データなし、全期間を取得: 2006-08-01 〜 2025-08-31
+2025-09-10 18:13:06,215 - data_loader - INFO - 差分データ取得開始: 3769.T (不足期間: 1個)
+2025-09-10 18:13:06,215 - data_loader - INFO - 差分データ取得開始: DOC (不足期間: 1個)
+2025-09-10 18:13:06,215 - data_loader - INFO - 不足期間 1/1 のデータを取得: CCEP (2006-08-01 〜 2025-08-31)
+2025-09-10 18:13:06,215 - data_loader - INFO - 差分データ取得開始: 6508.T (不足期間: 1個)
+2025-09-10 18:13:06,216 - data_loader - INFO - 不足期間 1/1 のデータを取得: 3769.T (2006-08-01 〜 2025-08-31)
+2025-09-10 18:13:06,216 - data_loader - INFO - 不足期間 1/1 のデータを取得: DOC (2006-08-01 〜 2025-08-31)
+2025-09-10 18:13:06,216 - data_loader - INFO - 不足期間 1/1 のデータを取得: 6508.T (2006-08-01 〜 2025-08-31)
+2025-09-10 18:13:06,373 - data_loader - INFO - stooq.comからデータ取得: 3679.T -> 3679.jp
+2025-09-10 18:13:06,373 - data_loader - INFO - stooq.comからデータ取得: CCEP -> CCEP
+2025-09-10 18:13:06,376 - data_loader - INFO - stooq.comからデータ取得: 3769.T -> 3769.jp
+2025-09-10 18:13:06,376 - data_loader - INFO - stooq.comからデータ取得: DOC -> DOC
+2025-09-10 18:13:06,377 - data_loader - INFO - stooq.comからデータ取得: 6508.T -> 6508.jp
+2025-09-10 18:13:07,704 - data_loader - WARNING - stooq.com エラー: 3679.T (試行 1), StooqDailyReader request returned no data; check URL for invalid inputs: https://stooq.com/q/d/l/
+2025-09-10 18:13:07,704 - data_loader - WARNING - stooq.com エラー: DOC (試行 1), StooqDailyReader request returned no data; check URL for invalid inputs: https://stooq.com/q/d/l/
+2025-09-10 18:13:07,705 - data_loader - WARNING - stooq.com エラー: 6508.T (試行 1), StooqDailyReader request returned no data; check URL for invalid inputs: https://stooq.com/q/d/l/
+2025-09-10 18:13:07,705 - data_loader - WARNING - stooq.com エラー: 3769.T (試行 1), StooqDailyReader request returned no data; check URL for invalid inputs: https://stooq.com/q/d/l/
+2025-09-10 18:13:07,739 - data_loader - WARNING - stooq.com エラー: CCEP (試行 1), StooqDailyReader request returned no data; check URL for invalid inputs: https://stooq.com/q/d/l/
+2025-09-10 18:13:08,715 - data_loader - INFO - stooq.comからデータ取得: 3679.T -> 3679.jp
+2025-09-10 18:13:08,716 - data_loader - INFO - stooq.comからデータ取得: 6508.T -> 6508.jp
+2025-09-10 18:13:08,718 - data_loader - INFO - stooq.comからデータ取得: DOC -> DOC
+2025-09-10 18:13:08,719 - data_loader - INFO - stooq.comからデータ取得: 3769.T -> 3769.jp
+2025-09-10 18:13:08,745 - data_loader - INFO - stooq.comからデータ取得: CCEP -> CCEP
+2025-09-10 18:13:09,750 - data_loader - WARNING - stooq.com エラー: DOC (試行 2), StooqDailyReader request returned no data; check URL for invalid inputs: https://stooq.com/q/d/l/
+2025-09-10 18:13:09,783 - data_loader - WARNING - stooq.com エラー: 3769.T (試行 2), StooqDailyReader request returned no data; check URL for invalid inputs: https://stooq.com/q/d/l/
+2025-09-10 18:13:09,785 - data_loader - WARNING - stooq.com エラー: CCEP (試行 2), StooqDailyReader request returned no data; check URL for invalid inputs: https://stooq.com/q/d/l/
+2025-09-10 18:13:09,785 - data_loader - WARNING - stooq.com エラー: 3679.T (試行 2), StooqDailyReader request returned no data; check URL for invalid inputs: https://stooq.com/q/d/l/
+2025-09-10 18:13:09,787 - data_loader - WARNING - stooq.com エラー: 6508.T (試行 2), StooqDailyReader request returned no data; check URL for invalid inputs: https://stooq.com/q/d/l/
+2025-09-10 18:13:11,755 - data_loader - INFO - stooq.comからデータ取得: DOC -> DOC
+2025-09-10 18:13:11,784 - data_loader - INFO - stooq.comからデータ取得: 3769.T -> 3769.jp
+2025-09-10 18:13:11,799 - data_loader - INFO - stooq.comからデータ取得: CCEP -> CCEP
+2025-09-10 18:13:11,801 - data_loader - INFO - stooq.comからデータ取得: 6508.T -> 6508.jp
+2025-09-10 18:13:11,802 - data_loader - INFO - stooq.comからデータ取得: 3679.T -> 3679.jp
+2025-09-10 18:13:12,818 - data_loader - WARNING - stooq.com エラー: DOC (試行 3), StooqDailyReader request returned no data; check URL for invalid inputs: https://stooq.com/q/d/l/
+2025-09-10 18:13:12,818 - data_loader - WARNING - stooq.com エラー: 3769.T (試行 3), StooqDailyReader request returned no data; check URL for invalid inputs: https://stooq.com/q/d/l/
+2025-09-10 18:13:12,819 - data_loader - ERROR - 期間データ取得失敗: DOC (2006-08-01 〜 2025-08-31), stooq.com データ取得失敗: DOC
+2025-09-10 18:13:12,820 - data_loader - ERROR - 期間データ取得失敗: 3769.T (2006-08-01 〜 2025-08-31), stooq.com データ取得失敗: 3769.T
+2025-09-10 18:13:12,821 - data_loader - ERROR - データ取得完全失敗: DOC
+2025-09-10 18:13:12,821 - data_loader - ERROR - データ取得完全失敗: 3769.T
+2025-09-10 18:13:12,822 - data_loader - INFO - 既存データなし、全期間を取得: 2006-08-01 〜 2025-08-31
+2025-09-10 18:13:12,823 - data_loader - INFO - 既存データなし、全期間を取得: 2006-08-01 〜 2025-08-31
+2025-09-10 18:13:12,823 - data_loader - INFO - 差分データ取得開始: ERIE (不足期間: 1個)
+2025-09-10 18:13:12,823 - data_loader - INFO - 差分データ取得開始: MRVL (不足期間: 1個)
+2025-09-10 18:13:12,823 - data_loader - INFO - 不足期間 1/1 のデータを取得: ERIE (2006-08-01 〜 2025-08-31)
+2025-09-10 18:13:12,823 - data_loader - INFO - 不足期間 1/1 のデータを取得: MRVL (2006-08-01 〜 2025-08-31)
+2025-09-10 18:13:12,824 - data_loader - INFO - stooq.comからデータ取得: ERIE -> ERIE
+2025-09-10 18:13:12,824 - data_loader - INFO - stooq.comからデータ取得: MRVL -> MRVL
+2025-09-10 18:13:12,830 - data_loader - WARNING - stooq.com エラー: CCEP (試行 3), StooqDailyReader request returned no data; check URL for invalid inputs: https://stooq.com/q/d/l/
+2025-09-10 18:13:12,831 - data_loader - ERROR - 期間データ取得失敗: CCEP (2006-08-01 〜 2025-08-31), stooq.com データ取得失敗: CCEP
+2025-09-10 18:13:12,831 - data_loader - ERROR - データ取得完全失敗: CCEP
+2025-09-10 18:13:12,833 - data_loader - INFO - 既存データなし、全期間を取得: 2006-08-01 〜 2025-08-31
+2025-09-10 18:13:12,833 - data_loader - INFO - 差分データ取得開始: 7731.T (不足期間: 1個)
+2025-09-10 18:13:12,833 - data_loader - INFO - 不足期間 1/1 のデータを取得: 7731.T (2006-08-01 〜 2025-08-31)
+2025-09-10 18:13:12,834 - data_loader - INFO - stooq.comからデータ取得: 7731.T -> 7731.jp
+2025-09-10 18:13:12,864 - data_loader - WARNING - stooq.com エラー: 6508.T (試行 3), StooqDailyReader request returned no data; check URL for invalid inputs: https://stooq.com/q/d/l/
+2025-09-10 18:13:12,866 - data_loader - ERROR - 期間データ取得失敗: 6508.T (2006-08-01 〜 2025-08-31), stooq.com データ取得失敗: 6508.T
+2025-09-10 18:13:12,866 - data_loader - WARNING - stooq.com エラー: 3679.T (試行 3), StooqDailyReader request returned no data; check URL for invalid inputs: https://stooq.com/q/d/l/
+2025-09-10 18:13:12,867 - data_loader - ERROR - データ取得完全失敗: 6508.T
+2025-09-10 18:13:12,868 - data_loader - ERROR - 期間データ取得失敗: 3679.T (2006-08-01 〜 2025-08-31), stooq.com データ取得失敗: 3679.T
+2025-09-10 18:13:12,869 - data_loader - INFO - 既存データなし、全期間を取得: 2006-08-01 〜 2025-08-31
+2025-09-10 18:13:12,870 - data_loader - ERROR - データ取得完全失敗: 3679.T
+2025-09-10 18:13:12,870 - data_loader - INFO - 差分データ取得開始: KLAC (不足期間: 1個)
+2025-09-10 18:13:12,870 - data_loader - INFO - 既存データなし、全期間を取得: 2006-08-01 〜 2025-08-31
+2025-09-10 18:13:12,871 - data_loader - INFO - 不足期間 1/1 のデータを取得: KLAC (2006-08-01 〜 2025-08-31)
+2025-09-10 18:13:12,871 - data_loader - INFO - 差分データ取得開始: ORCL (不足期間: 1個)
+2025-09-10 18:13:12,871 - data_loader - INFO - stooq.comからデータ取得: KLAC -> KLAC
+2025-09-10 18:13:12,872 - data_loader - INFO - 不足期間 1/1 のデータを取得: ORCL (2006-08-01 〜 2025-08-31)
+2025-09-10 18:13:12,873 - data_loader - INFO - stooq.comからデータ取得: ORCL -> ORCL
+2025-09-10 18:13:13,850 - data_loader - WARNING - stooq.com エラー: 7731.T (試行 1), StooqDailyReader request returned no data; check URL for invalid inputs: https://stooq.com/q/d/l/
+2025-09-10 18:13:13,885 - data_loader - WARNING - stooq.com エラー: MRVL (試行 1), StooqDailyReader request returned no data; check URL for invalid inputs: https://stooq.com/q/d/l/
+2025-09-10 18:13:13,885 - data_loader - WARNING - stooq.com エラー: ERIE (試行 1), StooqDailyReader request returned no data; check URL for invalid inputs: https://stooq.com/q/d/l/
+2025-09-10 18:13:13,944 - data_loader - WARNING - stooq.com エラー: KLAC (試行 1), StooqDailyReader request returned no data; check URL for invalid inputs: https://stooq.com/q/d/l/
+2025-09-10 18:13:13,945 - data_loader - WARNING - stooq.com エラー: ORCL (試行 1), StooqDailyReader request returned no data; check URL for invalid inputs: https://stooq.com/q/d/l/
+2025-09-10 18:13:14,867 - data_loader - INFO - stooq.comからデータ取得: 7731.T -> 7731.jp
+2025-09-10 18:13:14,899 - data_loader - INFO - stooq.comからデータ取得: MRVL -> MRVL
+2025-09-10 18:13:14,901 - data_loader - INFO - stooq.comからデータ取得: ERIE -> ERIE
+2025-09-10 18:13:14,947 - data_loader - INFO - stooq.comからデータ取得: KLAC -> KLAC
+2025-09-10 18:13:14,949 - data_loader - INFO - stooq.comからデータ取得: ORCL -> ORCL
+2025-09-10 18:13:15,893 - data_loader - WARNING - stooq.com エラー: 7731.T (試行 2), StooqDailyReader request returned no data; check URL for invalid inputs: https://stooq.com/q/d/l/
+2025-09-10 18:13:15,955 - data_loader - WARNING - stooq.com エラー: ERIE (試行 2), StooqDailyReader request returned no data; check URL for invalid inputs: https://stooq.com/q/d/l/
+2025-09-10 18:13:15,995 - data_loader - WARNING - stooq.com エラー: MRVL (試行 2), StooqDailyReader request returned no data; check URL for invalid inputs: https://stooq.com/q/d/l/
+2025-09-10 18:13:15,996 - data_loader - WARNING - stooq.com エラー: ORCL (試行 2), StooqDailyReader request returned no data; check URL for invalid inputs: https://stooq.com/q/d/l/
+2025-09-10 18:13:15,997 - data_loader - WARNING - stooq.com エラー: KLAC (試行 2), StooqDailyReader request returned no data; check URL for invalid inputs: https://stooq.com/q/d/l/
+2025-09-10 18:13:17,905 - data_loader - INFO - stooq.comからデータ取得: 7731.T -> 7731.jp
+2025-09-10 18:13:17,965 - data_loader - INFO - stooq.comからデータ取得: ERIE -> ERIE
+2025-09-10 18:13:17,997 - data_loader - INFO - stooq.comからデータ取得: MRVL -> MRVL
+2025-09-10 18:13:17,999 - data_loader - INFO - stooq.comからデータ取得: ORCL -> ORCL
+2025-09-10 18:13:18,013 - data_loader - INFO - stooq.comからデータ取得: KLAC -> KLAC
+2025-09-10 18:13:19,213 - data_loader - WARNING - stooq.com エラー: ERIE (試行 3), StooqDailyReader request returned no data; check URL for invalid inputs: https://stooq.com/q/d/l/
+2025-09-10 18:13:19,215 - data_loader - ERROR - 期間データ取得失敗: ERIE (2006-08-01 〜 2025-08-31), stooq.com データ取得失敗: ERIE
+2025-09-10 18:13:19,215 - data_loader - ERROR - データ取得完全失敗: ERIE
+2025-09-10 18:13:19,216 - data_loader - INFO - 既存データなし、全期間を取得: 2006-08-01 〜 2025-08-31
+2025-09-10 18:13:19,216 - data_loader - INFO - 差分データ取得開始: PCG (不足期間: 1個)
+2025-09-10 18:13:19,216 - data_loader - INFO - 不足期間 1/1 のデータを取得: PCG (2006-08-01 〜 2025-08-31)
+2025-09-10 18:13:19,216 - data_loader - INFO - stooq.comからデータ取得: PCG -> PCG
+2025-09-10 18:13:19,279 - data_loader - WARNING - stooq.com エラー: MRVL (試行 3), StooqDailyReader request returned no data; check URL for invalid inputs: https://stooq.com/q/d/l/
+2025-09-10 18:13:19,279 - data_loader - WARNING - stooq.com エラー: KLAC (試行 3), StooqDailyReader request returned no data; check URL for invalid inputs: https://stooq.com/q/d/l/
+2025-09-10 18:13:19,279 - data_loader - WARNING - stooq.com エラー: ORCL (試行 3), StooqDailyReader request returned no data; check URL for invalid inputs: https://stooq.com/q/d/l/
+2025-09-10 18:13:19,281 - data_loader - ERROR - 期間データ取得失敗: MRVL (2006-08-01 〜 2025-08-31), stooq.com データ取得失敗: MRVL
+2025-09-10 18:13:19,282 - data_loader - WARNING - stooq.com エラー: 7731.T (試行 3), StooqDailyReader request returned no data; check URL for invalid inputs: https://stooq.com/q/d/l/
+2025-09-10 18:13:19,284 - data_loader - ERROR - 期間データ取得失敗: KLAC (2006-08-01 〜 2025-08-31), stooq.com データ取得失敗: KLAC
+2025-09-10 18:13:19,285 - data_loader - ERROR - 期間データ取得失敗: ORCL (2006-08-01 〜 2025-08-31), stooq.com データ取得失敗: ORCL
+2025-09-10 18:13:19,286 - data_loader - ERROR - データ取得完全失敗: MRVL
+2025-09-10 18:13:19,287 - data_loader - ERROR - 期間データ取得失敗: 7731.T (2006-08-01 〜 2025-08-31), stooq.com データ取得失敗: 7731.T
+2025-09-10 18:13:19,287 - data_loader - ERROR - データ取得完全失敗: KLAC
+2025-09-10 18:13:19,288 - data_loader - ERROR - データ取得完全失敗: ORCL
+2025-09-10 18:13:19,289 - data_loader - INFO - 既存データなし、全期間を取得: 2006-08-01 〜 2025-08-31
+2025-09-10 18:13:19,289 - data_loader - ERROR - データ取得完全失敗: 7731.T
+2025-09-10 18:13:19,289 - data_loader - INFO - 既存データなし、全期間を取得: 2006-08-01 〜 2025-08-31
+2025-09-10 18:13:19,290 - data_loader - INFO - 既存データなし、全期間を取得: 2006-08-01 〜 2025-08-31
+2025-09-10 18:13:19,290 - data_loader - INFO - 差分データ取得開始: REGN (不足期間: 1個)
+2025-09-10 18:13:19,291 - data_loader - INFO - データ取得進捗: 10/30 完了
+2025-09-10 18:13:19,291 - data_loader - INFO - 既存データなし、全期間を取得: 2006-08-01 〜 2025-08-31
+2025-09-10 18:13:19,291 - data_loader - INFO - 差分データ取得開始: WMT (不足期間: 1個)
+2025-09-10 18:13:19,291 - data_loader - INFO - 差分データ取得開始: 4062.T (不足期間: 1個)
+2025-09-10 18:13:19,291 - data_loader - INFO - 不足期間 1/1 のデータを取得: REGN (2006-08-01 〜 2025-08-31)
+2025-09-10 18:13:19,292 - data_loader - INFO - 差分データ取得開始: T (不足期間: 1個)
+2025-09-10 18:13:19,292 - data_loader - INFO - 不足期間 1/1 のデータを取得: WMT (2006-08-01 〜 2025-08-31)
+2025-09-10 18:13:19,292 - data_loader - INFO - 不足期間 1/1 のデータを取得: 4062.T (2006-08-01 〜 2025-08-31)
+2025-09-10 18:13:19,292 - data_loader - INFO - stooq.comからデータ取得: REGN -> REGN
+2025-09-10 18:13:19,293 - data_loader - INFO - 不足期間 1/1 のデータを取得: T (2006-08-01 〜 2025-08-31)
+2025-09-10 18:13:19,293 - data_loader - INFO - stooq.comからデータ取得: WMT -> WMT
+2025-09-10 18:13:19,293 - data_loader - INFO - stooq.comからデータ取得: 4062.T -> 4062.jp
+2025-09-10 18:13:19,295 - data_loader - INFO - stooq.comからデータ取得: T -> T
+2025-09-10 18:13:20,239 - data_loader - WARNING - stooq.com エラー: PCG (試行 1), StooqDailyReader request returned no data; check URL for invalid inputs: https://stooq.com/q/d/l/
+2025-09-10 18:13:20,339 - data_loader - WARNING - stooq.com エラー: 4062.T (試行 1), StooqDailyReader request returned no data; check URL for invalid inputs: https://stooq.com/q/d/l/
+2025-09-10 18:13:20,339 - data_loader - WARNING - stooq.com エラー: REGN (試行 1), StooqDailyReader request returned no data; check URL for invalid inputs: https://stooq.com/q/d/l/
+2025-09-10 18:13:20,340 - data_loader - WARNING - stooq.com エラー: WMT (試行 1), StooqDailyReader request returned no data; check URL for invalid inputs: https://stooq.com/q/d/l/
+2025-09-10 18:13:20,342 - data_loader - WARNING - stooq.com エラー: T (試行 1), StooqDailyReader request returned no data; check URL for invalid inputs: https://stooq.com/q/d/l/
+2025-09-10 18:13:21,247 - data_loader - INFO - stooq.comからデータ取得: PCG -> PCG
+2025-09-10 18:13:21,356 - data_loader - INFO - stooq.comからデータ取得: WMT -> WMT
+2025-09-10 18:13:21,357 - data_loader - INFO - stooq.comからデータ取得: 4062.T -> 4062.jp
+2025-09-10 18:13:21,358 - data_loader - INFO - stooq.comからデータ取得: T -> T
+2025-09-10 18:13:21,359 - data_loader - INFO - stooq.comからデータ取得: REGN -> REGN
+2025-09-10 18:13:22,254 - data_loader - WARNING - stooq.com エラー: PCG (試行 2), StooqDailyReader request returned no data; check URL for invalid inputs: https://stooq.com/q/d/l/
+2025-09-10 18:13:22,388 - data_loader - WARNING - stooq.com エラー: 4062.T (試行 2), StooqDailyReader request returned no data; check URL for invalid inputs: https://stooq.com/q/d/l/
+2025-09-10 18:13:22,389 - data_loader - WARNING - stooq.com エラー: WMT (試行 2), StooqDailyReader request returned no data; check URL for invalid inputs: https://stooq.com/q/d/l/
+2025-09-10 18:13:22,389 - data_loader - WARNING - stooq.com エラー: REGN (試行 2), StooqDailyReader request returned no data; check URL for invalid inputs: https://stooq.com/q/d/l/
+2025-09-10 18:13:22,445 - data_loader - WARNING - stooq.com エラー: T (試行 2), StooqDailyReader request returned no data; check URL for invalid inputs: https://stooq.com/q/d/l/
+2025-09-10 18:13:24,258 - data_loader - INFO - stooq.comからデータ取得: PCG -> PCG
+2025-09-10 18:13:24,397 - data_loader - INFO - stooq.comからデータ取得: 4062.T -> 4062.jp
+2025-09-10 18:13:24,398 - data_loader - INFO - stooq.comからデータ取得: WMT -> WMT
+2025-09-10 18:13:24,399 - data_loader - INFO - stooq.comからデータ取得: REGN -> REGN
+2025-09-10 18:13:24,460 - data_loader - INFO - stooq.comからデータ取得: T -> T
+2025-09-10 18:13:25,359 - data_loader - WARNING - stooq.com エラー: PCG (試行 3), StooqDailyReader request returned no data; check URL for invalid inputs: https://stooq.com/q/d/l/
+2025-09-10 18:13:25,360 - data_loader - ERROR - 期間データ取得失敗: PCG (2006-08-01 〜 2025-08-31), stooq.com データ取得失敗: PCG
+2025-09-10 18:13:25,361 - data_loader - ERROR - データ取得完全失敗: PCG
+2025-09-10 18:13:25,361 - data_loader - INFO - 既存データなし、全期間を取得: 2006-08-01 〜 2025-08-31
+2025-09-10 18:13:25,362 - data_loader - INFO - 差分データ取得開始: 9810.T (不足期間: 1個)
+2025-09-10 18:13:25,362 - data_loader - INFO - 不足期間 1/1 のデータを取得: 9810.T (2006-08-01 〜 2025-08-31)
+2025-09-10 18:13:25,362 - data_loader - INFO - stooq.comからデータ取得: 9810.T -> 9810.jp
+2025-09-10 18:13:25,423 - data_loader - WARNING - stooq.com エラー: REGN (試行 3), StooqDailyReader request returned no data; check URL for invalid inputs: https://stooq.com/q/d/l/
+2025-09-10 18:13:25,424 - data_loader - WARNING - stooq.com エラー: 4062.T (試行 3), StooqDailyReader request returned no data; check URL for invalid inputs: https://stooq.com/q/d/l/
+2025-09-10 18:13:25,425 - data_loader - ERROR - 期間データ取得失敗: REGN (2006-08-01 〜 2025-08-31), stooq.com データ取得失敗: REGN
+2025-09-10 18:13:25,425 - data_loader - ERROR - 期間データ取得失敗: 4062.T (2006-08-01 〜 2025-08-31), stooq.com データ取得失敗: 4062.T
+2025-09-10 18:13:25,426 - data_loader - ERROR - データ取得完全失敗: REGN
+2025-09-10 18:13:25,426 - data_loader - ERROR - データ取得完全失敗: 4062.T
+2025-09-10 18:13:25,427 - data_loader - INFO - 既存データなし、全期間を取得: 2006-08-01 〜 2025-08-31
+2025-09-10 18:13:25,427 - data_loader - INFO - 既存データなし、全期間を取得: 2006-08-01 〜 2025-08-31
+2025-09-10 18:13:25,428 - data_loader - INFO - 差分データ取得開始: OXY (不足期間: 1個)
+2025-09-10 18:13:25,428 - data_loader - INFO - 差分データ取得開始: UBER (不足期間: 1個)
+2025-09-10 18:13:25,428 - data_loader - INFO - 不足期間 1/1 のデータを取得: OXY (2006-08-01 〜 2025-08-31)
+2025-09-10 18:13:25,428 - data_loader - INFO - 不足期間 1/1 のデータを取得: UBER (2006-08-01 〜 2025-08-31)
+2025-09-10 18:13:25,428 - data_loader - INFO - stooq.comからデータ取得: OXY -> OXY
+2025-09-10 18:13:25,429 - data_loader - INFO - stooq.comからデータ取得: UBER -> UBER
+2025-09-10 18:13:25,457 - data_loader - WARNING - stooq.com エラー: WMT (試行 3), StooqDailyReader request returned no data; check URL for invalid inputs: https://stooq.com/q/d/l/
+2025-09-10 18:13:25,458 - data_loader - ERROR - 期間データ取得失敗: WMT (2006-08-01 〜 2025-08-31), stooq.com データ取得失敗: WMT
+2025-09-10 18:13:25,459 - data_loader - ERROR - データ取得完全失敗: WMT
+2025-09-10 18:13:25,460 - data_loader - INFO - 既存データなし、全期間を取得: 2006-08-01 〜 2025-08-31
+2025-09-10 18:13:25,460 - data_loader - INFO - 差分データ取得開始: 6471.T (不足期間: 1個)
+2025-09-10 18:13:25,460 - data_loader - INFO - 不足期間 1/1 のデータを取得: 6471.T (2006-08-01 〜 2025-08-31)
+2025-09-10 18:13:25,460 - data_loader - INFO - stooq.comからデータ取得: 6471.T -> 6471.jp
+2025-09-10 18:13:25,462 - data_loader - WARNING - stooq.com エラー: T (試行 3), StooqDailyReader request returned no data; check URL for invalid inputs: https://stooq.com/q/d/l/
+2025-09-10 18:13:25,464 - data_loader - ERROR - 期間データ取得失敗: T (2006-08-01 〜 2025-08-31), stooq.com データ取得失敗: T
+2025-09-10 18:13:25,464 - data_loader - ERROR - データ取得完全失敗: T
+2025-09-10 18:13:25,465 - data_loader - INFO - 既存データなし、全期間を取得: 2006-08-01 〜 2025-08-31
+2025-09-10 18:13:25,465 - data_loader - INFO - 差分データ取得開始: MSTR (不足期間: 1個)
+2025-09-10 18:13:25,465 - data_loader - INFO - 不足期間 1/1 のデータを取得: MSTR (2006-08-01 〜 2025-08-31)
+2025-09-10 18:13:25,467 - data_loader - INFO - stooq.comからデータ取得: MSTR -> MSTR
+2025-09-10 18:13:26,447 - data_loader - WARNING - stooq.com エラー: 9810.T (試行 1), StooqDailyReader request returned no data; check URL for invalid inputs: https://stooq.com/q/d/l/
+2025-09-10 18:13:26,491 - data_loader - WARNING - stooq.com エラー: MSTR (試行 1), StooqDailyReader request returned no data; check URL for invalid inputs: https://stooq.com/q/d/l/
+2025-09-10 18:13:26,491 - data_loader - WARNING - stooq.com エラー: UBER (試行 1), StooqDailyReader request returned no data; check URL for invalid inputs: https://stooq.com/q/d/l/
+2025-09-10 18:13:26,499 - data_loader - WARNING - stooq.com エラー: OXY (試行 1), StooqDailyReader request returned no data; check URL for invalid inputs: https://stooq.com/q/d/l/
+2025-09-10 18:13:26,501 - data_loader - WARNING - stooq.com エラー: 6471.T (試行 1), StooqDailyReader request returned no data; check URL for invalid inputs: https://stooq.com/q/d/l/
+2025-09-10 18:13:27,462 - data_loader - INFO - stooq.comからデータ取得: 9810.T -> 9810.jp
+2025-09-10 18:13:27,494 - data_loader - INFO - stooq.comからデータ取得: UBER -> UBER
+2025-09-10 18:13:27,495 - data_loader - INFO - stooq.comからデータ取得: MSTR -> MSTR
+2025-09-10 18:13:27,510 - data_loader - INFO - stooq.comからデータ取得: 6471.T -> 6471.jp
+2025-09-10 18:13:27,511 - data_loader - INFO - stooq.comからデータ取得: OXY -> OXY
+2025-09-10 18:13:28,490 - data_loader - WARNING - stooq.com エラー: 9810.T (試行 2), StooqDailyReader request returned no data; check URL for invalid inputs: https://stooq.com/q/d/l/
+2025-09-10 18:13:28,599 - data_loader - WARNING - stooq.com エラー: 6471.T (試行 2), StooqDailyReader request returned no data; check URL for invalid inputs: https://stooq.com/q/d/l/
+2025-09-10 18:13:28,599 - data_loader - WARNING - stooq.com エラー: UBER (試行 2), StooqDailyReader request returned no data; check URL for invalid inputs: https://stooq.com/q/d/l/
+2025-09-10 18:13:28,600 - data_loader - WARNING - stooq.com エラー: OXY (試行 2), StooqDailyReader request returned no data; check URL for invalid inputs: https://stooq.com/q/d/l/
+2025-09-10 18:13:28,601 - data_loader - WARNING - stooq.com エラー: MSTR (試行 2), StooqDailyReader request returned no data; check URL for invalid inputs: https://stooq.com/q/d/l/
+2025-09-10 18:13:30,493 - data_loader - INFO - stooq.comからデータ取得: 9810.T -> 9810.jp
+2025-09-10 18:13:30,613 - data_loader - INFO - stooq.comからデータ取得: MSTR -> MSTR
+2025-09-10 18:13:30,622 - data_loader - INFO - stooq.comからデータ取得: 6471.T -> 6471.jp
+2025-09-10 18:13:30,624 - data_loader - INFO - stooq.comからデータ取得: UBER -> UBER
+2025-09-10 18:13:30,625 - data_loader - INFO - stooq.comからデータ取得: OXY -> OXY
+2025-09-10 18:13:32,140 - data_loader - WARNING - stooq.com エラー: 9810.T (試行 3), StooqDailyReader request returned no data; check URL for invalid inputs: https://stooq.com/q/d/l/
+2025-09-10 18:13:32,141 - data_loader - WARNING - stooq.com エラー: UBER (試行 3), StooqDailyReader request returned no data; check URL for invalid inputs: https://stooq.com/q/d/l/
+2025-09-10 18:13:32,141 - data_loader - WARNING - stooq.com エラー: OXY (試行 3), StooqDailyReader request returned no data; check URL for invalid inputs: https://stooq.com/q/d/l/
+2025-09-10 18:13:32,142 - data_loader - WARNING - stooq.com エラー: MSTR (試行 3), StooqDailyReader request returned no data; check URL for invalid inputs: https://stooq.com/q/d/l/
+2025-09-10 18:13:32,142 - data_loader - WARNING - stooq.com エラー: 6471.T (試行 3), StooqDailyReader request returned no data; check URL for invalid inputs: https://stooq.com/q/d/l/
+2025-09-10 18:13:32,143 - data_loader - ERROR - 期間データ取得失敗: UBER (2006-08-01 〜 2025-08-31), stooq.com データ取得失敗: UBER
+2025-09-10 18:13:32,144 - data_loader - ERROR - 期間データ取得失敗: 9810.T (2006-08-01 〜 2025-08-31), stooq.com データ取得失敗: 9810.T
+2025-09-10 18:13:32,146 - data_loader - ERROR - 期間データ取得失敗: OXY (2006-08-01 〜 2025-08-31), stooq.com データ取得失敗: OXY
+2025-09-10 18:13:32,148 - data_loader - ERROR - 期間データ取得失敗: MSTR (2006-08-01 〜 2025-08-31), stooq.com データ取得失敗: MSTR
+2025-09-10 18:13:32,151 - data_loader - ERROR - 期間データ取得失敗: 6471.T (2006-08-01 〜 2025-08-31), stooq.com データ取得失敗: 6471.T
+2025-09-10 18:13:32,151 - data_loader - ERROR - データ取得完全失敗: UBER
+2025-09-10 18:13:32,152 - data_loader - ERROR - データ取得完全失敗: 9810.T
+2025-09-10 18:13:32,152 - data_loader - ERROR - データ取得完全失敗: OXY
+2025-09-10 18:13:32,152 - data_loader - ERROR - データ取得完全失敗: MSTR
+2025-09-10 18:13:32,153 - data_loader - ERROR - データ取得完全失敗: 6471.T
+2025-09-10 18:13:32,154 - data_loader - INFO - 既存データなし、全期間を取得: 2006-08-01 〜 2025-08-31
+2025-09-10 18:13:32,154 - data_loader - INFO - 既存データなし、全期間を取得: 2006-08-01 〜 2025-08-31
+2025-09-10 18:13:32,155 - data_loader - INFO - 既存データなし、全期間を取得: 2006-08-01 〜 2025-08-31
+2025-09-10 18:13:32,155 - data_loader - INFO - 既存データなし、全期間を取得: 2006-08-01 〜 2025-08-31
+2025-09-10 18:13:32,156 - data_loader - INFO - 既存データなし、全期間を取得: 2006-08-01 〜 2025-08-31
+2025-09-10 18:13:32,156 - data_loader - INFO - データ取得進捗: 20/30 完了
+2025-09-10 18:13:32,156 - data_loader - INFO - 差分データ取得開始: CSCO (不足期間: 1個)
+2025-09-10 18:13:32,156 - data_loader - INFO - 差分データ取得開始: 4922.T (不足期間: 1個)
+2025-09-10 18:13:32,157 - data_loader - INFO - 差分データ取得開始: CCI (不足期間: 1個)
+2025-09-10 18:13:32,157 - data_loader - INFO - 差分データ取得開始: ARM (不足期間: 1個)
+2025-09-10 18:13:32,157 - data_loader - INFO - 差分データ取得開始: 2768.T (不足期間: 1個)
+2025-09-10 18:13:32,157 - data_loader - INFO - 不足期間 1/1 のデータを取得: CSCO (2006-08-01 〜 2025-08-31)
+2025-09-10 18:13:32,158 - data_loader - INFO - 不足期間 1/1 のデータを取得: 4922.T (2006-08-01 〜 2025-08-31)
+2025-09-10 18:13:32,158 - data_loader - INFO - 不足期間 1/1 のデータを取得: CCI (2006-08-01 〜 2025-08-31)
+2025-09-10 18:13:32,158 - data_loader - INFO - 不足期間 1/1 のデータを取得: ARM (2006-08-01 〜 2025-08-31)
+2025-09-10 18:13:32,158 - data_loader - INFO - 不足期間 1/1 のデータを取得: 2768.T (2006-08-01 〜 2025-08-31)
+2025-09-10 18:13:32,158 - data_loader - INFO - stooq.comからデータ取得: CSCO -> CSCO
+2025-09-10 18:13:32,159 - data_loader - INFO - stooq.comからデータ取得: 4922.T -> 4922.jp
+2025-09-10 18:13:32,159 - data_loader - INFO - stooq.comからデータ取得: CCI -> CCI
+2025-09-10 18:13:32,159 - data_loader - INFO - stooq.comからデータ取得: ARM -> ARM
+2025-09-10 18:13:32,159 - data_loader - INFO - stooq.comからデータ取得: 2768.T -> 2768.jp
+2025-09-10 18:13:33,354 - data_loader - WARNING - stooq.com エラー: 2768.T (試行 1), StooqDailyReader request returned no data; check URL for invalid inputs: https://stooq.com/q/d/l/
+2025-09-10 18:13:33,361 - data_loader - WARNING - stooq.com エラー: CSCO (試行 1), StooqDailyReader request returned no data; check URL for invalid inputs: https://stooq.com/q/d/l/
+2025-09-10 18:13:33,362 - data_loader - WARNING - stooq.com エラー: CCI (試行 1), StooqDailyReader request returned no data; check URL for invalid inputs: https://stooq.com/q/d/l/
+2025-09-10 18:13:33,415 - data_loader - WARNING - stooq.com エラー: 4922.T (試行 1), StooqDailyReader request returned no data; check URL for invalid inputs: https://stooq.com/q/d/l/
+2025-09-10 18:13:33,417 - data_loader - WARNING - stooq.com エラー: ARM (試行 1), StooqDailyReader request returned no data; check URL for invalid inputs: https://stooq.com/q/d/l/
+2025-09-10 18:13:34,371 - data_loader - INFO - stooq.comからデータ取得: 2768.T -> 2768.jp
+2025-09-10 18:13:34,372 - data_loader - INFO - stooq.comからデータ取得: CSCO -> CSCO
+2025-09-10 18:13:34,374 - data_loader - INFO - stooq.comからデータ取得: CCI -> CCI
+2025-09-10 18:13:34,434 - data_loader - INFO - stooq.comからデータ取得: ARM -> ARM
+2025-09-10 18:13:34,435 - data_loader - INFO - stooq.comからデータ取得: 4922.T -> 4922.jp
+2025-09-10 18:13:35,452 - data_loader - WARNING - stooq.com エラー: CCI (試行 2), StooqDailyReader request returned no data; check URL for invalid inputs: https://stooq.com/q/d/l/
+2025-09-10 18:13:35,453 - data_loader - WARNING - stooq.com エラー: CSCO (試行 2), StooqDailyReader request returned no data; check URL for invalid inputs: https://stooq.com/q/d/l/
+2025-09-10 18:13:35,453 - data_loader - WARNING - stooq.com エラー: 2768.T (試行 2), StooqDailyReader request returned no data; check URL for invalid inputs: https://stooq.com/q/d/l/
+2025-09-10 18:13:35,454 - data_loader - WARNING - stooq.com エラー: ARM (試行 2), StooqDailyReader request returned no data; check URL for invalid inputs: https://stooq.com/q/d/l/
+2025-09-10 18:13:35,455 - data_loader - WARNING - stooq.com エラー: 4922.T (試行 2), StooqDailyReader request returned no data; check URL for invalid inputs: https://stooq.com/q/d/l/
+2025-09-10 18:13:37,463 - data_loader - INFO - stooq.comからデータ取得: CCI -> CCI
+2025-09-10 18:13:37,464 - data_loader - INFO - stooq.comからデータ取得: 2768.T -> 2768.jp
+2025-09-10 18:13:37,465 - data_loader - INFO - stooq.comからデータ取得: CSCO -> CSCO
+2025-09-10 18:13:37,467 - data_loader - INFO - stooq.comからデータ取得: 4922.T -> 4922.jp
+2025-09-10 18:13:37,468 - data_loader - INFO - stooq.comからデータ取得: ARM -> ARM
+2025-09-10 18:13:38,770 - data_loader - WARNING - stooq.com エラー: CCI (試行 3), StooqDailyReader request returned no data; check URL for invalid inputs: https://stooq.com/q/d/l/
+2025-09-10 18:13:38,771 - data_loader - ERROR - 期間データ取得失敗: CCI (2006-08-01 〜 2025-08-31), stooq.com データ取得失敗: CCI
+2025-09-10 18:13:38,771 - data_loader - ERROR - データ取得完全失敗: CCI
+2025-09-10 18:13:38,772 - data_loader - INFO - 既存データなし、全期間を取得: 2006-08-01 〜 2025-08-31
+2025-09-10 18:13:38,772 - data_loader - INFO - 差分データ取得開始: MAR (不足期間: 1個)
+2025-09-10 18:13:38,772 - data_loader - INFO - 不足期間 1/1 のデータを取得: MAR (2006-08-01 〜 2025-08-31)
+2025-09-10 18:13:38,772 - data_loader - INFO - stooq.comからデータ取得: MAR -> MAR
+2025-09-10 18:13:38,835 - data_loader - WARNING - stooq.com エラー: 2768.T (試行 3), StooqDailyReader request returned no data; check URL for invalid inputs: https://stooq.com/q/d/l/
+2025-09-10 18:13:38,836 - data_loader - WARNING - stooq.com エラー: 4922.T (試行 3), StooqDailyReader request returned no data; check URL for invalid inputs: https://stooq.com/q/d/l/
+2025-09-10 18:13:38,837 - data_loader - WARNING - stooq.com エラー: ARM (試行 3), StooqDailyReader request returned no data; check URL for invalid inputs: https://stooq.com/q/d/l/
+2025-09-10 18:13:38,837 - data_loader - WARNING - stooq.com エラー: CSCO (試行 3), StooqDailyReader request returned no data; check URL for invalid inputs: https://stooq.com/q/d/l/
+2025-09-10 18:13:38,838 - data_loader - ERROR - 期間データ取得失敗: 2768.T (2006-08-01 〜 2025-08-31), stooq.com データ取得失敗: 2768.T
+2025-09-10 18:13:38,840 - data_loader - ERROR - 期間データ取得失敗: 4922.T (2006-08-01 〜 2025-08-31), stooq.com データ取得失敗: 4922.T
+2025-09-10 18:13:38,842 - data_loader - ERROR - 期間データ取得失敗: ARM (2006-08-01 〜 2025-08-31), stooq.com データ取得失敗: ARM
+2025-09-10 18:13:38,843 - data_loader - ERROR - 期間データ取得失敗: CSCO (2006-08-01 〜 2025-08-31), stooq.com データ取得失敗: CSCO
+2025-09-10 18:13:38,844 - data_loader - ERROR - データ取得完全失敗: 2768.T
+2025-09-10 18:13:38,844 - data_loader - ERROR - データ取得完全失敗: 4922.T
+2025-09-10 18:13:38,844 - data_loader - ERROR - データ取得完全失敗: ARM
+2025-09-10 18:13:38,844 - data_loader - ERROR - データ取得完全失敗: CSCO
+2025-09-10 18:13:38,845 - data_loader - INFO - 既存データなし、全期間を取得: 2006-08-01 〜 2025-08-31
+2025-09-10 18:13:38,846 - data_loader - INFO - 既存データなし、全期間を取得: 2006-08-01 〜 2025-08-31
+2025-09-10 18:13:38,846 - data_loader - INFO - 既存データなし、全期間を取得: 2006-08-01 〜 2025-08-31
+2025-09-10 18:13:38,847 - data_loader - INFO - 既存データなし、全期間を取得: 2006-08-01 〜 2025-08-31
+2025-09-10 18:13:38,848 - data_loader - INFO - 差分データ取得開始: STT (不足期間: 1個)
+2025-09-10 18:13:38,848 - data_loader - INFO - 差分データ取得開始: SLB (不足期間: 1個)
+2025-09-10 18:13:38,848 - data_loader - INFO - 差分データ取得開始: 6753.T (不足期間: 1個)
+2025-09-10 18:13:38,849 - data_loader - INFO - 差分データ取得開始: PNR (不足期間: 1個)
+2025-09-10 18:13:38,850 - data_loader - INFO - 不足期間 1/1 のデータを取得: STT (2006-08-01 〜 2025-08-31)
+2025-09-10 18:13:38,851 - data_loader - INFO - 不足期間 1/1 のデータを取得: SLB (2006-08-01 〜 2025-08-31)
+2025-09-10 18:13:38,852 - data_loader - INFO - 不足期間 1/1 のデータを取得: 6753.T (2006-08-01 〜 2025-08-31)
+2025-09-10 18:13:38,852 - data_loader - INFO - 不足期間 1/1 のデータを取得: PNR (2006-08-01 〜 2025-08-31)
+2025-09-10 18:13:38,853 - data_loader - INFO - stooq.comからデータ取得: STT -> STT
+2025-09-10 18:13:38,853 - data_loader - INFO - stooq.comからデータ取得: SLB -> SLB
+2025-09-10 18:13:38,853 - data_loader - INFO - stooq.comからデータ取得: 6753.T -> 6753.jp
+2025-09-10 18:13:38,853 - data_loader - INFO - stooq.comからデータ取得: PNR -> PNR
+2025-09-10 18:13:39,804 - data_loader - WARNING - stooq.com エラー: MAR (試行 1), StooqDailyReader request returned no data; check URL for invalid inputs: https://stooq.com/q/d/l/
+2025-09-10 18:13:39,900 - data_loader - WARNING - stooq.com エラー: SLB (試行 1), StooqDailyReader request returned no data; check URL for invalid inputs: https://stooq.com/q/d/l/
+2025-09-10 18:13:39,901 - data_loader - WARNING - stooq.com エラー: 6753.T (試行 1), StooqDailyReader request returned no data; check URL for invalid inputs: https://stooq.com/q/d/l/
+2025-09-10 18:13:39,901 - data_loader - WARNING - stooq.com エラー: STT (試行 1), StooqDailyReader request returned no data; check URL for invalid inputs: https://stooq.com/q/d/l/
+2025-09-10 18:13:39,902 - data_loader - WARNING - stooq.com エラー: PNR (試行 1), StooqDailyReader request returned no data; check URL for invalid inputs: https://stooq.com/q/d/l/
+2025-09-10 18:13:40,819 - data_loader - INFO - stooq.comからデータ取得: MAR -> MAR
+2025-09-10 18:13:40,913 - data_loader - INFO - stooq.comからデータ取得: SLB -> SLB
+2025-09-10 18:13:40,914 - data_loader - INFO - stooq.comからデータ取得: STT -> STT
+2025-09-10 18:13:40,915 - data_loader - INFO - stooq.comからデータ取得: PNR -> PNR
+2025-09-10 18:13:40,918 - data_loader - INFO - stooq.comからデータ取得: 6753.T -> 6753.jp
+2025-09-10 18:13:41,858 - data_loader - WARNING - stooq.com エラー: MAR (試行 2), StooqDailyReader request returned no data; check URL for invalid inputs: https://stooq.com/q/d/l/
+2025-09-10 18:13:41,952 - data_loader - WARNING - stooq.com エラー: STT (試行 2), StooqDailyReader request returned no data; check URL for invalid inputs: https://stooq.com/q/d/l/
+2025-09-10 18:13:42,012 - data_loader - WARNING - stooq.com エラー: 6753.T (試行 2), StooqDailyReader request returned no data; check URL for invalid inputs: https://stooq.com/q/d/l/
+2025-09-10 18:13:42,012 - data_loader - WARNING - stooq.com エラー: SLB (試行 2), StooqDailyReader request returned no data; check URL for invalid inputs: https://stooq.com/q/d/l/
+2025-09-10 18:13:42,012 - data_loader - WARNING - stooq.com エラー: PNR (試行 2), StooqDailyReader request returned no data; check URL for invalid inputs: https://stooq.com/q/d/l/
+2025-09-10 18:13:43,862 - data_loader - INFO - stooq.comからデータ取得: MAR -> MAR
+2025-09-10 18:13:43,955 - data_loader - INFO - stooq.comからデータ取得: STT -> STT
+2025-09-10 18:13:44,018 - data_loader - INFO - stooq.comからデータ取得: SLB -> SLB
+2025-09-10 18:13:44,019 - data_loader - INFO - stooq.comからデータ取得: 6753.T -> 6753.jp
+2025-09-10 18:13:44,021 - data_loader - INFO - stooq.comからデータ取得: PNR -> PNR
+2025-09-10 18:13:45,183 - data_loader - WARNING - stooq.com エラー: STT (試行 3), StooqDailyReader request returned no data; check URL for invalid inputs: https://stooq.com/q/d/l/
+2025-09-10 18:13:45,185 - data_loader - ERROR - 期間データ取得失敗: STT (2006-08-01 〜 2025-08-31), stooq.com データ取得失敗: STT
+2025-09-10 18:13:45,185 - data_loader - ERROR - データ取得完全失敗: STT
+2025-09-10 18:13:45,186 - data_loader - WARNING - stooq.com エラー: PNR (試行 3), StooqDailyReader request returned no data; check URL for invalid inputs: https://stooq.com/q/d/l/
+2025-09-10 18:13:45,188 - data_loader - ERROR - 期間データ取得失敗: PNR (2006-08-01 〜 2025-08-31), stooq.com データ取得失敗: PNR
+2025-09-10 18:13:45,188 - data_loader - ERROR - データ取得完全失敗: PNR
+2025-09-10 18:13:45,189 - data_loader - WARNING - stooq.com エラー: SLB (試行 3), StooqDailyReader request returned no data; check URL for invalid inputs: https://stooq.com/q/d/l/
+2025-09-10 18:13:45,190 - data_loader - ERROR - 期間データ取得失敗: SLB (2006-08-01 〜 2025-08-31), stooq.com データ取得失敗: SLB
+2025-09-10 18:13:45,191 - data_loader - ERROR - データ取得完全失敗: SLB
+2025-09-10 18:13:45,222 - data_loader - WARNING - stooq.com エラー: 6753.T (試行 3), StooqDailyReader request returned no data; check URL for invalid inputs: https://stooq.com/q/d/l/
+2025-09-10 18:13:45,222 - data_loader - WARNING - stooq.com エラー: MAR (試行 3), StooqDailyReader request returned no data; check URL for invalid inputs: https://stooq.com/q/d/l/
+2025-09-10 18:13:45,223 - data_loader - ERROR - 期間データ取得失敗: 6753.T (2006-08-01 〜 2025-08-31), stooq.com データ取得失敗: 6753.T
+2025-09-10 18:13:45,225 - data_loader - ERROR - 期間データ取得失敗: MAR (2006-08-01 〜 2025-08-31), stooq.com データ取得失敗: MAR
+2025-09-10 18:13:45,225 - data_loader - ERROR - データ取得完全失敗: 6753.T
+2025-09-10 18:13:45,226 - data_loader - ERROR - データ取得完全失敗: MAR
+2025-09-10 18:13:45,227 - data_loader - INFO - データ取得進捗: 30/30 完了
+2025-09-10 18:13:45,228 - data_loader - INFO - 並列データ取得完了: 30銘柄, 所要時間: 39.02秒
+2025-09-10 18:13:45,228 - data_fetcher - INFO - データ取得完了: 成功 30銘柄, 失敗 0銘柄
+2025-09-10 18:13:45,228 - data_fetcher - INFO - VIXデータを取得中...
+2025-09-10 18:13:45,229 - data_loader - INFO - VIXキャッシュデータを読み込み: (4979, 5)
+2025-09-10 18:13:45,230 - data_fetcher - INFO - VIXデータ取得成功: 4979行
+2025-09-10 18:13:45,230 - data_fetcher - INFO - === フェーズ1: データ取得完了 ===
+2025-09-10 18:13:45,230 - __main__ - INFO - データ取得完了: {'total': 30, 'success': 30, 'failed': 0}
