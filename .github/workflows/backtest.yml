@@ -58,6 +58,9 @@ jobs:
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action"
         
+        # 最新の変更を取得
+        git pull --rebase
+        
         # レポート、ログ、結果を強制的に追加（.gitignoreを無視）
         git add reports/
         git add -f logs/

@@ -55,6 +55,9 @@ jobs:
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action"
         
+        # 最新の変更を取得
+        git pull --rebase
+        
         # キャッシュファイルを強制的に追加（.gitignoreを無視）
         git add -f cache/
         git add -f logs/
