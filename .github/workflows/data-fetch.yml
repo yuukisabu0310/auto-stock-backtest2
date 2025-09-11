@@ -55,10 +55,19 @@ jobs:
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action"
         
+        # データ取得で生成されたファイルを一旦ステージング
+        git add -f cache/
+        git add -f logs/
+        
+        # 未ステージの変更をコミット（一時的）
+        if ! git diff --staged --quiet; then
+          git commit -m "Temporary commit for rebase"
+        fi
+        
         # 最新の変更を取得
         git pull --rebase
         
-        # キャッシュファイルを強制的に追加（.gitignoreを無視）
+        # キャッシュファイルを再度追加
         git add -f cache/
         git add -f logs/
         

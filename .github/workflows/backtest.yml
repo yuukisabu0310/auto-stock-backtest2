@@ -58,10 +58,20 @@ jobs:
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action"
         
+        # バックテストで生成されたファイルを一旦ステージング
+        git add reports/
+        git add -f logs/
+        git add -f results/
+        
+        # 未ステージの変更をコミット（一時的）
+        if ! git diff --staged --quiet; then
+          git commit -m "Temporary commit for rebase"
+        fi
+        
         # 最新の変更を取得
         git pull --rebase
         
-        # レポート、ログ、結果を強制的に追加（.gitignoreを無視）
+        # レポート、ログ、結果を再度追加
         git add reports/
         git add -f logs/
         git add -f results/
