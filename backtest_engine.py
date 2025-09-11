@@ -175,6 +175,12 @@ class BacktestEngine:
         """
         self.logger.info(f"バックテスト開始: {self.strategy}")
         
+        # 銘柄リストのデバッグ情報
+        self.logger.info(f"銘柄リスト数: {len(symbols)}")
+        if symbols:
+            self.logger.info(f"最初の5銘柄: {symbols[:5]}")
+            self.logger.info(f"銘柄の型: {[type(s) for s in symbols[:5]]}")
+        
         # データ取得（キャッシュ専用モードの場合は専用メソッドを使用）
         if isinstance(self.data_loader, CacheOnlyDataLoader):
             all_data = self._get_data_from_cache(symbols, start_date, end_date)
@@ -214,6 +220,18 @@ class BacktestEngine:
         all_data = {}
         
         for symbol in symbols:
+            # 銘柄シンボルが文字列であることを確認
+            if not isinstance(symbol, str):
+                self.logger.error(f"無効な銘柄シンボル型: {type(symbol)}, 値: {symbol}")
+                continue
+                
+            # 空の文字列や不正な値をチェック
+            if not symbol or len(symbol.strip()) == 0:
+                self.logger.error(f"空の銘柄シンボル: {symbol}")
+                continue
+                
+            symbol = symbol.strip()  # 前後の空白を除去
+            
             try:
                 data = self.data_loader.get_stock_data_from_cache(
                     symbol, start_date, end_date, 

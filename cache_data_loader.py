@@ -49,7 +49,7 @@ class CacheOnlyDataLoader:
                           if f.startswith(f"{symbol}_{interval}_") and f.endswith(".pkl")]
         
         if not all_cache_files:
-            raise FileNotFoundError(f"キャッシュファイルが見つかりません: {symbol}")
+            raise FileNotFoundError(f"キャッシュファイルが見つかりません: {symbol} (銘柄コード: {symbol})")
         
         # 最も広い期間のファイル（マスタデータ）を選択
         master_file = None
@@ -76,7 +76,7 @@ class CacheOnlyDataLoader:
                 continue
         
         if not master_file:
-            raise FileNotFoundError(f"有効なキャッシュファイルが見つかりません: {symbol}")
+            raise FileNotFoundError(f"有効なキャッシュファイルが見つかりません: {symbol} (銘柄コード: {symbol})")
         
         # マスタデータファイルからデータを読み込み
         master_cache_file = os.path.join(self.cache_dir, master_file)
