@@ -196,6 +196,7 @@ class BacktestEngine:
                     all_data = self._get_data_from_cache(fallback_symbols, start_date, end_date)
                     if all_data:
                         self.logger.info(f"フォールバック成功: {len(all_data)}銘柄のデータを取得")
+                        self.logger.info(f"フォールバック取得銘柄: {list(all_data.keys())}")
                     else:
                         self.logger.error("フォールバックでもデータを取得できませんでした")
                 else:
@@ -258,6 +259,11 @@ class BacktestEngine:
                     if self.data_loader.validate_data(data):
                         data = self.indicators.calculate_all_indicators(data)
                         all_data[symbol] = data
+                        self.logger.info(f"キャッシュからデータ取得成功: {symbol}")
+                    else:
+                        self.logger.warning(f"データ検証失敗: {symbol}")
+                else:
+                    self.logger.warning(f"空のデータ: {symbol}")
             except (FileNotFoundError, ValueError) as e:
                 self.logger.warning(f"キャッシュからデータ取得失敗: {symbol}")
         
