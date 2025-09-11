@@ -253,19 +253,17 @@ class DataLoader:
     
     def _get_from_stooq(self, symbol: str, start_date: str, end_date: str, 
                         interval: str, max_retries: int) -> pd.DataFrame:
-        """stooq.comからデータ取得（強化版リトライ機能）"""
-        for attempt in range(max_retries):
-            try:
+        """stooq.comからデータ取得（リトライなし）"""
+        try:
                 import pandas_datareader.data as web
-                import time
                 
-                # シンボル形式の変換
+                # 正しいシンボル形式に変換
                 if symbol.endswith('.T'):
                     # 日本株の場合: 7203.T -> 7203.JP
                     stooq_symbol = symbol.replace('.T', '.JP')
                 else:
-                    # 米国株の場合: AAPL -> AAPL
-                    stooq_symbol = symbol
+                    # 米国株の場合: AAPL -> AAPL.US
+                    stooq_symbol = f"{symbol}.US"
                 
                 # 間隔の変換
                 interval_map = {
@@ -296,21 +294,15 @@ class DataLoader:
                     self.logger.info(f"stooq.comデータ取得成功: {symbol} - 形状: {data.shape}")
                     return data
                 else:
-                    self.logger.warning(f"stooq.com データが空: {symbol} (試行 {attempt + 1})")
+                    self.logger.warning(f"stooq.com データが空: {symbol}")
+                    return pd.DataFrame()
                     
-            except ImportError:
-                self.logger.warning("pandas-datareaderがインストールされていません")
-                raise Exception("pandas-datareader未インストール")
-            except Exception as e:
-                self.logger.warning(f"stooq.com エラー: {symbol} (試行 {attempt + 1}), {e}")
-                if attempt < max_retries - 1:
-                    # より長い待機時間でリトライ
-                    wait_time = min(5 + (attempt * 3), 30)  # 5秒から30秒まで段階的に増加
-                    self.logger.info(f"リトライ待機: {wait_time}秒")
-                    time.sleep(wait_time)
-                    continue
-        
-        raise Exception(f"stooq.com データ取得失敗: {symbol}")
+        except ImportError:
+            self.logger.warning("pandas-datareaderがインストールされていません")
+            return pd.DataFrame()
+        except Exception as e:
+            self.logger.warning(f"stooq.com エラー: {symbol}, {e}")
+            return pd.DataFrame()
     
     def get_test_stocks(self) -> List[str]:
         """テスト用銘柄リスト"""
