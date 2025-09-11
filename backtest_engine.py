@@ -259,7 +259,7 @@ class BacktestEngine:
                         data = self.indicators.calculate_all_indicators(data)
                         all_data[symbol] = data
             except (FileNotFoundError, ValueError) as e:
-                self.logger.warning(f"キャッシュからデータ取得失敗: {symbol}, {e}")
+                self.logger.warning(f"キャッシュからデータ取得失敗: {symbol}")
         
         return all_data
     
