@@ -106,7 +106,7 @@ REPORT_DIR = "reports"
 STOCKS_PER_CATEGORY = 50  # 100から50に削減
 
 # ローカルテスト用設定
-LOCAL_TEST_MODE = True  # ローカルテストモード
+LOCAL_TEST_MODE = False  # ローカルテストモード
 LOCAL_TEST_STOCKS = 30  # ローカルテスト時の銘柄数
 LOCAL_TEST_RUNS = 2     # ローカルテスト時の実行回数
 
