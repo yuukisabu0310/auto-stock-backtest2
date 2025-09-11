@@ -79,8 +79,20 @@ class DataFetcher:
         # 期間変更判定
         should_fetch_differential = self.data_loader.should_fetch_differential_data(start_date, end_date)
         
-        if should_fetch_differential:
-            self.logger.info(f"差分データ取得開始: {len(all_stocks)}銘柄")
+        # 現在のキャッシュファイル数を確認
+        import os
+        current_cache_files = [f for f in os.listdir(self.data_loader.cache_dir) if f.endswith('.pkl')]
+        current_cache_count = len(current_cache_files)
+        target_count = len(all_stocks)
+        
+        # 期間変更があるか、目標数に達していない場合は取得実行
+        if should_fetch_differential or current_cache_count < target_count:
+            if should_fetch_differential:
+                self.logger.info(f"期間変更による差分データ取得開始: {len(all_stocks)}銘柄")
+            else:
+                self.logger.info(f"目標数未達によるデータ取得開始: {len(all_stocks)}銘柄")
+                self.logger.info(f"現在のキャッシュ数: {current_cache_count}/{target_count}")
+            
             self.logger.info(f"取得期間: {start_date} ～ {end_date}")
             
             try:
@@ -124,7 +136,8 @@ class DataFetcher:
                 self.logger.error(f"データ取得エラー: {e}")
                 return {"total": len(all_stocks), "success": 0, "failed": len(all_stocks)}
         else:
-            self.logger.info("期間変更なし - データ取得をスキップ")
+            self.logger.info("期間変更なし且つ目標数達成 - データ取得をスキップ")
+            self.logger.info(f"現在のキャッシュ数: {current_cache_count}/{target_count}")
             return {"total": len(all_stocks), "success": 0, "failed": 0, "skipped": True}
     
     def fetch_all_stocks_data(self, strategies: List[str], 
