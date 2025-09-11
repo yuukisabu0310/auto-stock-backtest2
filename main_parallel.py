@@ -92,8 +92,8 @@ def run_single_backtest_from_cache(strategy: str, random_seed: int,
         # キャッシュ専用バックテストエンジンの初期化
         engine = BacktestEngine(strategy, cache_only=True)
         
-        # バックテスト実行
-        results = engine.run_backtest(stocks, start_date, end_date)
+        # バックテスト実行（フォールバック機能を使用）
+        results = engine.run_backtest(stocks, start_date, end_date, use_cache_fallback=True)
         
         if "error" in results:
             logger.error(f"バックテストエラー: {results['error']}")
@@ -328,8 +328,11 @@ def run_strategy_backtests(strategy: str, num_runs: int, base_seed: int) -> Dict
             # バックテストエンジンをキャッシュ専用モードで初期化
             engine = BacktestEngine(strategy, cache_only=True)
             
-            # バックテスト実行
-            result = engine.run_backtest(start_date, end_date, base_seed + run)
+            # バックテスト実行（フォールバック機能を使用）
+            # まず銘柄リストを取得
+            data_fetcher = DataFetcher()
+            stocks = data_fetcher.get_strategy_stocks_for_run(strategy, run, base_seed)
+            result = engine.run_backtest(stocks, start_date, end_date, use_cache_fallback=True)
             
             if result:
                 results.append(result)

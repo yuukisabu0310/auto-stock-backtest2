@@ -271,6 +271,84 @@ class CacheOnlyDataLoader:
         
         return completeness
     
+    def get_available_cached_symbols(self, interval: str = "1d") -> List[str]:
+        """
+        キャッシュディレクトリから利用可能な銘柄シンボルリストを取得
+        
+        Args:
+            interval: 時間間隔 (1d, 1wk等)
+        
+        Returns:
+            List[str]: 利用可能な銘柄シンボルリスト
+        """
+        available_symbols = set()
+        
+        try:
+            # キャッシュディレクトリの全ファイルを取得
+            cache_files = os.listdir(self.cache_dir)
+            
+            # 株価データファイルのみを抽出（VIXファイルは除外）
+            stock_files = [f for f in cache_files 
+                          if f.endswith('.pkl') and not f.startswith('VIX_')]
+            
+            for file_name in stock_files:
+                # ファイル名から銘柄シンボルを抽出
+                # 形式: {symbol}_{interval}_{start_date}_{end_date}.pkl
+                parts = file_name.split('_')
+                if len(parts) >= 3 and parts[1] == interval:
+                    symbol = parts[0]
+                    available_symbols.add(symbol)
+            
+            symbol_list = sorted(list(available_symbols))
+            self.logger.info(f"キャッシュから利用可能な銘柄数: {len(symbol_list)}")
+            
+            return symbol_list
+            
+        except Exception as e:
+            self.logger.error(f"キャッシュ銘柄リスト取得エラー: {e}")
+            return []
+    
+    def get_cached_symbols_by_strategy(self, strategy: str, target_count: int = None) -> List[str]:
+        """
+        戦略に応じたキャッシュ銘柄リストを取得
+        
+        Args:
+            strategy: 戦略名（swing_trading, long_term）
+            target_count: 目標銘柄数（Noneの場合は戦略のデフォルト値を使用）
+        
+        Returns:
+            List[str]: 戦略用銘柄リスト
+        """
+        available_symbols = self.get_available_cached_symbols()
+        
+        if not available_symbols:
+            self.logger.warning("キャッシュに利用可能な銘柄がありません")
+            return []
+        
+        # 戦略別のデフォルト銘柄数
+        if target_count is None:
+            if strategy == "swing_trading":
+                target_count = 100
+            elif strategy == "long_term":
+                target_count = 200
+            else:
+                target_count = 100  # デフォルト
+        
+        # 利用可能な銘柄数が目標数を下回る場合は全銘柄を使用
+        if len(available_symbols) <= target_count:
+            self.logger.info(f"利用可能銘柄数({len(available_symbols)}) <= 目標数({target_count}) - 全銘柄を使用")
+            return available_symbols
+        
+        # ランダムに選択（シード値は現在時刻を使用）
+        import random
+        import time
+        random.seed(int(time.time()))
+        
+        selected_symbols = random.sample(available_symbols, target_count)
+        self.logger.info(f"{strategy}戦略用に{len(selected_symbols)}銘柄を選択")
+        
+        return selected_symbols
+    
     def clean_data(self, data: pd.DataFrame) -> pd.DataFrame:
         """
         データのクリーニング（元のDataLoaderと同じ処理）

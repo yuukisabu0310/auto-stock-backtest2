@@ -161,7 +161,7 @@ class BacktestEngine:
         self.risk_per_trade = self.rules["risk_per_trade"]
         self.max_holding_days = self.rules["max_holding_days"]
         
-    def run_backtest(self, symbols: List[str], start_date: str, end_date: str) -> Dict:
+    def run_backtest(self, symbols: List[str], start_date: str, end_date: str, use_cache_fallback: bool = True) -> Dict:
         """
         バックテスト実行
         
@@ -169,6 +169,7 @@ class BacktestEngine:
             symbols: 対象銘柄リスト
             start_date: 開始日
             end_date: 終了日
+            use_cache_fallback: キャッシュフォールバックを使用するか
         
         Returns:
             Dict: バックテスト結果
@@ -184,6 +185,21 @@ class BacktestEngine:
         # データ取得（キャッシュ専用モードの場合は専用メソッドを使用）
         if isinstance(self.data_loader, CacheOnlyDataLoader):
             all_data = self._get_data_from_cache(symbols, start_date, end_date)
+            
+            # キャッシュフォールバック機能
+            if use_cache_fallback and len(all_data) == 0:
+                self.logger.warning("指定された銘柄のデータが見つかりません。キャッシュフォールバックを使用します。")
+                fallback_symbols = self.data_loader.get_cached_symbols_by_strategy(self.strategy)
+                if fallback_symbols:
+                    self.logger.info(f"フォールバック銘柄数: {len(fallback_symbols)}")
+                    self.logger.info(f"フォールバック銘柄例: {fallback_symbols[:5]}")
+                    all_data = self._get_data_from_cache(fallback_symbols, start_date, end_date)
+                    if all_data:
+                        self.logger.info(f"フォールバック成功: {len(all_data)}銘柄のデータを取得")
+                    else:
+                        self.logger.error("フォールバックでもデータを取得できませんでした")
+                else:
+                    self.logger.error("フォールバック用の銘柄も見つかりませんでした")
         else:
             all_data = self._get_data_from_loader(symbols, start_date, end_date)
         
