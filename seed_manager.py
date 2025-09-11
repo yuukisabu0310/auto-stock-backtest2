@@ -95,7 +95,7 @@ class SeedManager:
                 for index in config["indices"]:
                     try:
                         # 指数の全銘柄を取得
-                        index_symbols = self.data_loader.get_index_stocks(index)
+                        index_symbols = self.data_loader.get_stocks_by_index(index)
                         # キャッシュに存在する銘柄のみにフィルタ
                         available_symbols = [s for s in index_symbols if s in cached_symbols]
                         
@@ -251,7 +251,7 @@ class SeedManager:
         for index in config["indices"]:
             try:
                 # 指数の全銘柄を取得
-                index_symbols = self.data_loader.get_index_stocks(index)
+                index_symbols = self.data_loader.get_stocks_by_index(index)
                 # キャッシュに存在する銘柄のみにフィルタ
                 available_symbols = [s for s in index_symbols if s in cached_symbols]
                 
