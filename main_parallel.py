@@ -18,6 +18,7 @@ from cache_data_loader import CacheOnlyDataLoader
 from backtest_engine import BacktestEngine
 from report_generator import ReportGenerator
 from backtest_aggregator import BacktestAggregator
+from seed_manager import SeedManager
 from config import get_dynamic_backtest_period
 from config import TRADING_RULES, START_DATE, END_DATE, get_backtest_period, DATA_START_DATE, DATA_END_DATE, LOCAL_TEST_MODE, LOCAL_TEST_STOCKS, LOCAL_TEST_RUNS
 
@@ -33,6 +34,75 @@ def setup_logging():
             logging.StreamHandler(sys.stdout)
         ]
     )
+
+def run_single_backtest_from_seed_mapping(strategy: str, seed: int, 
+                                         start_date: str, end_date: str,
+                                         use_parallel: bool = True) -> Dict:
+    """
+    シード値マッピングを使用した単一バックテスト実行
+    
+    Args:
+        strategy: 戦略名
+        seed: シード値
+        start_date: 開始日
+        end_date: 終了日
+        use_parallel: 並列処理を使用するか
+    
+    Returns:
+        Dict: バックテスト結果
+    """
+    logger = logging.getLogger(f"__main__.{strategy}")
+    
+    try:
+        logger.info(f"シード値マッピングからバックテスト開始: {strategy}, シード: {seed}")
+        
+        # シード値マネージャーを初期化
+        seed_manager = SeedManager()
+        
+        # シード値に対応する銘柄リストを取得
+        stocks = seed_manager.get_symbols_for_seed(strategy, seed)
+        
+        if not stocks:
+            logger.error(f"シード値 {seed} に対応する銘柄が見つかりません")
+            return {
+                "strategy": strategy,
+                "seed": seed,
+                "success": False,
+                "error": "銘柄が見つかりません",
+                "stocks_count": 0
+            }
+        
+        logger.info(f"シード値 {seed} から {len(stocks)} 銘柄を取得")
+        
+        # バックテストエンジンを初期化
+        engine = BacktestEngine(strategy)
+        
+        # バックテスト実行（フォールバック機能を使用）
+        result = engine.run_backtest(stocks, start_date, end_date, use_cache_fallback=True)
+        
+        if result["success"]:
+            logger.info(f"バックテスト成功: {strategy}, シード: {seed}")
+            result["strategy"] = strategy
+            result["seed"] = seed
+            result["stocks_count"] = len(stocks)
+            result["stocks"] = stocks
+        else:
+            logger.error(f"バックテスト失敗: {strategy}, シード: {seed}")
+            result["strategy"] = strategy
+            result["seed"] = seed
+            result["stocks_count"] = len(stocks)
+        
+        return result
+        
+    except Exception as e:
+        logger.error(f"バックテスト実行中にエラーが発生: {strategy}, シード: {seed}, エラー: {e}")
+        return {
+            "strategy": strategy,
+            "seed": seed,
+            "success": False,
+            "error": str(e),
+            "stocks_count": 0
+        }
 
 def run_single_backtest_from_cache(strategy: str, random_seed: int, 
                                   start_date: str, end_date: str, 
@@ -298,6 +368,278 @@ def run_parallel_strategies(num_runs: int = 3, base_seed: int = 42):
     logger.info("=== 並列化バックテストシステム完了 ===")
     return all_strategy_results
 
+def create_initial_seed_mapping(num_seeds: int = 10) -> None:
+    """初期シード値マッピングを作成"""
+    logger = logging.getLogger("__main__")
+    logger.info("初期シード値マッピング作成開始")
+    
+    try:
+        seed_manager = SeedManager()
+        mapping_data = seed_manager.create_initial_seeds_from_cache(num_seeds)
+        
+        if mapping_data:
+            seed_manager.save_seed_mapping(mapping_data)
+            logger.info("初期シード値マッピング作成完了")
+        else:
+            logger.error("初期シード値マッピングの作成に失敗")
+            
+    except Exception as e:
+        logger.error(f"初期シード値マッピング作成中にエラー: {e}")
+
+def run_strategy_backtests_from_seed_mapping(strategy: str, num_runs: int, 
+                                           use_latest_seed: bool = True, 
+                                           specific_seed: int = None) -> Dict:
+    """
+    シード値マッピングを使用した単一戦略の複数回バックテスト実行
+    
+    Args:
+        strategy: 戦略名
+        num_runs: 実行回数
+        use_latest_seed: 最新シード値を使用するか
+        specific_seed: 特定のシード値を指定する場合
+    
+    Returns:
+        Dict: バックテスト結果
+    """
+    logger = logging.getLogger(f"{__name__}.{strategy}")
+    logger.info(f"シード値マッピングから戦略複数回バックテスト開始: {strategy}, 実行回数: {num_runs}")
+    
+    try:
+        # バックテスト期間を取得
+        start_date, end_date = get_dynamic_backtest_period()
+        logger.info(f"{strategy} バックテスト期間: {start_date} 〜 {end_date}")
+        
+        # シード値マネージャーを初期化
+        seed_manager = SeedManager()
+        
+        # 使用するシード値を決定
+        if specific_seed is not None:
+            seed = specific_seed
+            logger.info(f"指定されたシード値を使用: {seed}")
+        elif use_latest_seed:
+            seed = seed_manager.get_latest_seed_for_strategy(strategy)
+            if seed is None:
+                logger.error(f"{strategy}の最新シード値が見つかりません")
+                return {
+                    "strategy": strategy,
+                    "success": False,
+                    "error": "最新シード値が見つかりません"
+                }
+            logger.info(f"最新シード値を使用: {seed}")
+        else:
+            logger.error("シード値が指定されていません")
+            return {
+                "strategy": strategy,
+                "success": False,
+                "error": "シード値が指定されていません"
+            }
+        
+        # 複数回バックテスト実行
+        results = []
+        for run in range(1, num_runs + 1):
+            logger.info(f"実行 {run}/{num_runs}")
+            
+            # シード値マッピングからバックテスト実行
+            result = run_single_backtest_from_seed_mapping(
+                strategy, seed, start_date, end_date, use_parallel=True
+            )
+            
+            results.append(result)
+            
+            if not result["success"]:
+                logger.error(f"実行 {run} 失敗: {result.get('error', 'Unknown error')}")
+            else:
+                logger.info(f"実行 {run} 成功")
+        
+        # 結果を集計
+        successful_results = [r for r in results if r["success"]]
+        success_count = len(successful_results)
+        
+        if success_count == 0:
+            logger.error(f"{strategy}: 全実行が失敗")
+            return {
+                "strategy": strategy,
+                "success": False,
+                "error": "全実行が失敗",
+                "total_runs": num_runs,
+                "successful_runs": 0,
+                "results": results
+            }
+        
+        logger.info(f"{strategy}: {success_count}/{num_runs} 回成功")
+        
+        # 成功した結果の統計を計算
+        if successful_results:
+            total_return = sum(r.get("total_return", 0) for r in successful_results) / success_count
+            avg_sharpe = sum(r.get("sharpe_ratio", 0) for r in successful_results) / success_count
+            avg_max_dd = sum(r.get("max_drawdown", 0) for r in successful_results) / success_count
+            
+            logger.info(f"{strategy} 平均結果:")
+            logger.info(f"  平均総リターン: {total_return*100:.2f}%")
+            logger.info(f"  平均シャープレシオ: {avg_sharpe:.2f}")
+            logger.info(f"  平均最大ドローダウン: {avg_max_dd*100:.2f}%")
+        
+        return {
+            "strategy": strategy,
+            "success": True,
+            "total_runs": num_runs,
+            "successful_runs": success_count,
+            "seed": seed,
+            "results": results,
+            "summary": {
+                "avg_total_return": total_return if successful_results else 0,
+                "avg_sharpe_ratio": avg_sharpe if successful_results else 0,
+                "avg_max_drawdown": avg_max_dd if successful_results else 0
+            }
+        }
+        
+    except Exception as e:
+        logger.error(f"{strategy} バックテスト実行中にエラー: {e}")
+        return {
+            "strategy": strategy,
+            "success": False,
+            "error": str(e),
+            "total_runs": num_runs,
+            "successful_runs": 0
+        }
+
+def run_strategy_backtests_with_random_seed(strategy: str, num_runs: int, 
+                                          save_seed: bool = False) -> Dict:
+    """
+    ランダムシード値を使用した単一戦略の複数回バックテスト実行
+    
+    Args:
+        strategy: 戦略名
+        num_runs: 実行回数
+        save_seed: シード値を保存するか
+    
+    Returns:
+        Dict: バックテスト結果
+    """
+    logger = logging.getLogger(f"{__name__}.{strategy}")
+    logger.info(f"ランダムシード値で戦略複数回バックテスト開始: {strategy}, 実行回数: {num_runs}")
+    
+    try:
+        # バックテスト期間を取得
+        start_date, end_date = get_dynamic_backtest_period()
+        logger.info(f"{strategy} バックテスト期間: {start_date} 〜 {end_date}")
+        
+        # シード値マネージャーを初期化
+        seed_manager = SeedManager()
+        
+        # 複数回バックテスト実行
+        results = []
+        saved_seeds = []
+        
+        for run in range(1, num_runs + 1):
+            logger.info(f"実行 {run}/{num_runs}")
+            
+            # ランダムシード値と銘柄を生成
+            random_seed, stocks = seed_manager.create_random_seed_for_strategy(strategy)
+            
+            if not stocks:
+                logger.error(f"実行 {run}: 銘柄の生成に失敗")
+                results.append({
+                    "strategy": strategy,
+                    "run": run,
+                    "success": False,
+                    "error": "銘柄の生成に失敗",
+                    "seed": random_seed
+                })
+                continue
+            
+            logger.info(f"実行 {run}: シード値 {random_seed}, {len(stocks)}銘柄")
+            
+            # バックテストエンジンを初期化
+            engine = BacktestEngine(strategy)
+            
+            # バックテスト実行（フォールバック機能を使用）
+            result = engine.run_backtest(stocks, start_date, end_date, use_cache_fallback=True)
+            
+            if result["success"]:
+                logger.info(f"実行 {run} 成功")
+                result["strategy"] = strategy
+                result["run"] = run
+                result["seed"] = random_seed
+                result["stocks_count"] = len(stocks)
+                result["stocks"] = stocks
+                saved_seeds.append(random_seed)
+            else:
+                logger.error(f"実行 {run} 失敗: {result.get('error', 'Unknown error')}")
+                result["strategy"] = strategy
+                result["run"] = run
+                result["seed"] = random_seed
+                result["stocks_count"] = len(stocks)
+            
+            results.append(result)
+        
+        # 結果を集計
+        successful_results = [r for r in results if r["success"]]
+        success_count = len(successful_results)
+        
+        if success_count == 0:
+            logger.error(f"{strategy}: 全実行が失敗")
+            return {
+                "strategy": strategy,
+                "success": False,
+                "error": "全実行が失敗",
+                "total_runs": num_runs,
+                "successful_runs": 0,
+                "results": results
+            }
+        
+        logger.info(f"{strategy}: {success_count}/{num_runs} 回成功")
+        
+        # 成功した結果の統計を計算
+        if successful_results:
+            total_return = sum(r.get("total_return", 0) for r in successful_results) / success_count
+            avg_sharpe = sum(r.get("sharpe_ratio", 0) for r in successful_results) / success_count
+            avg_max_dd = sum(r.get("max_drawdown", 0) for r in successful_results) / success_count
+            
+            logger.info(f"{strategy} 平均結果:")
+            logger.info(f"  平均総リターン: {total_return*100:.2f}%")
+            logger.info(f"  平均シャープレシオ: {avg_sharpe:.2f}")
+            logger.info(f"  平均最大ドローダウン: {avg_max_dd*100:.2f}%")
+        
+        # シード値を保存する場合
+        if save_seed and saved_seeds:
+            for seed in saved_seeds:
+                # 対応する銘柄を取得
+                stocks = seed_manager.get_symbols_for_seed(strategy, seed)
+                if not stocks:
+                    # 結果から銘柄を取得
+                    result_with_seed = next((r for r in results if r.get("seed") == seed), None)
+                    if result_with_seed:
+                        stocks = result_with_seed.get("stocks", [])
+                
+                if stocks:
+                    seed_manager.add_new_seed_mapping(strategy, seed, stocks)
+                    logger.info(f"シード値 {seed} を保存しました")
+        
+        return {
+            "strategy": strategy,
+            "success": True,
+            "total_runs": num_runs,
+            "successful_runs": success_count,
+            "random_seeds": saved_seeds,
+            "results": results,
+            "summary": {
+                "avg_total_return": total_return if successful_results else 0,
+                "avg_sharpe_ratio": avg_sharpe if successful_results else 0,
+                "avg_max_drawdown": avg_max_dd if successful_results else 0
+            }
+        }
+        
+    except Exception as e:
+        logger.error(f"{strategy} バックテスト実行中にエラー: {e}")
+        return {
+            "strategy": strategy,
+            "success": False,
+            "error": str(e),
+            "total_runs": num_runs,
+            "successful_runs": 0
+        }
+
 def run_strategy_backtests(strategy: str, num_runs: int, base_seed: int) -> Dict:
     """
     単一戦略の複数回バックテスト実行（キャッシュ専用）
@@ -429,6 +771,12 @@ def main():
     parser.add_argument('--data-only', action='store_true', help='データ取得のみ実行')
     parser.add_argument('--cache-only', action='store_true', help='キャッシュからのみバックテスト実行')
     parser.add_argument('--all-stocks', action='store_true', help='全指数全銘柄データ取得実行')
+    parser.add_argument('--create-seeds', action='store_true', help='初期シード値マッピングを作成')
+    parser.add_argument('--use-seed-mapping', action='store_true', help='シード値マッピングを使用してバックテスト実行')
+    parser.add_argument('--use-latest-seed', action='store_true', help='最新シード値を使用（--use-seed-mappingと併用）')
+    parser.add_argument('--specific-seed', type=int, help='特定のシード値を指定（--use-seed-mappingと併用）')
+    parser.add_argument('--random-seed', action='store_true', help='ランダムシード値でバックテスト実行')
+    parser.add_argument('--save-random-seed', action='store_true', help='ランダムシード値を保存（--random-seedと併用）')
     
     args = parser.parse_args()
     
@@ -453,6 +801,12 @@ def main():
             else:
                 logger.error("全指数全銘柄データ取得失敗")
             return
+        
+        if args.create_seeds:
+            # 初期シード値マッピング作成
+            logger.info("初期シード値マッピング作成実行")
+            create_initial_seed_mapping(10)  # デフォルト10個のシード値を作成
+            return
             
         if args.data_only:
             # データ取得のみ実行
@@ -465,7 +819,47 @@ def main():
             logger.info(f"データ取得完了: {results}")
             return
         
-        if args.cache_only:
+        if args.use_seed_mapping:
+            # シード値マッピングを使用してバックテスト実行
+            logger.info("シード値マッピング使用バックテスト実行")
+            all_results = {}
+            
+            strategies = [args.strategy] if args.strategy else list(TRADING_RULES.keys())
+            
+            for strategy in strategies:
+                logger.info(f"{strategy}戦略のシード値マッピングバックテスト開始")
+                
+                if args.use_latest_seed:
+                    result = run_strategy_backtests_from_seed_mapping(
+                        strategy, args.num_runs, use_latest_seed=True
+                    )
+                elif args.specific_seed:
+                    result = run_strategy_backtests_from_seed_mapping(
+                        strategy, args.num_runs, use_latest_seed=False, specific_seed=args.specific_seed
+                    )
+                else:
+                    # デフォルトは最新シード値を使用
+                    result = run_strategy_backtests_from_seed_mapping(
+                        strategy, args.num_runs, use_latest_seed=True
+                    )
+                
+                all_results[strategy] = result
+        
+        elif args.random_seed:
+            # ランダムシード値でバックテスト実行
+            logger.info("ランダムシード値バックテスト実行")
+            all_results = {}
+            
+            strategies = [args.strategy] if args.strategy else list(TRADING_RULES.keys())
+            
+            for strategy in strategies:
+                logger.info(f"{strategy}戦略のランダムシード値バックテスト開始")
+                result = run_strategy_backtests_with_random_seed(
+                    strategy, args.num_runs, save_seed=args.save_random_seed
+                )
+                all_results[strategy] = result
+        
+        elif args.cache_only:
             # キャッシュからのみバックテスト実行（動的期間計算）
             logger.info("キャッシュ専用バックテスト実行")
             all_results = run_cache_only_backtests(args.num_runs, args.base_seed)

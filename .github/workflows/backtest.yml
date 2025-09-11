@@ -6,6 +6,26 @@ on:
     # データ取得の30分後に実行
     - cron: '30 21 * * *'
   workflow_dispatch:
+    inputs:
+      backtest_mode:
+        description: 'バックテストモードを選択'
+        required: true
+        default: 'latest_seed'
+        type: choice
+        options:
+          - 'latest_seed'
+          - 'new_seed'
+          - 'random_seed'
+          - 'cache_only'
+      strategy:
+        description: '実行する戦略（空白で全戦略）'
+        required: false
+        type: string
+      num_runs:
+        description: '実行回数'
+        required: false
+        default: '3'
+        type: string
   push:
     branches: [ main ]
     paths:
@@ -49,9 +69,55 @@ jobs:
         mkdir -p results
         mkdir -p reports
         
-    - name: Run cache-only backtest
+    - name: Run backtest based on mode
       run: |
-        python main_parallel.py --cache-only --num-runs 3 --base-seed 42
+        # バックテストモードに応じてコマンドを決定
+        MODE="${{ github.event.inputs.backtest_mode || 'latest_seed' }}"
+        STRATEGY="${{ github.event.inputs.strategy || '' }}"
+        RUNS="${{ github.event.inputs.num_runs || '3' }}"
+        
+        echo "バックテストモード: $MODE"
+        echo "戦略: ${STRATEGY:-'全戦略'}"
+        echo "実行回数: $RUNS"
+        
+        case "$MODE" in
+          "latest_seed")
+            echo "最新シード値を使用してバックテスト実行"
+            if [ -n "$STRATEGY" ]; then
+              python main_parallel.py --use-seed-mapping --use-latest-seed --strategy "$STRATEGY" --num-runs "$RUNS"
+            else
+              python main_parallel.py --use-seed-mapping --use-latest-seed --num-runs "$RUNS"
+            fi
+            ;;
+          "new_seed")
+            echo "新しいシード値を生成してバックテスト実行"
+            if [ -n "$STRATEGY" ]; then
+              python main_parallel.py --random-seed --save-random-seed --strategy "$STRATEGY" --num-runs "$RUNS"
+            else
+              python main_parallel.py --random-seed --save-random-seed --num-runs "$RUNS"
+            fi
+            ;;
+          "random_seed")
+            echo "ランダムシード値でバックテスト実行（保存なし）"
+            if [ -n "$STRATEGY" ]; then
+              python main_parallel.py --random-seed --strategy "$STRATEGY" --num-runs "$RUNS"
+            else
+              python main_parallel.py --random-seed --num-runs "$RUNS"
+            fi
+            ;;
+          "cache_only")
+            echo "キャッシュ専用バックテスト実行"
+            if [ -n "$STRATEGY" ]; then
+              python main_parallel.py --cache-only --strategy "$STRATEGY" --num-runs "$RUNS" --base-seed 42
+            else
+              python main_parallel.py --cache-only --num-runs "$RUNS" --base-seed 42
+            fi
+            ;;
+          *)
+            echo "未知のモード: $MODE、デフォルトの最新シード値モードで実行"
+            python main_parallel.py --use-seed-mapping --use-latest-seed --num-runs "$RUNS"
+            ;;
+        esac
         
     - name: Commit and push results
       run: |
