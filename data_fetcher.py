@@ -93,10 +93,16 @@ class DataFetcher:
                 success_count = sum(1 for data in stocks_data.values() if not data.empty)
                 failed_count = len(all_stocks) - success_count
                 
-                self.logger.info(f"データ取得完了: 成功 {success_count}銘柄, 失敗 {failed_count}銘柄")
+                # 実際のキャッシュファイル数をカウント
+                import os
+                cache_files = [f for f in os.listdir(self.data_loader.cache_dir) if f.endswith('.pkl')]
+                actual_cache_count = len(cache_files)
                 
-                # メタデータを保存
-                self.data_loader.save_fetch_metadata(start_date, end_date, success_count)
+                self.logger.info(f"データ取得完了: 成功 {success_count}銘柄, 失敗 {failed_count}銘柄")
+                self.logger.info(f"実際のキャッシュファイル数: {actual_cache_count}個")
+                
+                # メタデータを保存（実際のキャッシュファイル数を使用）
+                self.data_loader.save_fetch_metadata(start_date, end_date, actual_cache_count)
                 
                 # VIXデータも取得
                 self.logger.info("VIXデータを取得中...")
@@ -162,7 +168,13 @@ class DataFetcher:
             success_count = sum(1 for data in stocks_data.values() if not data.empty)
             failed_count = len(all_stocks) - success_count
             
+            # 実際のキャッシュファイル数をカウント
+            import os
+            cache_files = [f for f in os.listdir(self.data_loader.cache_dir) if f.endswith('.pkl')]
+            actual_cache_count = len(cache_files)
+            
             self.logger.info(f"データ取得完了: 成功 {success_count}銘柄, 失敗 {failed_count}銘柄")
+            self.logger.info(f"実際のキャッシュファイル数: {actual_cache_count}個")
             
             # VIXデータも取得
             self.logger.info("VIXデータを取得中...")
