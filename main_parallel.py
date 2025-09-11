@@ -406,7 +406,7 @@ def run_strategy_backtests_from_seed_mapping(strategy: str, num_runs: int,
     
     try:
         # バックテスト期間を取得
-        start_date, end_date = get_dynamic_backtest_period()
+        start_date, end_date = get_dynamic_backtest_period(strategy)
         logger.info(f"{strategy} バックテスト期間: {start_date} 〜 {end_date}")
         
         # シード値マネージャーを初期化
@@ -521,7 +521,7 @@ def run_strategy_backtests_with_random_seed(strategy: str, num_runs: int,
     
     try:
         # バックテスト期間を取得
-        start_date, end_date = get_dynamic_backtest_period()
+        start_date, end_date = get_dynamic_backtest_period(strategy)
         logger.info(f"{strategy} バックテスト期間: {start_date} 〜 {end_date}")
         
         # シード値マネージャーを初期化
@@ -888,8 +888,8 @@ def main():
         
         # index.htmlの更新
         try:
-            from main import update_index_html
-            update_index_html()
+            from generate_index import main as generate_index_main
+            generate_index_main()
             logger.info("index.htmlを更新しました")
         except Exception as e:
             logger.warning(f"index.html更新エラー: {e}")
