@@ -10,6 +10,7 @@ from datetime import datetime
 import pytz
 
 from data_loader import DataLoader
+from cache_data_loader import CacheOnlyDataLoader
 
 logger = logging.getLogger(__name__)
 
@@ -20,6 +21,7 @@ class SeedManager:
     def __init__(self, seed_mapping_file: str = "seed_mapping.json"):
         self.seed_mapping_file = seed_mapping_file
         self.data_loader = DataLoader()
+        self.cache_loader = CacheOnlyDataLoader()
         
     def _get_jst_datetime_str(self) -> str:
         """現在時刻をJSTで文字列として取得"""
@@ -60,7 +62,7 @@ class SeedManager:
         logger.info("キャッシュから初期シード値を生成開始")
         
         # キャッシュに存在する銘柄を取得
-        cached_symbols = self.data_loader.get_available_cached_symbols()
+        cached_symbols = self.cache_loader.get_available_cached_symbols()
         logger.info(f"キャッシュに存在する銘柄数: {len(cached_symbols)}")
         
         if len(cached_symbols) == 0:
@@ -240,7 +242,7 @@ class SeedManager:
         random.seed(random_seed)
         
         # キャッシュに存在する銘柄を取得
-        cached_symbols = self.data_loader.get_available_cached_symbols()
+        cached_symbols = self.cache_loader.get_available_cached_symbols()
         logger.info(f"キャッシュに存在する銘柄数: {len(cached_symbols)}")
         
         # 各指数から銘柄を選択
