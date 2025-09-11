@@ -89,7 +89,8 @@ class DataFetcher:
                     all_stocks, start_date, end_date
                 )
                 
-                success_count = len(stocks_data)
+                # 空でないDataFrameのみを成功としてカウント
+                success_count = sum(1 for data in stocks_data.values() if not data.empty)
                 failed_count = len(all_stocks) - success_count
                 
                 self.logger.info(f"データ取得完了: 成功 {success_count}銘柄, 失敗 {failed_count}銘柄")
@@ -157,7 +158,8 @@ class DataFetcher:
                 list(all_stocks), start_date, end_date
             )
             
-            success_count = len(stocks_data)
+            # 空でないDataFrameのみを成功としてカウント
+            success_count = sum(1 for data in stocks_data.values() if not data.empty)
             failed_count = len(all_stocks) - success_count
             
             self.logger.info(f"データ取得完了: 成功 {success_count}銘柄, 失敗 {failed_count}銘柄")

@@ -16,7 +16,7 @@ from functools import partial
 class DataLoader:
     """データローダークラス"""
     
-    def __init__(self, cache_dir: str = "cache", max_workers: int = 5, local_test_mode: bool = False):
+    def __init__(self, cache_dir: str = "cache", max_workers: int = 3, local_test_mode: bool = False):
         """
         初期化
         
@@ -253,10 +253,11 @@ class DataLoader:
     
     def _get_from_stooq(self, symbol: str, start_date: str, end_date: str, 
                         interval: str, max_retries: int) -> pd.DataFrame:
-        """stooq.comからデータ取得"""
+        """stooq.comからデータ取得（強化版リトライ機能）"""
         for attempt in range(max_retries):
             try:
                 import pandas_datareader.data as web
+                import time
                 
                 # シンボル形式の変換
                 if symbol.endswith('.T'):
@@ -303,7 +304,10 @@ class DataLoader:
             except Exception as e:
                 self.logger.warning(f"stooq.com エラー: {symbol} (試行 {attempt + 1}), {e}")
                 if attempt < max_retries - 1:
-                    time.sleep(2 ** attempt)  # 指数バックオフ
+                    # より長い待機時間でリトライ
+                    wait_time = min(5 + (attempt * 3), 30)  # 5秒から30秒まで段階的に増加
+                    self.logger.info(f"リトライ待機: {wait_time}秒")
+                    time.sleep(wait_time)
                     continue
         
         raise Exception(f"stooq.com データ取得失敗: {symbol}")
