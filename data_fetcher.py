@@ -4,6 +4,7 @@
 """
 
 import logging
+import os
 from typing import List, Set, Dict
 from datetime import datetime
 from data_loader import DataLoader
@@ -244,3 +245,60 @@ class DataFetcher:
         """
         random_seed = base_seed + run_id
         return self.data_loader.get_strategy_stocks(strategy, random_seed)
+    
+    def check_and_fetch_missing_stocks(self, strategy: str, num_runs: int, base_seed: int, 
+                                     start_date: str, end_date: str) -> List[str]:
+        """
+        必要な銘柄データがキャッシュに存在するかチェックし、不足している場合は取得
+        
+        Args:
+            strategy: 戦略名
+            num_runs: 実行回数
+            base_seed: ベースシード
+            start_date: 開始日
+            end_date: 終了日
+        
+        Returns:
+            List[str]: 不足している銘柄リスト
+        """
+        logger = logging.getLogger(__name__)
+        logger.info(f"=== {strategy} 必要な銘柄データの確認開始 ===")
+        
+        # 必要な銘柄リストを取得
+        required_stocks = set()
+        for run_id in range(1, num_runs + 1):
+            stocks = self.get_strategy_stocks_for_run(strategy, run_id, base_seed)
+            required_stocks.update(stocks)
+        
+        logger.info(f"必要な銘柄数: {len(required_stocks)}銘柄")
+        
+        # キャッシュに存在しない銘柄をチェック
+        missing_stocks = []
+        for stock in required_stocks:
+            cache_file = os.path.join(self.data_loader.cache_dir, f"{stock}_1d_{start_date}_{end_date}.pkl")
+            if not os.path.exists(cache_file):
+                missing_stocks.append(stock)
+        
+        if missing_stocks:
+            logger.warning(f"不足している銘柄データ: {len(missing_stocks)}銘柄")
+            logger.info(f"不足銘柄: {missing_stocks}")
+            
+            # 不足銘柄のデータを取得
+            logger.info("不足銘柄のデータを取得中...")
+            success_count = 0
+            for stock in missing_stocks:
+                try:
+                    data = self.data_loader.get_stock_data(stock, start_date, end_date)
+                    if not data.empty:
+                        success_count += 1
+                        logger.info(f"データ取得成功: {stock}")
+                    else:
+                        logger.warning(f"データ取得失敗: {stock}")
+                except Exception as e:
+                    logger.error(f"データ取得エラー: {stock}, {e}")
+            
+            logger.info(f"不足銘柄データ取得完了: {success_count}/{len(missing_stocks)}銘柄")
+        else:
+            logger.info("必要な銘柄データは全てキャッシュに存在します")
+        
+        return missing_stocks

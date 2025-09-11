@@ -48,7 +48,7 @@ jobs:
         
     - name: Run data fetch only
       run: |
-        python main_parallel.py --data-only --num-runs 1
+        python main_parallel.py --data-only --all-stocks
         
     - name: Commit and push cache updates
       run: |
