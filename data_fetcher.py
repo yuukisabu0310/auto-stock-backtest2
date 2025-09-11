@@ -76,14 +76,14 @@ class DataFetcher:
             self.logger.error("取得対象の銘柄がありません")
             return {"total": 0, "success": 0, "failed": 0}
         
-        # 期間変更判定
-        should_fetch_differential = self.data_loader.should_fetch_differential_data(start_date, end_date)
-        
         # 現在のキャッシュファイル数を確認
         import os
         current_cache_files = [f for f in os.listdir(self.data_loader.cache_dir) if f.endswith('.pkl')]
         current_cache_count = len(current_cache_files)
         target_count = len(all_stocks)
+        
+        # 期間変更判定
+        should_fetch_differential = self.data_loader.should_fetch_differential_data(start_date, end_date)
         
         # 期間変更があるか、目標数に達していない場合は取得実行
         if should_fetch_differential or current_cache_count < target_count:
