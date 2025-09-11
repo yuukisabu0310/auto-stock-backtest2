@@ -58,7 +58,7 @@ jobs:
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action"
         
-        # バックテストで生成されたファイルを一旦ステージング
+        # バックテストで生成されたファイルを一旦ステージング（修正版）
         git add reports/
         git add -f logs/
         git add -f results/

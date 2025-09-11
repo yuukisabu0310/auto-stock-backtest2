@@ -55,7 +55,7 @@ jobs:
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action"
         
-        # データ取得で生成されたファイルを一旦ステージング
+        # データ取得で生成されたファイルを一旦ステージング（修正版）
         git add -f cache/
         git add -f logs/
         
