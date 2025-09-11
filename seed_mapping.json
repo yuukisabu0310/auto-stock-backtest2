@@ -1,0 +1,323 @@
+{
+  "mappings": {
+    "swing_trading": {
+      "42": {
+        "symbols": [],
+        "count": 0,
+        "created_at": "2025-09-11 23:30:16 JST",
+        "strategy": "swing_trading"
+      },
+      "43": {
+        "symbols": [],
+        "count": 0,
+        "created_at": "2025-09-11 23:30:16 JST",
+        "strategy": "swing_trading"
+      },
+      "44": {
+        "symbols": [],
+        "count": 0,
+        "created_at": "2025-09-11 23:30:16 JST",
+        "strategy": "swing_trading"
+      },
+      "45": {
+        "symbols": [],
+        "count": 0,
+        "created_at": "2025-09-11 23:30:16 JST",
+        "strategy": "swing_trading"
+      },
+      "46": {
+        "symbols": [],
+        "count": 0,
+        "created_at": "2025-09-11 23:30:16 JST",
+        "strategy": "swing_trading"
+      },
+      "47": {
+        "symbols": [],
+        "count": 0,
+        "created_at": "2025-09-11 23:30:16 JST",
+        "strategy": "swing_trading"
+      },
+      "48": {
+        "symbols": [],
+        "count": 0,
+        "created_at": "2025-09-11 23:30:16 JST",
+        "strategy": "swing_trading"
+      },
+      "49": {
+        "symbols": [],
+        "count": 0,
+        "created_at": "2025-09-11 23:30:16 JST",
+        "strategy": "swing_trading"
+      },
+      "50": {
+        "symbols": [],
+        "count": 0,
+        "created_at": "2025-09-11 23:30:16 JST",
+        "strategy": "swing_trading"
+      },
+      "51": {
+        "symbols": [],
+        "count": 0,
+        "created_at": "2025-09-11 23:30:16 JST",
+        "strategy": "swing_trading"
+      }
+    },
+    "long_term": {
+      "42": {
+        "symbols": [],
+        "count": 0,
+        "created_at": "2025-09-11 23:30:16 JST",
+        "strategy": "long_term"
+      },
+      "43": {
+        "symbols": [],
+        "count": 0,
+        "created_at": "2025-09-11 23:30:16 JST",
+        "strategy": "long_term"
+      },
+      "44": {
+        "symbols": [],
+        "count": 0,
+        "created_at": "2025-09-11 23:30:16 JST",
+        "strategy": "long_term"
+      },
+      "45": {
+        "symbols": [],
+        "count": 0,
+        "created_at": "2025-09-11 23:30:16 JST",
+        "strategy": "long_term"
+      },
+      "46": {
+        "symbols": [],
+        "count": 0,
+        "created_at": "2025-09-11 23:30:16 JST",
+        "strategy": "long_term"
+      },
+      "47": {
+        "symbols": [],
+        "count": 0,
+        "created_at": "2025-09-11 23:30:16 JST",
+        "strategy": "long_term"
+      },
+      "48": {
+        "symbols": [],
+        "count": 0,
+        "created_at": "2025-09-11 23:30:16 JST",
+        "strategy": "long_term"
+      },
+      "49": {
+        "symbols": [],
+        "count": 0,
+        "created_at": "2025-09-11 23:30:16 JST",
+        "strategy": "long_term"
+      },
+      "50": {
+        "symbols": [],
+        "count": 0,
+        "created_at": "2025-09-11 23:30:16 JST",
+        "strategy": "long_term"
+      },
+      "51": {
+        "symbols": [],
+        "count": 0,
+        "created_at": "2025-09-11 23:30:16 JST",
+        "strategy": "long_term"
+      }
+    },
+    "momentum": {
+      "42": {
+        "symbols": [],
+        "count": 0,
+        "created_at": "2025-09-11 23:30:16 JST",
+        "strategy": "momentum"
+      },
+      "43": {
+        "symbols": [],
+        "count": 0,
+        "created_at": "2025-09-11 23:30:16 JST",
+        "strategy": "momentum"
+      },
+      "44": {
+        "symbols": [],
+        "count": 0,
+        "created_at": "2025-09-11 23:30:16 JST",
+        "strategy": "momentum"
+      },
+      "45": {
+        "symbols": [],
+        "count": 0,
+        "created_at": "2025-09-11 23:30:16 JST",
+        "strategy": "momentum"
+      },
+      "46": {
+        "symbols": [],
+        "count": 0,
+        "created_at": "2025-09-11 23:30:16 JST",
+        "strategy": "momentum"
+      },
+      "47": {
+        "symbols": [],
+        "count": 0,
+        "created_at": "2025-09-11 23:30:16 JST",
+        "strategy": "momentum"
+      },
+      "48": {
+        "symbols": [],
+        "count": 0,
+        "created_at": "2025-09-11 23:30:16 JST",
+        "strategy": "momentum"
+      },
+      "49": {
+        "symbols": [],
+        "count": 0,
+        "created_at": "2025-09-11 23:30:16 JST",
+        "strategy": "momentum"
+      },
+      "50": {
+        "symbols": [],
+        "count": 0,
+        "created_at": "2025-09-11 23:30:16 JST",
+        "strategy": "momentum"
+      },
+      "51": {
+        "symbols": [],
+        "count": 0,
+        "created_at": "2025-09-11 23:30:16 JST",
+        "strategy": "momentum"
+      }
+    },
+    "value": {
+      "42": {
+        "symbols": [],
+        "count": 0,
+        "created_at": "2025-09-11 23:30:16 JST",
+        "strategy": "value"
+      },
+      "43": {
+        "symbols": [],
+        "count": 0,
+        "created_at": "2025-09-11 23:30:16 JST",
+        "strategy": "value"
+      },
+      "44": {
+        "symbols": [],
+        "count": 0,
+        "created_at": "2025-09-11 23:30:16 JST",
+        "strategy": "value"
+      },
+      "45": {
+        "symbols": [],
+        "count": 0,
+        "created_at": "2025-09-11 23:30:16 JST",
+        "strategy": "value"
+      },
+      "46": {
+        "symbols": [],
+        "count": 0,
+        "created_at": "2025-09-11 23:30:16 JST",
+        "strategy": "value"
+      },
+      "47": {
+        "symbols": [],
+        "count": 0,
+        "created_at": "2025-09-11 23:30:16 JST",
+        "strategy": "value"
+      },
+      "48": {
+        "symbols": [],
+        "count": 0,
+        "created_at": "2025-09-11 23:30:16 JST",
+        "strategy": "value"
+      },
+      "49": {
+        "symbols": [],
+        "count": 0,
+        "created_at": "2025-09-11 23:30:16 JST",
+        "strategy": "value"
+      },
+      "50": {
+        "symbols": [],
+        "count": 0,
+        "created_at": "2025-09-11 23:30:16 JST",
+        "strategy": "value"
+      },
+      "51": {
+        "symbols": [],
+        "count": 0,
+        "created_at": "2025-09-11 23:30:16 JST",
+        "strategy": "value"
+      }
+    },
+    "growth": {
+      "42": {
+        "symbols": [],
+        "count": 0,
+        "created_at": "2025-09-11 23:30:16 JST",
+        "strategy": "growth"
+      },
+      "43": {
+        "symbols": [],
+        "count": 0,
+        "created_at": "2025-09-11 23:30:16 JST",
+        "strategy": "growth"
+      },
+      "44": {
+        "symbols": [],
+        "count": 0,
+        "created_at": "2025-09-11 23:30:16 JST",
+        "strategy": "growth"
+      },
+      "45": {
+        "symbols": [],
+        "count": 0,
+        "created_at": "2025-09-11 23:30:16 JST",
+        "strategy": "growth"
+      },
+      "46": {
+        "symbols": [],
+        "count": 0,
+        "created_at": "2025-09-11 23:30:16 JST",
+        "strategy": "growth"
+      },
+      "47": {
+        "symbols": [],
+        "count": 0,
+        "created_at": "2025-09-11 23:30:16 JST",
+        "strategy": "growth"
+      },
+      "48": {
+        "symbols": [],
+        "count": 0,
+        "created_at": "2025-09-11 23:30:16 JST",
+        "strategy": "growth"
+      },
+      "49": {
+        "symbols": [],
+        "count": 0,
+        "created_at": "2025-09-11 23:30:16 JST",
+        "strategy": "growth"
+      },
+      "50": {
+        "symbols": [],
+        "count": 0,
+        "created_at": "2025-09-11 23:30:16 JST",
+        "strategy": "growth"
+      },
+      "51": {
+        "symbols": [],
+        "count": 0,
+        "created_at": "2025-09-11 23:30:16 JST",
+        "strategy": "growth"
+      }
+    }
+  },
+  "metadata": {
+    "created_at": "2025-09-11 23:30:16 JST",
+    "total_strategies": 5,
+    "seeds_per_strategy": 10,
+    "base_seed": 42,
+    "cached_symbols_count": 512,
+    "last_updated": "2025-09-11 23:30:16 JST",
+    "version": 1
+  }
+}
