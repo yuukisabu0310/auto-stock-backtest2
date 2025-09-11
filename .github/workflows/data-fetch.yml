@@ -55,26 +55,24 @@ jobs:
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action"
         
-        # データ取得で生成されたファイルを一旦ステージング（修正版）
-        git add -f cache/
-        git add -f logs/
+        # 生成されたファイルの状態を確認
+        git status
         
-        # 未ステージの変更をコミット（一時的）
-        if ! git diff --staged --quiet; then
+        # 未ステージの変更があるかチェック
+        if ! git diff --quiet || ! git diff --cached --quiet; then
+          # 変更があれば一時的にステージングしてコミット
+          git add -f cache/
+          git add -f logs/
           git commit -m "Temporary commit for rebase"
         fi
         
         # 最新の変更を取得
         git pull --rebase
         
-        # キャッシュファイルを再度追加
+        # データ取得で生成されたファイルを最終コミット用にステージング
         git add -f cache/
         git add -f logs/
         
-        # 変更がある場合のみコミット
-        if git diff --staged --quiet; then
-          echo "No changes to commit"
-        else
-          git commit -m "Daily data fetch and cache update $(TZ='Asia/Tokyo' date +'%Y-%m-%d %H:%M:%S JST')"
-          git push
-        fi
+        # 最終コミット（必ず実行）
+        git commit --amend -m "Daily data fetch and cache update $(TZ='Asia/Tokyo' date +'%Y-%m-%d %H:%M:%S JST')"
+        git push --force-with-lease
