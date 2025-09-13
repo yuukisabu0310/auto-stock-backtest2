@@ -22,20 +22,23 @@ def get_latest_reports(reports_dir: str = "reports") -> Dict[str, str]:
     """
     latest_reports = {}
     
-    # 戦略別の最新レポートを取得
+    # 戦略別の最新レポートを取得（新しい形式と古い形式の両方に対応）
     strategies = {
-        "swing_trading": "スイングトレード",
-        "long_term": "中長期投資",
-        "summary": "サマリー"
+        "swing_trading": ["swing_trading", "スイングトレード"],
+        "long_term": ["long_term", "中長期投資"],
+        "summary": ["summary"]
     }
     
-    for strategy_key, strategy_name in strategies.items():
-        pattern = os.path.join(reports_dir, f"{strategy_name}_*.html")
-        files = glob.glob(pattern)
+    for strategy_key, strategy_names in strategies.items():
+        all_files = []
+        for strategy_name in strategy_names:
+            pattern = os.path.join(reports_dir, f"{strategy_name}_*.html")
+            files = glob.glob(pattern)
+            all_files.extend(files)
         
-        if files:
+        if all_files:
             # ファイル名から日時を抽出して最新を特定
-            latest_file = max(files, key=lambda x: extract_datetime_from_filename(x))
+            latest_file = max(all_files, key=lambda x: extract_datetime_from_filename(x))
             latest_reports[strategy_key] = latest_file
     
     return latest_reports
@@ -61,8 +64,8 @@ def get_recent_reports(reports_dir: str = "reports", days: int = 30) -> List[Dic
     for file_path in files:
         filename = os.path.basename(file_path)
         
-        # index.htmlと銘柄一覧ファイルは除外
-        if filename == "index.html" or "_stocks_" in filename:
+        # index.htmlは除外
+        if filename == "index.html":
             continue
         
         # ファイル名から日時を抽出
@@ -121,8 +124,10 @@ def extract_strategy_name(filename: str) -> str:
     Returns:
         str: 戦略名
     """
-    # 戦略名のマッピング
+    # 戦略名のマッピング（新しい形式と古い形式の両方に対応）
     strategy_mapping = {
+        "swing_trading": "スイングトレード",
+        "long_term": "中長期投資",
         "スイングトレード": "スイングトレード",
         "中長期投資": "中長期投資",
         "summary": "サマリー",
