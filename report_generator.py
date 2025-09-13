@@ -220,7 +220,7 @@ class ReportGenerator:
         
         # ファイル保存
         timestamp = self._get_jst_timestamp()
-        filename = f"{strategy_name}_stocks_{timestamp}.html"
+        filename = f"{strategy_name}_{timestamp}.html"
         filepath = os.path.join(self.report_dir, filename)
         
         with open(filepath, 'w', encoding='utf-8') as f:
