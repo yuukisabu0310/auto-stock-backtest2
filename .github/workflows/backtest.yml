@@ -2,9 +2,9 @@ name: Daily Backtest
 
 on:
   schedule:
-    # 毎日06:30に実行（JST時間、UTC時間は21:30前日）
-    # データ取得の30分後に実行
-    - cron: '30 21 * * *'
+    # 毎日06:45に実行（JST時間、UTC時間は21:45前日）
+    # データ取得の45分後に実行
+    - cron: '45 21 * * *'
   workflow_dispatch:
     inputs:
       backtest_mode:
