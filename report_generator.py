@@ -67,14 +67,22 @@ class ReportGenerator:
         Returns:
             Dict: 戦略条件
         """
-        # 戦略名からキーを特定
+        # 戦略名からキーを特定（英語名と日本語名の両方に対応）
         strategy_key = None
+        
+        # 直接キーが渡された場合
+        if strategy_name in TRADING_RULES:
+            strategy_key = strategy_name
+        
+        # 日本語名で検索
         for key, value in TRADING_RULES.items():
             if value["name"] == strategy_name:
                 strategy_key = key
                 break
         
         if not strategy_key:
+            # デバッグ情報を追加
+            self.logger.warning(f"戦略条件が見つかりません: strategy_name='{strategy_name}', available_keys={list(TRADING_RULES.keys())}")
             return {}
         
         return TRADING_RULES[strategy_key]

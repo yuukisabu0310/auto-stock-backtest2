@@ -113,6 +113,14 @@ jobs:
               python main_parallel.py --cache-only --num-runs "$RUNS" --base-seed 42
             fi
             ;;
+          "latest_seed")
+            echo "最新シード値でバックテスト実行"
+            if [ -n "$STRATEGY" ]; then
+              python main_parallel.py --use-seed-mapping --use-latest-seed --strategy "$STRATEGY" --num-runs "$RUNS"
+            else
+              python main_parallel.py --use-seed-mapping --use-latest-seed --num-runs "$RUNS"
+            fi
+            ;;
           *)
             echo "未知のモード: $MODE、デフォルトの最新シード値モードで実行"
             python main_parallel.py --use-seed-mapping --use-latest-seed --num-runs "$RUNS"
