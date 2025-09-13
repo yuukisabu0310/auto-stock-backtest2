@@ -24,9 +24,27 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
       
+      - name: List reports directory
+        run: |
+          echo "=== Reports directory contents ==="
+          ls -la reports/
+          echo "=== HTML files in reports ==="
+          find reports/ -name "*.html" -type f
+          echo "=== File sizes ==="
+          du -h reports/*.html 2>/dev/null || echo "No HTML files found"
+      
       - name: Setup Pages
         uses: actions/configure-pages@v4
         
+      - name: Verify files before upload
+        run: |
+          echo "=== Pre-upload verification ==="
+          echo "Current directory: $(pwd)"
+          echo "Reports directory exists: $(test -d reports && echo 'YES' || echo 'NO')"
+          echo "Index.html exists: $(test -f reports/index.html && echo 'YES' || echo 'NO')"
+          echo "Swing trading report exists: $(test -f reports/swing_trading_20250911_182701.html && echo 'YES' || echo 'NO')"
+          echo "Long term report exists: $(test -f reports/long_term_20250910_131458.html && echo 'YES' || echo 'NO')"
+          
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
