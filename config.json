@@ -1,0 +1,64 @@
+{
+  "data_sources": {
+    "priority": ["yfinance", "alpha_vantage"],
+    "retry_attempts": 3,
+    "timeout": 30,
+    "max_workers": 4
+  },
+  "symbols": {
+    "config_file": "symbols_config.json",
+    "default_sources": ["sp500_symbols", "nasdaq_symbols", "custom_symbols"],
+    "max_symbols": 1000
+  },
+  "backtest": {
+    "period_years": 5,
+    "start_date_offset_months": 1,
+    "timeframe": "daily",
+    "use_cache_only": true
+  },
+  "strategy": {
+    "random_stocks_count": 100,
+    "symbols_file": "symbols.json",
+    "seed_management": {
+      "use_last_seed": true,
+      "last_seed_file": "cache/last_seed.txt"
+    },
+    "technical_indicators": {
+      "sma_periods": [25, 50, 200],
+      "ema_periods": [20, 60, 120, 240],
+      "rsi_period": 14,
+      "rsi_oversold": 30,
+      "rsi_overbought": 70,
+      "macd_fast": 12,
+      "macd_slow": 26,
+      "macd_signal": 9
+    },
+    "scoring": {
+      "buy_thresholds": {
+        "strong_buy": 5,
+        "buy_caution": 3,
+        "neutral_upper": 0
+      },
+      "sell_thresholds": {
+        "strong_sell": -5,
+        "sell_caution": -3,
+        "neutral_lower": 0
+      }
+    }
+  },
+  "reports": {
+    "output_dir": "reports",
+    "history_days": 30,
+    "chart_height": 600,
+    "include_ai_analysis": true,
+    "chart_display": {
+      "years_back": 2,
+      "months_forward_margin": 3
+    }
+  },
+  "cache": {
+    "directory": "cache",
+    "expiry_days": 7,
+    "max_size_mb": 1000
+  }
+}
